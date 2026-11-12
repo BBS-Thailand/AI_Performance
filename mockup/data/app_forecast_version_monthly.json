@@ -3,7 +3,7 @@
   "forecast_version_id": "FV-SL-2027-01",
   "metric_id": "REV",
   "period_id": 202704,
-  "actual": 246.35,
+  "actual": 243.71,
   "forecast": null,
   "budget": 252.8
  },
@@ -11,7 +11,7 @@
   "forecast_version_id": "FV-SL-2027-01",
   "metric_id": "REV",
   "period_id": 202705,
-  "actual": 250.65,
+  "actual": 248.01,
   "forecast": null,
   "budget": 260.7
  },
@@ -20,7 +20,7 @@
   "metric_id": "REV",
   "period_id": 202706,
   "actual": null,
-  "forecast": 264,
+  "forecast": 269.28,
   "budget": 276.5
  },
  {
@@ -99,7 +99,7 @@
   "forecast_version_id": "FV-SL-2027-01",
   "metric_id": "GP",
   "period_id": 202704,
-  "actual": 59.56,
+  "actual": 58.57,
   "forecast": null,
   "budget": 60.8
  },
@@ -107,7 +107,7 @@
   "forecast_version_id": "FV-SL-2027-01",
   "metric_id": "GP",
   "period_id": 202705,
-  "actual": 60.42,
+  "actual": 59.43,
   "forecast": null,
   "budget": 62.7
  },
@@ -116,7 +116,7 @@
   "metric_id": "GP",
   "period_id": 202706,
   "actual": null,
-  "forecast": 62.87,
+  "forecast": 64.85,
   "budget": 66.5
  },
  {
@@ -195,7 +195,7 @@
   "forecast_version_id": "FV-SL-2027-01",
   "metric_id": "SGA",
   "period_id": 202704,
-  "actual": 37.54,
+  "actual": 37.84,
   "forecast": null,
   "budget": 36.8
  },
@@ -203,7 +203,7 @@
   "forecast_version_id": "FV-SL-2027-01",
   "metric_id": "SGA",
   "period_id": 202705,
-  "actual": 38.68,
+  "actual": 38.74,
   "forecast": null,
   "budget": 37.95
  },
@@ -212,7 +212,7 @@
   "metric_id": "SGA",
   "period_id": 202706,
   "actual": null,
-  "forecast": 41.28,
+  "forecast": 40.92,
   "budget": 40.25
  },
  {
@@ -291,7 +291,7 @@
   "forecast_version_id": "FV-SL-2027-01",
   "metric_id": "OP",
   "period_id": 202704,
-  "actual": 22.02,
+  "actual": 20.73,
   "forecast": null,
   "budget": 24
  },
@@ -299,7 +299,7 @@
   "forecast_version_id": "FV-SL-2027-01",
   "metric_id": "OP",
   "period_id": 202705,
-  "actual": 21.74,
+  "actual": 20.69,
   "forecast": null,
   "budget": 24.75
  },
@@ -308,7 +308,7 @@
   "metric_id": "OP",
   "period_id": 202706,
   "actual": null,
-  "forecast": 21.59,
+  "forecast": 23.93,
   "budget": 26.25
  },
  {
@@ -387,7 +387,7 @@
   "forecast_version_id": "FV-SL-2027-02",
   "metric_id": "REV",
   "period_id": 202704,
-  "actual": 246.35,
+  "actual": 243.71,
   "forecast": null,
   "budget": 252.8
  },
@@ -395,7 +395,7 @@
   "forecast_version_id": "FV-SL-2027-02",
   "metric_id": "REV",
   "period_id": 202705,
-  "actual": 250.65,
+  "actual": 248.01,
   "forecast": null,
   "budget": 260.7
  },
@@ -403,7 +403,7 @@
   "forecast_version_id": "FV-SL-2027-02",
   "metric_id": "REV",
   "period_id": 202706,
-  "actual": 264,
+  "actual": 269.28,
   "forecast": null,
   "budget": 276.5
  },
@@ -483,7 +483,7 @@
   "forecast_version_id": "FV-SL-2027-02",
   "metric_id": "GP",
   "period_id": 202704,
-  "actual": 59.56,
+  "actual": 58.57,
   "forecast": null,
   "budget": 60.8
  },
@@ -491,7 +491,7 @@
   "forecast_version_id": "FV-SL-2027-02",
   "metric_id": "GP",
   "period_id": 202705,
-  "actual": 60.42,
+  "actual": 59.43,
   "forecast": null,
   "budget": 62.7
  },
@@ -499,7 +499,7 @@
   "forecast_version_id": "FV-SL-2027-02",
   "metric_id": "GP",
   "period_id": 202706,
-  "actual": 63.52,
+  "actual": 65.5,
   "forecast": null,
   "budget": 66.5
  },
@@ -579,7 +579,7 @@
   "forecast_version_id": "FV-SL-2027-02",
   "metric_id": "SGA",
   "period_id": 202704,
-  "actual": 37.54,
+  "actual": 37.84,
   "forecast": null,
   "budget": 36.8
  },
@@ -587,7 +587,7 @@
   "forecast_version_id": "FV-SL-2027-02",
   "metric_id": "SGA",
   "period_id": 202705,
-  "actual": 38.68,
+  "actual": 38.74,
   "forecast": null,
   "budget": 37.95
  },
@@ -595,7 +595,7 @@
   "forecast_version_id": "FV-SL-2027-02",
   "metric_id": "SGA",
   "period_id": 202706,
-  "actual": 41.28,
+  "actual": 40.92,
   "forecast": null,
   "budget": 40.25
  },
@@ -675,7 +675,7 @@
   "forecast_version_id": "FV-SL-2027-02",
   "metric_id": "OP",
   "period_id": 202704,
-  "actual": 22.02,
+  "actual": 20.73,
   "forecast": null,
   "budget": 24
  },
@@ -683,7 +683,7 @@
   "forecast_version_id": "FV-SL-2027-02",
   "metric_id": "OP",
   "period_id": 202705,
-  "actual": 21.74,
+  "actual": 20.69,
   "forecast": null,
   "budget": 24.75
  },
@@ -691,7 +691,7 @@
   "forecast_version_id": "FV-SL-2027-02",
   "metric_id": "OP",
   "period_id": 202706,
-  "actual": 22.24,
+  "actual": 24.58,
   "forecast": null,
   "budget": 26.25
  },
@@ -779,7 +779,7 @@
   "forecast_version_id": "FV-OS-2027-01",
   "metric_id": "REV",
   "period_id": 202705,
-  "actual": 158.51,
+  "actual": 169.31,
   "forecast": null,
   "budget": 169.95
  },
@@ -788,7 +788,7 @@
   "metric_id": "REV",
   "period_id": 202706,
   "actual": null,
-  "forecast": 166.48,
+  "forecast": 155.68,
   "budget": 180.25
  },
  {
@@ -875,7 +875,7 @@
   "forecast_version_id": "FV-OS-2027-01",
   "metric_id": "GP",
   "period_id": 202705,
-  "actual": 39.05,
+  "actual": 41.76,
   "forecast": null,
   "budget": 41.25
  },
@@ -884,7 +884,7 @@
   "metric_id": "GP",
   "period_id": 202706,
   "actual": null,
-  "forecast": 41.44,
+  "forecast": 38.73,
   "budget": 43.75
  },
  {
@@ -1067,7 +1067,7 @@
   "forecast_version_id": "FV-OS-2027-01",
   "metric_id": "OP",
   "period_id": 202705,
-  "actual": 13.81,
+  "actual": 16.52,
   "forecast": null,
   "budget": 15.84
  },
@@ -1076,7 +1076,7 @@
   "metric_id": "OP",
   "period_id": 202706,
   "actual": null,
-  "forecast": 14.66,
+  "forecast": 11.95,
   "budget": 16.8
  },
  {
@@ -1163,7 +1163,7 @@
   "forecast_version_id": "FV-OS-2027-02",
   "metric_id": "REV",
   "period_id": 202705,
-  "actual": 158.51,
+  "actual": 169.31,
   "forecast": null,
   "budget": 169.95
  },
@@ -1171,7 +1171,7 @@
   "forecast_version_id": "FV-OS-2027-02",
   "metric_id": "REV",
   "period_id": 202706,
-  "actual": 166.48,
+  "actual": 155.68,
   "forecast": null,
   "budget": 180.25
  },
@@ -1259,7 +1259,7 @@
   "forecast_version_id": "FV-OS-2027-02",
   "metric_id": "GP",
   "period_id": 202705,
-  "actual": 39.05,
+  "actual": 41.76,
   "forecast": null,
   "budget": 41.25
  },
@@ -1267,7 +1267,7 @@
   "forecast_version_id": "FV-OS-2027-02",
   "metric_id": "GP",
   "period_id": 202706,
-  "actual": 41.09,
+  "actual": 38.38,
   "forecast": null,
   "budget": 43.75
  },
@@ -1451,7 +1451,7 @@
   "forecast_version_id": "FV-OS-2027-02",
   "metric_id": "OP",
   "period_id": 202705,
-  "actual": 13.81,
+  "actual": 16.52,
   "forecast": null,
   "budget": 15.84
  },
@@ -1459,7 +1459,7 @@
   "forecast_version_id": "FV-OS-2027-02",
   "metric_id": "OP",
   "period_id": 202706,
-  "actual": 14.31,
+  "actual": 11.6,
   "forecast": null,
   "budget": 16.8
  },
@@ -1635,7 +1635,7 @@
   "forecast_version_id": "FV-MF-2027-01",
   "metric_id": "GP",
   "period_id": 202704,
-  "actual": -2,
+  "actual": -3.04,
   "forecast": null,
   "budget": 0
  },
@@ -1643,7 +1643,7 @@
   "forecast_version_id": "FV-MF-2027-01",
   "metric_id": "GP",
   "period_id": 202705,
-  "actual": -0.55,
+  "actual": -0.47,
   "forecast": null,
   "budget": 0
  },
@@ -1651,7 +1651,7 @@
   "forecast_version_id": "FV-MF-2027-01",
   "metric_id": "GP",
   "period_id": 202706,
-  "actual": -0.45,
+  "actual": 0.51,
   "forecast": null,
   "budget": 0
  },
@@ -1827,7 +1827,7 @@
   "forecast_version_id": "FV-MF-2027-01",
   "metric_id": "OP",
   "period_id": 202704,
-  "actual": -5.2,
+  "actual": -6.24,
   "forecast": null,
   "budget": -3.2
  },
@@ -1835,7 +1835,7 @@
   "forecast_version_id": "FV-MF-2027-01",
   "metric_id": "OP",
   "period_id": 202705,
-  "actual": -3.85,
+  "actual": -3.77,
   "forecast": null,
   "budget": -3.3
  },
@@ -1843,7 +1843,7 @@
   "forecast_version_id": "FV-MF-2027-01",
   "metric_id": "OP",
   "period_id": 202706,
-  "actual": -3.95,
+  "actual": -2.99,
   "forecast": null,
   "budget": -3.5
  },

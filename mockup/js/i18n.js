@@ -46,6 +46,7 @@
       new_action: 'New Action (user)', id_on_save: 'Generated on save', required: 'Required', cannot_cancel: 'Adoption cannot be cancelled: actual effects are already recorded.',
       saved_action: 'Saved {id}', override_notice: 'Override notice sent to Action chat (C-03).', no_points: 'No Points for this scope and period.',
       source_ref: 'Source: {src} · {period}', vs_init_short: 'Δ initial', vs_prev_short: 'Δ prev.', units_total: 'Total',
+      actions: 'Actions', action_effect: 'Action effect', action_effect_sub: 'OP, JPY M', plan_lbl: 'Plan', actual_lbl: 'Actual', actions_count: '{n} ({e} executing)', raised_new: 'Raised in {month} (new)', vs_init_last: 'vs. initial / vs. last month ({month})', new_point: 'New', kpi_budget_var: 'KPI budget variance', sub_row_hint: 'Second row of each Point: change since it was raised / since last month. Metric columns compare the single-month impact; Overall impact compares the annualized OP impact. Action effect: row 1 = annual plan of executing Actions, row 2 = actual to date (excluding Individual Factors).',
     },
     ja: {
       app_title: 'AI経営管理システム', menu_ai: 'AI分析', menu_forecast: '見通し', menu_bi: 'BI・レポート',
@@ -80,6 +81,7 @@
       new_action: '新規アクション（ユーザー）', id_on_save: '保存時に採番', required: '必須', cannot_cancel: '実績効果が記録済みのため採用を取り消せません。',
       saved_action: '{id} を保存しました', override_notice: '上書き通知をアクションチャット（C-03）に送信しました。', no_points: 'この範囲・期間のポイントはありません。',
       source_ref: '出典：{src}・{period}', vs_init_short: '初回比', vs_prev_short: '前月比', units_total: '合計',
+      actions: 'アクション', action_effect: 'アクション効果', action_effect_sub: '営業利益・百万円', plan_lbl: '計画', actual_lbl: '実績', actions_count: '{n}（実行中{e}）', raised_new: '{month}に検出（新規）', vs_init_last: '初回比 / 前月比（{month}検出）', new_point: '新規', kpi_budget_var: 'KPI予算差異', sub_row_hint: '各ポイントの2行目：検出時からの変化 / 前月からの変化。指標列は単月の影響額、総合影響は営業利益の年換算影響額で比較します。アクション効果：1行目＝実行中アクションの年間計画、2行目＝累計実績（個別要因除く）。',
     },
     th: {
       app_title: 'ระบบบริหารจัดการด้วย AI', menu_ai: 'การวิเคราะห์ AI', menu_forecast: 'การคาดการณ์', menu_bi: 'BI+รายงาน',
@@ -114,6 +116,7 @@
       new_action: 'แอคชันใหม่ (ผู้ใช้)', id_on_save: 'สร้างเมื่อบันทึก', required: 'จำเป็น', cannot_cancel: 'ยกเลิกการอนุมัติไม่ได้ เนื่องจากมีผลจริงบันทึกแล้ว',
       saved_action: 'บันทึก {id} แล้ว', override_notice: 'ส่งการแจ้งเตือนการเปลี่ยนคำตัดสินไปยังแชทแอคชัน (C-03) แล้ว', no_points: 'ไม่มีประเด็นสำหรับขอบเขตและงวดนี้',
       source_ref: 'ที่มา: {src} · {period}', vs_init_short: 'Δ ครั้งแรก', vs_prev_short: 'Δ เดือนก่อน', units_total: 'รวม',
+      actions: 'แอคชัน', action_effect: 'ผลของแอคชัน', action_effect_sub: 'กำไรดำเนินงาน ล้านเยน', plan_lbl: 'แผน', actual_lbl: 'จริง', actions_count: '{n} (กำลังดำเนินการ {e})', raised_new: 'พบใน {month} (ใหม่)', vs_init_last: 'เทียบครั้งแรก / เทียบเดือนก่อน ({month})', new_point: 'ใหม่', kpi_budget_var: 'ผลต่างงบประมาณ KPI', sub_row_hint: 'แถวที่สองของแต่ละประเด็น: การเปลี่ยนแปลงตั้งแต่พบ / จากเดือนก่อน คอลัมน์ตัวชี้วัดเทียบผลกระทบรายเดือน ผลกระทบรวมเทียบผลต่อกำไรดำเนินงานรายปี ผลของแอคชัน: แถว 1 = แผนรายปีของแอคชันที่ดำเนินการ แถว 2 = ผลจริงสะสม (ไม่รวมปัจจัยเฉพาะ)',
     },
     'zh-Hans': {
       app_title: 'AI经营管理系统', menu_ai: 'AI分析', menu_forecast: '预测', menu_bi: 'BI+报表', period: '期间', org: '组织', language: '语言', user: '演示用户',

@@ -136,8 +136,9 @@
     const snapIdx = new Map();
     db.app_point_impact_snapshot.forEach((s) => {
       const k = s.point_id + '|' + s.as_of_period_id;
-      if (!snapIdx.has(k)) snapIdx.set(k, { overall: s.overall_impact_annual_op, impacts: {} });
+      if (!snapIdx.has(k)) snapIdx.set(k, { overall: s.overall_impact_annual_op, impacts: {}, month: {} });
       snapIdx.get(k).impacts[s.metric_id] = s.impact_ytd;
+      snapIdx.get(k).month[s.metric_id] = s.impact_month ?? null;
     });
     M.point = (id) => pointById.get(id);
     M.pointChildren = (id) => db.app_point.filter((p) => p.parent_point_id === id);
@@ -165,15 +166,22 @@
       const executing = acts.filter((a) => M.isOnBoard(a, pid));
       const planned = sum(executing, (a) => M.actionTotals(a.action_id, pid, 'OP').planAnnual);
       const actual = sum(executing, (a) => M.actionTotals(a.action_id, pid, 'OP').actualToDate);
+      // A-01 second row (concept slide 38): change since the Point was raised and since last month.
+      // Metric columns compare the single-month impact (YTD impacts only accumulate, so they can't
+      // show improvement); the overall column compares the annualized OP impact. A Point raised in
+      // the selected month has no comparison yet (isNew).
+      const isNew = p.raised_period_id === pid;
       const vsInit = {}, vsPrev = {};
       METRICS.forEach((m) => {
-        vsInit[m] = initial && p.raised_period_id !== pid ? r2((snap.impacts[m] || 0) - (initial.impacts[m] || 0)) : null;
-        vsPrev[m] = prev ? r2((snap.impacts[m] || 0) - (prev.impacts[m] || 0)) : null;
+        const cur = snap.month[m] ?? 0;
+        vsInit[m] = initial && !isNew ? r2(cur - (initial.month[m] ?? 0)) : null;
+        vsPrev[m] = prev && !isNew ? r2(cur - (prev.month[m] ?? 0)) : null;
       });
       return {
-        point: p, impacts: snap.impacts, overall: snap.overall,
-        overallVsInit: initial && p.raised_period_id !== pid ? r2(snap.overall - initial.overall) : null,
-        overallVsPrev: prev ? r2(snap.overall - prev.overall) : null,
+        point: p, impacts: snap.impacts, monthImpacts: snap.month, overall: snap.overall,
+        isNew, raisedPeriodId: p.raised_period_id,
+        overallVsInit: initial && !isNew ? r2(snap.overall - initial.overall) : null,
+        overallVsPrev: prev && !isNew ? r2(snap.overall - prev.overall) : null,
         vsInit, vsPrev, orgs: M.pointOrgs(id),
         proposalCount: acts.length, executingCount: executing.length,
         plannedEffect: planned, actualEffect: actual,

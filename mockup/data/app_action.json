@@ -196,5 +196,23 @@
   "effect_kind": "COGS",
   "latest_decider": "u04",
   "latest_decided_at": "2027-05-20T06:00:00Z"
+ },
+ {
+  "action_id": "ACT-008-SL-A01",
+  "point_id": "PT-008-SL",
+  "owner_org_id": "SL",
+  "origin": "AI",
+  "seq_no": 1,
+  "action_name_comment_id": "CM-ANAME-ACT-008-SL-A01",
+  "description_comment_id": "CM-ADESC-ACT-008-SL-A01",
+  "start_period_id": 202708,
+  "end_period_id": 202803,
+  "decision_state": "PROPOSED",
+  "execution_state": "NOT_STARTED",
+  "hold_until_period_id": null,
+  "adopted_period_id": null,
+  "effect_kind": "REV",
+  "latest_decider": null,
+  "latest_decided_at": null
  }
 ]

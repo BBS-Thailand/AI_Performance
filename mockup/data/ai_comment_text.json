@@ -26,7 +26,7 @@
  {
   "comment_id": "CM-SUM-202705-CO",
   "language_code": "en",
-  "text": "The YTD gap to budget widened in May. Two new Points were raised: order delays from Customer F (Indonesia) and a yield improvement opportunity in manufacturing. Three Actions were adopted this month.",
+  "text": "The YTD gap to budget widened in May. One new Point was raised: a yield improvement opportunity in manufacturing. Imported material cost pressure eased slightly after April. Three Actions were adopted this month.",
   "is_base": true,
   "translated_at": null,
   "reviewed_by": null
@@ -34,7 +34,7 @@
  {
   "comment_id": "CM-SUM-202705-CO",
   "language_code": "ja",
-  "text": "5月は予算差異が拡大しました。新たに2件のポイント（顧客F（インドネシア）の受注遅延、製造歩留まり改善の機会）を検出しました。今月は3件のアクションが採用されました。",
+  "text": "5月は予算差異が拡大しました。新たに1件のポイント（製造歩留まり改善の機会）を検出しました。輸入材料費の圧力は4月以降わずかに緩和しています。今月は3件のアクションが採用されました。",
   "is_base": false,
   "translated_at": "2027-07-03T00:00:00Z",
   "reviewed_by": null
@@ -42,7 +42,7 @@
  {
   "comment_id": "CM-SUM-202705-CO",
   "language_code": "th",
-  "text": "ช่องว่างสะสมเทียบกับงบประมาณกว้างขึ้นในเดือนพฤษภาคม มีประเด็นใหม่ 2 เรื่อง ได้แก่ คำสั่งซื้อล่าช้าจากลูกค้า F (อินโดนีเซีย) และโอกาสปรับปรุงผลผลิตในการผลิต เดือนนี้อนุมัติแอคชัน 3 รายการ",
+  "text": "ช่องว่างสะสมเทียบกับงบประมาณกว้างขึ้นในเดือนพฤษภาคม มีประเด็นใหม่ 1 เรื่อง คือโอกาสปรับปรุงผลผลิตในการผลิต แรงกดดันจากต้นทุนวัตถุดิบนำเข้าลดลงเล็กน้อยหลังเดือนเมษายน เดือนนี้อนุมัติแอคชัน 3 รายการ",
   "is_base": false,
   "translated_at": "2027-07-03T00:00:00Z",
   "reviewed_by": null
@@ -50,7 +50,7 @@
  {
   "comment_id": "CM-SUM-202706-CO",
   "language_code": "en",
-  "text": "YTD operating profit is JPY 86M, JPY 12M below budget. The largest issue is volume decline at Customer B (annualized −36M), followed by imported material cost increase (−30M). Southeast Asian demand (+18M) and manufacturing yield (+16M) partly offset these. Adopted Actions have realized JPY 3.4M so far; their year-end outlook is JPY 22M against a plan of 30M, mainly because the Vietnam distributor expansion and the Line 2 yield rollout are delayed.",
+  "text": "YTD operating profit is JPY 86M, JPY 12M below budget. The largest issue is volume decline at Customer B (annualized −36M), followed by imported material cost increase (−30M, improved +4M since April). Two new Points were raised this month: order delays from Customer F in Indonesia (−14M) and an opportunity from domestic growth of high value-added control modules (+12M). Southeast Asian demand (+18M) and manufacturing yield (+16M) partly offset the issues. Adopted Actions have realized JPY 3.4M so far; their year-end outlook is JPY 22M against a plan of 30M, mainly because the Vietnam distributor expansion and the Line 2 yield rollout are delayed.",
   "is_base": true,
   "translated_at": null,
   "reviewed_by": null
@@ -58,7 +58,7 @@
  {
   "comment_id": "CM-SUM-202706-CO",
   "language_code": "ja",
-  "text": "当期累計の営業利益は86百万円で、予算を12百万円下回っています。最大の課題は顧客Bの数量減少（年換算−36百万円）、次いで輸入材料費の上昇（−30百万円）です。東南アジアの需要拡大（+18百万円）と製造歩留まり改善（+16百万円）が一部を相殺しています。採用済みアクションの実現効果は3.4百万円、年度末見込みは計画30百万円に対し22百万円です。主因はベトナム販売網拡大とライン2歩留まり展開の遅れです。",
+  "text": "当期累計の営業利益は86百万円で、予算を12百万円下回っています。最大の課題は顧客Bの数量減少（年換算−36百万円）、次いで輸入材料費の上昇（−30百万円、4月比+4百万円改善）です。今月は新たに2件のポイントを検出しました。顧客F（インドネシア）の受注遅延（−14百万円）と、高付加価値の制御モジュールの国内での伸長という機会（+12百万円）です。東南アジアの需要拡大（+18百万円）と製造歩留まり改善（+16百万円）が課題を一部相殺しています。採用済みアクションの実現効果は3.4百万円、年度末見込みは計画30百万円に対し22百万円です。主因はベトナム販売網拡大とライン2歩留まり展開の遅れです。",
   "is_base": false,
   "translated_at": "2027-07-03T00:00:00Z",
   "reviewed_by": null
@@ -66,7 +66,7 @@
  {
   "comment_id": "CM-SUM-202706-CO",
   "language_code": "th",
-  "text": "กำไรจากการดำเนินงานสะสมอยู่ที่ 86 ล้านเยน ต่ำกว่างบประมาณ 12 ล้านเยน ประเด็นใหญ่ที่สุดคือยอดขายลูกค้า B ลดลง (ผลกระทบรายปี −36 ล้านเยน) รองลงมาคือต้นทุนวัตถุดิบนำเข้าสูงขึ้น (−30 ล้านเยน) ความต้องการในเอเชียตะวันออกเฉียงใต้ (+18 ล้านเยน) และการปรับปรุงผลผลิต (+16 ล้านเยน) ช่วยชดเชยบางส่วน แอคชันที่อนุมัติแล้วสร้างผลจริง 3.4 ล้านเยน และคาดการณ์ ณ สิ้นปี 22 ล้านเยน เทียบกับแผน 30 ล้านเยน เนื่องจากการขยายตัวแทนจำหน่ายในเวียดนามและการปรับปรุงผลผลิตสายการผลิต 2 ล่าช้า",
+  "text": "กำไรจากการดำเนินงานสะสมอยู่ที่ 86 ล้านเยน ต่ำกว่างบประมาณ 12 ล้านเยน ประเด็นใหญ่ที่สุดคือยอดขายลูกค้า B ลดลง (ผลกระทบรายปี −36 ล้านเยน) รองลงมาคือต้นทุนวัตถุดิบนำเข้าสูงขึ้น (−30 ล้านเยน ดีขึ้น +4 ล้านเยนจากเดือนเมษายน) เดือนนี้พบประเด็นใหม่ 2 เรื่อง คือคำสั่งซื้อล่าช้าจากลูกค้า F ในอินโดนีเซีย (−14 ล้านเยน) และโอกาสจากการเติบโตของโมดูลควบคุมมูลค่าเพิ่มสูงในประเทศ (+12 ล้านเยน) ความต้องการในเอเชียตะวันออกเฉียงใต้ (+18 ล้านเยน) และการปรับปรุงผลผลิต (+16 ล้านเยน) ช่วยชดเชยบางส่วน แอคชันที่อนุมัติแล้วสร้างผลจริง 3.4 ล้านเยน และคาดการณ์ ณ สิ้นปี 22 ล้านเยน เทียบกับแผน 30 ล้านเยน เนื่องจากการขยายตัวแทนจำหน่ายในเวียดนามและการปรับปรุงผลผลิตสายการผลิต 2 ล่าช้า",
   "is_base": false,
   "translated_at": "2027-07-03T00:00:00Z",
   "reviewed_by": null
@@ -74,7 +74,7 @@
  {
   "comment_id": "CM-SUM-202706-SL",
   "language_code": "en",
-  "text": "Sales Dept. YTD operating profit is JPY 9M below budget. Customer B volume decline (annualized −28M) and logistics cost overrun (−12M) are the main issues. Joint demand planning with Customer B started in June; the shipment consolidation Action was completed with JPY 2.5M realized.",
+  "text": "Sales Dept. YTD operating profit is JPY 9M below budget. Customer B volume decline (annualized −28M) and logistics cost overrun (−12M) are the main issues. Joint demand planning with Customer B started in June; the shipment consolidation Action was completed with JPY 2.5M realized. New this month: Customer C adopted the high-spec control module (+12M opportunity); the AI proposes offering it to Customers A and B.",
   "is_base": true,
   "translated_at": null,
   "reviewed_by": null
@@ -82,7 +82,7 @@
  {
   "comment_id": "CM-SUM-202706-SL",
   "language_code": "ja",
-  "text": "営業部の当期累計営業利益は予算比9百万円の未達です。顧客Bの数量減少（年換算−28百万円）と物流費超過（−12百万円）が主な課題です。6月に顧客Bとの共同需要計画を開始し、出荷集約アクションは2.5百万円の効果を実現して完了しました。",
+  "text": "営業部の当期累計営業利益は予算比9百万円の未達です。顧客Bの数量減少（年換算−28百万円）と物流費超過（−12百万円）が主な課題です。6月に顧客Bとの共同需要計画を開始し、出荷集約アクションは2.5百万円の効果を実現して完了しました。今月新たに、顧客Cが高仕様制御モジュールを採用した機会（+12百万円）を検出しました。AIは顧客A・Bへの提案を推奨しています。",
   "is_base": false,
   "translated_at": "2027-07-03T00:00:00Z",
   "reviewed_by": null
@@ -320,6 +320,30 @@
   "reviewed_by": null
  },
  {
+  "comment_id": "CM-TITLE-PT-008",
+  "language_code": "en",
+  "text": "Growth of high value-added control modules (domestic)",
+  "is_base": true,
+  "translated_at": null,
+  "reviewed_by": null
+ },
+ {
+  "comment_id": "CM-TITLE-PT-008",
+  "language_code": "ja",
+  "text": "高付加価値製品（制御モジュール）の国内での伸長",
+  "is_base": false,
+  "translated_at": "2027-07-03T00:00:00Z",
+  "reviewed_by": null
+ },
+ {
+  "comment_id": "CM-TITLE-PT-008",
+  "language_code": "th",
+  "text": "การเติบโตของโมดูลควบคุมมูลค่าเพิ่มสูงในประเทศ",
+  "is_base": false,
+  "translated_at": "2027-07-03T00:00:00Z",
+  "reviewed_by": null
+ },
+ {
   "comment_id": "CM-CAUSE-01",
   "language_code": "en",
   "text": "Customer B (Japan) moved part of its gear production in-house, reducing precision gear orders.",
@@ -539,6 +563,38 @@
   "comment_id": "CM-CAUSE-14",
   "language_code": "ja",
   "text": "工程変更によりライン1の歩留まりが92.0%から95.5%に改善しました。",
+  "is_base": false,
+  "translated_at": "2027-07-03T00:00:00Z",
+  "reviewed_by": null
+ },
+ {
+  "comment_id": "CM-CAUSE-15",
+  "language_code": "en",
+  "text": "Customer C adopted the control module for its new automation line; June volume exceeded budget.",
+  "is_base": true,
+  "translated_at": null,
+  "reviewed_by": null
+ },
+ {
+  "comment_id": "CM-CAUSE-15",
+  "language_code": "ja",
+  "text": "顧客Cが新自動化ラインに制御モジュールを採用し、6月の数量が予算を上回りました。",
+  "is_base": false,
+  "translated_at": "2027-07-03T00:00:00Z",
+  "reviewed_by": null
+ },
+ {
+  "comment_id": "CM-CAUSE-16",
+  "language_code": "en",
+  "text": "The higher-spec version sells at a 6% premium over the standard model.",
+  "is_base": true,
+  "translated_at": null,
+  "reviewed_by": null
+ },
+ {
+  "comment_id": "CM-CAUSE-16",
+  "language_code": "ja",
+  "text": "高仕様版は標準品より6%高い価格で販売されています。",
   "is_base": false,
   "translated_at": "2027-07-03T00:00:00Z",
   "reviewed_by": null
@@ -1259,6 +1315,54 @@
   "comment_id": "CM-ASSESS-ACT-007-MF-A01-202706",
   "language_code": "ja",
   "text": "遅延しています。部品の納期によりライン2の設備改造が9月にずれ込みました。効果はまだありません。見込みを4.5から1.5に引き下げました。代替案：設備改造なしで工程条件のみを8月から適用（推定+0.5百万円）。",
+  "is_base": false,
+  "translated_at": "2027-07-03T00:00:00Z",
+  "reviewed_by": null
+ },
+ {
+  "comment_id": "CM-ANAME-ACT-008-SL-A01",
+  "language_code": "en",
+  "text": "Offer the high-spec control module to Customers A and B",
+  "is_base": true,
+  "translated_at": null,
+  "reviewed_by": null
+ },
+ {
+  "comment_id": "CM-ANAME-ACT-008-SL-A01",
+  "language_code": "ja",
+  "text": "顧客A・Bへ高仕様制御モジュールを提案",
+  "is_base": false,
+  "translated_at": "2027-07-03T00:00:00Z",
+  "reviewed_by": null
+ },
+ {
+  "comment_id": "CM-ADESC-ACT-008-SL-A01",
+  "language_code": "en",
+  "text": "Use the Customer C installation as a reference and propose the high-spec control module (P04) to Customers A and B for their automation projects.",
+  "is_base": true,
+  "translated_at": null,
+  "reviewed_by": null
+ },
+ {
+  "comment_id": "CM-ADESC-ACT-008-SL-A01",
+  "language_code": "ja",
+  "text": "顧客Cの導入事例を活用し、顧客A・Bの自動化案件に高仕様制御モジュール（P04）を提案する。",
+  "is_base": false,
+  "translated_at": "2027-07-03T00:00:00Z",
+  "reviewed_by": null
+ },
+ {
+  "comment_id": "CM-AEXPL-ACT-008-SL-A01",
+  "language_code": "en",
+  "text": "Measured directly from fact_financial (4010, 5010). Baseline: Budgeted P04 revenue for C01 and C02. Formula: (actual revenue − baseline revenue) × gross margin 25%. Planned FY effect on operating profit: JPY 4M, allocated evenly from 202708 to 202803.",
+  "is_base": true,
+  "translated_at": null,
+  "reviewed_by": null
+ },
+ {
+  "comment_id": "CM-AEXPL-ACT-008-SL-A01",
+  "language_code": "ja",
+  "text": "fact_financial (4010, 5010) から直接測定します。ベースライン：Budgeted P04 revenue for C01 and C02。計算式：(actual revenue − baseline revenue) × gross margin 25%。営業利益への年度計画効果は4百万円（202708〜202803に均等配分）。",
   "is_base": false,
   "translated_at": "2027-07-03T00:00:00Z",
   "reviewed_by": null

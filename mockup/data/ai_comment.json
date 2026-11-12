@@ -145,8 +145,8 @@
  },
  {
   "comment_id": "CM-TITLE-PT-006",
-  "run_id": "RUN-202705",
-  "as_of_period_id": 202705,
+  "run_id": "RUN-202706",
+  "as_of_period_id": 202706,
   "org_id": "CO",
   "comment_type": "POINT_TITLE",
   "entity_type": "point",
@@ -163,6 +163,18 @@
   "comment_type": "POINT_TITLE",
   "entity_type": "point",
   "entity_id": "PT-007",
+  "base_language": "en",
+  "version": 1,
+  "is_current": true
+ },
+ {
+  "comment_id": "CM-TITLE-PT-008",
+  "run_id": "RUN-202706",
+  "as_of_period_id": 202706,
+  "org_id": "CO",
+  "comment_type": "POINT_TITLE",
+  "entity_type": "point",
+  "entity_id": "PT-008",
   "base_language": "en",
   "version": 1,
   "is_current": true
@@ -331,6 +343,30 @@
   "comment_type": "POINT_CAUSE",
   "entity_type": "point_cause",
   "entity_id": "CS-14",
+  "base_language": "en",
+  "version": 1,
+  "is_current": true
+ },
+ {
+  "comment_id": "CM-CAUSE-15",
+  "run_id": "RUN-202706",
+  "as_of_period_id": 202706,
+  "org_id": "SL",
+  "comment_type": "POINT_CAUSE",
+  "entity_type": "point_cause",
+  "entity_id": "CS-15",
+  "base_language": "en",
+  "version": 1,
+  "is_current": true
+ },
+ {
+  "comment_id": "CM-CAUSE-16",
+  "run_id": "RUN-202706",
+  "as_of_period_id": 202706,
+  "org_id": "SL",
+  "comment_type": "POINT_CAUSE",
+  "entity_type": "point_cause",
+  "entity_id": "CS-16",
   "base_language": "en",
   "version": 1,
   "is_current": true
@@ -871,6 +907,42 @@
   "comment_type": "ACTION_ASSESSMENT",
   "entity_type": "action",
   "entity_id": "ACT-007-MF-A01",
+  "base_language": "en",
+  "version": 1,
+  "is_current": true
+ },
+ {
+  "comment_id": "CM-ANAME-ACT-008-SL-A01",
+  "run_id": "RUN-202706",
+  "as_of_period_id": 202706,
+  "org_id": "SL",
+  "comment_type": "ACTION_NAME",
+  "entity_type": "action",
+  "entity_id": "ACT-008-SL-A01",
+  "base_language": "en",
+  "version": 1,
+  "is_current": true
+ },
+ {
+  "comment_id": "CM-ADESC-ACT-008-SL-A01",
+  "run_id": "RUN-202706",
+  "as_of_period_id": 202706,
+  "org_id": "SL",
+  "comment_type": "ACTION_DESCRIPTION",
+  "entity_type": "action",
+  "entity_id": "ACT-008-SL-A01",
+  "base_language": "en",
+  "version": 1,
+  "is_current": true
+ },
+ {
+  "comment_id": "CM-AEXPL-ACT-008-SL-A01",
+  "run_id": "RUN-202706",
+  "as_of_period_id": 202706,
+  "org_id": "SL",
+  "comment_type": "ACTION_EXPLANATION",
+  "entity_type": "action",
+  "entity_id": "ACT-008-SL-A01",
   "base_language": "en",
   "version": 1,
   "is_current": true

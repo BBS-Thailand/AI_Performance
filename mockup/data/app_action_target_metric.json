@@ -110,5 +110,17 @@
  {
   "action_id": "ACT-007-MF-A01",
   "metric_id": "OP"
+ },
+ {
+  "action_id": "ACT-008-SL-A01",
+  "metric_id": "REV"
+ },
+ {
+  "action_id": "ACT-008-SL-A01",
+  "metric_id": "GP"
+ },
+ {
+  "action_id": "ACT-008-SL-A01",
+  "metric_id": "OP"
  }
 ]

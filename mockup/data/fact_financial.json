@@ -5586,7 +5586,7 @@
   "customer_id": "NA",
   "product_id": "NA",
   "scenario_id": "ACT",
-  "amount": 2,
+  "amount": 3.04,
   "load_id": "LOAD-PL-202704"
  },
  {
@@ -6116,7 +6116,7 @@
   "customer_id": "C01",
   "product_id": "P01",
   "scenario_id": "ACT",
-  "amount": 53.97,
+  "amount": 51.33,
   "load_id": "LOAD-PL-202704"
  },
  {
@@ -6266,7 +6266,7 @@
   "customer_id": "C01",
   "product_id": "P01",
   "scenario_id": "ACT",
-  "amount": 40.54,
+  "amount": 38.89,
   "load_id": "LOAD-PL-202704"
  },
  {
@@ -6386,7 +6386,7 @@
   "customer_id": "NA",
   "product_id": "NA",
   "scenario_id": "ACT",
-  "amount": 8.26,
+  "amount": 8.56,
   "load_id": "LOAD-PL-202704"
  },
  {
@@ -6476,7 +6476,7 @@
   "customer_id": "NA",
   "product_id": "NA",
   "scenario_id": "ACT",
-  "amount": 2.8,
+  "amount": 2.72,
   "load_id": "LOAD-PL-202705"
  },
  {
@@ -6666,7 +6666,7 @@
   "customer_id": "C07",
   "product_id": "P03",
   "scenario_id": "ACT",
-  "amount": 17.49,
+  "amount": 23.79,
   "load_id": "LOAD-PL-202705"
  },
  {
@@ -6676,7 +6676,7 @@
   "customer_id": "C07",
   "product_id": "P04",
   "scenario_id": "ACT",
-  "amount": 12.5,
+  "amount": 17,
   "load_id": "LOAD-PL-202705"
  },
  {
@@ -6836,7 +6836,7 @@
   "customer_id": "C07",
   "product_id": "P03",
   "scenario_id": "ACT",
-  "amount": 13.39,
+  "amount": 18.11,
   "load_id": "LOAD-PL-202705"
  },
  {
@@ -6846,7 +6846,7 @@
   "customer_id": "C07",
   "product_id": "P04",
   "scenario_id": "ACT",
-  "amount": 9.39,
+  "amount": 12.76,
   "load_id": "LOAD-PL-202705"
  },
  {
@@ -7016,7 +7016,7 @@
   "customer_id": "C01",
   "product_id": "P01",
   "scenario_id": "ACT",
-  "amount": 55.7,
+  "amount": 53.06,
   "load_id": "LOAD-PL-202705"
  },
  {
@@ -7166,7 +7166,7 @@
   "customer_id": "C01",
   "product_id": "P01",
   "scenario_id": "ACT",
-  "amount": 41.85,
+  "amount": 40.2,
   "load_id": "LOAD-PL-202705"
  },
  {
@@ -7286,7 +7286,7 @@
   "customer_id": "NA",
   "product_id": "NA",
   "scenario_id": "ACT",
-  "amount": 8.49,
+  "amount": 8.55,
   "load_id": "LOAD-PL-202705"
  },
  {
@@ -7376,7 +7376,7 @@
   "customer_id": "NA",
   "product_id": "NA",
   "scenario_id": "ACT",
-  "amount": 3.2,
+  "amount": 2.24,
   "load_id": "LOAD-PL-202706"
  },
  {
@@ -7566,7 +7566,7 @@
   "customer_id": "C07",
   "product_id": "P03",
   "scenario_id": "ACT",
-  "amount": 17.54,
+  "amount": 11.24,
   "load_id": "LOAD-PL-202706"
  },
  {
@@ -7576,7 +7576,7 @@
   "customer_id": "C07",
   "product_id": "P04",
   "scenario_id": "ACT",
-  "amount": 12.52,
+  "amount": 8.02,
   "load_id": "LOAD-PL-202706"
  },
  {
@@ -7736,7 +7736,7 @@
   "customer_id": "C07",
   "product_id": "P03",
   "scenario_id": "ACT",
-  "amount": 13.42,
+  "amount": 8.7,
   "load_id": "LOAD-PL-202706"
  },
  {
@@ -7746,7 +7746,7 @@
   "customer_id": "C07",
   "product_id": "P04",
   "scenario_id": "ACT",
-  "amount": 9.41,
+  "amount": 6.04,
   "load_id": "LOAD-PL-202706"
  },
  {
@@ -7916,7 +7916,7 @@
   "customer_id": "C01",
   "product_id": "P01",
   "scenario_id": "ACT",
-  "amount": 59.13,
+  "amount": 56.41,
   "load_id": "LOAD-PL-202706"
  },
  {
@@ -7966,7 +7966,7 @@
   "customer_id": "C03",
   "product_id": "P04",
   "scenario_id": "ACT",
-  "amount": 27.65,
+  "amount": 35.65,
   "load_id": "LOAD-PL-202706"
  },
  {
@@ -8066,7 +8066,7 @@
   "customer_id": "C01",
   "product_id": "P01",
   "scenario_id": "ACT",
-  "amount": 44.45,
+  "amount": 42.75,
   "load_id": "LOAD-PL-202706"
  },
  {
@@ -8116,7 +8116,7 @@
   "customer_id": "C03",
   "product_id": "P04",
   "scenario_id": "ACT",
-  "amount": 20.5,
+  "amount": 25.5,
   "load_id": "LOAD-PL-202706"
  },
  {
@@ -8186,7 +8186,7 @@
   "customer_id": "NA",
   "product_id": "NA",
   "scenario_id": "ACT",
-  "amount": 9.25,
+  "amount": 8.89,
   "load_id": "LOAD-PL-202706"
  },
  {

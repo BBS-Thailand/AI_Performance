@@ -171,3 +171,14 @@ table.grid-table { width: 100%; border-collapse: collapse; font-size: 12.5px; }
 .toasts { position: fixed; bottom: 18px; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; gap: 8px; z-index: 80; }
 .toast { background: #1c2430; color: #fff; padding: 9px 16px; border-radius: 6px; box-shadow: 0 6px 20px rgba(0,0,0,.25); font-size: 12.5px; }
 .toast.err { background: var(--bad); }
+
+/* A-01 Points table (concept slide 38) */
+.grid-table td.chips { white-space: nowrap; }
+.org-chip { display: inline-block; min-width: 24px; text-align: center; font-size: 10.5px; font-weight: 600; padding: 1px 4px; margin-right: 2px; border: 1px solid var(--border-strong); border-radius: 3px; color: var(--faint); background: var(--surface); }
+.org-chip.on { background: var(--brand); border-color: var(--brand); color: #fff; }
+.grid-table td.overall .rank { display: inline-block; min-width: 14px; margin-right: 8px; color: var(--muted); font-weight: 400; }
+.grid-table tr.sub-row td.sub-label { white-space: nowrap; }
+.grid-table tr.sub-row.is-new td.sub-label { color: var(--accent-ink); font-weight: 600; }
+.tag.st-new { background: var(--bad-soft); color: var(--bad); border-color: #f1c4cc; }
+.grid-table tr.total-row td { font-style: normal; font-weight: 600; color: var(--text); background: var(--warn-soft); }
+.nowrap { white-space: nowrap; }

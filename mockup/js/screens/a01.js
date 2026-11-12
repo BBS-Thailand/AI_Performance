@@ -28,7 +28,7 @@
   }
 
   function render() {
-    const { t, esc, fmt, fmtSigned, M, state } = A;
+    const { t, esc, fmtSigned, M, state } = A;
     const kpis = METRICS.map((m) => M.kpi(state.orgId, state.periodId, m));
     const applicable = Object.fromEntries(kpis.map((k) => [k.metric, k.applicable]));
     const all = M.pointsFor(state.orgId, state.periodId);
@@ -39,32 +39,50 @@
     const run = summary && A.db.ai_run.find((r) => r.run_id === summary.run_id);
     const pointOrgs = [...new Set(all.flatMap((r) => r.orgs))];
 
+    // Rank by absolute overall impact over all Points in scope, so filtering keeps each Point's rank.
+    const rank = new Map(all.slice().sort((a, b) => Math.abs(b.overall) - Math.abs(a.overall)).map((r, i) => [r.point.point_id, i + 1]));
+    const scopeOrgs = M.leafOrgs(state.orgId);
+    const dash = '<span class="faint">—</span>';
+    const pair = (m, a, b) => `<span class="${A.tone(m, a)}">${fmtSigned(a)}</span><span class="faint"> / </span><span class="${A.tone(m, b)}">${b === null ? '–' : fmtSigned(b)}</span>`;
     const cell = (r, m) => (applicable[m] ? `<td class="num ${A.tone(m, r.impacts[m])}">${fmtSigned(r.impacts[m])}</td>` : `<td class="num faint">${esc(t('na'))}</td>`);
-    const subCell = (r, m) => (applicable[m]
-      ? `<td class="num">${r.vsInit[m] === null ? '' : fmtSigned(r.vsInit[m])}<br>${r.vsPrev[m] === null ? '' : fmtSigned(r.vsPrev[m])}</td>` : '<td></td>');
+    const subCell = (r, m) => {
+      if (!applicable[m]) return '<td></td>';
+      if (r.isNew || r.vsInit[m] === null) return `<td class="num">${dash}</td>`;
+      return `<td class="num">${pair(m, r.vsInit[m], r.vsPrev[m])}</td>`;
+    };
+    const chips = (r) => scopeOrgs.map((o) => `<span class="org-chip ${r.orgs.includes(o) ? 'on' : ''}" title="${esc(A.orgName(o))}">${esc(M.org(o).org_code)}</span>`).join('');
+    const effect = (label, v, has) => `<span class="muted">${esc(label)}</span> ${has ? fmtSigned(v) : dash}`;
     const body = rows.map((r) => {
       const p = r.point;
+      const subLabel = r.isNew
+        ? t('raised_new', { month: A.monthLabel(r.raisedPeriodId) })
+        : t('vs_init_last', { month: A.monthLabel(r.raisedPeriodId) });
       return `<tr class="main-row" tabindex="0" data-point="${p.point_id}">
           <td><span class="id">${p.point_id}</span></td>
           <td><span class="tag ${p.point_type === 'ISSUE' ? 'issue' : 'opp'}">${esc(t(p.point_type === 'ISSUE' ? 'issue' : 'opportunity'))}</span></td>
           <td>${A.pointTitle(p)}</td>
-          <td>${r.orgs.map((o) => esc(A.orgName(o))).join(', ')}</td>
+          <td class="chips">${chips(r)}</td>
           ${METRICS.map((m) => cell(r, m)).join('')}
-          <td class="num overall ${r.overall < 0 ? 'bad' : 'good'}">${fmtSigned(r.overall)}</td>
-          <td>${esc(t('st_' + p.status))}</td>
-          <td class="num">${r.proposalCount}</td><td class="num">${r.executingCount}</td>
-          <td class="num">${fmt(r.plannedEffect)}</td><td class="num">${fmt(r.actualEffect)}</td>
+          <td class="num overall ${r.overall < 0 ? 'bad' : 'good'}"><span class="rank">${rank.get(p.point_id)}</span>${fmtSigned(r.overall)}</td>
+          <td>${r.isNew ? `<span class="tag st-new">${esc(t('new_point'))}</span>` : esc(t('st_' + p.status))}</td>
+          <td class="nowrap">${esc(t('actions_count', { n: r.proposalCount, e: r.executingCount }))}</td>
+          <td class="num nowrap">${effect(t('plan_lbl'), r.plannedEffect, r.executingCount > 0)}</td>
         </tr>
-        <tr class="sub-row" data-point-sub="${p.point_id}">
-          <td colspan="3"></td><td class="small">${esc(t('vs_init_short'))}<br>${esc(t('vs_prev_short'))}</td>
+        <tr class="sub-row ${r.isNew ? 'is-new' : ''}" data-point-sub="${p.point_id}">
+          <td colspan="2"></td><td class="sub-label">└ ${esc(subLabel)}</td><td></td>
           ${METRICS.map((m) => subCell(r, m)).join('')}
-          <td class="num">${r.overallVsInit === null ? '' : fmtSigned(r.overallVsInit)}<br>${r.overallVsPrev === null ? '' : fmtSigned(r.overallVsPrev)}</td>
-          <td colspan="5"></td></tr>`;
+          <td class="num">${r.isNew || r.overallVsInit === null ? dash : pair('OP', r.overallVsInit, r.overallVsPrev)}</td>
+          <td colspan="2"></td>
+          <td class="num nowrap">${effect(t('actual_lbl'), r.actualEffect, r.executingCount > 0)}</td></tr>`;
     }).join('');
+    const sumPlan = M.r2(all.reduce((s, r) => s + r.plannedEffect, 0));
+    const sumActual = M.r2(all.reduce((s, r) => s + r.actualEffect, 0));
     const otherRow = filtered ? '' : `<tr class="other-row"><td colspan="4" title="${esc(t('other_note'))}">${esc(t('other_unidentified'))} <span class="small">— ${esc(t('other_note'))}</span></td>
-      ${METRICS.map((m) => (applicable[m] ? `<td class="num">${fmtSigned(other[m])}</td>` : '<td></td>')).join('')}<td colspan="6"></td></tr>
-      <tr class="other-row" style="font-style:normal;font-weight:600"><td colspan="4">${esc(t('units_total'))} = ${esc(t('vs_budget'))}</td>
-      ${kpis.map((k) => (k.applicable ? `<td class="num ${A.tone(k.metric, k.variance)}">${fmtSigned(k.variance)}</td>` : '<td></td>')).join('')}<td colspan="6"></td></tr>`;
+      ${METRICS.map((m) => (applicable[m] ? `<td class="num">${fmtSigned(other[m])}</td>` : '<td></td>')).join('')}<td class="num">${dash}</td><td colspan="3"></td></tr>
+      <tr class="other-row total-row"><td colspan="4">${esc(t('units_total'))} (= ${esc(t('kpi_budget_var'))})</td>
+      ${kpis.map((k) => (k.applicable ? `<td class="num ${A.tone(k.metric, k.variance)}">${fmtSigned(k.variance)}</td>` : '<td></td>')).join('')}
+      <td class="num">${dash}</td><td colspan="2"></td>
+      <td class="num nowrap" title="${esc(t('plan_lbl'))} / ${esc(t('actual_lbl'))}">${fmtSigned(sumPlan)} / ${fmtSigned(sumActual)}</td></tr>`;
     const opt = (v, label, cur) => `<option value="${v}" ${v === cur ? 'selected' : ''}>${esc(label)}</option>`;
 
     return `
@@ -94,12 +112,13 @@
             <tr><th rowspan="2">${esc(t('point_id'))}</th><th rowspan="2">${esc(t('type'))}</th><th rowspan="2">${esc(t('description'))}</th><th rowspan="2">${esc(t('orgs'))}</th>
               <th colspan="4" class="group-head">${esc(t('impact'))} (${esc(t('jpy_m'))})</th>
               <th class="num" rowspan="2">${esc(t('overall_impact'))}<br><span class="small">${esc(t('annual_op_impact'))}</span></th>
-              <th rowspan="2">${esc(t('status'))}</th><th class="num" rowspan="2">${esc(t('proposals'))}</th><th class="num" rowspan="2">${esc(t('executing'))}</th>
-              <th class="num" rowspan="2">${esc(t('planned_effect'))}</th><th class="num" rowspan="2">${esc(t('actual_effect'))}</th></tr>
+              <th rowspan="2">${esc(t('status'))}</th><th rowspan="2">${esc(t('actions'))}</th>
+              <th class="num" rowspan="2">${esc(t('action_effect'))}<br><span class="small">${esc(t('action_effect_sub'))}</span></th></tr>
             <tr>${METRICS.map((m) => `<th class="num">${esc(t(m))}</th>`).join('')}</tr>
           </thead>
-          <tbody>${body || `<tr><td colspan="14" class="muted">${esc(t('no_points'))}</td></tr>`}${otherRow}</tbody>
+          <tbody>${body || `<tr><td colspan="12" class="muted">${esc(t('no_points'))}</td></tr>`}${otherRow}</tbody>
         </table></div>
+        <p class="hint" style="margin-top:8px">${esc(t('sub_row_hint'))}</p>
       </div>`;
   }
 

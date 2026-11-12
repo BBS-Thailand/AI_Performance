@@ -130,5 +130,17 @@
   "proxy_indicator": null,
   "proxy_reliability": null,
   "ai_comment_id": "CM-AEXPL-ACT-007-MF-A01"
+ },
+ {
+  "action_id": "ACT-008-SL-A01",
+  "measurement_mode": "DIRECT",
+  "is_measurable": true,
+  "source_tables": "fact_financial (4010, 5010)",
+  "source_filter": "org_id = SL; product_id = P04; customer_id IN (C01, C02)",
+  "baseline_method": "Budgeted P04 revenue for C01 and C02",
+  "formula": "(actual revenue − baseline revenue) × gross margin 25%",
+  "proxy_indicator": null,
+  "proxy_reliability": null,
+  "ai_comment_id": "CM-AEXPL-ACT-008-SL-A01"
  }
 ]

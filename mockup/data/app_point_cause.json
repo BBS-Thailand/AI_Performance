@@ -128,7 +128,7 @@
   "quantity_value": 3,
   "quantity_unit": "orders",
   "impact_op": -4.5,
-  "evidence_ref": "fact_financial: customer C07 × products P03/P04, May–Jun 2027",
+  "evidence_ref": "fact_financial: customer C07 × products P03/P04, Jun 2027",
   "comment_id": "CM-CAUSE-12"
  },
  {
@@ -152,5 +152,27 @@
   "impact_op": 5,
   "evidence_ref": "fact_financial: account 5040 (MF); production yield log Line 1",
   "comment_id": "CM-CAUSE-14"
+ },
+ {
+  "cause_id": "CS-15",
+  "point_id": "PT-008-SL",
+  "as_of_period_id": 202706,
+  "sort_order": 15,
+  "quantity_value": 1300,
+  "quantity_unit": "units",
+  "impact_op": 2,
+  "evidence_ref": "fact_financial: customer C03 × product P04, Jun 2027 vs budget",
+  "comment_id": "CM-CAUSE-15"
+ },
+ {
+  "cause_id": "CS-16",
+  "point_id": "PT-008-SL",
+  "as_of_period_id": 202706,
+  "sort_order": 16,
+  "quantity_value": 6,
+  "quantity_unit": "% price",
+  "impact_op": 1,
+  "evidence_ref": "fact_financial: customer C03 × product P04, average selling price Jun 2027",
+  "comment_id": "CM-CAUSE-16"
  }
 ]

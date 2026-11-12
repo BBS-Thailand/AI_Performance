@@ -149,7 +149,7 @@
   "org_id": "CO",
   "point_type": "ISSUE",
   "status": "OPEN",
-  "raised_period_id": 202705,
+  "raised_period_id": 202706,
   "title_comment_id": "CM-TITLE-PT-006",
   "gap_dimension": "PRODUCT",
   "indicator_metric_id": "REV",
@@ -162,7 +162,7 @@
   "org_id": "OS",
   "point_type": "ISSUE",
   "status": "OPEN",
-  "raised_period_id": 202705,
+  "raised_period_id": 202706,
   "title_comment_id": "CM-TITLE-PT-006",
   "gap_dimension": "PRODUCT",
   "indicator_metric_id": "REV",
@@ -193,5 +193,31 @@
   "gap_dimension": "ACCOUNT",
   "indicator_metric_id": "GP",
   "indicator_filter": "{\"account_id\":[\"5040\"],\"org_id\":[\"MF\"]}"
+ },
+ {
+  "point_id": "PT-008",
+  "parent_point_id": null,
+  "point_no": 8,
+  "org_id": "CO",
+  "point_type": "OPPORTUNITY",
+  "status": "OPEN",
+  "raised_period_id": 202706,
+  "title_comment_id": "CM-TITLE-PT-008",
+  "gap_dimension": "PRODUCT",
+  "indicator_metric_id": "REV",
+  "indicator_filter": "{\"customer_id\":[\"C03\"],\"product_id\":[\"P04\"]}"
+ },
+ {
+  "point_id": "PT-008-SL",
+  "parent_point_id": "PT-008",
+  "point_no": 8,
+  "org_id": "SL",
+  "point_type": "OPPORTUNITY",
+  "status": "OPEN",
+  "raised_period_id": 202706,
+  "title_comment_id": "CM-TITLE-PT-008",
+  "gap_dimension": "PRODUCT",
+  "indicator_metric_id": "REV",
+  "indicator_filter": "{\"customer_id\":[\"C03\"],\"product_id\":[\"P04\"],\"org_id\":[\"SL\"]}"
  }
 ]

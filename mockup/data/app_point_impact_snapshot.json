@@ -4,6 +4,7 @@
   "as_of_period_id": 202704,
   "metric_id": "REV",
   "impact_ytd": -4.8,
+  "impact_month": -4.8,
   "overall_impact_annual_op": -23
  },
  {
@@ -11,6 +12,7 @@
   "as_of_period_id": 202704,
   "metric_id": "GP",
   "impact_ytd": -1.4,
+  "impact_month": -1.4,
   "overall_impact_annual_op": -23
  },
  {
@@ -18,6 +20,7 @@
   "as_of_period_id": 202704,
   "metric_id": "SGA",
   "impact_ytd": 0,
+  "impact_month": 0,
   "overall_impact_annual_op": -23
  },
  {
@@ -25,6 +28,7 @@
   "as_of_period_id": 202704,
   "metric_id": "OP",
   "impact_ytd": -1.4,
+  "impact_month": -1.4,
   "overall_impact_annual_op": -23
  },
  {
@@ -32,6 +36,7 @@
   "as_of_period_id": 202705,
   "metric_id": "REV",
   "impact_ytd": -13.2,
+  "impact_month": -8.4,
   "overall_impact_annual_op": -26
  },
  {
@@ -39,6 +44,7 @@
   "as_of_period_id": 202705,
   "metric_id": "GP",
   "impact_ytd": -3.85,
+  "impact_month": -2.45,
   "overall_impact_annual_op": -26
  },
  {
@@ -46,6 +52,7 @@
   "as_of_period_id": 202705,
   "metric_id": "SGA",
   "impact_ytd": 0,
+  "impact_month": 0,
   "overall_impact_annual_op": -26
  },
  {
@@ -53,6 +60,7 @@
   "as_of_period_id": 202705,
   "metric_id": "OP",
   "impact_ytd": -3.85,
+  "impact_month": -2.45,
   "overall_impact_annual_op": -26
  },
  {
@@ -60,6 +68,7 @@
   "as_of_period_id": 202706,
   "metric_id": "REV",
   "impact_ytd": -24,
+  "impact_month": -10.8,
   "overall_impact_annual_op": -28
  },
  {
@@ -67,6 +76,7 @@
   "as_of_period_id": 202706,
   "metric_id": "GP",
   "impact_ytd": -7,
+  "impact_month": -3.15,
   "overall_impact_annual_op": -28
  },
  {
@@ -74,6 +84,7 @@
   "as_of_period_id": 202706,
   "metric_id": "SGA",
   "impact_ytd": 0,
+  "impact_month": 0,
   "overall_impact_annual_op": -28
  },
  {
@@ -81,6 +92,7 @@
   "as_of_period_id": 202706,
   "metric_id": "OP",
   "impact_ytd": -7,
+  "impact_month": -3.15,
   "overall_impact_annual_op": -28
  },
  {
@@ -88,6 +100,7 @@
   "as_of_period_id": 202704,
   "metric_id": "REV",
   "impact_ytd": -1.6,
+  "impact_month": -1.6,
   "overall_impact_annual_op": -7
  },
  {
@@ -95,6 +108,7 @@
   "as_of_period_id": 202704,
   "metric_id": "GP",
   "impact_ytd": -0.4,
+  "impact_month": -0.4,
   "overall_impact_annual_op": -7
  },
  {
@@ -102,6 +116,7 @@
   "as_of_period_id": 202704,
   "metric_id": "SGA",
   "impact_ytd": 0,
+  "impact_month": 0,
   "overall_impact_annual_op": -7
  },
  {
@@ -109,6 +124,7 @@
   "as_of_period_id": 202704,
   "metric_id": "OP",
   "impact_ytd": -0.4,
+  "impact_month": -0.4,
   "overall_impact_annual_op": -7
  },
  {
@@ -116,6 +132,7 @@
   "as_of_period_id": 202705,
   "metric_id": "REV",
   "impact_ytd": -4.4,
+  "impact_month": -2.8,
   "overall_impact_annual_op": -8
  },
  {
@@ -123,6 +140,7 @@
   "as_of_period_id": 202705,
   "metric_id": "GP",
   "impact_ytd": -1.1,
+  "impact_month": -0.7,
   "overall_impact_annual_op": -8
  },
  {
@@ -130,6 +148,7 @@
   "as_of_period_id": 202705,
   "metric_id": "SGA",
   "impact_ytd": 0,
+  "impact_month": 0,
   "overall_impact_annual_op": -8
  },
  {
@@ -137,6 +156,7 @@
   "as_of_period_id": 202705,
   "metric_id": "OP",
   "impact_ytd": -1.1,
+  "impact_month": -0.7,
   "overall_impact_annual_op": -8
  },
  {
@@ -144,6 +164,7 @@
   "as_of_period_id": 202706,
   "metric_id": "REV",
   "impact_ytd": -8,
+  "impact_month": -3.6,
   "overall_impact_annual_op": -8
  },
  {
@@ -151,6 +172,7 @@
   "as_of_period_id": 202706,
   "metric_id": "GP",
   "impact_ytd": -2,
+  "impact_month": -0.9,
   "overall_impact_annual_op": -8
  },
  {
@@ -158,6 +180,7 @@
   "as_of_period_id": 202706,
   "metric_id": "SGA",
   "impact_ytd": 0,
+  "impact_month": 0,
   "overall_impact_annual_op": -8
  },
  {
@@ -165,6 +188,7 @@
   "as_of_period_id": 202706,
   "metric_id": "OP",
   "impact_ytd": -2,
+  "impact_month": -0.9,
   "overall_impact_annual_op": -8
  },
  {
@@ -172,6 +196,7 @@
   "as_of_period_id": 202704,
   "metric_id": "REV",
   "impact_ytd": -6.4,
+  "impact_month": -6.4,
   "overall_impact_annual_op": -30
  },
  {
@@ -179,6 +204,7 @@
   "as_of_period_id": 202704,
   "metric_id": "GP",
   "impact_ytd": -1.8,
+  "impact_month": -1.8,
   "overall_impact_annual_op": -30
  },
  {
@@ -186,6 +212,7 @@
   "as_of_period_id": 202704,
   "metric_id": "SGA",
   "impact_ytd": 0,
+  "impact_month": 0,
   "overall_impact_annual_op": -30
  },
  {
@@ -193,6 +220,7 @@
   "as_of_period_id": 202704,
   "metric_id": "OP",
   "impact_ytd": -1.8,
+  "impact_month": -1.8,
   "overall_impact_annual_op": -30
  },
  {
@@ -200,6 +228,7 @@
   "as_of_period_id": 202705,
   "metric_id": "REV",
   "impact_ytd": -17.6,
+  "impact_month": -11.2,
   "overall_impact_annual_op": -34
  },
  {
@@ -207,6 +236,7 @@
   "as_of_period_id": 202705,
   "metric_id": "GP",
   "impact_ytd": -4.95,
+  "impact_month": -3.15,
   "overall_impact_annual_op": -34
  },
  {
@@ -214,6 +244,7 @@
   "as_of_period_id": 202705,
   "metric_id": "SGA",
   "impact_ytd": 0,
+  "impact_month": 0,
   "overall_impact_annual_op": -34
  },
  {
@@ -221,6 +252,7 @@
   "as_of_period_id": 202705,
   "metric_id": "OP",
   "impact_ytd": -4.95,
+  "impact_month": -3.15,
   "overall_impact_annual_op": -34
  },
  {
@@ -228,6 +260,7 @@
   "as_of_period_id": 202706,
   "metric_id": "REV",
   "impact_ytd": -32,
+  "impact_month": -14.4,
   "overall_impact_annual_op": -36
  },
  {
@@ -235,6 +268,7 @@
   "as_of_period_id": 202706,
   "metric_id": "GP",
   "impact_ytd": -9,
+  "impact_month": -4.05,
   "overall_impact_annual_op": -36
  },
  {
@@ -242,6 +276,7 @@
   "as_of_period_id": 202706,
   "metric_id": "SGA",
   "impact_ytd": 0,
+  "impact_month": 0,
   "overall_impact_annual_op": -36
  },
  {
@@ -249,6 +284,7 @@
   "as_of_period_id": 202706,
   "metric_id": "OP",
   "impact_ytd": -9,
+  "impact_month": -4.05,
   "overall_impact_annual_op": -36
  },
  {
@@ -256,62 +292,71 @@
   "as_of_period_id": 202704,
   "metric_id": "REV",
   "impact_ytd": 0,
-  "overall_impact_annual_op": -24
+  "impact_month": 0,
+  "overall_impact_annual_op": -34
  },
  {
   "point_id": "PT-002-MF",
   "as_of_period_id": 202704,
   "metric_id": "GP",
-  "impact_ytd": -2,
-  "overall_impact_annual_op": -24
+  "impact_ytd": -3.04,
+  "impact_month": -3.04,
+  "overall_impact_annual_op": -34
  },
  {
   "point_id": "PT-002-MF",
   "as_of_period_id": 202704,
   "metric_id": "SGA",
   "impact_ytd": 0,
-  "overall_impact_annual_op": -24
+  "impact_month": 0,
+  "overall_impact_annual_op": -34
  },
  {
   "point_id": "PT-002-MF",
   "as_of_period_id": 202704,
   "metric_id": "OP",
-  "impact_ytd": -2,
-  "overall_impact_annual_op": -24
+  "impact_ytd": -3.04,
+  "impact_month": -3.04,
+  "overall_impact_annual_op": -34
  },
  {
   "point_id": "PT-002-MF",
   "as_of_period_id": 202705,
   "metric_id": "REV",
   "impact_ytd": 0,
-  "overall_impact_annual_op": -28
+  "impact_month": 0,
+  "overall_impact_annual_op": -32
  },
  {
   "point_id": "PT-002-MF",
   "as_of_period_id": 202705,
   "metric_id": "GP",
-  "impact_ytd": -4.8,
-  "overall_impact_annual_op": -28
+  "impact_ytd": -5.76,
+  "impact_month": -2.72,
+  "overall_impact_annual_op": -32
  },
  {
   "point_id": "PT-002-MF",
   "as_of_period_id": 202705,
   "metric_id": "SGA",
   "impact_ytd": 0,
-  "overall_impact_annual_op": -28
+  "impact_month": 0,
+  "overall_impact_annual_op": -32
  },
  {
   "point_id": "PT-002-MF",
   "as_of_period_id": 202705,
   "metric_id": "OP",
-  "impact_ytd": -4.8,
-  "overall_impact_annual_op": -28
+  "impact_ytd": -5.76,
+  "impact_month": -2.72,
+  "overall_impact_annual_op": -32
  },
  {
   "point_id": "PT-002-MF",
   "as_of_period_id": 202706,
   "metric_id": "REV",
   "impact_ytd": 0,
+  "impact_month": 0,
   "overall_impact_annual_op": -30
  },
  {
@@ -319,6 +364,7 @@
   "as_of_period_id": 202706,
   "metric_id": "GP",
   "impact_ytd": -8,
+  "impact_month": -2.24,
   "overall_impact_annual_op": -30
  },
  {
@@ -326,6 +372,7 @@
   "as_of_period_id": 202706,
   "metric_id": "SGA",
   "impact_ytd": 0,
+  "impact_month": 0,
   "overall_impact_annual_op": -30
  },
  {
@@ -333,6 +380,7 @@
   "as_of_period_id": 202706,
   "metric_id": "OP",
   "impact_ytd": -8,
+  "impact_month": -2.24,
   "overall_impact_annual_op": -30
  },
  {
@@ -340,62 +388,71 @@
   "as_of_period_id": 202704,
   "metric_id": "REV",
   "impact_ytd": 0,
-  "overall_impact_annual_op": -24
+  "impact_month": 0,
+  "overall_impact_annual_op": -34
  },
  {
   "point_id": "PT-002",
   "as_of_period_id": 202704,
   "metric_id": "GP",
-  "impact_ytd": -2,
-  "overall_impact_annual_op": -24
+  "impact_ytd": -3.04,
+  "impact_month": -3.04,
+  "overall_impact_annual_op": -34
  },
  {
   "point_id": "PT-002",
   "as_of_period_id": 202704,
   "metric_id": "SGA",
   "impact_ytd": 0,
-  "overall_impact_annual_op": -24
+  "impact_month": 0,
+  "overall_impact_annual_op": -34
  },
  {
   "point_id": "PT-002",
   "as_of_period_id": 202704,
   "metric_id": "OP",
-  "impact_ytd": -2,
-  "overall_impact_annual_op": -24
+  "impact_ytd": -3.04,
+  "impact_month": -3.04,
+  "overall_impact_annual_op": -34
  },
  {
   "point_id": "PT-002",
   "as_of_period_id": 202705,
   "metric_id": "REV",
   "impact_ytd": 0,
-  "overall_impact_annual_op": -28
+  "impact_month": 0,
+  "overall_impact_annual_op": -32
  },
  {
   "point_id": "PT-002",
   "as_of_period_id": 202705,
   "metric_id": "GP",
-  "impact_ytd": -4.8,
-  "overall_impact_annual_op": -28
+  "impact_ytd": -5.76,
+  "impact_month": -2.72,
+  "overall_impact_annual_op": -32
  },
  {
   "point_id": "PT-002",
   "as_of_period_id": 202705,
   "metric_id": "SGA",
   "impact_ytd": 0,
-  "overall_impact_annual_op": -28
+  "impact_month": 0,
+  "overall_impact_annual_op": -32
  },
  {
   "point_id": "PT-002",
   "as_of_period_id": 202705,
   "metric_id": "OP",
-  "impact_ytd": -4.8,
-  "overall_impact_annual_op": -28
+  "impact_ytd": -5.76,
+  "impact_month": -2.72,
+  "overall_impact_annual_op": -32
  },
  {
   "point_id": "PT-002",
   "as_of_period_id": 202706,
   "metric_id": "REV",
   "impact_ytd": 0,
+  "impact_month": 0,
   "overall_impact_annual_op": -30
  },
  {
@@ -403,6 +460,7 @@
   "as_of_period_id": 202706,
   "metric_id": "GP",
   "impact_ytd": -8,
+  "impact_month": -2.24,
   "overall_impact_annual_op": -30
  },
  {
@@ -410,6 +468,7 @@
   "as_of_period_id": 202706,
   "metric_id": "SGA",
   "impact_ytd": 0,
+  "impact_month": 0,
   "overall_impact_annual_op": -30
  },
  {
@@ -417,6 +476,7 @@
   "as_of_period_id": 202706,
   "metric_id": "OP",
   "impact_ytd": -8,
+  "impact_month": -2.24,
   "overall_impact_annual_op": -30
  },
  {
@@ -424,6 +484,7 @@
   "as_of_period_id": 202704,
   "metric_id": "REV",
   "impact_ytd": 1.8,
+  "impact_month": 1.8,
   "overall_impact_annual_op": 14
  },
  {
@@ -431,6 +492,7 @@
   "as_of_period_id": 202704,
   "metric_id": "GP",
   "impact_ytd": 0.6,
+  "impact_month": 0.6,
   "overall_impact_annual_op": 14
  },
  {
@@ -438,6 +500,7 @@
   "as_of_period_id": 202704,
   "metric_id": "SGA",
   "impact_ytd": 0,
+  "impact_month": 0,
   "overall_impact_annual_op": 14
  },
  {
@@ -445,6 +508,7 @@
   "as_of_period_id": 202704,
   "metric_id": "OP",
   "impact_ytd": 0.6,
+  "impact_month": 0.6,
   "overall_impact_annual_op": 14
  },
  {
@@ -452,6 +516,7 @@
   "as_of_period_id": 202705,
   "metric_id": "REV",
   "impact_ytd": 4.95,
+  "impact_month": 3.15,
   "overall_impact_annual_op": 16
  },
  {
@@ -459,6 +524,7 @@
   "as_of_period_id": 202705,
   "metric_id": "GP",
   "impact_ytd": 1.64,
+  "impact_month": 1.04,
   "overall_impact_annual_op": 16
  },
  {
@@ -466,6 +532,7 @@
   "as_of_period_id": 202705,
   "metric_id": "SGA",
   "impact_ytd": 0,
+  "impact_month": 0,
   "overall_impact_annual_op": 16
  },
  {
@@ -473,6 +540,7 @@
   "as_of_period_id": 202705,
   "metric_id": "OP",
   "impact_ytd": 1.64,
+  "impact_month": 1.04,
   "overall_impact_annual_op": 16
  },
  {
@@ -480,6 +548,7 @@
   "as_of_period_id": 202706,
   "metric_id": "REV",
   "impact_ytd": 9,
+  "impact_month": 4.05,
   "overall_impact_annual_op": 18
  },
  {
@@ -487,6 +556,7 @@
   "as_of_period_id": 202706,
   "metric_id": "GP",
   "impact_ytd": 3,
+  "impact_month": 1.36,
   "overall_impact_annual_op": 18
  },
  {
@@ -494,6 +564,7 @@
   "as_of_period_id": 202706,
   "metric_id": "SGA",
   "impact_ytd": 0,
+  "impact_month": 0,
   "overall_impact_annual_op": 18
  },
  {
@@ -501,6 +572,7 @@
   "as_of_period_id": 202706,
   "metric_id": "OP",
   "impact_ytd": 3,
+  "impact_month": 1.36,
   "overall_impact_annual_op": 18
  },
  {
@@ -508,6 +580,7 @@
   "as_of_period_id": 202704,
   "metric_id": "REV",
   "impact_ytd": 1.8,
+  "impact_month": 1.8,
   "overall_impact_annual_op": 14
  },
  {
@@ -515,6 +588,7 @@
   "as_of_period_id": 202704,
   "metric_id": "GP",
   "impact_ytd": 0.6,
+  "impact_month": 0.6,
   "overall_impact_annual_op": 14
  },
  {
@@ -522,6 +596,7 @@
   "as_of_period_id": 202704,
   "metric_id": "SGA",
   "impact_ytd": 0,
+  "impact_month": 0,
   "overall_impact_annual_op": 14
  },
  {
@@ -529,6 +604,7 @@
   "as_of_period_id": 202704,
   "metric_id": "OP",
   "impact_ytd": 0.6,
+  "impact_month": 0.6,
   "overall_impact_annual_op": 14
  },
  {
@@ -536,6 +612,7 @@
   "as_of_period_id": 202705,
   "metric_id": "REV",
   "impact_ytd": 4.95,
+  "impact_month": 3.15,
   "overall_impact_annual_op": 16
  },
  {
@@ -543,6 +620,7 @@
   "as_of_period_id": 202705,
   "metric_id": "GP",
   "impact_ytd": 1.64,
+  "impact_month": 1.04,
   "overall_impact_annual_op": 16
  },
  {
@@ -550,6 +628,7 @@
   "as_of_period_id": 202705,
   "metric_id": "SGA",
   "impact_ytd": 0,
+  "impact_month": 0,
   "overall_impact_annual_op": 16
  },
  {
@@ -557,6 +636,7 @@
   "as_of_period_id": 202705,
   "metric_id": "OP",
   "impact_ytd": 1.64,
+  "impact_month": 1.04,
   "overall_impact_annual_op": 16
  },
  {
@@ -564,6 +644,7 @@
   "as_of_period_id": 202706,
   "metric_id": "REV",
   "impact_ytd": 9,
+  "impact_month": 4.05,
   "overall_impact_annual_op": 18
  },
  {
@@ -571,6 +652,7 @@
   "as_of_period_id": 202706,
   "metric_id": "GP",
   "impact_ytd": 3,
+  "impact_month": 1.36,
   "overall_impact_annual_op": 18
  },
  {
@@ -578,6 +660,7 @@
   "as_of_period_id": 202706,
   "metric_id": "SGA",
   "impact_ytd": 0,
+  "impact_month": 0,
   "overall_impact_annual_op": 18
  },
  {
@@ -585,6 +668,7 @@
   "as_of_period_id": 202706,
   "metric_id": "OP",
   "impact_ytd": 3,
+  "impact_month": 1.36,
   "overall_impact_annual_op": 18
  },
  {
@@ -592,62 +676,71 @@
   "as_of_period_id": 202704,
   "metric_id": "REV",
   "impact_ytd": 0,
-  "overall_impact_annual_op": -10
+  "impact_month": 0,
+  "overall_impact_annual_op": -15
  },
  {
   "point_id": "PT-004-SL",
   "as_of_period_id": 202704,
   "metric_id": "GP",
   "impact_ytd": 0,
-  "overall_impact_annual_op": -10
+  "impact_month": 0,
+  "overall_impact_annual_op": -15
  },
  {
   "point_id": "PT-004-SL",
   "as_of_period_id": 202704,
   "metric_id": "SGA",
-  "impact_ytd": 0.9,
-  "overall_impact_annual_op": -10
+  "impact_ytd": 1.2,
+  "impact_month": 1.2,
+  "overall_impact_annual_op": -15
  },
  {
   "point_id": "PT-004-SL",
   "as_of_period_id": 202704,
   "metric_id": "OP",
-  "impact_ytd": -0.9,
-  "overall_impact_annual_op": -10
+  "impact_ytd": -1.2,
+  "impact_month": -1.2,
+  "overall_impact_annual_op": -15
  },
  {
   "point_id": "PT-004-SL",
   "as_of_period_id": 202705,
   "metric_id": "REV",
   "impact_ytd": 0,
-  "overall_impact_annual_op": -11
+  "impact_month": 0,
+  "overall_impact_annual_op": -13
  },
  {
   "point_id": "PT-004-SL",
   "as_of_period_id": 202705,
   "metric_id": "GP",
   "impact_ytd": 0,
-  "overall_impact_annual_op": -11
+  "impact_month": 0,
+  "overall_impact_annual_op": -13
  },
  {
   "point_id": "PT-004-SL",
   "as_of_period_id": 202705,
   "metric_id": "SGA",
-  "impact_ytd": 1.8,
-  "overall_impact_annual_op": -11
+  "impact_ytd": 2.16,
+  "impact_month": 0.96,
+  "overall_impact_annual_op": -13
  },
  {
   "point_id": "PT-004-SL",
   "as_of_period_id": 202705,
   "metric_id": "OP",
-  "impact_ytd": -1.8,
-  "overall_impact_annual_op": -11
+  "impact_ytd": -2.16,
+  "impact_month": -0.96,
+  "overall_impact_annual_op": -13
  },
  {
   "point_id": "PT-004-SL",
   "as_of_period_id": 202706,
   "metric_id": "REV",
   "impact_ytd": 0,
+  "impact_month": 0,
   "overall_impact_annual_op": -12
  },
  {
@@ -655,6 +748,7 @@
   "as_of_period_id": 202706,
   "metric_id": "GP",
   "impact_ytd": 0,
+  "impact_month": 0,
   "overall_impact_annual_op": -12
  },
  {
@@ -662,6 +756,7 @@
   "as_of_period_id": 202706,
   "metric_id": "SGA",
   "impact_ytd": 3,
+  "impact_month": 0.84,
   "overall_impact_annual_op": -12
  },
  {
@@ -669,6 +764,7 @@
   "as_of_period_id": 202706,
   "metric_id": "OP",
   "impact_ytd": -3,
+  "impact_month": -0.84,
   "overall_impact_annual_op": -12
  },
  {
@@ -676,62 +772,71 @@
   "as_of_period_id": 202704,
   "metric_id": "REV",
   "impact_ytd": 0,
-  "overall_impact_annual_op": -10
+  "impact_month": 0,
+  "overall_impact_annual_op": -15
  },
  {
   "point_id": "PT-004",
   "as_of_period_id": 202704,
   "metric_id": "GP",
   "impact_ytd": 0,
-  "overall_impact_annual_op": -10
+  "impact_month": 0,
+  "overall_impact_annual_op": -15
  },
  {
   "point_id": "PT-004",
   "as_of_period_id": 202704,
   "metric_id": "SGA",
-  "impact_ytd": 0.9,
-  "overall_impact_annual_op": -10
+  "impact_ytd": 1.2,
+  "impact_month": 1.2,
+  "overall_impact_annual_op": -15
  },
  {
   "point_id": "PT-004",
   "as_of_period_id": 202704,
   "metric_id": "OP",
-  "impact_ytd": -0.9,
-  "overall_impact_annual_op": -10
+  "impact_ytd": -1.2,
+  "impact_month": -1.2,
+  "overall_impact_annual_op": -15
  },
  {
   "point_id": "PT-004",
   "as_of_period_id": 202705,
   "metric_id": "REV",
   "impact_ytd": 0,
-  "overall_impact_annual_op": -11
+  "impact_month": 0,
+  "overall_impact_annual_op": -13
  },
  {
   "point_id": "PT-004",
   "as_of_period_id": 202705,
   "metric_id": "GP",
   "impact_ytd": 0,
-  "overall_impact_annual_op": -11
+  "impact_month": 0,
+  "overall_impact_annual_op": -13
  },
  {
   "point_id": "PT-004",
   "as_of_period_id": 202705,
   "metric_id": "SGA",
-  "impact_ytd": 1.8,
-  "overall_impact_annual_op": -11
+  "impact_ytd": 2.16,
+  "impact_month": 0.96,
+  "overall_impact_annual_op": -13
  },
  {
   "point_id": "PT-004",
   "as_of_period_id": 202705,
   "metric_id": "OP",
-  "impact_ytd": -1.8,
-  "overall_impact_annual_op": -11
+  "impact_ytd": -2.16,
+  "impact_month": -0.96,
+  "overall_impact_annual_op": -13
  },
  {
   "point_id": "PT-004",
   "as_of_period_id": 202706,
   "metric_id": "REV",
   "impact_ytd": 0,
+  "impact_month": 0,
   "overall_impact_annual_op": -12
  },
  {
@@ -739,6 +844,7 @@
   "as_of_period_id": 202706,
   "metric_id": "GP",
   "impact_ytd": 0,
+  "impact_month": 0,
   "overall_impact_annual_op": -12
  },
  {
@@ -746,6 +852,7 @@
   "as_of_period_id": 202706,
   "metric_id": "SGA",
   "impact_ytd": 3,
+  "impact_month": 0.84,
   "overall_impact_annual_op": -12
  },
  {
@@ -753,6 +860,7 @@
   "as_of_period_id": 202706,
   "metric_id": "OP",
   "impact_ytd": -3,
+  "impact_month": -0.84,
   "overall_impact_annual_op": -12
  },
  {
@@ -760,6 +868,7 @@
   "as_of_period_id": 202704,
   "metric_id": "REV",
   "impact_ytd": 0,
+  "impact_month": 0,
   "overall_impact_annual_op": 10
  },
  {
@@ -767,6 +876,7 @@
   "as_of_period_id": 202704,
   "metric_id": "GP",
   "impact_ytd": 0,
+  "impact_month": 0,
   "overall_impact_annual_op": 10
  },
  {
@@ -774,6 +884,7 @@
   "as_of_period_id": 202704,
   "metric_id": "SGA",
   "impact_ytd": -0.8,
+  "impact_month": -0.8,
   "overall_impact_annual_op": 10
  },
  {
@@ -781,6 +892,7 @@
   "as_of_period_id": 202704,
   "metric_id": "OP",
   "impact_ytd": 0.8,
+  "impact_month": 0.8,
   "overall_impact_annual_op": 10
  },
  {
@@ -788,6 +900,7 @@
   "as_of_period_id": 202705,
   "metric_id": "REV",
   "impact_ytd": 0,
+  "impact_month": 0,
   "overall_impact_annual_op": 12
  },
  {
@@ -795,6 +908,7 @@
   "as_of_period_id": 202705,
   "metric_id": "GP",
   "impact_ytd": 0,
+  "impact_month": 0,
   "overall_impact_annual_op": 12
  },
  {
@@ -802,6 +916,7 @@
   "as_of_period_id": 202705,
   "metric_id": "SGA",
   "impact_ytd": -2.4,
+  "impact_month": -1.6,
   "overall_impact_annual_op": 12
  },
  {
@@ -809,6 +924,7 @@
   "as_of_period_id": 202705,
   "metric_id": "OP",
   "impact_ytd": 2.4,
+  "impact_month": 1.6,
   "overall_impact_annual_op": 12
  },
  {
@@ -816,6 +932,7 @@
   "as_of_period_id": 202706,
   "metric_id": "REV",
   "impact_ytd": 0,
+  "impact_month": 0,
   "overall_impact_annual_op": 14
  },
  {
@@ -823,6 +940,7 @@
   "as_of_period_id": 202706,
   "metric_id": "GP",
   "impact_ytd": 0,
+  "impact_month": 0,
   "overall_impact_annual_op": 14
  },
  {
@@ -830,6 +948,7 @@
   "as_of_period_id": 202706,
   "metric_id": "SGA",
   "impact_ytd": -4,
+  "impact_month": -1.6,
   "overall_impact_annual_op": 14
  },
  {
@@ -837,6 +956,7 @@
   "as_of_period_id": 202706,
   "metric_id": "OP",
   "impact_ytd": 4,
+  "impact_month": 1.6,
   "overall_impact_annual_op": 14
  },
  {
@@ -844,6 +964,7 @@
   "as_of_period_id": 202704,
   "metric_id": "REV",
   "impact_ytd": 0,
+  "impact_month": 0,
   "overall_impact_annual_op": 10
  },
  {
@@ -851,6 +972,7 @@
   "as_of_period_id": 202704,
   "metric_id": "GP",
   "impact_ytd": 0,
+  "impact_month": 0,
   "overall_impact_annual_op": 10
  },
  {
@@ -858,6 +980,7 @@
   "as_of_period_id": 202704,
   "metric_id": "SGA",
   "impact_ytd": -0.8,
+  "impact_month": -0.8,
   "overall_impact_annual_op": 10
  },
  {
@@ -865,6 +988,7 @@
   "as_of_period_id": 202704,
   "metric_id": "OP",
   "impact_ytd": 0.8,
+  "impact_month": 0.8,
   "overall_impact_annual_op": 10
  },
  {
@@ -872,6 +996,7 @@
   "as_of_period_id": 202705,
   "metric_id": "REV",
   "impact_ytd": 0,
+  "impact_month": 0,
   "overall_impact_annual_op": 12
  },
  {
@@ -879,6 +1004,7 @@
   "as_of_period_id": 202705,
   "metric_id": "GP",
   "impact_ytd": 0,
+  "impact_month": 0,
   "overall_impact_annual_op": 12
  },
  {
@@ -886,6 +1012,7 @@
   "as_of_period_id": 202705,
   "metric_id": "SGA",
   "impact_ytd": -2.4,
+  "impact_month": -1.6,
   "overall_impact_annual_op": 12
  },
  {
@@ -893,6 +1020,7 @@
   "as_of_period_id": 202705,
   "metric_id": "OP",
   "impact_ytd": 2.4,
+  "impact_month": 1.6,
   "overall_impact_annual_op": 12
  },
  {
@@ -900,6 +1028,7 @@
   "as_of_period_id": 202706,
   "metric_id": "REV",
   "impact_ytd": 0,
+  "impact_month": 0,
   "overall_impact_annual_op": 14
  },
  {
@@ -907,6 +1036,7 @@
   "as_of_period_id": 202706,
   "metric_id": "GP",
   "impact_ytd": 0,
+  "impact_month": 0,
   "overall_impact_annual_op": 14
  },
  {
@@ -914,6 +1044,7 @@
   "as_of_period_id": 202706,
   "metric_id": "SGA",
   "impact_ytd": -4,
+  "impact_month": -1.6,
   "overall_impact_annual_op": 14
  },
  {
@@ -921,41 +1052,15 @@
   "as_of_period_id": 202706,
   "metric_id": "OP",
   "impact_ytd": 4,
+  "impact_month": 1.6,
   "overall_impact_annual_op": 14
- },
- {
-  "point_id": "PT-006-OS",
-  "as_of_period_id": 202705,
-  "metric_id": "REV",
-  "impact_ytd": -10.8,
-  "overall_impact_annual_op": -12
- },
- {
-  "point_id": "PT-006-OS",
-  "as_of_period_id": 202705,
-  "metric_id": "GP",
-  "impact_ytd": -2.71,
-  "overall_impact_annual_op": -12
- },
- {
-  "point_id": "PT-006-OS",
-  "as_of_period_id": 202705,
-  "metric_id": "SGA",
-  "impact_ytd": 0,
-  "overall_impact_annual_op": -12
- },
- {
-  "point_id": "PT-006-OS",
-  "as_of_period_id": 202705,
-  "metric_id": "OP",
-  "impact_ytd": -2.71,
-  "overall_impact_annual_op": -12
  },
  {
   "point_id": "PT-006-OS",
   "as_of_period_id": 202706,
   "metric_id": "REV",
   "impact_ytd": -24,
+  "impact_month": -24,
   "overall_impact_annual_op": -14
  },
  {
@@ -963,6 +1068,7 @@
   "as_of_period_id": 202706,
   "metric_id": "GP",
   "impact_ytd": -6,
+  "impact_month": -6,
   "overall_impact_annual_op": -14
  },
  {
@@ -970,6 +1076,7 @@
   "as_of_period_id": 202706,
   "metric_id": "SGA",
   "impact_ytd": 0,
+  "impact_month": 0,
   "overall_impact_annual_op": -14
  },
  {
@@ -977,41 +1084,15 @@
   "as_of_period_id": 202706,
   "metric_id": "OP",
   "impact_ytd": -6,
+  "impact_month": -6,
   "overall_impact_annual_op": -14
- },
- {
-  "point_id": "PT-006",
-  "as_of_period_id": 202705,
-  "metric_id": "REV",
-  "impact_ytd": -10.8,
-  "overall_impact_annual_op": -12
- },
- {
-  "point_id": "PT-006",
-  "as_of_period_id": 202705,
-  "metric_id": "GP",
-  "impact_ytd": -2.71,
-  "overall_impact_annual_op": -12
- },
- {
-  "point_id": "PT-006",
-  "as_of_period_id": 202705,
-  "metric_id": "SGA",
-  "impact_ytd": 0,
-  "overall_impact_annual_op": -12
- },
- {
-  "point_id": "PT-006",
-  "as_of_period_id": 202705,
-  "metric_id": "OP",
-  "impact_ytd": -2.71,
-  "overall_impact_annual_op": -12
  },
  {
   "point_id": "PT-006",
   "as_of_period_id": 202706,
   "metric_id": "REV",
   "impact_ytd": -24,
+  "impact_month": -24,
   "overall_impact_annual_op": -14
  },
  {
@@ -1019,6 +1100,7 @@
   "as_of_period_id": 202706,
   "metric_id": "GP",
   "impact_ytd": -6,
+  "impact_month": -6,
   "overall_impact_annual_op": -14
  },
  {
@@ -1026,6 +1108,7 @@
   "as_of_period_id": 202706,
   "metric_id": "SGA",
   "impact_ytd": 0,
+  "impact_month": 0,
   "overall_impact_annual_op": -14
  },
  {
@@ -1033,6 +1116,7 @@
   "as_of_period_id": 202706,
   "metric_id": "OP",
   "impact_ytd": -6,
+  "impact_month": -6,
   "overall_impact_annual_op": -14
  },
  {
@@ -1040,6 +1124,7 @@
   "as_of_period_id": 202705,
   "metric_id": "REV",
   "impact_ytd": 0,
+  "impact_month": 0,
   "overall_impact_annual_op": 14
  },
  {
@@ -1047,6 +1132,7 @@
   "as_of_period_id": 202705,
   "metric_id": "GP",
   "impact_ytd": 2.25,
+  "impact_month": 2.25,
   "overall_impact_annual_op": 14
  },
  {
@@ -1054,6 +1140,7 @@
   "as_of_period_id": 202705,
   "metric_id": "SGA",
   "impact_ytd": 0,
+  "impact_month": 0,
   "overall_impact_annual_op": 14
  },
  {
@@ -1061,6 +1148,7 @@
   "as_of_period_id": 202705,
   "metric_id": "OP",
   "impact_ytd": 2.25,
+  "impact_month": 2.25,
   "overall_impact_annual_op": 14
  },
  {
@@ -1068,6 +1156,7 @@
   "as_of_period_id": 202706,
   "metric_id": "REV",
   "impact_ytd": 0,
+  "impact_month": 0,
   "overall_impact_annual_op": 16
  },
  {
@@ -1075,6 +1164,7 @@
   "as_of_period_id": 202706,
   "metric_id": "GP",
   "impact_ytd": 5,
+  "impact_month": 2.75,
   "overall_impact_annual_op": 16
  },
  {
@@ -1082,6 +1172,7 @@
   "as_of_period_id": 202706,
   "metric_id": "SGA",
   "impact_ytd": 0,
+  "impact_month": 0,
   "overall_impact_annual_op": 16
  },
  {
@@ -1089,6 +1180,7 @@
   "as_of_period_id": 202706,
   "metric_id": "OP",
   "impact_ytd": 5,
+  "impact_month": 2.75,
   "overall_impact_annual_op": 16
  },
  {
@@ -1096,6 +1188,7 @@
   "as_of_period_id": 202705,
   "metric_id": "REV",
   "impact_ytd": 0,
+  "impact_month": 0,
   "overall_impact_annual_op": 14
  },
  {
@@ -1103,6 +1196,7 @@
   "as_of_period_id": 202705,
   "metric_id": "GP",
   "impact_ytd": 2.25,
+  "impact_month": 2.25,
   "overall_impact_annual_op": 14
  },
  {
@@ -1110,6 +1204,7 @@
   "as_of_period_id": 202705,
   "metric_id": "SGA",
   "impact_ytd": 0,
+  "impact_month": 0,
   "overall_impact_annual_op": 14
  },
  {
@@ -1117,6 +1212,7 @@
   "as_of_period_id": 202705,
   "metric_id": "OP",
   "impact_ytd": 2.25,
+  "impact_month": 2.25,
   "overall_impact_annual_op": 14
  },
  {
@@ -1124,6 +1220,7 @@
   "as_of_period_id": 202706,
   "metric_id": "REV",
   "impact_ytd": 0,
+  "impact_month": 0,
   "overall_impact_annual_op": 16
  },
  {
@@ -1131,6 +1228,7 @@
   "as_of_period_id": 202706,
   "metric_id": "GP",
   "impact_ytd": 5,
+  "impact_month": 2.75,
   "overall_impact_annual_op": 16
  },
  {
@@ -1138,6 +1236,7 @@
   "as_of_period_id": 202706,
   "metric_id": "SGA",
   "impact_ytd": 0,
+  "impact_month": 0,
   "overall_impact_annual_op": 16
  },
  {
@@ -1145,6 +1244,71 @@
   "as_of_period_id": 202706,
   "metric_id": "OP",
   "impact_ytd": 5,
+  "impact_month": 2.75,
   "overall_impact_annual_op": 16
+ },
+ {
+  "point_id": "PT-008-SL",
+  "as_of_period_id": 202706,
+  "metric_id": "REV",
+  "impact_ytd": 8,
+  "impact_month": 8,
+  "overall_impact_annual_op": 12
+ },
+ {
+  "point_id": "PT-008-SL",
+  "as_of_period_id": 202706,
+  "metric_id": "GP",
+  "impact_ytd": 3,
+  "impact_month": 3,
+  "overall_impact_annual_op": 12
+ },
+ {
+  "point_id": "PT-008-SL",
+  "as_of_period_id": 202706,
+  "metric_id": "SGA",
+  "impact_ytd": 0,
+  "impact_month": 0,
+  "overall_impact_annual_op": 12
+ },
+ {
+  "point_id": "PT-008-SL",
+  "as_of_period_id": 202706,
+  "metric_id": "OP",
+  "impact_ytd": 3,
+  "impact_month": 3,
+  "overall_impact_annual_op": 12
+ },
+ {
+  "point_id": "PT-008",
+  "as_of_period_id": 202706,
+  "metric_id": "REV",
+  "impact_ytd": 8,
+  "impact_month": 8,
+  "overall_impact_annual_op": 12
+ },
+ {
+  "point_id": "PT-008",
+  "as_of_period_id": 202706,
+  "metric_id": "GP",
+  "impact_ytd": 3,
+  "impact_month": 3,
+  "overall_impact_annual_op": 12
+ },
+ {
+  "point_id": "PT-008",
+  "as_of_period_id": 202706,
+  "metric_id": "SGA",
+  "impact_ytd": 0,
+  "impact_month": 0,
+  "overall_impact_annual_op": 12
+ },
+ {
+  "point_id": "PT-008",
+  "as_of_period_id": 202706,
+  "metric_id": "OP",
+  "impact_ytd": 3,
+  "impact_month": 3,
+  "overall_impact_annual_op": 12
  }
 ]

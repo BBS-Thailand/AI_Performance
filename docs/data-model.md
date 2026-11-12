@@ -153,7 +153,7 @@
 | Table | Columns |
 |---|---|
 | `app_point` | point_id (`PT-001` / `PT-001-SL`), parent_point_id, point_no, org_id, point_type (`ISSUE`/`OPPORTUNITY`), status (`OPEN`, `IN_ACTION`, `RESOLVED`, `CLOSED`), raised_period_id, title_comment_id, gap_dimension (`CUSTOMER`/`PRODUCT`/`ACCOUNT` — A-02 decomposition chart), indicator_metric_id + indicator_filter (JSON — A-02 related-indicator chart) |
-| `app_point_impact_snapshot` | point_id, as_of_period_id, metric_id, impact_ytd, overall_impact_annual_op — one row per month the Point exists; gives **vs initial** and **vs previous month** |
+| `app_point_impact_snapshot` | point_id, as_of_period_id, metric_id, impact_ytd, impact_month (single-month impact), overall_impact_annual_op — one row per month the Point exists. A-01 second row (concept slide 38): **vs initial / vs last month** compare `impact_month` per Metric and `overall_impact_annual_op` for Overall impact (YTD only accumulates, so it can't show improvement). A Point raised in the selected month shows "Raised in {month} (new)" with no comparison. |
 | `app_point_cause` | cause_id, point_id, as_of_period_id, sort_order, quantity_value, quantity_unit, impact_op, evidence_ref (table/filter used), comment_id |
 
 > Parent Point impact = Σ child Point impacts (enforced by AI job + reconciliation test).
