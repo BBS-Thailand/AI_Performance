@@ -1,0 +1,35 @@
+[
+ {
+  "run_id": "RUN-202704",
+  "run_type": "MONTHLY_ANALYSIS",
+  "as_of_period_id": 202704,
+  "model_name": "TBD (mock)",
+  "prompt_version": "mock-v1",
+  "source_load_id": "LOAD-PL-202704",
+  "status": "SUCCEEDED",
+  "started_at": "2027-05-03T00:00:00Z",
+  "finished_at": null
+ },
+ {
+  "run_id": "RUN-202705",
+  "run_type": "MONTHLY_ANALYSIS",
+  "as_of_period_id": 202705,
+  "model_name": "TBD (mock)",
+  "prompt_version": "mock-v1",
+  "source_load_id": "LOAD-PL-202705",
+  "status": "SUCCEEDED",
+  "started_at": "2027-06-03T00:00:00Z",
+  "finished_at": null
+ },
+ {
+  "run_id": "RUN-202706",
+  "run_type": "MONTHLY_ANALYSIS",
+  "as_of_period_id": 202706,
+  "model_name": "TBD (mock)",
+  "prompt_version": "mock-v1",
+  "source_load_id": "LOAD-PL-202706",
+  "status": "SUCCEEDED",
+  "started_at": "2027-07-03T00:00:00Z",
+  "finished_at": null
+ }
+]

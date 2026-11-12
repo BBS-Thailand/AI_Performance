@@ -1,0 +1,82 @@
+[
+ {
+  "org_id": "CO",
+  "language_code": "ja",
+  "org_name": "サンプル株式会社"
+ },
+ {
+  "org_id": "DSL",
+  "language_code": "ja",
+  "org_name": "営業本部"
+ },
+ {
+  "org_id": "SL",
+  "language_code": "ja",
+  "org_name": "営業部"
+ },
+ {
+  "org_id": "OS",
+  "language_code": "ja",
+  "org_name": "海外営業部"
+ },
+ {
+  "org_id": "DOP",
+  "language_code": "ja",
+  "org_name": "生産本部"
+ },
+ {
+  "org_id": "MF",
+  "language_code": "ja",
+  "org_name": "製造部"
+ },
+ {
+  "org_id": "DCP",
+  "language_code": "ja",
+  "org_name": "コーポレート本部"
+ },
+ {
+  "org_id": "AD",
+  "language_code": "ja",
+  "org_name": "管理部"
+ },
+ {
+  "org_id": "CO",
+  "language_code": "th",
+  "org_name": "บริษัทตัวอย่าง"
+ },
+ {
+  "org_id": "DSL",
+  "language_code": "th",
+  "org_name": "สายงานขาย"
+ },
+ {
+  "org_id": "SL",
+  "language_code": "th",
+  "org_name": "ฝ่ายขาย"
+ },
+ {
+  "org_id": "OS",
+  "language_code": "th",
+  "org_name": "ฝ่ายขายต่างประเทศ"
+ },
+ {
+  "org_id": "DOP",
+  "language_code": "th",
+  "org_name": "สายงานปฏิบัติการ"
+ },
+ {
+  "org_id": "MF",
+  "language_code": "th",
+  "org_name": "ฝ่ายผลิต"
+ },
+ {
+  "org_id": "DCP",
+  "language_code": "th",
+  "org_name": "สายงานองค์กร"
+ },
+ {
+  "org_id": "AD",
+  "language_code": "th",
+  "org_name": "ฝ่ายบริหาร"
+ }
+]

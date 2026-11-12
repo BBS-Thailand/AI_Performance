@@ -1,0 +1,16 @@
+[
+ {
+  "view_id": "BV-01",
+  "owner_id": "u01",
+  "name": "Regional revenue trend",
+  "definition_json": "{\"rows\":\"region\",\"cols\":\"period\",\"measure\":\"REV\",\"scenario\":\"ACT\"}",
+  "shared": true
+ },
+ {
+  "view_id": "BV-02",
+  "owner_id": "u01",
+  "name": "Product cost ratio",
+  "definition_json": "{\"rows\":\"product_category\",\"cols\":\"scenario\",\"measure\":\"GP\",\"scenario\":\"ALL\"}",
+  "shared": true
+ }
+]

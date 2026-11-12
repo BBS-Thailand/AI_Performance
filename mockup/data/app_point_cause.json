@@ -1,0 +1,156 @@
+[
+ {
+  "cause_id": "CS-01",
+  "point_id": "PT-001-SL",
+  "as_of_period_id": 202706,
+  "sort_order": 1,
+  "quantity_value": -18000,
+  "quantity_unit": "units",
+  "impact_op": -4.2,
+  "evidence_ref": "fact_financial: customer C02 × product P01, Apr–Jun 2027 vs budget",
+  "comment_id": "CM-CAUSE-01"
+ },
+ {
+  "cause_id": "CS-02",
+  "point_id": "PT-001-SL",
+  "as_of_period_id": 202706,
+  "sort_order": 2,
+  "quantity_value": -1200,
+  "quantity_unit": "units",
+  "impact_op": -2.8,
+  "evidence_ref": "fact_financial: customer C02 × product P03, Apr–Jun 2027 vs budget",
+  "comment_id": "CM-CAUSE-02"
+ },
+ {
+  "cause_id": "CS-03",
+  "point_id": "PT-001-OS",
+  "as_of_period_id": 202706,
+  "sort_order": 3,
+  "quantity_value": -6500,
+  "quantity_unit": "units",
+  "impact_op": -2,
+  "evidence_ref": "fact_financial: customer C06 × product P01, Apr–Jun 2027 vs budget",
+  "comment_id": "CM-CAUSE-03"
+ },
+ {
+  "cause_id": "CS-04",
+  "point_id": "PT-002-MF",
+  "as_of_period_id": 202706,
+  "sort_order": 4,
+  "quantity_value": 9,
+  "quantity_unit": "%",
+  "impact_op": -6,
+  "evidence_ref": "fact_financial: account 5030 (MF), purchase price index",
+  "comment_id": "CM-CAUSE-04"
+ },
+ {
+  "cause_id": "CS-05",
+  "point_id": "PT-002-MF",
+  "as_of_period_id": 202706,
+  "sort_order": 5,
+  "quantity_value": 3,
+  "quantity_unit": "lots",
+  "impact_op": -2,
+  "evidence_ref": "fact_financial: account 5030 (MF), spot purchase lots May 2027",
+  "comment_id": "CM-CAUSE-05"
+ },
+ {
+  "cause_id": "CS-06",
+  "point_id": "PT-003-OS",
+  "as_of_period_id": 202706,
+  "sort_order": 6,
+  "quantity_value": 4100,
+  "quantity_unit": "units",
+  "impact_op": 1.8,
+  "evidence_ref": "fact_financial: customer C04 × product P03, Apr–Jun 2027",
+  "comment_id": "CM-CAUSE-06"
+ },
+ {
+  "cause_id": "CS-07",
+  "point_id": "PT-003-OS",
+  "as_of_period_id": 202706,
+  "sort_order": 7,
+  "quantity_value": 2600,
+  "quantity_unit": "units",
+  "impact_op": 1.2,
+  "evidence_ref": "fact_financial: customer C05 × product P02, Apr–Jun 2027",
+  "comment_id": "CM-CAUSE-07"
+ },
+ {
+  "cause_id": "CS-08",
+  "point_id": "PT-004-SL",
+  "as_of_period_id": 202706,
+  "sort_order": 8,
+  "quantity_value": 140,
+  "quantity_unit": "shipments",
+  "impact_op": -2.1,
+  "evidence_ref": "fact_financial: account 6030 (SL), express freight",
+  "comment_id": "CM-CAUSE-08"
+ },
+ {
+  "cause_id": "CS-09",
+  "point_id": "PT-004-SL",
+  "as_of_period_id": 202706,
+  "sort_order": 9,
+  "quantity_value": 12,
+  "quantity_unit": "%",
+  "impact_op": -0.9,
+  "evidence_ref": "fact_financial: account 6030 (SL), carrier fuel surcharge",
+  "comment_id": "CM-CAUSE-09"
+ },
+ {
+  "cause_id": "CS-10",
+  "point_id": "PT-005-AD",
+  "as_of_period_id": 202706,
+  "sort_order": 10,
+  "quantity_value": 1,
+  "quantity_unit": "floor",
+  "impact_op": 2.8,
+  "evidence_ref": "fact_financial: account 6040 (AD), rent",
+  "comment_id": "CM-CAUSE-10"
+ },
+ {
+  "cause_id": "CS-11",
+  "point_id": "PT-005-AD",
+  "as_of_period_id": 202706,
+  "sort_order": 11,
+  "quantity_value": -18,
+  "quantity_unit": "% kWh",
+  "impact_op": 1.2,
+  "evidence_ref": "fact_financial: account 6040 (AD), utilities",
+  "comment_id": "CM-CAUSE-11"
+ },
+ {
+  "cause_id": "CS-12",
+  "point_id": "PT-006-OS",
+  "as_of_period_id": 202706,
+  "sort_order": 12,
+  "quantity_value": 3,
+  "quantity_unit": "orders",
+  "impact_op": -4.5,
+  "evidence_ref": "fact_financial: customer C07 × products P03/P04, May–Jun 2027",
+  "comment_id": "CM-CAUSE-12"
+ },
+ {
+  "cause_id": "CS-13",
+  "point_id": "PT-006-OS",
+  "as_of_period_id": 202706,
+  "sort_order": 13,
+  "quantity_value": 2.4,
+  "quantity_unit": "months stock",
+  "impact_op": -1.5,
+  "evidence_ref": "Distributor inventory report (proxy), Jun 2027",
+  "comment_id": "CM-CAUSE-13"
+ },
+ {
+  "cause_id": "CS-14",
+  "point_id": "PT-007-MF",
+  "as_of_period_id": 202706,
+  "sort_order": 14,
+  "quantity_value": 3.5,
+  "quantity_unit": "pt yield",
+  "impact_op": 5,
+  "evidence_ref": "fact_financial: account 5040 (MF); production yield log Line 1",
+  "comment_id": "CM-CAUSE-14"
+ }
+]

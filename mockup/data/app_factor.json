@@ -1,0 +1,54 @@
+[
+ {
+  "factor_id": "EV-001",
+  "category": "FX",
+  "title_comment_id": "CM-FTITLE-EV-001",
+  "start_period_id": 202707,
+  "end_period_id": 202803,
+  "evidence_memo": "Treasury FX outlook 2027-06: JPY/THB assumed 4.6 (budget 4.3).",
+  "registered_period_id": 202706,
+  "default_included": true,
+  "is_deleted": false,
+  "created_by": "u04",
+  "created_at": "2027-06-25T00:00:00Z"
+ },
+ {
+  "factor_id": "EV-002",
+  "category": "EVENT",
+  "title_comment_id": "CM-FTITLE-EV-002",
+  "start_period_id": 202710,
+  "end_period_id": 202710,
+  "evidence_memo": "Booth and travel cost estimate for the Bangkok industrial exhibition.",
+  "registered_period_id": 202706,
+  "default_included": true,
+  "is_deleted": false,
+  "created_by": "u03",
+  "created_at": "2027-06-25T00:00:00Z"
+ },
+ {
+  "factor_id": "EV-003",
+  "category": "LAUNCH",
+  "title_comment_id": "CM-FTITLE-EV-003",
+  "start_period_id": 202711,
+  "end_period_id": 202803,
+  "evidence_memo": "Launch plan for sensor housing v2 (P02) approved 2027-06-15.",
+  "registered_period_id": 202706,
+  "default_included": true,
+  "is_deleted": false,
+  "created_by": "u02",
+  "created_at": "2027-06-25T00:00:00Z"
+ },
+ {
+  "factor_id": "EV-004",
+  "category": "ORDER_DELAY",
+  "title_comment_id": "CM-FTITLE-EV-004",
+  "start_period_id": 202710,
+  "end_period_id": 202712,
+  "evidence_memo": "Possible delay of Customer F Q3 orders; under confirmation.",
+  "registered_period_id": 202706,
+  "default_included": false,
+  "is_deleted": false,
+  "created_by": "u03",
+  "created_at": "2027-06-25T00:00:00Z"
+ }
+]

@@ -1,0 +1,2306 @@
+[
+ {
+  "forecast_version_id": "FV-SL-2027-01",
+  "metric_id": "REV",
+  "period_id": 202704,
+  "actual": 246.35,
+  "forecast": null,
+  "budget": 252.8
+ },
+ {
+  "forecast_version_id": "FV-SL-2027-01",
+  "metric_id": "REV",
+  "period_id": 202705,
+  "actual": 250.65,
+  "forecast": null,
+  "budget": 260.7
+ },
+ {
+  "forecast_version_id": "FV-SL-2027-01",
+  "metric_id": "REV",
+  "period_id": 202706,
+  "actual": null,
+  "forecast": 264,
+  "budget": 276.5
+ },
+ {
+  "forecast_version_id": "FV-SL-2027-01",
+  "metric_id": "REV",
+  "period_id": 202707,
+  "actual": null,
+  "forecast": 253.84,
+  "budget": 259.14
+ },
+ {
+  "forecast_version_id": "FV-SL-2027-01",
+  "metric_id": "REV",
+  "period_id": 202708,
+  "actual": null,
+  "forecast": 248.83,
+  "budget": 253.96
+ },
+ {
+  "forecast_version_id": "FV-SL-2027-01",
+  "metric_id": "REV",
+  "period_id": 202709,
+  "actual": null,
+  "forecast": 266.29,
+  "budget": 272.1
+ },
+ {
+  "forecast_version_id": "FV-SL-2027-01",
+  "metric_id": "REV",
+  "period_id": 202710,
+  "actual": null,
+  "forecast": 273.79,
+  "budget": 279.87
+ },
+ {
+  "forecast_version_id": "FV-SL-2027-01",
+  "metric_id": "REV",
+  "period_id": 202711,
+  "actual": null,
+  "forecast": 278.79,
+  "budget": 285.05
+ },
+ {
+  "forecast_version_id": "FV-SL-2027-01",
+  "metric_id": "REV",
+  "period_id": 202712,
+  "actual": null,
+  "forecast": 253.79,
+  "budget": 259.14
+ },
+ {
+  "forecast_version_id": "FV-SL-2027-01",
+  "metric_id": "REV",
+  "period_id": 202801,
+  "actual": null,
+  "forecast": 237.57,
+  "budget": 246.18
+ },
+ {
+  "forecast_version_id": "FV-SL-2027-01",
+  "metric_id": "REV",
+  "period_id": 202802,
+  "actual": null,
+  "forecast": 255.07,
+  "budget": 264.32
+ },
+ {
+  "forecast_version_id": "FV-SL-2027-01",
+  "metric_id": "REV",
+  "period_id": 202803,
+  "actual": null,
+  "forecast": 280.08,
+  "budget": 290.24
+ },
+ {
+  "forecast_version_id": "FV-SL-2027-01",
+  "metric_id": "GP",
+  "period_id": 202704,
+  "actual": 59.56,
+  "forecast": null,
+  "budget": 60.8
+ },
+ {
+  "forecast_version_id": "FV-SL-2027-01",
+  "metric_id": "GP",
+  "period_id": 202705,
+  "actual": 60.42,
+  "forecast": null,
+  "budget": 62.7
+ },
+ {
+  "forecast_version_id": "FV-SL-2027-01",
+  "metric_id": "GP",
+  "period_id": 202706,
+  "actual": null,
+  "forecast": 62.87,
+  "budget": 66.5
+ },
+ {
+  "forecast_version_id": "FV-SL-2027-01",
+  "metric_id": "GP",
+  "period_id": 202707,
+  "actual": null,
+  "forecast": 60.58,
+  "budget": 62.37
+ },
+ {
+  "forecast_version_id": "FV-SL-2027-01",
+  "metric_id": "GP",
+  "period_id": 202708,
+  "actual": null,
+  "forecast": 59.36,
+  "budget": 61.12
+ },
+ {
+  "forecast_version_id": "FV-SL-2027-01",
+  "metric_id": "GP",
+  "period_id": 202709,
+  "actual": null,
+  "forecast": 63.57,
+  "budget": 65.49
+ },
+ {
+  "forecast_version_id": "FV-SL-2027-01",
+  "metric_id": "GP",
+  "period_id": 202710,
+  "actual": null,
+  "forecast": 65.37,
+  "budget": 67.35
+ },
+ {
+  "forecast_version_id": "FV-SL-2027-01",
+  "metric_id": "GP",
+  "period_id": 202711,
+  "actual": null,
+  "forecast": 66.57,
+  "budget": 68.6
+ },
+ {
+  "forecast_version_id": "FV-SL-2027-01",
+  "metric_id": "GP",
+  "period_id": 202712,
+  "actual": null,
+  "forecast": 60.56,
+  "budget": 62.37
+ },
+ {
+  "forecast_version_id": "FV-SL-2027-01",
+  "metric_id": "GP",
+  "period_id": 202801,
+  "actual": null,
+  "forecast": 56.61,
+  "budget": 59.24
+ },
+ {
+  "forecast_version_id": "FV-SL-2027-01",
+  "metric_id": "GP",
+  "period_id": 202802,
+  "actual": null,
+  "forecast": 60.83,
+  "budget": 63.61
+ },
+ {
+  "forecast_version_id": "FV-SL-2027-01",
+  "metric_id": "GP",
+  "period_id": 202803,
+  "actual": null,
+  "forecast": 66.85,
+  "budget": 69.85
+ },
+ {
+  "forecast_version_id": "FV-SL-2027-01",
+  "metric_id": "SGA",
+  "period_id": 202704,
+  "actual": 37.54,
+  "forecast": null,
+  "budget": 36.8
+ },
+ {
+  "forecast_version_id": "FV-SL-2027-01",
+  "metric_id": "SGA",
+  "period_id": 202705,
+  "actual": 38.68,
+  "forecast": null,
+  "budget": 37.95
+ },
+ {
+  "forecast_version_id": "FV-SL-2027-01",
+  "metric_id": "SGA",
+  "period_id": 202706,
+  "actual": null,
+  "forecast": 41.28,
+  "budget": 40.25
+ },
+ {
+  "forecast_version_id": "FV-SL-2027-01",
+  "metric_id": "SGA",
+  "period_id": 202707,
+  "actual": null,
+  "forecast": 40.38,
+  "budget": 39.98
+ },
+ {
+  "forecast_version_id": "FV-SL-2027-01",
+  "metric_id": "SGA",
+  "period_id": 202708,
+  "actual": null,
+  "forecast": 40.38,
+  "budget": 39.98
+ },
+ {
+  "forecast_version_id": "FV-SL-2027-01",
+  "metric_id": "SGA",
+  "period_id": 202709,
+  "actual": null,
+  "forecast": 41.18,
+  "budget": 40.78
+ },
+ {
+  "forecast_version_id": "FV-SL-2027-01",
+  "metric_id": "SGA",
+  "period_id": 202710,
+  "actual": null,
+  "forecast": 40.38,
+  "budget": 39.98
+ },
+ {
+  "forecast_version_id": "FV-SL-2027-01",
+  "metric_id": "SGA",
+  "period_id": 202711,
+  "actual": null,
+  "forecast": 40.38,
+  "budget": 39.98
+ },
+ {
+  "forecast_version_id": "FV-SL-2027-01",
+  "metric_id": "SGA",
+  "period_id": 202712,
+  "actual": null,
+  "forecast": 42.38,
+  "budget": 41.97
+ },
+ {
+  "forecast_version_id": "FV-SL-2027-01",
+  "metric_id": "SGA",
+  "period_id": 202801,
+  "actual": null,
+  "forecast": 39.58,
+  "budget": 39.18
+ },
+ {
+  "forecast_version_id": "FV-SL-2027-01",
+  "metric_id": "SGA",
+  "period_id": 202802,
+  "actual": null,
+  "forecast": 39.58,
+  "budget": 39.18
+ },
+ {
+  "forecast_version_id": "FV-SL-2027-01",
+  "metric_id": "SGA",
+  "period_id": 202803,
+  "actual": null,
+  "forecast": 44.41,
+  "budget": 43.97
+ },
+ {
+  "forecast_version_id": "FV-SL-2027-01",
+  "metric_id": "OP",
+  "period_id": 202704,
+  "actual": 22.02,
+  "forecast": null,
+  "budget": 24
+ },
+ {
+  "forecast_version_id": "FV-SL-2027-01",
+  "metric_id": "OP",
+  "period_id": 202705,
+  "actual": 21.74,
+  "forecast": null,
+  "budget": 24.75
+ },
+ {
+  "forecast_version_id": "FV-SL-2027-01",
+  "metric_id": "OP",
+  "period_id": 202706,
+  "actual": null,
+  "forecast": 21.59,
+  "budget": 26.25
+ },
+ {
+  "forecast_version_id": "FV-SL-2027-01",
+  "metric_id": "OP",
+  "period_id": 202707,
+  "actual": null,
+  "forecast": 20.2,
+  "budget": 22.39
+ },
+ {
+  "forecast_version_id": "FV-SL-2027-01",
+  "metric_id": "OP",
+  "period_id": 202708,
+  "actual": null,
+  "forecast": 18.98,
+  "budget": 21.14
+ },
+ {
+  "forecast_version_id": "FV-SL-2027-01",
+  "metric_id": "OP",
+  "period_id": 202709,
+  "actual": null,
+  "forecast": 22.39,
+  "budget": 24.71
+ },
+ {
+  "forecast_version_id": "FV-SL-2027-01",
+  "metric_id": "OP",
+  "period_id": 202710,
+  "actual": null,
+  "forecast": 24.99,
+  "budget": 27.37
+ },
+ {
+  "forecast_version_id": "FV-SL-2027-01",
+  "metric_id": "OP",
+  "period_id": 202711,
+  "actual": null,
+  "forecast": 26.19,
+  "budget": 28.62
+ },
+ {
+  "forecast_version_id": "FV-SL-2027-01",
+  "metric_id": "OP",
+  "period_id": 202712,
+  "actual": null,
+  "forecast": 18.18,
+  "budget": 20.4
+ },
+ {
+  "forecast_version_id": "FV-SL-2027-01",
+  "metric_id": "OP",
+  "period_id": 202801,
+  "actual": null,
+  "forecast": 17.03,
+  "budget": 20.06
+ },
+ {
+  "forecast_version_id": "FV-SL-2027-01",
+  "metric_id": "OP",
+  "period_id": 202802,
+  "actual": null,
+  "forecast": 21.25,
+  "budget": 24.43
+ },
+ {
+  "forecast_version_id": "FV-SL-2027-01",
+  "metric_id": "OP",
+  "period_id": 202803,
+  "actual": null,
+  "forecast": 22.44,
+  "budget": 25.88
+ },
+ {
+  "forecast_version_id": "FV-SL-2027-02",
+  "metric_id": "REV",
+  "period_id": 202704,
+  "actual": 246.35,
+  "forecast": null,
+  "budget": 252.8
+ },
+ {
+  "forecast_version_id": "FV-SL-2027-02",
+  "metric_id": "REV",
+  "period_id": 202705,
+  "actual": 250.65,
+  "forecast": null,
+  "budget": 260.7
+ },
+ {
+  "forecast_version_id": "FV-SL-2027-02",
+  "metric_id": "REV",
+  "period_id": 202706,
+  "actual": 264,
+  "forecast": null,
+  "budget": 276.5
+ },
+ {
+  "forecast_version_id": "FV-SL-2027-02",
+  "metric_id": "REV",
+  "period_id": 202707,
+  "actual": null,
+  "forecast": 253.84,
+  "budget": 259.14
+ },
+ {
+  "forecast_version_id": "FV-SL-2027-02",
+  "metric_id": "REV",
+  "period_id": 202708,
+  "actual": null,
+  "forecast": 248.83,
+  "budget": 253.96
+ },
+ {
+  "forecast_version_id": "FV-SL-2027-02",
+  "metric_id": "REV",
+  "period_id": 202709,
+  "actual": null,
+  "forecast": 266.29,
+  "budget": 272.1
+ },
+ {
+  "forecast_version_id": "FV-SL-2027-02",
+  "metric_id": "REV",
+  "period_id": 202710,
+  "actual": null,
+  "forecast": 273.79,
+  "budget": 279.87
+ },
+ {
+  "forecast_version_id": "FV-SL-2027-02",
+  "metric_id": "REV",
+  "period_id": 202711,
+  "actual": null,
+  "forecast": 285.19,
+  "budget": 285.05
+ },
+ {
+  "forecast_version_id": "FV-SL-2027-02",
+  "metric_id": "REV",
+  "period_id": 202712,
+  "actual": null,
+  "forecast": 260.19,
+  "budget": 259.14
+ },
+ {
+  "forecast_version_id": "FV-SL-2027-02",
+  "metric_id": "REV",
+  "period_id": 202801,
+  "actual": null,
+  "forecast": 243.97,
+  "budget": 246.18
+ },
+ {
+  "forecast_version_id": "FV-SL-2027-02",
+  "metric_id": "REV",
+  "period_id": 202802,
+  "actual": null,
+  "forecast": 261.47,
+  "budget": 264.32
+ },
+ {
+  "forecast_version_id": "FV-SL-2027-02",
+  "metric_id": "REV",
+  "period_id": 202803,
+  "actual": null,
+  "forecast": 286.48,
+  "budget": 290.24
+ },
+ {
+  "forecast_version_id": "FV-SL-2027-02",
+  "metric_id": "GP",
+  "period_id": 202704,
+  "actual": 59.56,
+  "forecast": null,
+  "budget": 60.8
+ },
+ {
+  "forecast_version_id": "FV-SL-2027-02",
+  "metric_id": "GP",
+  "period_id": 202705,
+  "actual": 60.42,
+  "forecast": null,
+  "budget": 62.7
+ },
+ {
+  "forecast_version_id": "FV-SL-2027-02",
+  "metric_id": "GP",
+  "period_id": 202706,
+  "actual": 63.52,
+  "forecast": null,
+  "budget": 66.5
+ },
+ {
+  "forecast_version_id": "FV-SL-2027-02",
+  "metric_id": "GP",
+  "period_id": 202707,
+  "actual": null,
+  "forecast": 61.23,
+  "budget": 62.37
+ },
+ {
+  "forecast_version_id": "FV-SL-2027-02",
+  "metric_id": "GP",
+  "period_id": 202708,
+  "actual": null,
+  "forecast": 60.01,
+  "budget": 61.12
+ },
+ {
+  "forecast_version_id": "FV-SL-2027-02",
+  "metric_id": "GP",
+  "period_id": 202709,
+  "actual": null,
+  "forecast": 64.22,
+  "budget": 65.49
+ },
+ {
+  "forecast_version_id": "FV-SL-2027-02",
+  "metric_id": "GP",
+  "period_id": 202710,
+  "actual": null,
+  "forecast": 66.02,
+  "budget": 67.35
+ },
+ {
+  "forecast_version_id": "FV-SL-2027-02",
+  "metric_id": "GP",
+  "period_id": 202711,
+  "actual": null,
+  "forecast": 68.82,
+  "budget": 68.6
+ },
+ {
+  "forecast_version_id": "FV-SL-2027-02",
+  "metric_id": "GP",
+  "period_id": 202712,
+  "actual": null,
+  "forecast": 62.81,
+  "budget": 62.37
+ },
+ {
+  "forecast_version_id": "FV-SL-2027-02",
+  "metric_id": "GP",
+  "period_id": 202801,
+  "actual": null,
+  "forecast": 58.86,
+  "budget": 59.24
+ },
+ {
+  "forecast_version_id": "FV-SL-2027-02",
+  "metric_id": "GP",
+  "period_id": 202802,
+  "actual": null,
+  "forecast": 63.08,
+  "budget": 63.61
+ },
+ {
+  "forecast_version_id": "FV-SL-2027-02",
+  "metric_id": "GP",
+  "period_id": 202803,
+  "actual": null,
+  "forecast": 69.1,
+  "budget": 69.85
+ },
+ {
+  "forecast_version_id": "FV-SL-2027-02",
+  "metric_id": "SGA",
+  "period_id": 202704,
+  "actual": 37.54,
+  "forecast": null,
+  "budget": 36.8
+ },
+ {
+  "forecast_version_id": "FV-SL-2027-02",
+  "metric_id": "SGA",
+  "period_id": 202705,
+  "actual": 38.68,
+  "forecast": null,
+  "budget": 37.95
+ },
+ {
+  "forecast_version_id": "FV-SL-2027-02",
+  "metric_id": "SGA",
+  "period_id": 202706,
+  "actual": 41.28,
+  "forecast": null,
+  "budget": 40.25
+ },
+ {
+  "forecast_version_id": "FV-SL-2027-02",
+  "metric_id": "SGA",
+  "period_id": 202707,
+  "actual": null,
+  "forecast": 40.38,
+  "budget": 39.98
+ },
+ {
+  "forecast_version_id": "FV-SL-2027-02",
+  "metric_id": "SGA",
+  "period_id": 202708,
+  "actual": null,
+  "forecast": 40.38,
+  "budget": 39.98
+ },
+ {
+  "forecast_version_id": "FV-SL-2027-02",
+  "metric_id": "SGA",
+  "period_id": 202709,
+  "actual": null,
+  "forecast": 41.18,
+  "budget": 40.78
+ },
+ {
+  "forecast_version_id": "FV-SL-2027-02",
+  "metric_id": "SGA",
+  "period_id": 202710,
+  "actual": null,
+  "forecast": 40.38,
+  "budget": 39.98
+ },
+ {
+  "forecast_version_id": "FV-SL-2027-02",
+  "metric_id": "SGA",
+  "period_id": 202711,
+  "actual": null,
+  "forecast": 40.38,
+  "budget": 39.98
+ },
+ {
+  "forecast_version_id": "FV-SL-2027-02",
+  "metric_id": "SGA",
+  "period_id": 202712,
+  "actual": null,
+  "forecast": 42.38,
+  "budget": 41.97
+ },
+ {
+  "forecast_version_id": "FV-SL-2027-02",
+  "metric_id": "SGA",
+  "period_id": 202801,
+  "actual": null,
+  "forecast": 39.58,
+  "budget": 39.18
+ },
+ {
+  "forecast_version_id": "FV-SL-2027-02",
+  "metric_id": "SGA",
+  "period_id": 202802,
+  "actual": null,
+  "forecast": 39.58,
+  "budget": 39.18
+ },
+ {
+  "forecast_version_id": "FV-SL-2027-02",
+  "metric_id": "SGA",
+  "period_id": 202803,
+  "actual": null,
+  "forecast": 44.41,
+  "budget": 43.97
+ },
+ {
+  "forecast_version_id": "FV-SL-2027-02",
+  "metric_id": "OP",
+  "period_id": 202704,
+  "actual": 22.02,
+  "forecast": null,
+  "budget": 24
+ },
+ {
+  "forecast_version_id": "FV-SL-2027-02",
+  "metric_id": "OP",
+  "period_id": 202705,
+  "actual": 21.74,
+  "forecast": null,
+  "budget": 24.75
+ },
+ {
+  "forecast_version_id": "FV-SL-2027-02",
+  "metric_id": "OP",
+  "period_id": 202706,
+  "actual": 22.24,
+  "forecast": null,
+  "budget": 26.25
+ },
+ {
+  "forecast_version_id": "FV-SL-2027-02",
+  "metric_id": "OP",
+  "period_id": 202707,
+  "actual": null,
+  "forecast": 20.85,
+  "budget": 22.39
+ },
+ {
+  "forecast_version_id": "FV-SL-2027-02",
+  "metric_id": "OP",
+  "period_id": 202708,
+  "actual": null,
+  "forecast": 19.63,
+  "budget": 21.14
+ },
+ {
+  "forecast_version_id": "FV-SL-2027-02",
+  "metric_id": "OP",
+  "period_id": 202709,
+  "actual": null,
+  "forecast": 23.04,
+  "budget": 24.71
+ },
+ {
+  "forecast_version_id": "FV-SL-2027-02",
+  "metric_id": "OP",
+  "period_id": 202710,
+  "actual": null,
+  "forecast": 25.64,
+  "budget": 27.37
+ },
+ {
+  "forecast_version_id": "FV-SL-2027-02",
+  "metric_id": "OP",
+  "period_id": 202711,
+  "actual": null,
+  "forecast": 28.44,
+  "budget": 28.62
+ },
+ {
+  "forecast_version_id": "FV-SL-2027-02",
+  "metric_id": "OP",
+  "period_id": 202712,
+  "actual": null,
+  "forecast": 20.43,
+  "budget": 20.4
+ },
+ {
+  "forecast_version_id": "FV-SL-2027-02",
+  "metric_id": "OP",
+  "period_id": 202801,
+  "actual": null,
+  "forecast": 19.28,
+  "budget": 20.06
+ },
+ {
+  "forecast_version_id": "FV-SL-2027-02",
+  "metric_id": "OP",
+  "period_id": 202802,
+  "actual": null,
+  "forecast": 23.5,
+  "budget": 24.43
+ },
+ {
+  "forecast_version_id": "FV-SL-2027-02",
+  "metric_id": "OP",
+  "period_id": 202803,
+  "actual": null,
+  "forecast": 24.69,
+  "budget": 25.88
+ },
+ {
+  "forecast_version_id": "FV-OS-2027-01",
+  "metric_id": "REV",
+  "period_id": 202704,
+  "actual": 164.01,
+  "forecast": null,
+  "budget": 164.8
+ },
+ {
+  "forecast_version_id": "FV-OS-2027-01",
+  "metric_id": "REV",
+  "period_id": 202705,
+  "actual": 158.51,
+  "forecast": null,
+  "budget": 169.95
+ },
+ {
+  "forecast_version_id": "FV-OS-2027-01",
+  "metric_id": "REV",
+  "period_id": 202706,
+  "actual": null,
+  "forecast": 166.48,
+  "budget": 180.25
+ },
+ {
+  "forecast_version_id": "FV-OS-2027-01",
+  "metric_id": "REV",
+  "period_id": 202707,
+  "actual": null,
+  "forecast": 167.72,
+  "budget": 170.43
+ },
+ {
+  "forecast_version_id": "FV-OS-2027-01",
+  "metric_id": "REV",
+  "period_id": 202708,
+  "actual": null,
+  "forecast": 164.41,
+  "budget": 167.02
+ },
+ {
+  "forecast_version_id": "FV-OS-2027-01",
+  "metric_id": "REV",
+  "period_id": 202709,
+  "actual": null,
+  "forecast": 175.98,
+  "budget": 178.95
+ },
+ {
+  "forecast_version_id": "FV-OS-2027-01",
+  "metric_id": "REV",
+  "period_id": 202710,
+  "actual": null,
+  "forecast": 180.9,
+  "budget": 184.07
+ },
+ {
+  "forecast_version_id": "FV-OS-2027-01",
+  "metric_id": "REV",
+  "period_id": 202711,
+  "actual": null,
+  "forecast": 184.21,
+  "budget": 187.47
+ },
+ {
+  "forecast_version_id": "FV-OS-2027-01",
+  "metric_id": "REV",
+  "period_id": 202712,
+  "actual": null,
+  "forecast": 167.63,
+  "budget": 170.43
+ },
+ {
+  "forecast_version_id": "FV-OS-2027-01",
+  "metric_id": "REV",
+  "period_id": 202801,
+  "actual": null,
+  "forecast": 159.38,
+  "budget": 161.91
+ },
+ {
+  "forecast_version_id": "FV-OS-2027-01",
+  "metric_id": "REV",
+  "period_id": 202802,
+  "actual": null,
+  "forecast": 170.95,
+  "budget": 173.84
+ },
+ {
+  "forecast_version_id": "FV-OS-2027-01",
+  "metric_id": "REV",
+  "period_id": 202803,
+  "actual": null,
+  "forecast": 187.47,
+  "budget": 190.88
+ },
+ {
+  "forecast_version_id": "FV-OS-2027-01",
+  "metric_id": "GP",
+  "period_id": 202704,
+  "actual": 40.36,
+  "forecast": null,
+  "budget": 40
+ },
+ {
+  "forecast_version_id": "FV-OS-2027-01",
+  "metric_id": "GP",
+  "period_id": 202705,
+  "actual": 39.05,
+  "forecast": null,
+  "budget": 41.25
+ },
+ {
+  "forecast_version_id": "FV-OS-2027-01",
+  "metric_id": "GP",
+  "period_id": 202706,
+  "actual": null,
+  "forecast": 41.44,
+  "budget": 43.75
+ },
+ {
+  "forecast_version_id": "FV-OS-2027-01",
+  "metric_id": "GP",
+  "period_id": 202707,
+  "actual": null,
+  "forecast": 41.19,
+  "budget": 41.4
+ },
+ {
+  "forecast_version_id": "FV-OS-2027-01",
+  "metric_id": "GP",
+  "period_id": 202708,
+  "actual": null,
+  "forecast": 40.38,
+  "budget": 40.57
+ },
+ {
+  "forecast_version_id": "FV-OS-2027-01",
+  "metric_id": "GP",
+  "period_id": 202709,
+  "actual": null,
+  "forecast": 43.2,
+  "budget": 43.47
+ },
+ {
+  "forecast_version_id": "FV-OS-2027-01",
+  "metric_id": "GP",
+  "period_id": 202710,
+  "actual": null,
+  "forecast": 44.39,
+  "budget": 44.71
+ },
+ {
+  "forecast_version_id": "FV-OS-2027-01",
+  "metric_id": "GP",
+  "period_id": 202711,
+  "actual": null,
+  "forecast": 45.2,
+  "budget": 45.53
+ },
+ {
+  "forecast_version_id": "FV-OS-2027-01",
+  "metric_id": "GP",
+  "period_id": 202712,
+  "actual": null,
+  "forecast": 41.16,
+  "budget": 41.4
+ },
+ {
+  "forecast_version_id": "FV-OS-2027-01",
+  "metric_id": "GP",
+  "period_id": 202801,
+  "actual": null,
+  "forecast": 39.16,
+  "budget": 39.33
+ },
+ {
+  "forecast_version_id": "FV-OS-2027-01",
+  "metric_id": "GP",
+  "period_id": 202802,
+  "actual": null,
+  "forecast": 41.98,
+  "budget": 42.23
+ },
+ {
+  "forecast_version_id": "FV-OS-2027-01",
+  "metric_id": "GP",
+  "period_id": 202803,
+  "actual": null,
+  "forecast": 45.99,
+  "budget": 46.36
+ },
+ {
+  "forecast_version_id": "FV-OS-2027-01",
+  "metric_id": "SGA",
+  "period_id": 202704,
+  "actual": 24.48,
+  "forecast": null,
+  "budget": 24.64
+ },
+ {
+  "forecast_version_id": "FV-OS-2027-01",
+  "metric_id": "SGA",
+  "period_id": 202705,
+  "actual": 25.24,
+  "forecast": null,
+  "budget": 25.41
+ },
+ {
+  "forecast_version_id": "FV-OS-2027-01",
+  "metric_id": "SGA",
+  "period_id": 202706,
+  "actual": null,
+  "forecast": 26.78,
+  "budget": 26.95
+ },
+ {
+  "forecast_version_id": "FV-OS-2027-01",
+  "metric_id": "SGA",
+  "period_id": 202707,
+  "actual": null,
+  "forecast": 27.71,
+  "budget": 27.71
+ },
+ {
+  "forecast_version_id": "FV-OS-2027-01",
+  "metric_id": "SGA",
+  "period_id": 202708,
+  "actual": null,
+  "forecast": 27.71,
+  "budget": 27.71
+ },
+ {
+  "forecast_version_id": "FV-OS-2027-01",
+  "metric_id": "SGA",
+  "period_id": 202709,
+  "actual": null,
+  "forecast": 28.26,
+  "budget": 28.26
+ },
+ {
+  "forecast_version_id": "FV-OS-2027-01",
+  "metric_id": "SGA",
+  "period_id": 202710,
+  "actual": null,
+  "forecast": 27.71,
+  "budget": 27.71
+ },
+ {
+  "forecast_version_id": "FV-OS-2027-01",
+  "metric_id": "SGA",
+  "period_id": 202711,
+  "actual": null,
+  "forecast": 27.71,
+  "budget": 27.71
+ },
+ {
+  "forecast_version_id": "FV-OS-2027-01",
+  "metric_id": "SGA",
+  "period_id": 202712,
+  "actual": null,
+  "forecast": 29.1,
+  "budget": 29.1
+ },
+ {
+  "forecast_version_id": "FV-OS-2027-01",
+  "metric_id": "SGA",
+  "period_id": 202801,
+  "actual": null,
+  "forecast": 27.16,
+  "budget": 27.16
+ },
+ {
+  "forecast_version_id": "FV-OS-2027-01",
+  "metric_id": "SGA",
+  "period_id": 202802,
+  "actual": null,
+  "forecast": 27.16,
+  "budget": 27.16
+ },
+ {
+  "forecast_version_id": "FV-OS-2027-01",
+  "metric_id": "SGA",
+  "period_id": 202803,
+  "actual": null,
+  "forecast": 30.48,
+  "budget": 30.48
+ },
+ {
+  "forecast_version_id": "FV-OS-2027-01",
+  "metric_id": "OP",
+  "period_id": 202704,
+  "actual": 15.88,
+  "forecast": null,
+  "budget": 15.36
+ },
+ {
+  "forecast_version_id": "FV-OS-2027-01",
+  "metric_id": "OP",
+  "period_id": 202705,
+  "actual": 13.81,
+  "forecast": null,
+  "budget": 15.84
+ },
+ {
+  "forecast_version_id": "FV-OS-2027-01",
+  "metric_id": "OP",
+  "period_id": 202706,
+  "actual": null,
+  "forecast": 14.66,
+  "budget": 16.8
+ },
+ {
+  "forecast_version_id": "FV-OS-2027-01",
+  "metric_id": "OP",
+  "period_id": 202707,
+  "actual": null,
+  "forecast": 13.48,
+  "budget": 13.69
+ },
+ {
+  "forecast_version_id": "FV-OS-2027-01",
+  "metric_id": "OP",
+  "period_id": 202708,
+  "actual": null,
+  "forecast": 12.67,
+  "budget": 12.86
+ },
+ {
+  "forecast_version_id": "FV-OS-2027-01",
+  "metric_id": "OP",
+  "period_id": 202709,
+  "actual": null,
+  "forecast": 14.94,
+  "budget": 15.21
+ },
+ {
+  "forecast_version_id": "FV-OS-2027-01",
+  "metric_id": "OP",
+  "period_id": 202710,
+  "actual": null,
+  "forecast": 16.68,
+  "budget": 17
+ },
+ {
+  "forecast_version_id": "FV-OS-2027-01",
+  "metric_id": "OP",
+  "period_id": 202711,
+  "actual": null,
+  "forecast": 17.49,
+  "budget": 17.82
+ },
+ {
+  "forecast_version_id": "FV-OS-2027-01",
+  "metric_id": "OP",
+  "period_id": 202712,
+  "actual": null,
+  "forecast": 12.06,
+  "budget": 12.3
+ },
+ {
+  "forecast_version_id": "FV-OS-2027-01",
+  "metric_id": "OP",
+  "period_id": 202801,
+  "actual": null,
+  "forecast": 12,
+  "budget": 12.17
+ },
+ {
+  "forecast_version_id": "FV-OS-2027-01",
+  "metric_id": "OP",
+  "period_id": 202802,
+  "actual": null,
+  "forecast": 14.82,
+  "budget": 15.07
+ },
+ {
+  "forecast_version_id": "FV-OS-2027-01",
+  "metric_id": "OP",
+  "period_id": 202803,
+  "actual": null,
+  "forecast": 15.51,
+  "budget": 15.88
+ },
+ {
+  "forecast_version_id": "FV-OS-2027-02",
+  "metric_id": "REV",
+  "period_id": 202704,
+  "actual": 164.01,
+  "forecast": null,
+  "budget": 164.8
+ },
+ {
+  "forecast_version_id": "FV-OS-2027-02",
+  "metric_id": "REV",
+  "period_id": 202705,
+  "actual": 158.51,
+  "forecast": null,
+  "budget": 169.95
+ },
+ {
+  "forecast_version_id": "FV-OS-2027-02",
+  "metric_id": "REV",
+  "period_id": 202706,
+  "actual": 166.48,
+  "forecast": null,
+  "budget": 180.25
+ },
+ {
+  "forecast_version_id": "FV-OS-2027-02",
+  "metric_id": "REV",
+  "period_id": 202707,
+  "actual": null,
+  "forecast": 167.72,
+  "budget": 170.43
+ },
+ {
+  "forecast_version_id": "FV-OS-2027-02",
+  "metric_id": "REV",
+  "period_id": 202708,
+  "actual": null,
+  "forecast": 164.41,
+  "budget": 167.02
+ },
+ {
+  "forecast_version_id": "FV-OS-2027-02",
+  "metric_id": "REV",
+  "period_id": 202709,
+  "actual": null,
+  "forecast": 175.98,
+  "budget": 178.95
+ },
+ {
+  "forecast_version_id": "FV-OS-2027-02",
+  "metric_id": "REV",
+  "period_id": 202710,
+  "actual": null,
+  "forecast": 180.9,
+  "budget": 184.07
+ },
+ {
+  "forecast_version_id": "FV-OS-2027-02",
+  "metric_id": "REV",
+  "period_id": 202711,
+  "actual": null,
+  "forecast": 184.21,
+  "budget": 187.47
+ },
+ {
+  "forecast_version_id": "FV-OS-2027-02",
+  "metric_id": "REV",
+  "period_id": 202712,
+  "actual": null,
+  "forecast": 167.63,
+  "budget": 170.43
+ },
+ {
+  "forecast_version_id": "FV-OS-2027-02",
+  "metric_id": "REV",
+  "period_id": 202801,
+  "actual": null,
+  "forecast": 159.38,
+  "budget": 161.91
+ },
+ {
+  "forecast_version_id": "FV-OS-2027-02",
+  "metric_id": "REV",
+  "period_id": 202802,
+  "actual": null,
+  "forecast": 170.95,
+  "budget": 173.84
+ },
+ {
+  "forecast_version_id": "FV-OS-2027-02",
+  "metric_id": "REV",
+  "period_id": 202803,
+  "actual": null,
+  "forecast": 187.47,
+  "budget": 190.88
+ },
+ {
+  "forecast_version_id": "FV-OS-2027-02",
+  "metric_id": "GP",
+  "period_id": 202704,
+  "actual": 40.36,
+  "forecast": null,
+  "budget": 40
+ },
+ {
+  "forecast_version_id": "FV-OS-2027-02",
+  "metric_id": "GP",
+  "period_id": 202705,
+  "actual": 39.05,
+  "forecast": null,
+  "budget": 41.25
+ },
+ {
+  "forecast_version_id": "FV-OS-2027-02",
+  "metric_id": "GP",
+  "period_id": 202706,
+  "actual": 41.09,
+  "forecast": null,
+  "budget": 43.75
+ },
+ {
+  "forecast_version_id": "FV-OS-2027-02",
+  "metric_id": "GP",
+  "period_id": 202707,
+  "actual": null,
+  "forecast": 40.84,
+  "budget": 41.4
+ },
+ {
+  "forecast_version_id": "FV-OS-2027-02",
+  "metric_id": "GP",
+  "period_id": 202708,
+  "actual": null,
+  "forecast": 40.03,
+  "budget": 40.57
+ },
+ {
+  "forecast_version_id": "FV-OS-2027-02",
+  "metric_id": "GP",
+  "period_id": 202709,
+  "actual": null,
+  "forecast": 42.85,
+  "budget": 43.47
+ },
+ {
+  "forecast_version_id": "FV-OS-2027-02",
+  "metric_id": "GP",
+  "period_id": 202710,
+  "actual": null,
+  "forecast": 44.04,
+  "budget": 44.71
+ },
+ {
+  "forecast_version_id": "FV-OS-2027-02",
+  "metric_id": "GP",
+  "period_id": 202711,
+  "actual": null,
+  "forecast": 44.85,
+  "budget": 45.53
+ },
+ {
+  "forecast_version_id": "FV-OS-2027-02",
+  "metric_id": "GP",
+  "period_id": 202712,
+  "actual": null,
+  "forecast": 40.81,
+  "budget": 41.4
+ },
+ {
+  "forecast_version_id": "FV-OS-2027-02",
+  "metric_id": "GP",
+  "period_id": 202801,
+  "actual": null,
+  "forecast": 38.81,
+  "budget": 39.33
+ },
+ {
+  "forecast_version_id": "FV-OS-2027-02",
+  "metric_id": "GP",
+  "period_id": 202802,
+  "actual": null,
+  "forecast": 41.63,
+  "budget": 42.23
+ },
+ {
+  "forecast_version_id": "FV-OS-2027-02",
+  "metric_id": "GP",
+  "period_id": 202803,
+  "actual": null,
+  "forecast": 45.64,
+  "budget": 46.36
+ },
+ {
+  "forecast_version_id": "FV-OS-2027-02",
+  "metric_id": "SGA",
+  "period_id": 202704,
+  "actual": 24.48,
+  "forecast": null,
+  "budget": 24.64
+ },
+ {
+  "forecast_version_id": "FV-OS-2027-02",
+  "metric_id": "SGA",
+  "period_id": 202705,
+  "actual": 25.24,
+  "forecast": null,
+  "budget": 25.41
+ },
+ {
+  "forecast_version_id": "FV-OS-2027-02",
+  "metric_id": "SGA",
+  "period_id": 202706,
+  "actual": 26.78,
+  "forecast": null,
+  "budget": 26.95
+ },
+ {
+  "forecast_version_id": "FV-OS-2027-02",
+  "metric_id": "SGA",
+  "period_id": 202707,
+  "actual": null,
+  "forecast": 27.71,
+  "budget": 27.71
+ },
+ {
+  "forecast_version_id": "FV-OS-2027-02",
+  "metric_id": "SGA",
+  "period_id": 202708,
+  "actual": null,
+  "forecast": 27.71,
+  "budget": 27.71
+ },
+ {
+  "forecast_version_id": "FV-OS-2027-02",
+  "metric_id": "SGA",
+  "period_id": 202709,
+  "actual": null,
+  "forecast": 28.26,
+  "budget": 28.26
+ },
+ {
+  "forecast_version_id": "FV-OS-2027-02",
+  "metric_id": "SGA",
+  "period_id": 202710,
+  "actual": null,
+  "forecast": 28.71,
+  "budget": 27.71
+ },
+ {
+  "forecast_version_id": "FV-OS-2027-02",
+  "metric_id": "SGA",
+  "period_id": 202711,
+  "actual": null,
+  "forecast": 27.71,
+  "budget": 27.71
+ },
+ {
+  "forecast_version_id": "FV-OS-2027-02",
+  "metric_id": "SGA",
+  "period_id": 202712,
+  "actual": null,
+  "forecast": 29.1,
+  "budget": 29.1
+ },
+ {
+  "forecast_version_id": "FV-OS-2027-02",
+  "metric_id": "SGA",
+  "period_id": 202801,
+  "actual": null,
+  "forecast": 27.16,
+  "budget": 27.16
+ },
+ {
+  "forecast_version_id": "FV-OS-2027-02",
+  "metric_id": "SGA",
+  "period_id": 202802,
+  "actual": null,
+  "forecast": 27.16,
+  "budget": 27.16
+ },
+ {
+  "forecast_version_id": "FV-OS-2027-02",
+  "metric_id": "SGA",
+  "period_id": 202803,
+  "actual": null,
+  "forecast": 30.48,
+  "budget": 30.48
+ },
+ {
+  "forecast_version_id": "FV-OS-2027-02",
+  "metric_id": "OP",
+  "period_id": 202704,
+  "actual": 15.88,
+  "forecast": null,
+  "budget": 15.36
+ },
+ {
+  "forecast_version_id": "FV-OS-2027-02",
+  "metric_id": "OP",
+  "period_id": 202705,
+  "actual": 13.81,
+  "forecast": null,
+  "budget": 15.84
+ },
+ {
+  "forecast_version_id": "FV-OS-2027-02",
+  "metric_id": "OP",
+  "period_id": 202706,
+  "actual": 14.31,
+  "forecast": null,
+  "budget": 16.8
+ },
+ {
+  "forecast_version_id": "FV-OS-2027-02",
+  "metric_id": "OP",
+  "period_id": 202707,
+  "actual": null,
+  "forecast": 13.13,
+  "budget": 13.69
+ },
+ {
+  "forecast_version_id": "FV-OS-2027-02",
+  "metric_id": "OP",
+  "period_id": 202708,
+  "actual": null,
+  "forecast": 12.32,
+  "budget": 12.86
+ },
+ {
+  "forecast_version_id": "FV-OS-2027-02",
+  "metric_id": "OP",
+  "period_id": 202709,
+  "actual": null,
+  "forecast": 14.59,
+  "budget": 15.21
+ },
+ {
+  "forecast_version_id": "FV-OS-2027-02",
+  "metric_id": "OP",
+  "period_id": 202710,
+  "actual": null,
+  "forecast": 15.33,
+  "budget": 17
+ },
+ {
+  "forecast_version_id": "FV-OS-2027-02",
+  "metric_id": "OP",
+  "period_id": 202711,
+  "actual": null,
+  "forecast": 17.14,
+  "budget": 17.82
+ },
+ {
+  "forecast_version_id": "FV-OS-2027-02",
+  "metric_id": "OP",
+  "period_id": 202712,
+  "actual": null,
+  "forecast": 11.71,
+  "budget": 12.3
+ },
+ {
+  "forecast_version_id": "FV-OS-2027-02",
+  "metric_id": "OP",
+  "period_id": 202801,
+  "actual": null,
+  "forecast": 11.65,
+  "budget": 12.17
+ },
+ {
+  "forecast_version_id": "FV-OS-2027-02",
+  "metric_id": "OP",
+  "period_id": 202802,
+  "actual": null,
+  "forecast": 14.47,
+  "budget": 15.07
+ },
+ {
+  "forecast_version_id": "FV-OS-2027-02",
+  "metric_id": "OP",
+  "period_id": 202803,
+  "actual": null,
+  "forecast": 15.16,
+  "budget": 15.88
+ },
+ {
+  "forecast_version_id": "FV-MF-2027-01",
+  "metric_id": "REV",
+  "period_id": 202704,
+  "actual": 0,
+  "forecast": null,
+  "budget": 0
+ },
+ {
+  "forecast_version_id": "FV-MF-2027-01",
+  "metric_id": "REV",
+  "period_id": 202705,
+  "actual": 0,
+  "forecast": null,
+  "budget": 0
+ },
+ {
+  "forecast_version_id": "FV-MF-2027-01",
+  "metric_id": "REV",
+  "period_id": 202706,
+  "actual": 0,
+  "forecast": null,
+  "budget": 0
+ },
+ {
+  "forecast_version_id": "FV-MF-2027-01",
+  "metric_id": "REV",
+  "period_id": 202707,
+  "actual": null,
+  "forecast": 0,
+  "budget": 0
+ },
+ {
+  "forecast_version_id": "FV-MF-2027-01",
+  "metric_id": "REV",
+  "period_id": 202708,
+  "actual": null,
+  "forecast": 0,
+  "budget": 0
+ },
+ {
+  "forecast_version_id": "FV-MF-2027-01",
+  "metric_id": "REV",
+  "period_id": 202709,
+  "actual": null,
+  "forecast": 0,
+  "budget": 0
+ },
+ {
+  "forecast_version_id": "FV-MF-2027-01",
+  "metric_id": "REV",
+  "period_id": 202710,
+  "actual": null,
+  "forecast": 0,
+  "budget": 0
+ },
+ {
+  "forecast_version_id": "FV-MF-2027-01",
+  "metric_id": "REV",
+  "period_id": 202711,
+  "actual": null,
+  "forecast": 0,
+  "budget": 0
+ },
+ {
+  "forecast_version_id": "FV-MF-2027-01",
+  "metric_id": "REV",
+  "period_id": 202712,
+  "actual": null,
+  "forecast": 0,
+  "budget": 0
+ },
+ {
+  "forecast_version_id": "FV-MF-2027-01",
+  "metric_id": "REV",
+  "period_id": 202801,
+  "actual": null,
+  "forecast": 0,
+  "budget": 0
+ },
+ {
+  "forecast_version_id": "FV-MF-2027-01",
+  "metric_id": "REV",
+  "period_id": 202802,
+  "actual": null,
+  "forecast": 0,
+  "budget": 0
+ },
+ {
+  "forecast_version_id": "FV-MF-2027-01",
+  "metric_id": "REV",
+  "period_id": 202803,
+  "actual": null,
+  "forecast": 0,
+  "budget": 0
+ },
+ {
+  "forecast_version_id": "FV-MF-2027-01",
+  "metric_id": "GP",
+  "period_id": 202704,
+  "actual": -2,
+  "forecast": null,
+  "budget": 0
+ },
+ {
+  "forecast_version_id": "FV-MF-2027-01",
+  "metric_id": "GP",
+  "period_id": 202705,
+  "actual": -0.55,
+  "forecast": null,
+  "budget": 0
+ },
+ {
+  "forecast_version_id": "FV-MF-2027-01",
+  "metric_id": "GP",
+  "period_id": 202706,
+  "actual": -0.45,
+  "forecast": null,
+  "budget": 0
+ },
+ {
+  "forecast_version_id": "FV-MF-2027-01",
+  "metric_id": "GP",
+  "period_id": 202707,
+  "actual": null,
+  "forecast": 0.33,
+  "budget": 0
+ },
+ {
+  "forecast_version_id": "FV-MF-2027-01",
+  "metric_id": "GP",
+  "period_id": 202708,
+  "actual": null,
+  "forecast": 0.33,
+  "budget": 0
+ },
+ {
+  "forecast_version_id": "FV-MF-2027-01",
+  "metric_id": "GP",
+  "period_id": 202709,
+  "actual": null,
+  "forecast": 0.33,
+  "budget": 0
+ },
+ {
+  "forecast_version_id": "FV-MF-2027-01",
+  "metric_id": "GP",
+  "period_id": 202710,
+  "actual": null,
+  "forecast": 0.33,
+  "budget": 0
+ },
+ {
+  "forecast_version_id": "FV-MF-2027-01",
+  "metric_id": "GP",
+  "period_id": 202711,
+  "actual": null,
+  "forecast": 0.35,
+  "budget": 0
+ },
+ {
+  "forecast_version_id": "FV-MF-2027-01",
+  "metric_id": "GP",
+  "period_id": 202712,
+  "actual": null,
+  "forecast": 0.34,
+  "budget": 0
+ },
+ {
+  "forecast_version_id": "FV-MF-2027-01",
+  "metric_id": "GP",
+  "period_id": 202801,
+  "actual": null,
+  "forecast": 0.33,
+  "budget": 0
+ },
+ {
+  "forecast_version_id": "FV-MF-2027-01",
+  "metric_id": "GP",
+  "period_id": 202802,
+  "actual": null,
+  "forecast": 0.33,
+  "budget": 0
+ },
+ {
+  "forecast_version_id": "FV-MF-2027-01",
+  "metric_id": "GP",
+  "period_id": 202803,
+  "actual": null,
+  "forecast": 0.33,
+  "budget": 0
+ },
+ {
+  "forecast_version_id": "FV-MF-2027-01",
+  "metric_id": "SGA",
+  "period_id": 202704,
+  "actual": 3.2,
+  "forecast": null,
+  "budget": 3.2
+ },
+ {
+  "forecast_version_id": "FV-MF-2027-01",
+  "metric_id": "SGA",
+  "period_id": 202705,
+  "actual": 3.3,
+  "forecast": null,
+  "budget": 3.3
+ },
+ {
+  "forecast_version_id": "FV-MF-2027-01",
+  "metric_id": "SGA",
+  "period_id": 202706,
+  "actual": 3.5,
+  "forecast": null,
+  "budget": 3.5
+ },
+ {
+  "forecast_version_id": "FV-MF-2027-01",
+  "metric_id": "SGA",
+  "period_id": 202707,
+  "actual": null,
+  "forecast": 3.29,
+  "budget": 3.29
+ },
+ {
+  "forecast_version_id": "FV-MF-2027-01",
+  "metric_id": "SGA",
+  "period_id": 202708,
+  "actual": null,
+  "forecast": 3.29,
+  "budget": 3.29
+ },
+ {
+  "forecast_version_id": "FV-MF-2027-01",
+  "metric_id": "SGA",
+  "period_id": 202709,
+  "actual": null,
+  "forecast": 3.35,
+  "budget": 3.35
+ },
+ {
+  "forecast_version_id": "FV-MF-2027-01",
+  "metric_id": "SGA",
+  "period_id": 202710,
+  "actual": null,
+  "forecast": 3.29,
+  "budget": 3.29
+ },
+ {
+  "forecast_version_id": "FV-MF-2027-01",
+  "metric_id": "SGA",
+  "period_id": 202711,
+  "actual": null,
+  "forecast": 3.28,
+  "budget": 3.28
+ },
+ {
+  "forecast_version_id": "FV-MF-2027-01",
+  "metric_id": "SGA",
+  "period_id": 202712,
+  "actual": null,
+  "forecast": 3.45,
+  "budget": 3.45
+ },
+ {
+  "forecast_version_id": "FV-MF-2027-01",
+  "metric_id": "SGA",
+  "period_id": 202801,
+  "actual": null,
+  "forecast": 3.22,
+  "budget": 3.22
+ },
+ {
+  "forecast_version_id": "FV-MF-2027-01",
+  "metric_id": "SGA",
+  "period_id": 202802,
+  "actual": null,
+  "forecast": 3.22,
+  "budget": 3.22
+ },
+ {
+  "forecast_version_id": "FV-MF-2027-01",
+  "metric_id": "SGA",
+  "period_id": 202803,
+  "actual": null,
+  "forecast": 3.61,
+  "budget": 3.61
+ },
+ {
+  "forecast_version_id": "FV-MF-2027-01",
+  "metric_id": "OP",
+  "period_id": 202704,
+  "actual": -5.2,
+  "forecast": null,
+  "budget": -3.2
+ },
+ {
+  "forecast_version_id": "FV-MF-2027-01",
+  "metric_id": "OP",
+  "period_id": 202705,
+  "actual": -3.85,
+  "forecast": null,
+  "budget": -3.3
+ },
+ {
+  "forecast_version_id": "FV-MF-2027-01",
+  "metric_id": "OP",
+  "period_id": 202706,
+  "actual": -3.95,
+  "forecast": null,
+  "budget": -3.5
+ },
+ {
+  "forecast_version_id": "FV-MF-2027-01",
+  "metric_id": "OP",
+  "period_id": 202707,
+  "actual": null,
+  "forecast": -2.96,
+  "budget": -3.29
+ },
+ {
+  "forecast_version_id": "FV-MF-2027-01",
+  "metric_id": "OP",
+  "period_id": 202708,
+  "actual": null,
+  "forecast": -2.96,
+  "budget": -3.29
+ },
+ {
+  "forecast_version_id": "FV-MF-2027-01",
+  "metric_id": "OP",
+  "period_id": 202709,
+  "actual": null,
+  "forecast": -3.02,
+  "budget": -3.35
+ },
+ {
+  "forecast_version_id": "FV-MF-2027-01",
+  "metric_id": "OP",
+  "period_id": 202710,
+  "actual": null,
+  "forecast": -2.96,
+  "budget": -3.29
+ },
+ {
+  "forecast_version_id": "FV-MF-2027-01",
+  "metric_id": "OP",
+  "period_id": 202711,
+  "actual": null,
+  "forecast": -2.93,
+  "budget": -3.28
+ },
+ {
+  "forecast_version_id": "FV-MF-2027-01",
+  "metric_id": "OP",
+  "period_id": 202712,
+  "actual": null,
+  "forecast": -3.11,
+  "budget": -3.45
+ },
+ {
+  "forecast_version_id": "FV-MF-2027-01",
+  "metric_id": "OP",
+  "period_id": 202801,
+  "actual": null,
+  "forecast": -2.89,
+  "budget": -3.22
+ },
+ {
+  "forecast_version_id": "FV-MF-2027-01",
+  "metric_id": "OP",
+  "period_id": 202802,
+  "actual": null,
+  "forecast": -2.89,
+  "budget": -3.22
+ },
+ {
+  "forecast_version_id": "FV-MF-2027-01",
+  "metric_id": "OP",
+  "period_id": 202803,
+  "actual": null,
+  "forecast": -3.28,
+  "budget": -3.61
+ },
+ {
+  "forecast_version_id": "FV-AD-2027-01",
+  "metric_id": "REV",
+  "period_id": 202704,
+  "actual": 0,
+  "forecast": null,
+  "budget": 0
+ },
+ {
+  "forecast_version_id": "FV-AD-2027-01",
+  "metric_id": "REV",
+  "period_id": 202705,
+  "actual": 0,
+  "forecast": null,
+  "budget": 0
+ },
+ {
+  "forecast_version_id": "FV-AD-2027-01",
+  "metric_id": "REV",
+  "period_id": 202706,
+  "actual": 0,
+  "forecast": null,
+  "budget": 0
+ },
+ {
+  "forecast_version_id": "FV-AD-2027-01",
+  "metric_id": "REV",
+  "period_id": 202707,
+  "actual": null,
+  "forecast": 0,
+  "budget": 0
+ },
+ {
+  "forecast_version_id": "FV-AD-2027-01",
+  "metric_id": "REV",
+  "period_id": 202708,
+  "actual": null,
+  "forecast": 0,
+  "budget": 0
+ },
+ {
+  "forecast_version_id": "FV-AD-2027-01",
+  "metric_id": "REV",
+  "period_id": 202709,
+  "actual": null,
+  "forecast": 0,
+  "budget": 0
+ },
+ {
+  "forecast_version_id": "FV-AD-2027-01",
+  "metric_id": "REV",
+  "period_id": 202710,
+  "actual": null,
+  "forecast": 0,
+  "budget": 0
+ },
+ {
+  "forecast_version_id": "FV-AD-2027-01",
+  "metric_id": "REV",
+  "period_id": 202711,
+  "actual": null,
+  "forecast": 0,
+  "budget": 0
+ },
+ {
+  "forecast_version_id": "FV-AD-2027-01",
+  "metric_id": "REV",
+  "period_id": 202712,
+  "actual": null,
+  "forecast": 0,
+  "budget": 0
+ },
+ {
+  "forecast_version_id": "FV-AD-2027-01",
+  "metric_id": "REV",
+  "period_id": 202801,
+  "actual": null,
+  "forecast": 0,
+  "budget": 0
+ },
+ {
+  "forecast_version_id": "FV-AD-2027-01",
+  "metric_id": "REV",
+  "period_id": 202802,
+  "actual": null,
+  "forecast": 0,
+  "budget": 0
+ },
+ {
+  "forecast_version_id": "FV-AD-2027-01",
+  "metric_id": "REV",
+  "period_id": 202803,
+  "actual": null,
+  "forecast": 0,
+  "budget": 0
+ },
+ {
+  "forecast_version_id": "FV-AD-2027-01",
+  "metric_id": "GP",
+  "period_id": 202704,
+  "actual": 0,
+  "forecast": null,
+  "budget": 0
+ },
+ {
+  "forecast_version_id": "FV-AD-2027-01",
+  "metric_id": "GP",
+  "period_id": 202705,
+  "actual": 0,
+  "forecast": null,
+  "budget": 0
+ },
+ {
+  "forecast_version_id": "FV-AD-2027-01",
+  "metric_id": "GP",
+  "period_id": 202706,
+  "actual": 0,
+  "forecast": null,
+  "budget": 0
+ },
+ {
+  "forecast_version_id": "FV-AD-2027-01",
+  "metric_id": "GP",
+  "period_id": 202707,
+  "actual": null,
+  "forecast": 0,
+  "budget": 0
+ },
+ {
+  "forecast_version_id": "FV-AD-2027-01",
+  "metric_id": "GP",
+  "period_id": 202708,
+  "actual": null,
+  "forecast": 0,
+  "budget": 0
+ },
+ {
+  "forecast_version_id": "FV-AD-2027-01",
+  "metric_id": "GP",
+  "period_id": 202709,
+  "actual": null,
+  "forecast": 0,
+  "budget": 0
+ },
+ {
+  "forecast_version_id": "FV-AD-2027-01",
+  "metric_id": "GP",
+  "period_id": 202710,
+  "actual": null,
+  "forecast": 0,
+  "budget": 0
+ },
+ {
+  "forecast_version_id": "FV-AD-2027-01",
+  "metric_id": "GP",
+  "period_id": 202711,
+  "actual": null,
+  "forecast": 0,
+  "budget": 0
+ },
+ {
+  "forecast_version_id": "FV-AD-2027-01",
+  "metric_id": "GP",
+  "period_id": 202712,
+  "actual": null,
+  "forecast": 0,
+  "budget": 0
+ },
+ {
+  "forecast_version_id": "FV-AD-2027-01",
+  "metric_id": "GP",
+  "period_id": 202801,
+  "actual": null,
+  "forecast": 0,
+  "budget": 0
+ },
+ {
+  "forecast_version_id": "FV-AD-2027-01",
+  "metric_id": "GP",
+  "period_id": 202802,
+  "actual": null,
+  "forecast": 0,
+  "budget": 0
+ },
+ {
+  "forecast_version_id": "FV-AD-2027-01",
+  "metric_id": "GP",
+  "period_id": 202803,
+  "actual": null,
+  "forecast": 0,
+  "budget": 0
+ },
+ {
+  "forecast_version_id": "FV-AD-2027-01",
+  "metric_id": "SGA",
+  "period_id": 202704,
+  "actual": 4,
+  "forecast": null,
+  "budget": 4.8
+ },
+ {
+  "forecast_version_id": "FV-AD-2027-01",
+  "metric_id": "SGA",
+  "period_id": 202705,
+  "actual": 3.35,
+  "forecast": null,
+  "budget": 4.95
+ },
+ {
+  "forecast_version_id": "FV-AD-2027-01",
+  "metric_id": "SGA",
+  "period_id": 202706,
+  "actual": 3.65,
+  "forecast": null,
+  "budget": 5.25
+ },
+ {
+  "forecast_version_id": "FV-AD-2027-01",
+  "metric_id": "SGA",
+  "period_id": 202707,
+  "actual": null,
+  "forecast": 4.11,
+  "budget": 4.93
+ },
+ {
+  "forecast_version_id": "FV-AD-2027-01",
+  "metric_id": "SGA",
+  "period_id": 202708,
+  "actual": null,
+  "forecast": 4.1,
+  "budget": 4.93
+ },
+ {
+  "forecast_version_id": "FV-AD-2027-01",
+  "metric_id": "SGA",
+  "period_id": 202709,
+  "actual": null,
+  "forecast": 4.18,
+  "budget": 5.03
+ },
+ {
+  "forecast_version_id": "FV-AD-2027-01",
+  "metric_id": "SGA",
+  "period_id": 202710,
+  "actual": null,
+  "forecast": 4.11,
+  "budget": 4.93
+ },
+ {
+  "forecast_version_id": "FV-AD-2027-01",
+  "metric_id": "SGA",
+  "period_id": 202711,
+  "actual": null,
+  "forecast": 4.11,
+  "budget": 4.93
+ },
+ {
+  "forecast_version_id": "FV-AD-2027-01",
+  "metric_id": "SGA",
+  "period_id": 202712,
+  "actual": null,
+  "forecast": 4.32,
+  "budget": 5.17
+ },
+ {
+  "forecast_version_id": "FV-AD-2027-01",
+  "metric_id": "SGA",
+  "period_id": 202801,
+  "actual": null,
+  "forecast": 4.02,
+  "budget": 4.83
+ },
+ {
+  "forecast_version_id": "FV-AD-2027-01",
+  "metric_id": "SGA",
+  "period_id": 202802,
+  "actual": null,
+  "forecast": 4.02,
+  "budget": 4.83
+ },
+ {
+  "forecast_version_id": "FV-AD-2027-01",
+  "metric_id": "SGA",
+  "period_id": 202803,
+  "actual": null,
+  "forecast": 4.53,
+  "budget": 5.42
+ },
+ {
+  "forecast_version_id": "FV-AD-2027-01",
+  "metric_id": "OP",
+  "period_id": 202704,
+  "actual": -4,
+  "forecast": null,
+  "budget": -4.8
+ },
+ {
+  "forecast_version_id": "FV-AD-2027-01",
+  "metric_id": "OP",
+  "period_id": 202705,
+  "actual": -3.35,
+  "forecast": null,
+  "budget": -4.95
+ },
+ {
+  "forecast_version_id": "FV-AD-2027-01",
+  "metric_id": "OP",
+  "period_id": 202706,
+  "actual": -3.65,
+  "forecast": null,
+  "budget": -5.25
+ },
+ {
+  "forecast_version_id": "FV-AD-2027-01",
+  "metric_id": "OP",
+  "period_id": 202707,
+  "actual": null,
+  "forecast": -4.11,
+  "budget": -4.93
+ },
+ {
+  "forecast_version_id": "FV-AD-2027-01",
+  "metric_id": "OP",
+  "period_id": 202708,
+  "actual": null,
+  "forecast": -4.1,
+  "budget": -4.93
+ },
+ {
+  "forecast_version_id": "FV-AD-2027-01",
+  "metric_id": "OP",
+  "period_id": 202709,
+  "actual": null,
+  "forecast": -4.18,
+  "budget": -5.03
+ },
+ {
+  "forecast_version_id": "FV-AD-2027-01",
+  "metric_id": "OP",
+  "period_id": 202710,
+  "actual": null,
+  "forecast": -4.11,
+  "budget": -4.93
+ },
+ {
+  "forecast_version_id": "FV-AD-2027-01",
+  "metric_id": "OP",
+  "period_id": 202711,
+  "actual": null,
+  "forecast": -4.11,
+  "budget": -4.93
+ },
+ {
+  "forecast_version_id": "FV-AD-2027-01",
+  "metric_id": "OP",
+  "period_id": 202712,
+  "actual": null,
+  "forecast": -4.32,
+  "budget": -5.17
+ },
+ {
+  "forecast_version_id": "FV-AD-2027-01",
+  "metric_id": "OP",
+  "period_id": 202801,
+  "actual": null,
+  "forecast": -4.02,
+  "budget": -4.83
+ },
+ {
+  "forecast_version_id": "FV-AD-2027-01",
+  "metric_id": "OP",
+  "period_id": 202802,
+  "actual": null,
+  "forecast": -4.02,
+  "budget": -4.83
+ },
+ {
+  "forecast_version_id": "FV-AD-2027-01",
+  "metric_id": "OP",
+  "period_id": 202803,
+  "actual": null,
+  "forecast": -4.53,
+  "budget": -5.42
+ }
+]

@@ -1,0 +1,18 @@
+[
+ {
+  "factor_id": "EV-001",
+  "org_id": "MF"
+ },
+ {
+  "factor_id": "EV-002",
+  "org_id": "OS"
+ },
+ {
+  "factor_id": "EV-003",
+  "org_id": "SL"
+ },
+ {
+  "factor_id": "EV-004",
+  "org_id": "OS"
+ }
+]

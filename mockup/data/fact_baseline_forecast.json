@@ -1,0 +1,2106 @@
+[
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202704,
+  "org_id": "SL",
+  "account_id": "4010",
+  "amount": 228.66
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202704,
+  "org_id": "SL",
+  "account_id": "4020",
+  "amount": 17.69
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202704,
+  "org_id": "SL",
+  "account_id": "5010",
+  "amount": 186.79
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202704,
+  "org_id": "SL",
+  "account_id": "6010",
+  "amount": 18.4
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202704,
+  "org_id": "SL",
+  "account_id": "6020",
+  "amount": 7.36
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202704,
+  "org_id": "SL",
+  "account_id": "6030",
+  "amount": 8.96
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202704,
+  "org_id": "SL",
+  "account_id": "6050",
+  "amount": 3.52
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202705,
+  "org_id": "SL",
+  "account_id": "4010",
+  "amount": 232.4
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202705,
+  "org_id": "SL",
+  "account_id": "4020",
+  "amount": 18.25
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202705,
+  "org_id": "SL",
+  "account_id": "5010",
+  "amount": 190.23
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202705,
+  "org_id": "SL",
+  "account_id": "6010",
+  "amount": 18.98
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202705,
+  "org_id": "SL",
+  "account_id": "6020",
+  "amount": 7.59
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202705,
+  "org_id": "SL",
+  "account_id": "6030",
+  "amount": 9.39
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202705,
+  "org_id": "SL",
+  "account_id": "6050",
+  "amount": 3.62
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202706,
+  "org_id": "SL",
+  "account_id": "4010",
+  "amount": 243.05
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202706,
+  "org_id": "SL",
+  "account_id": "4020",
+  "amount": 19.35
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202706,
+  "org_id": "SL",
+  "account_id": "5010",
+  "amount": 199.28
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202706,
+  "org_id": "SL",
+  "account_id": "6010",
+  "amount": 20.13
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202706,
+  "org_id": "SL",
+  "account_id": "6020",
+  "amount": 8.05
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202706,
+  "org_id": "SL",
+  "account_id": "6030",
+  "amount": 10.15
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202706,
+  "org_id": "SL",
+  "account_id": "6050",
+  "amount": 3.85
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202707,
+  "org_id": "SL",
+  "account_id": "4010",
+  "amount": 232.57
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202707,
+  "org_id": "SL",
+  "account_id": "4020",
+  "amount": 17.51
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202708,
+  "org_id": "SL",
+  "account_id": "4010",
+  "amount": 227.91
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202708,
+  "org_id": "SL",
+  "account_id": "4020",
+  "amount": 17.16
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202709,
+  "org_id": "SL",
+  "account_id": "4010",
+  "amount": 244.19
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202709,
+  "org_id": "SL",
+  "account_id": "4020",
+  "amount": 18.38
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202710,
+  "org_id": "SL",
+  "account_id": "4010",
+  "amount": 251.17
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202710,
+  "org_id": "SL",
+  "account_id": "4020",
+  "amount": 18.9
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202711,
+  "org_id": "SL",
+  "account_id": "4010",
+  "amount": 255.82
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202711,
+  "org_id": "SL",
+  "account_id": "4020",
+  "amount": 19.25
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202712,
+  "org_id": "SL",
+  "account_id": "4010",
+  "amount": 232.56
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202712,
+  "org_id": "SL",
+  "account_id": "4020",
+  "amount": 17.51
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202801,
+  "org_id": "SL",
+  "account_id": "4010",
+  "amount": 220.94
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202801,
+  "org_id": "SL",
+  "account_id": "4020",
+  "amount": 16.63
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202802,
+  "org_id": "SL",
+  "account_id": "4010",
+  "amount": 237.22
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202802,
+  "org_id": "SL",
+  "account_id": "4020",
+  "amount": 17.85
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202803,
+  "org_id": "SL",
+  "account_id": "4010",
+  "amount": 260.47
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202803,
+  "org_id": "SL",
+  "account_id": "4020",
+  "amount": 19.61
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202707,
+  "org_id": "SL",
+  "account_id": "6010",
+  "amount": 20.19
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202707,
+  "org_id": "SL",
+  "account_id": "6020",
+  "amount": 8.08
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202707,
+  "org_id": "SL",
+  "account_id": "6030",
+  "amount": 8.07
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202707,
+  "org_id": "SL",
+  "account_id": "6050",
+  "amount": 4.04
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202708,
+  "org_id": "SL",
+  "account_id": "6010",
+  "amount": 20.19
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202708,
+  "org_id": "SL",
+  "account_id": "6020",
+  "amount": 8.08
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202708,
+  "org_id": "SL",
+  "account_id": "6030",
+  "amount": 8.07
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202708,
+  "org_id": "SL",
+  "account_id": "6050",
+  "amount": 4.04
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202709,
+  "org_id": "SL",
+  "account_id": "6010",
+  "amount": 20.59
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202709,
+  "org_id": "SL",
+  "account_id": "6020",
+  "amount": 8.24
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202709,
+  "org_id": "SL",
+  "account_id": "6030",
+  "amount": 8.23
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202709,
+  "org_id": "SL",
+  "account_id": "6050",
+  "amount": 4.12
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202710,
+  "org_id": "SL",
+  "account_id": "6010",
+  "amount": 20.19
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202710,
+  "org_id": "SL",
+  "account_id": "6020",
+  "amount": 8.08
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202710,
+  "org_id": "SL",
+  "account_id": "6030",
+  "amount": 8.07
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202710,
+  "org_id": "SL",
+  "account_id": "6050",
+  "amount": 4.04
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202711,
+  "org_id": "SL",
+  "account_id": "6010",
+  "amount": 20.19
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202711,
+  "org_id": "SL",
+  "account_id": "6020",
+  "amount": 8.08
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202711,
+  "org_id": "SL",
+  "account_id": "6030",
+  "amount": 8.07
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202711,
+  "org_id": "SL",
+  "account_id": "6050",
+  "amount": 4.04
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202712,
+  "org_id": "SL",
+  "account_id": "6010",
+  "amount": 21.2
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202712,
+  "org_id": "SL",
+  "account_id": "6020",
+  "amount": 8.47
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202712,
+  "org_id": "SL",
+  "account_id": "6030",
+  "amount": 8.47
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202712,
+  "org_id": "SL",
+  "account_id": "6050",
+  "amount": 4.24
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202801,
+  "org_id": "SL",
+  "account_id": "6010",
+  "amount": 19.79
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202801,
+  "org_id": "SL",
+  "account_id": "6020",
+  "amount": 7.92
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202801,
+  "org_id": "SL",
+  "account_id": "6030",
+  "amount": 7.91
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202801,
+  "org_id": "SL",
+  "account_id": "6050",
+  "amount": 3.96
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202802,
+  "org_id": "SL",
+  "account_id": "6010",
+  "amount": 19.79
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202802,
+  "org_id": "SL",
+  "account_id": "6020",
+  "amount": 7.92
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202802,
+  "org_id": "SL",
+  "account_id": "6030",
+  "amount": 7.91
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202802,
+  "org_id": "SL",
+  "account_id": "6050",
+  "amount": 3.96
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202803,
+  "org_id": "SL",
+  "account_id": "6010",
+  "amount": 22.21
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202803,
+  "org_id": "SL",
+  "account_id": "6020",
+  "amount": 8.88
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202803,
+  "org_id": "SL",
+  "account_id": "6030",
+  "amount": 8.88
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202803,
+  "org_id": "SL",
+  "account_id": "6050",
+  "amount": 4.44
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202707,
+  "org_id": "SL",
+  "account_id": "5010",
+  "amount": 189.79
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202708,
+  "org_id": "SL",
+  "account_id": "5010",
+  "amount": 186
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202709,
+  "org_id": "SL",
+  "account_id": "5010",
+  "amount": 199.28
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202710,
+  "org_id": "SL",
+  "account_id": "5010",
+  "amount": 204.98
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202711,
+  "org_id": "SL",
+  "account_id": "5010",
+  "amount": 208.78
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202712,
+  "org_id": "SL",
+  "account_id": "5010",
+  "amount": 189.79
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202801,
+  "org_id": "SL",
+  "account_id": "5010",
+  "amount": 180.31
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202802,
+  "org_id": "SL",
+  "account_id": "5010",
+  "amount": 193.59
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202803,
+  "org_id": "SL",
+  "account_id": "5010",
+  "amount": 212.58
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202704,
+  "org_id": "OS",
+  "account_id": "4010",
+  "amount": 155.77
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202704,
+  "org_id": "OS",
+  "account_id": "4020",
+  "amount": 8.24
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202704,
+  "org_id": "OS",
+  "account_id": "5010",
+  "amount": 123.65
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202704,
+  "org_id": "OS",
+  "account_id": "6010",
+  "amount": 11.09
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202704,
+  "org_id": "OS",
+  "account_id": "6020",
+  "amount": 6.16
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202704,
+  "org_id": "OS",
+  "account_id": "6030",
+  "amount": 4.93
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202704,
+  "org_id": "OS",
+  "account_id": "6050",
+  "amount": 2.3
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202705,
+  "org_id": "OS",
+  "account_id": "4010",
+  "amount": 150.01
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202705,
+  "org_id": "OS",
+  "account_id": "4020",
+  "amount": 8.5
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202705,
+  "org_id": "OS",
+  "account_id": "5010",
+  "amount": 119.46
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202705,
+  "org_id": "OS",
+  "account_id": "6010",
+  "amount": 11.44
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202705,
+  "org_id": "OS",
+  "account_id": "6020",
+  "amount": 6.35
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202705,
+  "org_id": "OS",
+  "account_id": "6030",
+  "amount": 5.08
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202705,
+  "org_id": "OS",
+  "account_id": "6050",
+  "amount": 2.37
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202706,
+  "org_id": "OS",
+  "account_id": "4010",
+  "amount": 156.67
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202706,
+  "org_id": "OS",
+  "account_id": "4020",
+  "amount": 9.01
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202706,
+  "org_id": "OS",
+  "account_id": "5010",
+  "amount": 124.79
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202706,
+  "org_id": "OS",
+  "account_id": "6010",
+  "amount": 12.13
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202706,
+  "org_id": "OS",
+  "account_id": "6020",
+  "amount": 6.74
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202706,
+  "org_id": "OS",
+  "account_id": "6030",
+  "amount": 5.39
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202706,
+  "org_id": "OS",
+  "account_id": "6050",
+  "amount": 2.52
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202707,
+  "org_id": "OS",
+  "account_id": "4010",
+  "amount": 157.05
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202707,
+  "org_id": "OS",
+  "account_id": "4020",
+  "amount": 8.27
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202708,
+  "org_id": "OS",
+  "account_id": "4010",
+  "amount": 153.91
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202708,
+  "org_id": "OS",
+  "account_id": "4020",
+  "amount": 8.1
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202709,
+  "org_id": "OS",
+  "account_id": "4010",
+  "amount": 164.9
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202709,
+  "org_id": "OS",
+  "account_id": "4020",
+  "amount": 8.68
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202710,
+  "org_id": "OS",
+  "account_id": "4010",
+  "amount": 169.62
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202710,
+  "org_id": "OS",
+  "account_id": "4020",
+  "amount": 8.92
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202711,
+  "org_id": "OS",
+  "account_id": "4010",
+  "amount": 172.76
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202711,
+  "org_id": "OS",
+  "account_id": "4020",
+  "amount": 9.09
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202712,
+  "org_id": "OS",
+  "account_id": "4010",
+  "amount": 157.05
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202712,
+  "org_id": "OS",
+  "account_id": "4020",
+  "amount": 8.26
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202801,
+  "org_id": "OS",
+  "account_id": "4010",
+  "amount": 149.21
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202801,
+  "org_id": "OS",
+  "account_id": "4020",
+  "amount": 7.85
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202802,
+  "org_id": "OS",
+  "account_id": "4010",
+  "amount": 160.2
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202802,
+  "org_id": "OS",
+  "account_id": "4020",
+  "amount": 8.43
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202803,
+  "org_id": "OS",
+  "account_id": "4010",
+  "amount": 175.9
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202803,
+  "org_id": "OS",
+  "account_id": "4020",
+  "amount": 9.25
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202707,
+  "org_id": "OS",
+  "account_id": "6010",
+  "amount": 12.47
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202707,
+  "org_id": "OS",
+  "account_id": "6020",
+  "amount": 6.93
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202707,
+  "org_id": "OS",
+  "account_id": "6030",
+  "amount": 5.54
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202707,
+  "org_id": "OS",
+  "account_id": "6050",
+  "amount": 2.77
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202708,
+  "org_id": "OS",
+  "account_id": "6010",
+  "amount": 12.47
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202708,
+  "org_id": "OS",
+  "account_id": "6020",
+  "amount": 6.93
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202708,
+  "org_id": "OS",
+  "account_id": "6030",
+  "amount": 5.54
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202708,
+  "org_id": "OS",
+  "account_id": "6050",
+  "amount": 2.77
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202709,
+  "org_id": "OS",
+  "account_id": "6010",
+  "amount": 12.72
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202709,
+  "org_id": "OS",
+  "account_id": "6020",
+  "amount": 7.06
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202709,
+  "org_id": "OS",
+  "account_id": "6030",
+  "amount": 5.65
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202709,
+  "org_id": "OS",
+  "account_id": "6050",
+  "amount": 2.83
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202710,
+  "org_id": "OS",
+  "account_id": "6010",
+  "amount": 12.47
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202710,
+  "org_id": "OS",
+  "account_id": "6020",
+  "amount": 6.93
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202710,
+  "org_id": "OS",
+  "account_id": "6030",
+  "amount": 5.54
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202710,
+  "org_id": "OS",
+  "account_id": "6050",
+  "amount": 2.77
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202711,
+  "org_id": "OS",
+  "account_id": "6010",
+  "amount": 12.47
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202711,
+  "org_id": "OS",
+  "account_id": "6020",
+  "amount": 6.93
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202711,
+  "org_id": "OS",
+  "account_id": "6030",
+  "amount": 5.54
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202711,
+  "org_id": "OS",
+  "account_id": "6050",
+  "amount": 2.77
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202712,
+  "org_id": "OS",
+  "account_id": "6010",
+  "amount": 13.1
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202712,
+  "org_id": "OS",
+  "account_id": "6020",
+  "amount": 7.27
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202712,
+  "org_id": "OS",
+  "account_id": "6030",
+  "amount": 5.82
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202712,
+  "org_id": "OS",
+  "account_id": "6050",
+  "amount": 2.91
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202801,
+  "org_id": "OS",
+  "account_id": "6010",
+  "amount": 12.22
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202801,
+  "org_id": "OS",
+  "account_id": "6020",
+  "amount": 6.79
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202801,
+  "org_id": "OS",
+  "account_id": "6030",
+  "amount": 5.43
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202801,
+  "org_id": "OS",
+  "account_id": "6050",
+  "amount": 2.72
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202802,
+  "org_id": "OS",
+  "account_id": "6010",
+  "amount": 12.22
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202802,
+  "org_id": "OS",
+  "account_id": "6020",
+  "amount": 6.79
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202802,
+  "org_id": "OS",
+  "account_id": "6030",
+  "amount": 5.43
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202802,
+  "org_id": "OS",
+  "account_id": "6050",
+  "amount": 2.72
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202803,
+  "org_id": "OS",
+  "account_id": "6010",
+  "amount": 13.71
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202803,
+  "org_id": "OS",
+  "account_id": "6020",
+  "amount": 7.62
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202803,
+  "org_id": "OS",
+  "account_id": "6030",
+  "amount": 6.1
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202803,
+  "org_id": "OS",
+  "account_id": "6050",
+  "amount": 3.05
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202707,
+  "org_id": "OS",
+  "account_id": "5010",
+  "amount": 125.08
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202708,
+  "org_id": "OS",
+  "account_id": "5010",
+  "amount": 122.58
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202709,
+  "org_id": "OS",
+  "account_id": "5010",
+  "amount": 131.33
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202710,
+  "org_id": "OS",
+  "account_id": "5010",
+  "amount": 135.09
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202711,
+  "org_id": "OS",
+  "account_id": "5010",
+  "amount": 137.59
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202712,
+  "org_id": "OS",
+  "account_id": "5010",
+  "amount": 125.08
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202801,
+  "org_id": "OS",
+  "account_id": "5010",
+  "amount": 118.83
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202802,
+  "org_id": "OS",
+  "account_id": "5010",
+  "amount": 127.58
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202803,
+  "org_id": "OS",
+  "account_id": "5010",
+  "amount": 140.09
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202704,
+  "org_id": "MF",
+  "account_id": "5030",
+  "amount": 2
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202704,
+  "org_id": "MF",
+  "account_id": "6010",
+  "amount": 1.92
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202704,
+  "org_id": "MF",
+  "account_id": "6040",
+  "amount": 0.96
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202704,
+  "org_id": "MF",
+  "account_id": "6050",
+  "amount": 0.32
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202705,
+  "org_id": "MF",
+  "account_id": "5030",
+  "amount": 2.8
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202705,
+  "org_id": "MF",
+  "account_id": "5040",
+  "amount": -2.25
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202705,
+  "org_id": "MF",
+  "account_id": "6010",
+  "amount": 1.98
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202705,
+  "org_id": "MF",
+  "account_id": "6040",
+  "amount": 0.99
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202705,
+  "org_id": "MF",
+  "account_id": "6050",
+  "amount": 0.33
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202706,
+  "org_id": "MF",
+  "account_id": "5030",
+  "amount": 3.2
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202706,
+  "org_id": "MF",
+  "account_id": "5040",
+  "amount": -2.75
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202706,
+  "org_id": "MF",
+  "account_id": "6010",
+  "amount": 2.1
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202706,
+  "org_id": "MF",
+  "account_id": "6040",
+  "amount": 1.05
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202706,
+  "org_id": "MF",
+  "account_id": "6050",
+  "amount": 0.35
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202707,
+  "org_id": "MF",
+  "account_id": "6010",
+  "amount": 1.97
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202707,
+  "org_id": "MF",
+  "account_id": "6040",
+  "amount": 0.99
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202707,
+  "org_id": "MF",
+  "account_id": "6050",
+  "amount": 0.33
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202708,
+  "org_id": "MF",
+  "account_id": "6010",
+  "amount": 1.97
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202708,
+  "org_id": "MF",
+  "account_id": "6040",
+  "amount": 0.99
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202708,
+  "org_id": "MF",
+  "account_id": "6050",
+  "amount": 0.33
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202709,
+  "org_id": "MF",
+  "account_id": "6010",
+  "amount": 2.01
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202709,
+  "org_id": "MF",
+  "account_id": "6040",
+  "amount": 1.01
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202709,
+  "org_id": "MF",
+  "account_id": "6050",
+  "amount": 0.33
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202710,
+  "org_id": "MF",
+  "account_id": "6010",
+  "amount": 1.97
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202710,
+  "org_id": "MF",
+  "account_id": "6040",
+  "amount": 0.99
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202710,
+  "org_id": "MF",
+  "account_id": "6050",
+  "amount": 0.33
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202711,
+  "org_id": "MF",
+  "account_id": "6010",
+  "amount": 1.97
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202711,
+  "org_id": "MF",
+  "account_id": "6040",
+  "amount": 0.98
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202711,
+  "org_id": "MF",
+  "account_id": "6050",
+  "amount": 0.33
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202712,
+  "org_id": "MF",
+  "account_id": "6010",
+  "amount": 2.07
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202712,
+  "org_id": "MF",
+  "account_id": "6040",
+  "amount": 1.04
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202712,
+  "org_id": "MF",
+  "account_id": "6050",
+  "amount": 0.34
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202801,
+  "org_id": "MF",
+  "account_id": "6010",
+  "amount": 1.93
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202801,
+  "org_id": "MF",
+  "account_id": "6040",
+  "amount": 0.97
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202801,
+  "org_id": "MF",
+  "account_id": "6050",
+  "amount": 0.32
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202802,
+  "org_id": "MF",
+  "account_id": "6010",
+  "amount": 1.93
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202802,
+  "org_id": "MF",
+  "account_id": "6040",
+  "amount": 0.97
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202802,
+  "org_id": "MF",
+  "account_id": "6050",
+  "amount": 0.32
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202803,
+  "org_id": "MF",
+  "account_id": "6010",
+  "amount": 2.17
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202803,
+  "org_id": "MF",
+  "account_id": "6040",
+  "amount": 1.08
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202803,
+  "org_id": "MF",
+  "account_id": "6050",
+  "amount": 0.36
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202707,
+  "org_id": "MF",
+  "account_id": "5030",
+  "amount": -0.05
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202707,
+  "org_id": "MF",
+  "account_id": "5040",
+  "amount": -0.05
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202708,
+  "org_id": "MF",
+  "account_id": "5030",
+  "amount": -0.05
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202708,
+  "org_id": "MF",
+  "account_id": "5040",
+  "amount": -0.05
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202709,
+  "org_id": "MF",
+  "account_id": "5030",
+  "amount": -0.05
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202709,
+  "org_id": "MF",
+  "account_id": "5040",
+  "amount": -0.05
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202710,
+  "org_id": "MF",
+  "account_id": "5030",
+  "amount": -0.05
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202710,
+  "org_id": "MF",
+  "account_id": "5040",
+  "amount": -0.05
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202711,
+  "org_id": "MF",
+  "account_id": "5030",
+  "amount": -0.06
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202711,
+  "org_id": "MF",
+  "account_id": "5040",
+  "amount": -0.06
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202712,
+  "org_id": "MF",
+  "account_id": "5030",
+  "amount": -0.06
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202712,
+  "org_id": "MF",
+  "account_id": "5040",
+  "amount": -0.06
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202801,
+  "org_id": "MF",
+  "account_id": "5030",
+  "amount": -0.06
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202801,
+  "org_id": "MF",
+  "account_id": "5040",
+  "amount": -0.06
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202802,
+  "org_id": "MF",
+  "account_id": "5030",
+  "amount": -0.06
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202802,
+  "org_id": "MF",
+  "account_id": "5040",
+  "amount": -0.06
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202803,
+  "org_id": "MF",
+  "account_id": "5030",
+  "amount": -0.06
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202803,
+  "org_id": "MF",
+  "account_id": "5040",
+  "amount": -0.06
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202704,
+  "org_id": "AD",
+  "account_id": "6010",
+  "amount": 2.4
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202704,
+  "org_id": "AD",
+  "account_id": "6040",
+  "amount": 0.88
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202704,
+  "org_id": "AD",
+  "account_id": "6050",
+  "amount": 0.72
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202705,
+  "org_id": "AD",
+  "account_id": "6010",
+  "amount": 2.48
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202705,
+  "org_id": "AD",
+  "account_id": "6040",
+  "amount": 0.23
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202705,
+  "org_id": "AD",
+  "account_id": "6050",
+  "amount": 0.74
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202706,
+  "org_id": "AD",
+  "account_id": "6010",
+  "amount": 2.62
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202706,
+  "org_id": "AD",
+  "account_id": "6040",
+  "amount": 0.44
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202706,
+  "org_id": "AD",
+  "account_id": "6050",
+  "amount": 0.79
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202707,
+  "org_id": "AD",
+  "account_id": "6010",
+  "amount": 2.12
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202707,
+  "org_id": "AD",
+  "account_id": "6040",
+  "amount": 1.49
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202707,
+  "org_id": "AD",
+  "account_id": "6050",
+  "amount": 0.64
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202708,
+  "org_id": "AD",
+  "account_id": "6010",
+  "amount": 2.11
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202708,
+  "org_id": "AD",
+  "account_id": "6040",
+  "amount": 1.49
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202708,
+  "org_id": "AD",
+  "account_id": "6050",
+  "amount": 0.64
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202709,
+  "org_id": "AD",
+  "account_id": "6010",
+  "amount": 2.17
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202709,
+  "org_id": "AD",
+  "account_id": "6040",
+  "amount": 1.51
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202709,
+  "org_id": "AD",
+  "account_id": "6050",
+  "amount": 0.64
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202710,
+  "org_id": "AD",
+  "account_id": "6010",
+  "amount": 2.11
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202710,
+  "org_id": "AD",
+  "account_id": "6040",
+  "amount": 1.49
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202710,
+  "org_id": "AD",
+  "account_id": "6050",
+  "amount": 0.64
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202711,
+  "org_id": "AD",
+  "account_id": "6010",
+  "amount": 2.11
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202711,
+  "org_id": "AD",
+  "account_id": "6040",
+  "amount": 1.49
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202711,
+  "org_id": "AD",
+  "account_id": "6050",
+  "amount": 0.64
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202712,
+  "org_id": "AD",
+  "account_id": "6010",
+  "amount": 2.22
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202712,
+  "org_id": "AD",
+  "account_id": "6040",
+  "amount": 1.56
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202712,
+  "org_id": "AD",
+  "account_id": "6050",
+  "amount": 0.67
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202801,
+  "org_id": "AD",
+  "account_id": "6010",
+  "amount": 2.08
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202801,
+  "org_id": "AD",
+  "account_id": "6040",
+  "amount": 1.45
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202801,
+  "org_id": "AD",
+  "account_id": "6050",
+  "amount": 0.62
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202802,
+  "org_id": "AD",
+  "account_id": "6010",
+  "amount": 2.08
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202802,
+  "org_id": "AD",
+  "account_id": "6040",
+  "amount": 1.45
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202802,
+  "org_id": "AD",
+  "account_id": "6050",
+  "amount": 0.62
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202803,
+  "org_id": "AD",
+  "account_id": "6010",
+  "amount": 2.33
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202803,
+  "org_id": "AD",
+  "account_id": "6040",
+  "amount": 1.63
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "period_id": 202803,
+  "org_id": "AD",
+  "account_id": "6050",
+  "amount": 0.7
+ }
+]

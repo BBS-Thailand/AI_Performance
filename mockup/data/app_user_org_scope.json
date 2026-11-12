@@ -1,0 +1,38 @@
+[
+ {
+  "user_id": "u01",
+  "org_id": "CO",
+  "can_decide_action": true,
+  "can_confirm_forecast": false
+ },
+ {
+  "user_id": "u02",
+  "org_id": "SL",
+  "can_decide_action": true,
+  "can_confirm_forecast": true
+ },
+ {
+  "user_id": "u03",
+  "org_id": "OS",
+  "can_decide_action": true,
+  "can_confirm_forecast": true
+ },
+ {
+  "user_id": "u04",
+  "org_id": "MF",
+  "can_decide_action": true,
+  "can_confirm_forecast": true
+ },
+ {
+  "user_id": "u05",
+  "org_id": "AD",
+  "can_decide_action": true,
+  "can_confirm_forecast": true
+ },
+ {
+  "user_id": "u06",
+  "org_id": "SL",
+  "can_decide_action": false,
+  "can_confirm_forecast": false
+ }
+]

@@ -1,0 +1,218 @@
+[
+ {
+  "forecast_version_id": "FV-SL-2027-01",
+  "metric_id": "REV",
+  "budget_annual": 3200,
+  "baseline_no_action": 3085.05,
+  "action_contribution": 24,
+  "factor_contribution": 0,
+  "landing": 3109.05
+ },
+ {
+  "forecast_version_id": "FV-SL-2027-01",
+  "metric_id": "GP",
+  "budget_annual": 770,
+  "baseline_no_action": 737.15,
+  "action_contribution": 6,
+  "factor_contribution": 0,
+  "landing": 743.15
+ },
+ {
+  "forecast_version_id": "FV-SL-2027-01",
+  "metric_id": "SGA",
+  "budget_annual": 480,
+  "baseline_no_action": 488.65,
+  "action_contribution": -2.5,
+  "factor_contribution": 0,
+  "landing": 486.15
+ },
+ {
+  "forecast_version_id": "FV-SL-2027-01",
+  "metric_id": "OP",
+  "budget_annual": 290,
+  "baseline_no_action": 248.5,
+  "action_contribution": 8.5,
+  "factor_contribution": 0,
+  "landing": 257
+ },
+ {
+  "forecast_version_id": "FV-SL-2027-02",
+  "metric_id": "REV",
+  "budget_annual": 3200,
+  "baseline_no_action": 3085.05,
+  "action_contribution": 24,
+  "factor_contribution": 32,
+  "landing": 3141.05
+ },
+ {
+  "forecast_version_id": "FV-SL-2027-02",
+  "metric_id": "GP",
+  "budget_annual": 770,
+  "baseline_no_action": 743.65,
+  "action_contribution": 6,
+  "factor_contribution": 8,
+  "landing": 757.65
+ },
+ {
+  "forecast_version_id": "FV-SL-2027-02",
+  "metric_id": "SGA",
+  "budget_annual": 480,
+  "baseline_no_action": 488.65,
+  "action_contribution": -2.5,
+  "factor_contribution": 0,
+  "landing": 486.15
+ },
+ {
+  "forecast_version_id": "FV-SL-2027-02",
+  "metric_id": "OP",
+  "budget_annual": 290,
+  "baseline_no_action": 255,
+  "action_contribution": 8.5,
+  "factor_contribution": 8,
+  "landing": 271.5
+ },
+ {
+  "forecast_version_id": "FV-OS-2027-01",
+  "metric_id": "REV",
+  "budget_annual": 2100,
+  "baseline_no_action": 2025.65,
+  "action_contribution": 22,
+  "factor_contribution": 0,
+  "landing": 2047.65
+ },
+ {
+  "forecast_version_id": "FV-OS-2027-01",
+  "metric_id": "GP",
+  "budget_annual": 510,
+  "baseline_no_action": 498,
+  "action_contribution": 5.5,
+  "factor_contribution": 0,
+  "landing": 503.5
+ },
+ {
+  "forecast_version_id": "FV-OS-2027-01",
+  "metric_id": "SGA",
+  "budget_annual": 330,
+  "baseline_no_action": 329.5,
+  "action_contribution": 0,
+  "factor_contribution": 0,
+  "landing": 329.5
+ },
+ {
+  "forecast_version_id": "FV-OS-2027-01",
+  "metric_id": "OP",
+  "budget_annual": 180,
+  "baseline_no_action": 168.5,
+  "action_contribution": 5.5,
+  "factor_contribution": 0,
+  "landing": 174
+ },
+ {
+  "forecast_version_id": "FV-OS-2027-02",
+  "metric_id": "REV",
+  "budget_annual": 2100,
+  "baseline_no_action": 2025.65,
+  "action_contribution": 22,
+  "factor_contribution": 0,
+  "landing": 2047.65
+ },
+ {
+  "forecast_version_id": "FV-OS-2027-02",
+  "metric_id": "GP",
+  "budget_annual": 510,
+  "baseline_no_action": 494.5,
+  "action_contribution": 5.5,
+  "factor_contribution": 0,
+  "landing": 500
+ },
+ {
+  "forecast_version_id": "FV-OS-2027-02",
+  "metric_id": "SGA",
+  "budget_annual": 330,
+  "baseline_no_action": 329.5,
+  "action_contribution": 0,
+  "factor_contribution": 1,
+  "landing": 330.5
+ },
+ {
+  "forecast_version_id": "FV-OS-2027-02",
+  "metric_id": "OP",
+  "budget_annual": 180,
+  "baseline_no_action": 165,
+  "action_contribution": 5.5,
+  "factor_contribution": -1,
+  "landing": 169.5
+ },
+ {
+  "forecast_version_id": "FV-MF-2027-01",
+  "metric_id": "REV",
+  "budget_annual": 0,
+  "baseline_no_action": 0,
+  "action_contribution": 0,
+  "factor_contribution": 0,
+  "landing": 0
+ },
+ {
+  "forecast_version_id": "FV-MF-2027-01",
+  "metric_id": "GP",
+  "budget_annual": 0,
+  "baseline_no_action": -2,
+  "action_contribution": 6.5,
+  "factor_contribution": -4.5,
+  "landing": 0
+ },
+ {
+  "forecast_version_id": "FV-MF-2027-01",
+  "metric_id": "SGA",
+  "budget_annual": 40,
+  "baseline_no_action": 40,
+  "action_contribution": 0,
+  "factor_contribution": 0,
+  "landing": 40
+ },
+ {
+  "forecast_version_id": "FV-MF-2027-01",
+  "metric_id": "OP",
+  "budget_annual": -40,
+  "baseline_no_action": -42,
+  "action_contribution": 6.5,
+  "factor_contribution": -4.5,
+  "landing": -40
+ },
+ {
+  "forecast_version_id": "FV-AD-2027-01",
+  "metric_id": "REV",
+  "budget_annual": 0,
+  "baseline_no_action": 0,
+  "action_contribution": 0,
+  "factor_contribution": 0,
+  "landing": 0
+ },
+ {
+  "forecast_version_id": "FV-AD-2027-01",
+  "metric_id": "GP",
+  "budget_annual": 0,
+  "baseline_no_action": 0,
+  "action_contribution": 0,
+  "factor_contribution": 0,
+  "landing": 0
+ },
+ {
+  "forecast_version_id": "FV-AD-2027-01",
+  "metric_id": "SGA",
+  "budget_annual": 60,
+  "baseline_no_action": 50,
+  "action_contribution": -1.5,
+  "factor_contribution": 0,
+  "landing": 48.5
+ },
+ {
+  "forecast_version_id": "FV-AD-2027-01",
+  "metric_id": "OP",
+  "budget_annual": -60,
+  "baseline_no_action": -50,
+  "action_contribution": 1.5,
+  "factor_contribution": 0,
+  "landing": -48.5
+ }
+]

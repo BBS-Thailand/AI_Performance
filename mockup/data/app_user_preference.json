@@ -1,0 +1,38 @@
+[
+ {
+  "user_id": "u01",
+  "language_code": "en",
+  "last_period_id": null,
+  "last_org_id": null
+ },
+ {
+  "user_id": "u02",
+  "language_code": "ja",
+  "last_period_id": null,
+  "last_org_id": null
+ },
+ {
+  "user_id": "u03",
+  "language_code": "th",
+  "last_period_id": null,
+  "last_org_id": null
+ },
+ {
+  "user_id": "u04",
+  "language_code": "ja",
+  "last_period_id": null,
+  "last_org_id": null
+ },
+ {
+  "user_id": "u05",
+  "language_code": "th",
+  "last_period_id": null,
+  "last_org_id": null
+ },
+ {
+  "user_id": "u06",
+  "language_code": "ja",
+  "last_period_id": null,
+  "last_org_id": null
+ }
+]

@@ -1,0 +1,112 @@
+[
+ {
+  "account_id": "4010",
+  "metric_id": "REV",
+  "sign": 1
+ },
+ {
+  "account_id": "4010",
+  "metric_id": "GP",
+  "sign": 1
+ },
+ {
+  "account_id": "4010",
+  "metric_id": "OP",
+  "sign": 1
+ },
+ {
+  "account_id": "4020",
+  "metric_id": "REV",
+  "sign": 1
+ },
+ {
+  "account_id": "4020",
+  "metric_id": "GP",
+  "sign": 1
+ },
+ {
+  "account_id": "4020",
+  "metric_id": "OP",
+  "sign": 1
+ },
+ {
+  "account_id": "5010",
+  "metric_id": "GP",
+  "sign": -1
+ },
+ {
+  "account_id": "5010",
+  "metric_id": "OP",
+  "sign": -1
+ },
+ {
+  "account_id": "5030",
+  "metric_id": "GP",
+  "sign": -1
+ },
+ {
+  "account_id": "5030",
+  "metric_id": "OP",
+  "sign": -1
+ },
+ {
+  "account_id": "5040",
+  "metric_id": "GP",
+  "sign": -1
+ },
+ {
+  "account_id": "5040",
+  "metric_id": "OP",
+  "sign": -1
+ },
+ {
+  "account_id": "6010",
+  "metric_id": "SGA",
+  "sign": 1
+ },
+ {
+  "account_id": "6010",
+  "metric_id": "OP",
+  "sign": -1
+ },
+ {
+  "account_id": "6020",
+  "metric_id": "SGA",
+  "sign": 1
+ },
+ {
+  "account_id": "6020",
+  "metric_id": "OP",
+  "sign": -1
+ },
+ {
+  "account_id": "6030",
+  "metric_id": "SGA",
+  "sign": 1
+ },
+ {
+  "account_id": "6030",
+  "metric_id": "OP",
+  "sign": -1
+ },
+ {
+  "account_id": "6040",
+  "metric_id": "SGA",
+  "sign": 1
+ },
+ {
+  "account_id": "6040",
+  "metric_id": "OP",
+  "sign": -1
+ },
+ {
+  "account_id": "6050",
+  "metric_id": "SGA",
+  "sign": 1
+ },
+ {
+  "account_id": "6050",
+  "metric_id": "OP",
+  "sign": -1
+ }
+]

@@ -1,0 +1,102 @@
+[
+ {
+  "decision_id": "DC-01",
+  "action_id": "ACT-004-SL-A01",
+  "decision": "ADOPT",
+  "reason": null,
+  "hold_until_period_id": null,
+  "decided_by": "u02",
+  "decided_at": "2027-04-08T09:12:00Z",
+  "overrides_decision_id": null
+ },
+ {
+  "decision_id": "DC-02",
+  "action_id": "ACT-003-OS-A01",
+  "decision": "ADOPT",
+  "reason": null,
+  "hold_until_period_id": null,
+  "decided_by": "u03",
+  "decided_at": "2027-05-12T03:40:00Z",
+  "overrides_decision_id": null
+ },
+ {
+  "decision_id": "DC-03",
+  "action_id": "ACT-005-AD-U01",
+  "decision": "ADOPT",
+  "reason": null,
+  "hold_until_period_id": null,
+  "decided_by": "u05",
+  "decided_at": "2027-05-06T02:10:00Z",
+  "overrides_decision_id": null
+ },
+ {
+  "decision_id": "DC-04",
+  "action_id": "ACT-007-MF-A01",
+  "decision": "ADOPT",
+  "reason": null,
+  "hold_until_period_id": null,
+  "decided_by": "u04",
+  "decided_at": "2027-05-20T06:00:00Z",
+  "overrides_decision_id": null
+ },
+ {
+  "decision_id": "DC-05",
+  "action_id": "ACT-001-SL-A01",
+  "decision": "ADOPT",
+  "reason": null,
+  "hold_until_period_id": null,
+  "decided_by": "u02",
+  "decided_at": "2027-06-03T01:30:00Z",
+  "overrides_decision_id": null
+ },
+ {
+  "decision_id": "DC-06",
+  "action_id": "ACT-001-OS-A01",
+  "decision": "ADOPT",
+  "reason": null,
+  "hold_until_period_id": null,
+  "decided_by": "u03",
+  "decided_at": "2027-06-05T04:20:00Z",
+  "overrides_decision_id": null
+ },
+ {
+  "decision_id": "DC-07",
+  "action_id": "ACT-002-MF-A01",
+  "decision": "ADOPT",
+  "reason": null,
+  "hold_until_period_id": null,
+  "decided_by": "u04",
+  "decided_at": "2027-06-10T02:00:00Z",
+  "overrides_decision_id": null
+ },
+ {
+  "decision_id": "DC-08",
+  "action_id": "ACT-002-MF-A02",
+  "decision": "ADOPT",
+  "reason": null,
+  "hold_until_period_id": null,
+  "decided_by": "u04",
+  "decided_at": "2027-06-10T02:05:00Z",
+  "overrides_decision_id": null
+ },
+ {
+  "decision_id": "DC-09",
+  "action_id": "ACT-002-MF-A02",
+  "decision": "REJECT",
+  "reason": "FX exposure is hedged centrally by Treasury; local forward contracts are not permitted.",
+  "hold_until_period_id": null,
+  "decided_by": "u01",
+  "decided_at": "2027-06-12T08:15:00Z",
+  "overrides_decision_id": "DC-08"
+ },
+ {
+  "decision_id": "DC-10",
+  "action_id": "ACT-001-SL-U01",
+  "decision": "HOLD",
+  "reason": "Wait for Customer B mid-term plan announcement.",
+  "hold_until_period_id": 202709,
+  "decided_by": "u02",
+  "decided_at": "2027-06-20T05:00:00Z",
+  "overrides_decision_id": null
+ }
+]

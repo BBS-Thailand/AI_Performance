@@ -1,0 +1,10 @@
+[
+ {
+  "scenario_id": "ACT",
+  "scenario_name": "Actual"
+ },
+ {
+  "scenario_id": "BUD",
+  "scenario_name": "Budget (original)"
+ }
+]

@@ -1,0 +1,162 @@
+[
+ {
+  "org_id": "CO",
+  "metric_id": "REV",
+  "is_applicable": true
+ },
+ {
+  "org_id": "CO",
+  "metric_id": "GP",
+  "is_applicable": true
+ },
+ {
+  "org_id": "CO",
+  "metric_id": "SGA",
+  "is_applicable": true
+ },
+ {
+  "org_id": "CO",
+  "metric_id": "OP",
+  "is_applicable": true
+ },
+ {
+  "org_id": "DSL",
+  "metric_id": "REV",
+  "is_applicable": true
+ },
+ {
+  "org_id": "DSL",
+  "metric_id": "GP",
+  "is_applicable": true
+ },
+ {
+  "org_id": "DSL",
+  "metric_id": "SGA",
+  "is_applicable": true
+ },
+ {
+  "org_id": "DSL",
+  "metric_id": "OP",
+  "is_applicable": true
+ },
+ {
+  "org_id": "SL",
+  "metric_id": "REV",
+  "is_applicable": true
+ },
+ {
+  "org_id": "SL",
+  "metric_id": "GP",
+  "is_applicable": true
+ },
+ {
+  "org_id": "SL",
+  "metric_id": "SGA",
+  "is_applicable": true
+ },
+ {
+  "org_id": "SL",
+  "metric_id": "OP",
+  "is_applicable": true
+ },
+ {
+  "org_id": "OS",
+  "metric_id": "REV",
+  "is_applicable": true
+ },
+ {
+  "org_id": "OS",
+  "metric_id": "GP",
+  "is_applicable": true
+ },
+ {
+  "org_id": "OS",
+  "metric_id": "SGA",
+  "is_applicable": true
+ },
+ {
+  "org_id": "OS",
+  "metric_id": "OP",
+  "is_applicable": true
+ },
+ {
+  "org_id": "DOP",
+  "metric_id": "REV",
+  "is_applicable": false
+ },
+ {
+  "org_id": "DOP",
+  "metric_id": "GP",
+  "is_applicable": true
+ },
+ {
+  "org_id": "DOP",
+  "metric_id": "SGA",
+  "is_applicable": true
+ },
+ {
+  "org_id": "DOP",
+  "metric_id": "OP",
+  "is_applicable": true
+ },
+ {
+  "org_id": "MF",
+  "metric_id": "REV",
+  "is_applicable": false
+ },
+ {
+  "org_id": "MF",
+  "metric_id": "GP",
+  "is_applicable": true
+ },
+ {
+  "org_id": "MF",
+  "metric_id": "SGA",
+  "is_applicable": true
+ },
+ {
+  "org_id": "MF",
+  "metric_id": "OP",
+  "is_applicable": true
+ },
+ {
+  "org_id": "DCP",
+  "metric_id": "REV",
+  "is_applicable": false
+ },
+ {
+  "org_id": "DCP",
+  "metric_id": "GP",
+  "is_applicable": false
+ },
+ {
+  "org_id": "DCP",
+  "metric_id": "SGA",
+  "is_applicable": true
+ },
+ {
+  "org_id": "DCP",
+  "metric_id": "OP",
+  "is_applicable": true
+ },
+ {
+  "org_id": "AD",
+  "metric_id": "REV",
+  "is_applicable": false
+ },
+ {
+  "org_id": "AD",
+  "metric_id": "GP",
+  "is_applicable": false
+ },
+ {
+  "org_id": "AD",
+  "metric_id": "SGA",
+  "is_applicable": true
+ },
+ {
+  "org_id": "AD",
+  "metric_id": "OP",
+  "is_applicable": true
+ }
+]

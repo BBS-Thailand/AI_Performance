@@ -1,0 +1,26 @@
+[
+ {
+  "metric_id": "REV",
+  "metric_name": "Revenue",
+  "favorable_direction": 1,
+  "sort_order": 1
+ },
+ {
+  "metric_id": "GP",
+  "metric_name": "Gross profit",
+  "favorable_direction": 1,
+  "sort_order": 2
+ },
+ {
+  "metric_id": "SGA",
+  "metric_name": "SG&A",
+  "favorable_direction": -1,
+  "sort_order": 3
+ },
+ {
+  "metric_id": "OP",
+  "metric_name": "Operating profit",
+  "favorable_direction": 1,
+  "sort_order": 4
+ }
+]

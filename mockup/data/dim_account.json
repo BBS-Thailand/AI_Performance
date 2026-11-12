@@ -1,0 +1,62 @@
+[
+ {
+  "account_id": "4010",
+  "account_name": "Product sales",
+  "account_class": "REVENUE",
+  "sort_order": 1
+ },
+ {
+  "account_id": "4020",
+  "account_name": "Service revenue",
+  "account_class": "REVENUE",
+  "sort_order": 2
+ },
+ {
+  "account_id": "5010",
+  "account_name": "Cost of sales (standard)",
+  "account_class": "COGS",
+  "sort_order": 3
+ },
+ {
+  "account_id": "5030",
+  "account_name": "Material price variance",
+  "account_class": "COGS",
+  "sort_order": 4
+ },
+ {
+  "account_id": "5040",
+  "account_name": "Production efficiency variance",
+  "account_class": "COGS",
+  "sort_order": 5
+ },
+ {
+  "account_id": "6010",
+  "account_name": "Personnel expenses",
+  "account_class": "SGA",
+  "sort_order": 6
+ },
+ {
+  "account_id": "6020",
+  "account_name": "Sales promotion",
+  "account_class": "SGA",
+  "sort_order": 7
+ },
+ {
+  "account_id": "6030",
+  "account_name": "Logistics",
+  "account_class": "SGA",
+  "sort_order": 8
+ },
+ {
+  "account_id": "6040",
+  "account_name": "Rent & facilities",
+  "account_class": "SGA",
+  "sort_order": 9
+ },
+ {
+  "account_id": "6050",
+  "account_name": "Other SG&A",
+  "account_class": "SGA",
+  "sort_order": 10
+ }
+]

@@ -1,0 +1,20 @@
+[
+ {
+  "action_id": "ACT-002-MF-A01",
+  "factor_id": "EV-001",
+  "metric_id": "OP",
+  "period_from": 202707,
+  "period_to": 202803,
+  "excluded_amount": -4.5,
+  "method_comment_id": "CM-EXCL-1"
+ },
+ {
+  "action_id": "ACT-003-OS-A01",
+  "factor_id": "EV-002",
+  "metric_id": "OP",
+  "period_from": 202710,
+  "period_to": 202710,
+  "excluded_amount": -1,
+  "method_comment_id": "CM-EXCL-2"
+ }
+]

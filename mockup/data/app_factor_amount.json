@@ -1,0 +1,310 @@
+[
+ {
+  "factor_id": "EV-001",
+  "org_id": "MF",
+  "metric_id": "GP",
+  "period_id": 202707,
+  "amount": -0.5
+ },
+ {
+  "factor_id": "EV-001",
+  "org_id": "MF",
+  "metric_id": "GP",
+  "period_id": 202708,
+  "amount": -0.5
+ },
+ {
+  "factor_id": "EV-001",
+  "org_id": "MF",
+  "metric_id": "GP",
+  "period_id": 202709,
+  "amount": -0.5
+ },
+ {
+  "factor_id": "EV-001",
+  "org_id": "MF",
+  "metric_id": "GP",
+  "period_id": 202710,
+  "amount": -0.5
+ },
+ {
+  "factor_id": "EV-001",
+  "org_id": "MF",
+  "metric_id": "GP",
+  "period_id": 202711,
+  "amount": -0.5
+ },
+ {
+  "factor_id": "EV-001",
+  "org_id": "MF",
+  "metric_id": "GP",
+  "period_id": 202712,
+  "amount": -0.5
+ },
+ {
+  "factor_id": "EV-001",
+  "org_id": "MF",
+  "metric_id": "GP",
+  "period_id": 202801,
+  "amount": -0.5
+ },
+ {
+  "factor_id": "EV-001",
+  "org_id": "MF",
+  "metric_id": "GP",
+  "period_id": 202802,
+  "amount": -0.5
+ },
+ {
+  "factor_id": "EV-001",
+  "org_id": "MF",
+  "metric_id": "GP",
+  "period_id": 202803,
+  "amount": -0.5
+ },
+ {
+  "factor_id": "EV-001",
+  "org_id": "MF",
+  "metric_id": "OP",
+  "period_id": 202707,
+  "amount": -0.5
+ },
+ {
+  "factor_id": "EV-001",
+  "org_id": "MF",
+  "metric_id": "OP",
+  "period_id": 202708,
+  "amount": -0.5
+ },
+ {
+  "factor_id": "EV-001",
+  "org_id": "MF",
+  "metric_id": "OP",
+  "period_id": 202709,
+  "amount": -0.5
+ },
+ {
+  "factor_id": "EV-001",
+  "org_id": "MF",
+  "metric_id": "OP",
+  "period_id": 202710,
+  "amount": -0.5
+ },
+ {
+  "factor_id": "EV-001",
+  "org_id": "MF",
+  "metric_id": "OP",
+  "period_id": 202711,
+  "amount": -0.5
+ },
+ {
+  "factor_id": "EV-001",
+  "org_id": "MF",
+  "metric_id": "OP",
+  "period_id": 202712,
+  "amount": -0.5
+ },
+ {
+  "factor_id": "EV-001",
+  "org_id": "MF",
+  "metric_id": "OP",
+  "period_id": 202801,
+  "amount": -0.5
+ },
+ {
+  "factor_id": "EV-001",
+  "org_id": "MF",
+  "metric_id": "OP",
+  "period_id": 202802,
+  "amount": -0.5
+ },
+ {
+  "factor_id": "EV-001",
+  "org_id": "MF",
+  "metric_id": "OP",
+  "period_id": 202803,
+  "amount": -0.5
+ },
+ {
+  "factor_id": "EV-002",
+  "org_id": "OS",
+  "metric_id": "SGA",
+  "period_id": 202710,
+  "amount": 1
+ },
+ {
+  "factor_id": "EV-002",
+  "org_id": "OS",
+  "metric_id": "OP",
+  "period_id": 202710,
+  "amount": -1
+ },
+ {
+  "factor_id": "EV-003",
+  "org_id": "SL",
+  "metric_id": "REV",
+  "period_id": 202711,
+  "amount": 6.4
+ },
+ {
+  "factor_id": "EV-003",
+  "org_id": "SL",
+  "metric_id": "REV",
+  "period_id": 202712,
+  "amount": 6.4
+ },
+ {
+  "factor_id": "EV-003",
+  "org_id": "SL",
+  "metric_id": "REV",
+  "period_id": 202801,
+  "amount": 6.4
+ },
+ {
+  "factor_id": "EV-003",
+  "org_id": "SL",
+  "metric_id": "REV",
+  "period_id": 202802,
+  "amount": 6.4
+ },
+ {
+  "factor_id": "EV-003",
+  "org_id": "SL",
+  "metric_id": "REV",
+  "period_id": 202803,
+  "amount": 6.4
+ },
+ {
+  "factor_id": "EV-003",
+  "org_id": "SL",
+  "metric_id": "GP",
+  "period_id": 202711,
+  "amount": 1.6
+ },
+ {
+  "factor_id": "EV-003",
+  "org_id": "SL",
+  "metric_id": "GP",
+  "period_id": 202712,
+  "amount": 1.6
+ },
+ {
+  "factor_id": "EV-003",
+  "org_id": "SL",
+  "metric_id": "GP",
+  "period_id": 202801,
+  "amount": 1.6
+ },
+ {
+  "factor_id": "EV-003",
+  "org_id": "SL",
+  "metric_id": "GP",
+  "period_id": 202802,
+  "amount": 1.6
+ },
+ {
+  "factor_id": "EV-003",
+  "org_id": "SL",
+  "metric_id": "GP",
+  "period_id": 202803,
+  "amount": 1.6
+ },
+ {
+  "factor_id": "EV-003",
+  "org_id": "SL",
+  "metric_id": "OP",
+  "period_id": 202711,
+  "amount": 1.6
+ },
+ {
+  "factor_id": "EV-003",
+  "org_id": "SL",
+  "metric_id": "OP",
+  "period_id": 202712,
+  "amount": 1.6
+ },
+ {
+  "factor_id": "EV-003",
+  "org_id": "SL",
+  "metric_id": "OP",
+  "period_id": 202801,
+  "amount": 1.6
+ },
+ {
+  "factor_id": "EV-003",
+  "org_id": "SL",
+  "metric_id": "OP",
+  "period_id": 202802,
+  "amount": 1.6
+ },
+ {
+  "factor_id": "EV-003",
+  "org_id": "SL",
+  "metric_id": "OP",
+  "period_id": 202803,
+  "amount": 1.6
+ },
+ {
+  "factor_id": "EV-004",
+  "org_id": "OS",
+  "metric_id": "REV",
+  "period_id": 202710,
+  "amount": -2.66
+ },
+ {
+  "factor_id": "EV-004",
+  "org_id": "OS",
+  "metric_id": "REV",
+  "period_id": 202711,
+  "amount": -2.67
+ },
+ {
+  "factor_id": "EV-004",
+  "org_id": "OS",
+  "metric_id": "REV",
+  "period_id": 202712,
+  "amount": -2.67
+ },
+ {
+  "factor_id": "EV-004",
+  "org_id": "OS",
+  "metric_id": "GP",
+  "period_id": 202710,
+  "amount": -0.66
+ },
+ {
+  "factor_id": "EV-004",
+  "org_id": "OS",
+  "metric_id": "GP",
+  "period_id": 202711,
+  "amount": -0.67
+ },
+ {
+  "factor_id": "EV-004",
+  "org_id": "OS",
+  "metric_id": "GP",
+  "period_id": 202712,
+  "amount": -0.67
+ },
+ {
+  "factor_id": "EV-004",
+  "org_id": "OS",
+  "metric_id": "OP",
+  "period_id": 202710,
+  "amount": -0.66
+ },
+ {
+  "factor_id": "EV-004",
+  "org_id": "OS",
+  "metric_id": "OP",
+  "period_id": 202711,
+  "amount": -0.67
+ },
+ {
+  "factor_id": "EV-004",
+  "org_id": "OS",
+  "metric_id": "OP",
+  "period_id": 202712,
+  "amount": -0.67
+ }
+]

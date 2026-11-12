@@ -1,0 +1,1919 @@
+[
+ {
+  "action_id": "ACT-001-SL-A01",
+  "metric_id": "REV",
+  "period_id": 202706,
+  "planned_effect": 4,
+  "actual_effect": 1.6,
+  "outlook_effect": null,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-001-SL-A01",
+  "metric_id": "GP",
+  "period_id": 202706,
+  "planned_effect": 1,
+  "actual_effect": 0.4,
+  "outlook_effect": null,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-001-SL-A01",
+  "metric_id": "OP",
+  "period_id": 202706,
+  "planned_effect": 1,
+  "actual_effect": 0.4,
+  "outlook_effect": null,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-001-SL-A01",
+  "metric_id": "REV",
+  "period_id": 202707,
+  "planned_effect": 4,
+  "actual_effect": null,
+  "outlook_effect": 3.76,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-001-SL-A01",
+  "metric_id": "GP",
+  "period_id": 202707,
+  "planned_effect": 1,
+  "actual_effect": null,
+  "outlook_effect": 0.94,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-001-SL-A01",
+  "metric_id": "OP",
+  "period_id": 202707,
+  "planned_effect": 1,
+  "actual_effect": null,
+  "outlook_effect": 0.94,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-001-SL-A01",
+  "metric_id": "REV",
+  "period_id": 202708,
+  "planned_effect": 4,
+  "actual_effect": null,
+  "outlook_effect": 3.76,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-001-SL-A01",
+  "metric_id": "GP",
+  "period_id": 202708,
+  "planned_effect": 1,
+  "actual_effect": null,
+  "outlook_effect": 0.94,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-001-SL-A01",
+  "metric_id": "OP",
+  "period_id": 202708,
+  "planned_effect": 1,
+  "actual_effect": null,
+  "outlook_effect": 0.94,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-001-SL-A01",
+  "metric_id": "REV",
+  "period_id": 202709,
+  "planned_effect": 4,
+  "actual_effect": null,
+  "outlook_effect": 3.72,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-001-SL-A01",
+  "metric_id": "GP",
+  "period_id": 202709,
+  "planned_effect": 1,
+  "actual_effect": null,
+  "outlook_effect": 0.93,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-001-SL-A01",
+  "metric_id": "OP",
+  "period_id": 202709,
+  "planned_effect": 1,
+  "actual_effect": null,
+  "outlook_effect": 0.93,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-001-SL-A01",
+  "metric_id": "REV",
+  "period_id": 202710,
+  "planned_effect": 4,
+  "actual_effect": null,
+  "outlook_effect": 3.72,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-001-SL-A01",
+  "metric_id": "GP",
+  "period_id": 202710,
+  "planned_effect": 1,
+  "actual_effect": null,
+  "outlook_effect": 0.93,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-001-SL-A01",
+  "metric_id": "OP",
+  "period_id": 202710,
+  "planned_effect": 1,
+  "actual_effect": null,
+  "outlook_effect": 0.93,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-001-SL-A01",
+  "metric_id": "REV",
+  "period_id": 202711,
+  "planned_effect": 4,
+  "actual_effect": null,
+  "outlook_effect": 3.72,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-001-SL-A01",
+  "metric_id": "GP",
+  "period_id": 202711,
+  "planned_effect": 1,
+  "actual_effect": null,
+  "outlook_effect": 0.93,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-001-SL-A01",
+  "metric_id": "OP",
+  "period_id": 202711,
+  "planned_effect": 1,
+  "actual_effect": null,
+  "outlook_effect": 0.93,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-001-SL-A01",
+  "metric_id": "REV",
+  "period_id": 202712,
+  "planned_effect": 4,
+  "actual_effect": null,
+  "outlook_effect": 3.72,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-001-SL-A01",
+  "metric_id": "GP",
+  "period_id": 202712,
+  "planned_effect": 1,
+  "actual_effect": null,
+  "outlook_effect": 0.93,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-001-SL-A01",
+  "metric_id": "OP",
+  "period_id": 202712,
+  "planned_effect": 1,
+  "actual_effect": null,
+  "outlook_effect": 0.93,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-001-SL-A02",
+  "metric_id": "REV",
+  "period_id": 202708,
+  "planned_effect": 2.52,
+  "actual_effect": null,
+  "outlook_effect": null,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-001-SL-A02",
+  "metric_id": "GP",
+  "period_id": 202708,
+  "planned_effect": 0.63,
+  "actual_effect": null,
+  "outlook_effect": null,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-001-SL-A02",
+  "metric_id": "OP",
+  "period_id": 202708,
+  "planned_effect": 0.63,
+  "actual_effect": null,
+  "outlook_effect": null,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-001-SL-A02",
+  "metric_id": "REV",
+  "period_id": 202709,
+  "planned_effect": 2.52,
+  "actual_effect": null,
+  "outlook_effect": null,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-001-SL-A02",
+  "metric_id": "GP",
+  "period_id": 202709,
+  "planned_effect": 0.63,
+  "actual_effect": null,
+  "outlook_effect": null,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-001-SL-A02",
+  "metric_id": "OP",
+  "period_id": 202709,
+  "planned_effect": 0.63,
+  "actual_effect": null,
+  "outlook_effect": null,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-001-SL-A02",
+  "metric_id": "REV",
+  "period_id": 202710,
+  "planned_effect": 2.52,
+  "actual_effect": null,
+  "outlook_effect": null,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-001-SL-A02",
+  "metric_id": "GP",
+  "period_id": 202710,
+  "planned_effect": 0.63,
+  "actual_effect": null,
+  "outlook_effect": null,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-001-SL-A02",
+  "metric_id": "OP",
+  "period_id": 202710,
+  "planned_effect": 0.63,
+  "actual_effect": null,
+  "outlook_effect": null,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-001-SL-A02",
+  "metric_id": "REV",
+  "period_id": 202711,
+  "planned_effect": 2.52,
+  "actual_effect": null,
+  "outlook_effect": null,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-001-SL-A02",
+  "metric_id": "GP",
+  "period_id": 202711,
+  "planned_effect": 0.63,
+  "actual_effect": null,
+  "outlook_effect": null,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-001-SL-A02",
+  "metric_id": "OP",
+  "period_id": 202711,
+  "planned_effect": 0.63,
+  "actual_effect": null,
+  "outlook_effect": null,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-001-SL-A02",
+  "metric_id": "REV",
+  "period_id": 202712,
+  "planned_effect": 2.48,
+  "actual_effect": null,
+  "outlook_effect": null,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-001-SL-A02",
+  "metric_id": "GP",
+  "period_id": 202712,
+  "planned_effect": 0.62,
+  "actual_effect": null,
+  "outlook_effect": null,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-001-SL-A02",
+  "metric_id": "OP",
+  "period_id": 202712,
+  "planned_effect": 0.62,
+  "actual_effect": null,
+  "outlook_effect": null,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-001-SL-A02",
+  "metric_id": "REV",
+  "period_id": 202801,
+  "planned_effect": 2.48,
+  "actual_effect": null,
+  "outlook_effect": null,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-001-SL-A02",
+  "metric_id": "GP",
+  "period_id": 202801,
+  "planned_effect": 0.62,
+  "actual_effect": null,
+  "outlook_effect": null,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-001-SL-A02",
+  "metric_id": "OP",
+  "period_id": 202801,
+  "planned_effect": 0.62,
+  "actual_effect": null,
+  "outlook_effect": null,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-001-SL-A02",
+  "metric_id": "REV",
+  "period_id": 202802,
+  "planned_effect": 2.48,
+  "actual_effect": null,
+  "outlook_effect": null,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-001-SL-A02",
+  "metric_id": "GP",
+  "period_id": 202802,
+  "planned_effect": 0.62,
+  "actual_effect": null,
+  "outlook_effect": null,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-001-SL-A02",
+  "metric_id": "OP",
+  "period_id": 202802,
+  "planned_effect": 0.62,
+  "actual_effect": null,
+  "outlook_effect": null,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-001-SL-A02",
+  "metric_id": "REV",
+  "period_id": 202803,
+  "planned_effect": 2.48,
+  "actual_effect": null,
+  "outlook_effect": null,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-001-SL-A02",
+  "metric_id": "GP",
+  "period_id": 202803,
+  "planned_effect": 0.62,
+  "actual_effect": null,
+  "outlook_effect": null,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-001-SL-A02",
+  "metric_id": "OP",
+  "period_id": 202803,
+  "planned_effect": 0.62,
+  "actual_effect": null,
+  "outlook_effect": null,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-001-SL-U01",
+  "metric_id": "REV",
+  "period_id": 202707,
+  "planned_effect": 2.68,
+  "actual_effect": null,
+  "outlook_effect": null,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-001-SL-U01",
+  "metric_id": "GP",
+  "period_id": 202707,
+  "planned_effect": 0.67,
+  "actual_effect": null,
+  "outlook_effect": null,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-001-SL-U01",
+  "metric_id": "OP",
+  "period_id": 202707,
+  "planned_effect": 0.67,
+  "actual_effect": null,
+  "outlook_effect": null,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-001-SL-U01",
+  "metric_id": "REV",
+  "period_id": 202708,
+  "planned_effect": 2.68,
+  "actual_effect": null,
+  "outlook_effect": null,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-001-SL-U01",
+  "metric_id": "GP",
+  "period_id": 202708,
+  "planned_effect": 0.67,
+  "actual_effect": null,
+  "outlook_effect": null,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-001-SL-U01",
+  "metric_id": "OP",
+  "period_id": 202708,
+  "planned_effect": 0.67,
+  "actual_effect": null,
+  "outlook_effect": null,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-001-SL-U01",
+  "metric_id": "REV",
+  "period_id": 202709,
+  "planned_effect": 2.64,
+  "actual_effect": null,
+  "outlook_effect": null,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-001-SL-U01",
+  "metric_id": "GP",
+  "period_id": 202709,
+  "planned_effect": 0.66,
+  "actual_effect": null,
+  "outlook_effect": null,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-001-SL-U01",
+  "metric_id": "OP",
+  "period_id": 202709,
+  "planned_effect": 0.66,
+  "actual_effect": null,
+  "outlook_effect": null,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-001-OS-A01",
+  "metric_id": "REV",
+  "period_id": 202706,
+  "planned_effect": 1.2,
+  "actual_effect": 0.8,
+  "outlook_effect": null,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-001-OS-A01",
+  "metric_id": "GP",
+  "period_id": 202706,
+  "planned_effect": 0.3,
+  "actual_effect": 0.2,
+  "outlook_effect": null,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-001-OS-A01",
+  "metric_id": "OP",
+  "period_id": 202706,
+  "planned_effect": 0.3,
+  "actual_effect": 0.2,
+  "outlook_effect": null,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-001-OS-A01",
+  "metric_id": "REV",
+  "period_id": 202707,
+  "planned_effect": 1.2,
+  "actual_effect": null,
+  "outlook_effect": 1.04,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-001-OS-A01",
+  "metric_id": "GP",
+  "period_id": 202707,
+  "planned_effect": 0.3,
+  "actual_effect": null,
+  "outlook_effect": 0.26,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-001-OS-A01",
+  "metric_id": "OP",
+  "period_id": 202707,
+  "planned_effect": 0.3,
+  "actual_effect": null,
+  "outlook_effect": 0.26,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-001-OS-A01",
+  "metric_id": "REV",
+  "period_id": 202708,
+  "planned_effect": 1.2,
+  "actual_effect": null,
+  "outlook_effect": 1.04,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-001-OS-A01",
+  "metric_id": "GP",
+  "period_id": 202708,
+  "planned_effect": 0.3,
+  "actual_effect": null,
+  "outlook_effect": 0.26,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-001-OS-A01",
+  "metric_id": "OP",
+  "period_id": 202708,
+  "planned_effect": 0.3,
+  "actual_effect": null,
+  "outlook_effect": 0.26,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-001-OS-A01",
+  "metric_id": "REV",
+  "period_id": 202709,
+  "planned_effect": 1.2,
+  "actual_effect": null,
+  "outlook_effect": 1.04,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-001-OS-A01",
+  "metric_id": "GP",
+  "period_id": 202709,
+  "planned_effect": 0.3,
+  "actual_effect": null,
+  "outlook_effect": 0.26,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-001-OS-A01",
+  "metric_id": "OP",
+  "period_id": 202709,
+  "planned_effect": 0.3,
+  "actual_effect": null,
+  "outlook_effect": 0.26,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-001-OS-A01",
+  "metric_id": "REV",
+  "period_id": 202710,
+  "planned_effect": 1.2,
+  "actual_effect": null,
+  "outlook_effect": 1.04,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-001-OS-A01",
+  "metric_id": "GP",
+  "period_id": 202710,
+  "planned_effect": 0.3,
+  "actual_effect": null,
+  "outlook_effect": 0.26,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-001-OS-A01",
+  "metric_id": "OP",
+  "period_id": 202710,
+  "planned_effect": 0.3,
+  "actual_effect": null,
+  "outlook_effect": 0.26,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-001-OS-A01",
+  "metric_id": "REV",
+  "period_id": 202711,
+  "planned_effect": 1.2,
+  "actual_effect": null,
+  "outlook_effect": 1.04,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-001-OS-A01",
+  "metric_id": "GP",
+  "period_id": 202711,
+  "planned_effect": 0.3,
+  "actual_effect": null,
+  "outlook_effect": 0.26,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-001-OS-A01",
+  "metric_id": "OP",
+  "period_id": 202711,
+  "planned_effect": 0.3,
+  "actual_effect": null,
+  "outlook_effect": 0.26,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-001-OS-A01",
+  "metric_id": "REV",
+  "period_id": 202712,
+  "planned_effect": 1.2,
+  "actual_effect": null,
+  "outlook_effect": 1,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-001-OS-A01",
+  "metric_id": "GP",
+  "period_id": 202712,
+  "planned_effect": 0.3,
+  "actual_effect": null,
+  "outlook_effect": 0.25,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-001-OS-A01",
+  "metric_id": "OP",
+  "period_id": 202712,
+  "planned_effect": 0.3,
+  "actual_effect": null,
+  "outlook_effect": 0.25,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-001-OS-A01",
+  "metric_id": "REV",
+  "period_id": 202801,
+  "planned_effect": 1.2,
+  "actual_effect": null,
+  "outlook_effect": 1,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-001-OS-A01",
+  "metric_id": "GP",
+  "period_id": 202801,
+  "planned_effect": 0.3,
+  "actual_effect": null,
+  "outlook_effect": 0.25,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-001-OS-A01",
+  "metric_id": "OP",
+  "period_id": 202801,
+  "planned_effect": 0.3,
+  "actual_effect": null,
+  "outlook_effect": 0.25,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-001-OS-A01",
+  "metric_id": "REV",
+  "period_id": 202802,
+  "planned_effect": 1.2,
+  "actual_effect": null,
+  "outlook_effect": 1,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-001-OS-A01",
+  "metric_id": "GP",
+  "period_id": 202802,
+  "planned_effect": 0.3,
+  "actual_effect": null,
+  "outlook_effect": 0.25,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-001-OS-A01",
+  "metric_id": "OP",
+  "period_id": 202802,
+  "planned_effect": 0.3,
+  "actual_effect": null,
+  "outlook_effect": 0.25,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-001-OS-A01",
+  "metric_id": "REV",
+  "period_id": 202803,
+  "planned_effect": 1.2,
+  "actual_effect": null,
+  "outlook_effect": 1,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-001-OS-A01",
+  "metric_id": "GP",
+  "period_id": 202803,
+  "planned_effect": 0.3,
+  "actual_effect": null,
+  "outlook_effect": 0.25,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-001-OS-A01",
+  "metric_id": "OP",
+  "period_id": 202803,
+  "planned_effect": 0.3,
+  "actual_effect": null,
+  "outlook_effect": 0.25,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-002-MF-A01",
+  "metric_id": "GP",
+  "period_id": 202707,
+  "planned_effect": 0.67,
+  "actual_effect": null,
+  "outlook_effect": 0.56,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-002-MF-A01",
+  "metric_id": "OP",
+  "period_id": 202707,
+  "planned_effect": 0.67,
+  "actual_effect": null,
+  "outlook_effect": 0.56,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-002-MF-A01",
+  "metric_id": "GP",
+  "period_id": 202708,
+  "planned_effect": 0.67,
+  "actual_effect": null,
+  "outlook_effect": 0.56,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-002-MF-A01",
+  "metric_id": "OP",
+  "period_id": 202708,
+  "planned_effect": 0.67,
+  "actual_effect": null,
+  "outlook_effect": 0.56,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-002-MF-A01",
+  "metric_id": "GP",
+  "period_id": 202709,
+  "planned_effect": 0.67,
+  "actual_effect": null,
+  "outlook_effect": 0.56,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-002-MF-A01",
+  "metric_id": "OP",
+  "period_id": 202709,
+  "planned_effect": 0.67,
+  "actual_effect": null,
+  "outlook_effect": 0.56,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-002-MF-A01",
+  "metric_id": "GP",
+  "period_id": 202710,
+  "planned_effect": 0.67,
+  "actual_effect": null,
+  "outlook_effect": 0.56,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-002-MF-A01",
+  "metric_id": "OP",
+  "period_id": 202710,
+  "planned_effect": 0.67,
+  "actual_effect": null,
+  "outlook_effect": 0.56,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-002-MF-A01",
+  "metric_id": "GP",
+  "period_id": 202711,
+  "planned_effect": 0.67,
+  "actual_effect": null,
+  "outlook_effect": 0.56,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-002-MF-A01",
+  "metric_id": "OP",
+  "period_id": 202711,
+  "planned_effect": 0.67,
+  "actual_effect": null,
+  "outlook_effect": 0.56,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-002-MF-A01",
+  "metric_id": "GP",
+  "period_id": 202712,
+  "planned_effect": 0.67,
+  "actual_effect": null,
+  "outlook_effect": 0.55,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-002-MF-A01",
+  "metric_id": "OP",
+  "period_id": 202712,
+  "planned_effect": 0.67,
+  "actual_effect": null,
+  "outlook_effect": 0.55,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-002-MF-A01",
+  "metric_id": "GP",
+  "period_id": 202801,
+  "planned_effect": 0.66,
+  "actual_effect": null,
+  "outlook_effect": 0.55,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-002-MF-A01",
+  "metric_id": "OP",
+  "period_id": 202801,
+  "planned_effect": 0.66,
+  "actual_effect": null,
+  "outlook_effect": 0.55,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-002-MF-A01",
+  "metric_id": "GP",
+  "period_id": 202802,
+  "planned_effect": 0.66,
+  "actual_effect": null,
+  "outlook_effect": 0.55,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-002-MF-A01",
+  "metric_id": "OP",
+  "period_id": 202802,
+  "planned_effect": 0.66,
+  "actual_effect": null,
+  "outlook_effect": 0.55,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-002-MF-A01",
+  "metric_id": "GP",
+  "period_id": 202803,
+  "planned_effect": 0.66,
+  "actual_effect": null,
+  "outlook_effect": 0.55,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-002-MF-A01",
+  "metric_id": "OP",
+  "period_id": 202803,
+  "planned_effect": 0.66,
+  "actual_effect": null,
+  "outlook_effect": 0.55,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-002-MF-A02",
+  "metric_id": "GP",
+  "period_id": 202707,
+  "planned_effect": 0.39,
+  "actual_effect": null,
+  "outlook_effect": null,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-002-MF-A02",
+  "metric_id": "OP",
+  "period_id": 202707,
+  "planned_effect": 0.39,
+  "actual_effect": null,
+  "outlook_effect": null,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-002-MF-A02",
+  "metric_id": "GP",
+  "period_id": 202708,
+  "planned_effect": 0.39,
+  "actual_effect": null,
+  "outlook_effect": null,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-002-MF-A02",
+  "metric_id": "OP",
+  "period_id": 202708,
+  "planned_effect": 0.39,
+  "actual_effect": null,
+  "outlook_effect": null,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-002-MF-A02",
+  "metric_id": "GP",
+  "period_id": 202709,
+  "planned_effect": 0.39,
+  "actual_effect": null,
+  "outlook_effect": null,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-002-MF-A02",
+  "metric_id": "OP",
+  "period_id": 202709,
+  "planned_effect": 0.39,
+  "actual_effect": null,
+  "outlook_effect": null,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-002-MF-A02",
+  "metric_id": "GP",
+  "period_id": 202710,
+  "planned_effect": 0.39,
+  "actual_effect": null,
+  "outlook_effect": null,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-002-MF-A02",
+  "metric_id": "OP",
+  "period_id": 202710,
+  "planned_effect": 0.39,
+  "actual_effect": null,
+  "outlook_effect": null,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-002-MF-A02",
+  "metric_id": "GP",
+  "period_id": 202711,
+  "planned_effect": 0.39,
+  "actual_effect": null,
+  "outlook_effect": null,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-002-MF-A02",
+  "metric_id": "OP",
+  "period_id": 202711,
+  "planned_effect": 0.39,
+  "actual_effect": null,
+  "outlook_effect": null,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-002-MF-A02",
+  "metric_id": "GP",
+  "period_id": 202712,
+  "planned_effect": 0.39,
+  "actual_effect": null,
+  "outlook_effect": null,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-002-MF-A02",
+  "metric_id": "OP",
+  "period_id": 202712,
+  "planned_effect": 0.39,
+  "actual_effect": null,
+  "outlook_effect": null,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-002-MF-A02",
+  "metric_id": "GP",
+  "period_id": 202801,
+  "planned_effect": 0.39,
+  "actual_effect": null,
+  "outlook_effect": null,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-002-MF-A02",
+  "metric_id": "OP",
+  "period_id": 202801,
+  "planned_effect": 0.39,
+  "actual_effect": null,
+  "outlook_effect": null,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-002-MF-A02",
+  "metric_id": "GP",
+  "period_id": 202802,
+  "planned_effect": 0.39,
+  "actual_effect": null,
+  "outlook_effect": null,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-002-MF-A02",
+  "metric_id": "OP",
+  "period_id": 202802,
+  "planned_effect": 0.39,
+  "actual_effect": null,
+  "outlook_effect": null,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-002-MF-A02",
+  "metric_id": "GP",
+  "period_id": 202803,
+  "planned_effect": 0.38,
+  "actual_effect": null,
+  "outlook_effect": null,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-002-MF-A02",
+  "metric_id": "OP",
+  "period_id": 202803,
+  "planned_effect": 0.38,
+  "actual_effect": null,
+  "outlook_effect": null,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-003-OS-A01",
+  "metric_id": "REV",
+  "period_id": 202707,
+  "planned_effect": 1.8,
+  "actual_effect": null,
+  "outlook_effect": 1.36,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-003-OS-A01",
+  "metric_id": "GP",
+  "period_id": 202707,
+  "planned_effect": 0.45,
+  "actual_effect": null,
+  "outlook_effect": 0.34,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-003-OS-A01",
+  "metric_id": "OP",
+  "period_id": 202707,
+  "planned_effect": 0.45,
+  "actual_effect": null,
+  "outlook_effect": 0.34,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-003-OS-A01",
+  "metric_id": "REV",
+  "period_id": 202708,
+  "planned_effect": 1.8,
+  "actual_effect": null,
+  "outlook_effect": 1.36,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-003-OS-A01",
+  "metric_id": "GP",
+  "period_id": 202708,
+  "planned_effect": 0.45,
+  "actual_effect": null,
+  "outlook_effect": 0.34,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-003-OS-A01",
+  "metric_id": "OP",
+  "period_id": 202708,
+  "planned_effect": 0.45,
+  "actual_effect": null,
+  "outlook_effect": 0.34,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-003-OS-A01",
+  "metric_id": "REV",
+  "period_id": 202709,
+  "planned_effect": 1.8,
+  "actual_effect": null,
+  "outlook_effect": 1.36,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-003-OS-A01",
+  "metric_id": "GP",
+  "period_id": 202709,
+  "planned_effect": 0.45,
+  "actual_effect": null,
+  "outlook_effect": 0.34,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-003-OS-A01",
+  "metric_id": "OP",
+  "period_id": 202709,
+  "planned_effect": 0.45,
+  "actual_effect": null,
+  "outlook_effect": 0.34,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-003-OS-A01",
+  "metric_id": "REV",
+  "period_id": 202710,
+  "planned_effect": 1.8,
+  "actual_effect": null,
+  "outlook_effect": 1.32,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-003-OS-A01",
+  "metric_id": "GP",
+  "period_id": 202710,
+  "planned_effect": 0.45,
+  "actual_effect": null,
+  "outlook_effect": 0.33,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-003-OS-A01",
+  "metric_id": "OP",
+  "period_id": 202710,
+  "planned_effect": 0.45,
+  "actual_effect": null,
+  "outlook_effect": 0.33,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-003-OS-A01",
+  "metric_id": "REV",
+  "period_id": 202711,
+  "planned_effect": 1.76,
+  "actual_effect": null,
+  "outlook_effect": 1.32,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-003-OS-A01",
+  "metric_id": "GP",
+  "period_id": 202711,
+  "planned_effect": 0.44,
+  "actual_effect": null,
+  "outlook_effect": 0.33,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-003-OS-A01",
+  "metric_id": "OP",
+  "period_id": 202711,
+  "planned_effect": 0.44,
+  "actual_effect": null,
+  "outlook_effect": 0.33,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-003-OS-A01",
+  "metric_id": "REV",
+  "period_id": 202712,
+  "planned_effect": 1.76,
+  "actual_effect": null,
+  "outlook_effect": 1.32,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-003-OS-A01",
+  "metric_id": "GP",
+  "period_id": 202712,
+  "planned_effect": 0.44,
+  "actual_effect": null,
+  "outlook_effect": 0.33,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-003-OS-A01",
+  "metric_id": "OP",
+  "period_id": 202712,
+  "planned_effect": 0.44,
+  "actual_effect": null,
+  "outlook_effect": 0.33,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-003-OS-A01",
+  "metric_id": "REV",
+  "period_id": 202801,
+  "planned_effect": 1.76,
+  "actual_effect": null,
+  "outlook_effect": 1.32,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-003-OS-A01",
+  "metric_id": "GP",
+  "period_id": 202801,
+  "planned_effect": 0.44,
+  "actual_effect": null,
+  "outlook_effect": 0.33,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-003-OS-A01",
+  "metric_id": "OP",
+  "period_id": 202801,
+  "planned_effect": 0.44,
+  "actual_effect": null,
+  "outlook_effect": 0.33,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-003-OS-A01",
+  "metric_id": "REV",
+  "period_id": 202802,
+  "planned_effect": 1.76,
+  "actual_effect": null,
+  "outlook_effect": 1.32,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-003-OS-A01",
+  "metric_id": "GP",
+  "period_id": 202802,
+  "planned_effect": 0.44,
+  "actual_effect": null,
+  "outlook_effect": 0.33,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-003-OS-A01",
+  "metric_id": "OP",
+  "period_id": 202802,
+  "planned_effect": 0.44,
+  "actual_effect": null,
+  "outlook_effect": 0.33,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-003-OS-A01",
+  "metric_id": "REV",
+  "period_id": 202803,
+  "planned_effect": 1.76,
+  "actual_effect": null,
+  "outlook_effect": 1.32,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-003-OS-A01",
+  "metric_id": "GP",
+  "period_id": 202803,
+  "planned_effect": 0.44,
+  "actual_effect": null,
+  "outlook_effect": 0.33,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-003-OS-A01",
+  "metric_id": "OP",
+  "period_id": 202803,
+  "planned_effect": 0.44,
+  "actual_effect": null,
+  "outlook_effect": 0.33,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-004-SL-A01",
+  "metric_id": "SGA",
+  "period_id": 202704,
+  "planned_effect": -1,
+  "actual_effect": -0.7,
+  "outlook_effect": null,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-004-SL-A01",
+  "metric_id": "OP",
+  "period_id": 202704,
+  "planned_effect": 1,
+  "actual_effect": 0.7,
+  "outlook_effect": null,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-004-SL-A01",
+  "metric_id": "SGA",
+  "period_id": 202705,
+  "planned_effect": -1,
+  "actual_effect": -0.9,
+  "outlook_effect": null,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-004-SL-A01",
+  "metric_id": "OP",
+  "period_id": 202705,
+  "planned_effect": 1,
+  "actual_effect": 0.9,
+  "outlook_effect": null,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-004-SL-A01",
+  "metric_id": "SGA",
+  "period_id": 202706,
+  "planned_effect": -1,
+  "actual_effect": -0.9,
+  "outlook_effect": null,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-004-SL-A01",
+  "metric_id": "OP",
+  "period_id": 202706,
+  "planned_effect": 1,
+  "actual_effect": 0.9,
+  "outlook_effect": null,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-005-AD-U01",
+  "metric_id": "SGA",
+  "period_id": 202705,
+  "planned_effect": -0.23,
+  "actual_effect": -0.1,
+  "outlook_effect": null,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-005-AD-U01",
+  "metric_id": "OP",
+  "period_id": 202705,
+  "planned_effect": 0.23,
+  "actual_effect": 0.1,
+  "outlook_effect": null,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-005-AD-U01",
+  "metric_id": "SGA",
+  "period_id": 202706,
+  "planned_effect": -0.23,
+  "actual_effect": -0.2,
+  "outlook_effect": null,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-005-AD-U01",
+  "metric_id": "OP",
+  "period_id": 202706,
+  "planned_effect": 0.23,
+  "actual_effect": 0.2,
+  "outlook_effect": null,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-005-AD-U01",
+  "metric_id": "SGA",
+  "period_id": 202707,
+  "planned_effect": -0.23,
+  "actual_effect": null,
+  "outlook_effect": -0.14,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-005-AD-U01",
+  "metric_id": "OP",
+  "period_id": 202707,
+  "planned_effect": 0.23,
+  "actual_effect": null,
+  "outlook_effect": 0.14,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-005-AD-U01",
+  "metric_id": "SGA",
+  "period_id": 202708,
+  "planned_effect": -0.23,
+  "actual_effect": null,
+  "outlook_effect": -0.14,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-005-AD-U01",
+  "metric_id": "OP",
+  "period_id": 202708,
+  "planned_effect": 0.23,
+  "actual_effect": null,
+  "outlook_effect": 0.14,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-005-AD-U01",
+  "metric_id": "SGA",
+  "period_id": 202709,
+  "planned_effect": -0.23,
+  "actual_effect": null,
+  "outlook_effect": -0.14,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-005-AD-U01",
+  "metric_id": "OP",
+  "period_id": 202709,
+  "planned_effect": 0.23,
+  "actual_effect": null,
+  "outlook_effect": 0.14,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-005-AD-U01",
+  "metric_id": "SGA",
+  "period_id": 202710,
+  "planned_effect": -0.23,
+  "actual_effect": null,
+  "outlook_effect": -0.13,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-005-AD-U01",
+  "metric_id": "OP",
+  "period_id": 202710,
+  "planned_effect": 0.23,
+  "actual_effect": null,
+  "outlook_effect": 0.13,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-005-AD-U01",
+  "metric_id": "SGA",
+  "period_id": 202711,
+  "planned_effect": -0.23,
+  "actual_effect": null,
+  "outlook_effect": -0.13,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-005-AD-U01",
+  "metric_id": "OP",
+  "period_id": 202711,
+  "planned_effect": 0.23,
+  "actual_effect": null,
+  "outlook_effect": 0.13,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-005-AD-U01",
+  "metric_id": "SGA",
+  "period_id": 202712,
+  "planned_effect": -0.23,
+  "actual_effect": null,
+  "outlook_effect": -0.13,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-005-AD-U01",
+  "metric_id": "OP",
+  "period_id": 202712,
+  "planned_effect": 0.23,
+  "actual_effect": null,
+  "outlook_effect": 0.13,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-005-AD-U01",
+  "metric_id": "SGA",
+  "period_id": 202801,
+  "planned_effect": -0.22,
+  "actual_effect": null,
+  "outlook_effect": -0.13,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-005-AD-U01",
+  "metric_id": "OP",
+  "period_id": 202801,
+  "planned_effect": 0.22,
+  "actual_effect": null,
+  "outlook_effect": 0.13,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-005-AD-U01",
+  "metric_id": "SGA",
+  "period_id": 202802,
+  "planned_effect": -0.22,
+  "actual_effect": null,
+  "outlook_effect": -0.13,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-005-AD-U01",
+  "metric_id": "OP",
+  "period_id": 202802,
+  "planned_effect": 0.22,
+  "actual_effect": null,
+  "outlook_effect": 0.13,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-005-AD-U01",
+  "metric_id": "SGA",
+  "period_id": 202803,
+  "planned_effect": -0.22,
+  "actual_effect": null,
+  "outlook_effect": -0.13,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-005-AD-U01",
+  "metric_id": "OP",
+  "period_id": 202803,
+  "planned_effect": 0.22,
+  "actual_effect": null,
+  "outlook_effect": 0.13,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-006-OS-A01",
+  "metric_id": "REV",
+  "period_id": 202707,
+  "planned_effect": 1.36,
+  "actual_effect": null,
+  "outlook_effect": null,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-006-OS-A01",
+  "metric_id": "GP",
+  "period_id": 202707,
+  "planned_effect": 0.34,
+  "actual_effect": null,
+  "outlook_effect": null,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-006-OS-A01",
+  "metric_id": "OP",
+  "period_id": 202707,
+  "planned_effect": 0.34,
+  "actual_effect": null,
+  "outlook_effect": null,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-006-OS-A01",
+  "metric_id": "REV",
+  "period_id": 202708,
+  "planned_effect": 1.36,
+  "actual_effect": null,
+  "outlook_effect": null,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-006-OS-A01",
+  "metric_id": "GP",
+  "period_id": 202708,
+  "planned_effect": 0.34,
+  "actual_effect": null,
+  "outlook_effect": null,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-006-OS-A01",
+  "metric_id": "OP",
+  "period_id": 202708,
+  "planned_effect": 0.34,
+  "actual_effect": null,
+  "outlook_effect": null,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-006-OS-A01",
+  "metric_id": "REV",
+  "period_id": 202709,
+  "planned_effect": 1.32,
+  "actual_effect": null,
+  "outlook_effect": null,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-006-OS-A01",
+  "metric_id": "GP",
+  "period_id": 202709,
+  "planned_effect": 0.33,
+  "actual_effect": null,
+  "outlook_effect": null,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-006-OS-A01",
+  "metric_id": "OP",
+  "period_id": 202709,
+  "planned_effect": 0.33,
+  "actual_effect": null,
+  "outlook_effect": null,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-006-OS-A01",
+  "metric_id": "REV",
+  "period_id": 202710,
+  "planned_effect": 1.32,
+  "actual_effect": null,
+  "outlook_effect": null,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-006-OS-A01",
+  "metric_id": "GP",
+  "period_id": 202710,
+  "planned_effect": 0.33,
+  "actual_effect": null,
+  "outlook_effect": null,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-006-OS-A01",
+  "metric_id": "OP",
+  "period_id": 202710,
+  "planned_effect": 0.33,
+  "actual_effect": null,
+  "outlook_effect": null,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-006-OS-A01",
+  "metric_id": "REV",
+  "period_id": 202711,
+  "planned_effect": 1.32,
+  "actual_effect": null,
+  "outlook_effect": null,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-006-OS-A01",
+  "metric_id": "GP",
+  "period_id": 202711,
+  "planned_effect": 0.33,
+  "actual_effect": null,
+  "outlook_effect": null,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-006-OS-A01",
+  "metric_id": "OP",
+  "period_id": 202711,
+  "planned_effect": 0.33,
+  "actual_effect": null,
+  "outlook_effect": null,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-006-OS-A01",
+  "metric_id": "REV",
+  "period_id": 202712,
+  "planned_effect": 1.32,
+  "actual_effect": null,
+  "outlook_effect": null,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-006-OS-A01",
+  "metric_id": "GP",
+  "period_id": 202712,
+  "planned_effect": 0.33,
+  "actual_effect": null,
+  "outlook_effect": null,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-006-OS-A01",
+  "metric_id": "OP",
+  "period_id": 202712,
+  "planned_effect": 0.33,
+  "actual_effect": null,
+  "outlook_effect": null,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-007-MF-A01",
+  "metric_id": "GP",
+  "period_id": 202706,
+  "planned_effect": 0.45,
+  "actual_effect": 0,
+  "outlook_effect": null,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-007-MF-A01",
+  "metric_id": "OP",
+  "period_id": 202706,
+  "planned_effect": 0.45,
+  "actual_effect": 0,
+  "outlook_effect": null,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-007-MF-A01",
+  "metric_id": "GP",
+  "period_id": 202707,
+  "planned_effect": 0.45,
+  "actual_effect": null,
+  "outlook_effect": 0.17,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-007-MF-A01",
+  "metric_id": "OP",
+  "period_id": 202707,
+  "planned_effect": 0.45,
+  "actual_effect": null,
+  "outlook_effect": 0.17,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-007-MF-A01",
+  "metric_id": "GP",
+  "period_id": 202708,
+  "planned_effect": 0.45,
+  "actual_effect": null,
+  "outlook_effect": 0.17,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-007-MF-A01",
+  "metric_id": "OP",
+  "period_id": 202708,
+  "planned_effect": 0.45,
+  "actual_effect": null,
+  "outlook_effect": 0.17,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-007-MF-A01",
+  "metric_id": "GP",
+  "period_id": 202709,
+  "planned_effect": 0.45,
+  "actual_effect": null,
+  "outlook_effect": 0.17,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-007-MF-A01",
+  "metric_id": "OP",
+  "period_id": 202709,
+  "planned_effect": 0.45,
+  "actual_effect": null,
+  "outlook_effect": 0.17,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-007-MF-A01",
+  "metric_id": "GP",
+  "period_id": 202710,
+  "planned_effect": 0.45,
+  "actual_effect": null,
+  "outlook_effect": 0.17,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-007-MF-A01",
+  "metric_id": "OP",
+  "period_id": 202710,
+  "planned_effect": 0.45,
+  "actual_effect": null,
+  "outlook_effect": 0.17,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-007-MF-A01",
+  "metric_id": "GP",
+  "period_id": 202711,
+  "planned_effect": 0.45,
+  "actual_effect": null,
+  "outlook_effect": 0.17,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-007-MF-A01",
+  "metric_id": "OP",
+  "period_id": 202711,
+  "planned_effect": 0.45,
+  "actual_effect": null,
+  "outlook_effect": 0.17,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-007-MF-A01",
+  "metric_id": "GP",
+  "period_id": 202712,
+  "planned_effect": 0.45,
+  "actual_effect": null,
+  "outlook_effect": 0.17,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-007-MF-A01",
+  "metric_id": "OP",
+  "period_id": 202712,
+  "planned_effect": 0.45,
+  "actual_effect": null,
+  "outlook_effect": 0.17,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-007-MF-A01",
+  "metric_id": "GP",
+  "period_id": 202801,
+  "planned_effect": 0.45,
+  "actual_effect": null,
+  "outlook_effect": 0.16,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-007-MF-A01",
+  "metric_id": "OP",
+  "period_id": 202801,
+  "planned_effect": 0.45,
+  "actual_effect": null,
+  "outlook_effect": 0.16,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-007-MF-A01",
+  "metric_id": "GP",
+  "period_id": 202802,
+  "planned_effect": 0.45,
+  "actual_effect": null,
+  "outlook_effect": 0.16,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-007-MF-A01",
+  "metric_id": "OP",
+  "period_id": 202802,
+  "planned_effect": 0.45,
+  "actual_effect": null,
+  "outlook_effect": 0.16,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-007-MF-A01",
+  "metric_id": "GP",
+  "period_id": 202803,
+  "planned_effect": 0.45,
+  "actual_effect": null,
+  "outlook_effect": 0.16,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-007-MF-A01",
+  "metric_id": "OP",
+  "period_id": 202803,
+  "planned_effect": 0.45,
+  "actual_effect": null,
+  "outlook_effect": 0.16,
+  "excluded_factor_amount": null
+ }
+]

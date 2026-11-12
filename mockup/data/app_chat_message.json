@@ -1,0 +1,101 @@
+[
+ {
+  "message_id": "MS-01",
+  "thread_id": "TH-ACT-001-SL-A01",
+  "author_id": "u02",
+  "message_type": "MESSAGE",
+  "body": "Kick-off with Customer B procurement held. They will share the 6-month forecast every month.",
+  "mentions": "",
+  "email_notified": false,
+  "due_date": null,
+  "sent_at": "2027-06-05T02:00:00Z"
+ },
+ {
+  "message_id": "MS-02",
+  "thread_id": "TH-ACT-001-SL-A01",
+  "author_id": "u06",
+  "message_type": "MESSAGE",
+  "body": "First forecast received. Q3 gear demand is 8% below last year, drive modules flat.",
+  "mentions": "",
+  "email_notified": false,
+  "due_date": null,
+  "sent_at": "2027-06-18T07:30:00Z"
+ },
+ {
+  "message_id": "MS-03",
+  "thread_id": "TH-ACT-001-SL-A01",
+  "author_id": "u01",
+  "message_type": "PROGRESS_REQUEST",
+  "body": "@Tanaka please update the Q3 framework order status before the July review.",
+  "mentions": "u02",
+  "email_notified": true,
+  "due_date": "2027-07-20",
+  "sent_at": "2027-07-02T01:00:00Z"
+ },
+ {
+  "message_id": "MS-04",
+  "thread_id": "TH-ACT-002-MF-A02",
+  "author_id": null,
+  "message_type": "SYSTEM",
+  "body": "Adoption by Suzuki (Manufacturing Head) was overridden: rejected by Sato (Corporate Planning). Reason: FX exposure is hedged centrally by Treasury.",
+  "mentions": "u04",
+  "email_notified": true,
+  "due_date": null,
+  "sent_at": "2027-06-12T08:15:00Z"
+ },
+ {
+  "message_id": "MS-05",
+  "thread_id": "TH-ACT-005-AD-U01",
+  "author_id": "u05",
+  "message_type": "MESSAGE",
+  "body": "Landlord rejected the first proposal. Preparing market rent comparison for July.",
+  "mentions": "",
+  "email_notified": false,
+  "due_date": null,
+  "sent_at": "2027-06-24T03:00:00Z"
+ },
+ {
+  "message_id": "MS-06",
+  "thread_id": "TH-ACT-005-AD-U01",
+  "author_id": "u01",
+  "message_type": "PROGRESS_REQUEST",
+  "body": "@Nittaya please share the market rent comparison when ready.",
+  "mentions": "u05",
+  "email_notified": true,
+  "due_date": "2027-07-15",
+  "sent_at": "2027-07-01T02:00:00Z"
+ },
+ {
+  "message_id": "MS-07",
+  "thread_id": "TH-ACT-007-MF-A01",
+  "author_id": "u04",
+  "message_type": "MESSAGE",
+  "body": "Equipment parts delayed to end of August. Evaluating parameter-only change for August.",
+  "mentions": "",
+  "email_notified": false,
+  "due_date": null,
+  "sent_at": "2027-06-28T06:00:00Z"
+ },
+ {
+  "message_id": "MS-08",
+  "thread_id": "TH-ACT-007-MF-A01",
+  "author_id": "u01",
+  "message_type": "MESSAGE",
+  "body": "Thanks. Please include the expected effect of the parameter-only option in the next update.",
+  "mentions": "u04",
+  "email_notified": true,
+  "due_date": null,
+  "sent_at": "2027-07-01T03:00:00Z"
+ },
+ {
+  "message_id": "MS-09",
+  "thread_id": "TH-ACT-003-OS-A01",
+  "author_id": "u03",
+  "message_type": "MESSAGE",
+  "body": "Second distributor candidate withdrew. Restarting search in Hai Phong.",
+  "mentions": "",
+  "email_notified": false,
+  "due_date": null,
+  "sent_at": "2027-06-26T09:00:00Z"
+ }
+]

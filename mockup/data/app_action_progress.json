@@ -1,0 +1,110 @@
+[
+ {
+  "action_id": "ACT-001-SL-A01",
+  "period_id": 202706,
+  "progress_pct": 20,
+  "ai_status": "ON_TRACK",
+  "outlook_total_op": 6,
+  "comment_id": "CM-ASSESS-ACT-001-SL-A01-202706",
+  "updated_by": null
+ },
+ {
+  "action_id": "ACT-001-OS-A01",
+  "period_id": 202706,
+  "progress_pct": 15,
+  "ai_status": "ON_TRACK",
+  "outlook_total_op": 2.5,
+  "comment_id": "CM-ASSESS-ACT-001-OS-A01-202706",
+  "updated_by": null
+ },
+ {
+  "action_id": "ACT-002-MF-A01",
+  "period_id": 202706,
+  "progress_pct": 25,
+  "ai_status": "ON_TRACK",
+  "outlook_total_op": 5,
+  "comment_id": "CM-ASSESS-ACT-002-MF-A01-202706",
+  "updated_by": null
+ },
+ {
+  "action_id": "ACT-003-OS-A01",
+  "period_id": 202705,
+  "progress_pct": 5,
+  "ai_status": "ON_TRACK",
+  "outlook_total_op": 4,
+  "comment_id": "CM-ASSESS-ACT-003-OS-A01-202705",
+  "updated_by": null
+ },
+ {
+  "action_id": "ACT-003-OS-A01",
+  "period_id": 202706,
+  "progress_pct": 10,
+  "ai_status": "DELAYED",
+  "outlook_total_op": 3,
+  "comment_id": "CM-ASSESS-ACT-003-OS-A01-202706",
+  "updated_by": null
+ },
+ {
+  "action_id": "ACT-004-SL-A01",
+  "period_id": 202704,
+  "progress_pct": 30,
+  "ai_status": "ON_TRACK",
+  "outlook_total_op": 3,
+  "comment_id": "CM-ASSESS-ACT-004-SL-A01-202704",
+  "updated_by": null
+ },
+ {
+  "action_id": "ACT-004-SL-A01",
+  "period_id": 202705,
+  "progress_pct": 65,
+  "ai_status": "EFFECTIVE",
+  "outlook_total_op": 2.8,
+  "comment_id": "CM-ASSESS-ACT-004-SL-A01-202705",
+  "updated_by": null
+ },
+ {
+  "action_id": "ACT-004-SL-A01",
+  "period_id": 202706,
+  "progress_pct": 100,
+  "ai_status": "COMPLETED",
+  "outlook_total_op": 2.5,
+  "comment_id": "CM-ASSESS-ACT-004-SL-A01-202706",
+  "updated_by": null
+ },
+ {
+  "action_id": "ACT-005-AD-U01",
+  "period_id": 202705,
+  "progress_pct": 20,
+  "ai_status": "ON_TRACK",
+  "outlook_total_op": 2.5,
+  "comment_id": "CM-ASSESS-ACT-005-AD-U01-202705",
+  "updated_by": null
+ },
+ {
+  "action_id": "ACT-005-AD-U01",
+  "period_id": 202706,
+  "progress_pct": 40,
+  "ai_status": "AT_RISK",
+  "outlook_total_op": 1.5,
+  "comment_id": "CM-ASSESS-ACT-005-AD-U01-202706",
+  "updated_by": null
+ },
+ {
+  "action_id": "ACT-007-MF-A01",
+  "period_id": 202705,
+  "progress_pct": 0,
+  "ai_status": "ON_TRACK",
+  "outlook_total_op": 4.5,
+  "comment_id": "CM-ASSESS-ACT-007-MF-A01-202705",
+  "updated_by": null
+ },
+ {
+  "action_id": "ACT-007-MF-A01",
+  "period_id": 202706,
+  "progress_pct": 10,
+  "ai_status": "DELAYED",
+  "outlook_total_op": 1.5,
+  "comment_id": "CM-ASSESS-ACT-007-MF-A01-202706",
+  "updated_by": null
+ }
+]

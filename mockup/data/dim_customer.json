@@ -1,0 +1,65 @@
+[
+ {
+  "customer_id": "C01",
+  "customer_name": "Customer A",
+  "region": "Japan",
+  "country": "JP",
+  "owner_org_id": "SL"
+ },
+ {
+  "customer_id": "C02",
+  "customer_name": "Customer B",
+  "region": "Japan",
+  "country": "JP",
+  "owner_org_id": "SL"
+ },
+ {
+  "customer_id": "C03",
+  "customer_name": "Customer C",
+  "region": "Japan",
+  "country": "JP",
+  "owner_org_id": "SL"
+ },
+ {
+  "customer_id": "C04",
+  "customer_name": "Customer D",
+  "region": "ASEAN",
+  "country": "TH",
+  "owner_org_id": "OS"
+ },
+ {
+  "customer_id": "C05",
+  "customer_name": "Customer E",
+  "region": "ASEAN",
+  "country": "VN",
+  "owner_org_id": "OS"
+ },
+ {
+  "customer_id": "C06",
+  "customer_name": "Customer B (Thailand)",
+  "region": "ASEAN",
+  "country": "TH",
+  "owner_org_id": "OS"
+ },
+ {
+  "customer_id": "C07",
+  "customer_name": "Customer F",
+  "region": "ASEAN",
+  "country": "ID",
+  "owner_org_id": "OS"
+ },
+ {
+  "customer_id": "C08",
+  "customer_name": "Customer G",
+  "region": "China",
+  "country": "CN",
+  "owner_org_id": "OS"
+ },
+ {
+  "customer_id": "NA",
+  "customer_name": "(not applicable)",
+  "region": "-",
+  "country": "-",
+  "owner_org_id": null
+ }
+]

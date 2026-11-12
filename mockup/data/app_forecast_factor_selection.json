@@ -1,0 +1,26 @@
+[
+ {
+  "forecast_version_id": "FV-SL-2027-02",
+  "factor_id": "EV-003",
+  "is_included": true,
+  "applied_amount_op": 8
+ },
+ {
+  "forecast_version_id": "FV-OS-2027-02",
+  "factor_id": "EV-002",
+  "is_included": true,
+  "applied_amount_op": -1
+ },
+ {
+  "forecast_version_id": "FV-OS-2027-02",
+  "factor_id": "EV-004",
+  "is_included": false,
+  "applied_amount_op": 0
+ },
+ {
+  "forecast_version_id": "FV-MF-2027-01",
+  "factor_id": "EV-001",
+  "is_included": true,
+  "applied_amount_op": -4.5
+ }
+]

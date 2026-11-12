@@ -1,0 +1,44 @@
+[
+ {
+  "user_id": "u01",
+  "display_name": "Sato (Corporate Planning)",
+  "email": "sato@sample.example",
+  "role": "CORP_PLANNING",
+  "home_org_id": "CO"
+ },
+ {
+  "user_id": "u02",
+  "display_name": "Tanaka (Sales Dept. Head)",
+  "email": "tanaka@sample.example",
+  "role": "ORG_HEAD",
+  "home_org_id": "SL"
+ },
+ {
+  "user_id": "u03",
+  "display_name": "Somchai (Overseas Sales Head)",
+  "email": "somchai@sample.example",
+  "role": "ORG_HEAD",
+  "home_org_id": "OS"
+ },
+ {
+  "user_id": "u04",
+  "display_name": "Suzuki (Manufacturing Head)",
+  "email": "suzuki@sample.example",
+  "role": "ORG_HEAD",
+  "home_org_id": "MF"
+ },
+ {
+  "user_id": "u05",
+  "display_name": "Nittaya (Administration Head)",
+  "email": "nittaya@sample.example",
+  "role": "ORG_HEAD",
+  "home_org_id": "AD"
+ },
+ {
+  "user_id": "u06",
+  "display_name": "Yamada (Sales Staff)",
+  "email": "yamada@sample.example",
+  "role": "ACTION_OWNER",
+  "home_org_id": "SL"
+ }
+]
