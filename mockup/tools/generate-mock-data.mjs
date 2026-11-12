@@ -744,6 +744,8 @@ const pts = M.pointsFor('CO', AS_OF);
 const other = M.otherVariance('CO', AS_OF, pts);
 assertEq('Point OP impacts + Other = OP variance', M.r2(pts.reduce((s, r) => s + r.impacts.OP, 0) + other.OP), -12);
 assertEq('Other / unidentified OP', other.OP, -1);
+const otherJun = M.otherVariance('CO', AS_OF, pts, 'month');
+assertEq('June: Point OP impacts + Other = June OP variance', M.r2(pts.reduce((s, r) => s + r.monthImpacts.OP, 0) + otherJun.OP), M.varianceMonth('CO', AS_OF, 'OP'));
 const roll = M.forecastRollup('CO', AS_OF, 'OP');
 assertEq('Company baseline (no Actions)', roll.baseline, 328);
 assertEq('Company Action contribution', roll.action, 22);

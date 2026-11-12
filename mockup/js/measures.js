@@ -120,6 +120,7 @@
     M.budgetYTD = (orgId, pid, metric) => factValue('BUD', M.ytdPeriods(pid), orgId, metric);
     M.budgetAnnual = (orgId, fy, metric) => factValue('BUD', M.fyPeriods(fy), orgId, metric);
     M.varianceYTD = (orgId, pid, metric) => r2(M.actualYTD(orgId, pid, metric) - M.budgetYTD(orgId, pid, metric));
+    M.varianceMonth = (orgId, pid, metric) => r2(factValue('ACT', [pid], orgId, metric) - factValue('BUD', [pid], orgId, metric));
     M.isFavorable = (metric, variance) => {
       const d = db.dim_metric.find((m) => m.metric_id === metric).favorable_direction;
       return variance * d > 0;
@@ -187,10 +188,13 @@
         plannedEffect: planned, actualEffect: actual,
       };
     };
-    /** Other / unidentified variance so Point impacts reconcile to Metric variances. */
-    M.otherVariance = (orgId, pid, rows) => {
+    /** Other / unidentified variance so Point impacts reconcile to Metric variances.
+     *  basis 'ytd' (default) uses YTD impacts; 'month' uses the selected month only (A-01 table). */
+    M.otherVariance = (orgId, pid, rows, basis = 'ytd') => {
       const out = {};
-      METRICS.forEach((m) => (out[m] = r2(M.varianceYTD(orgId, pid, m) - sum(rows, (r) => r.impacts[m] || 0))));
+      const month = basis === 'month';
+      METRICS.forEach((m) => (out[m] = r2((month ? M.varianceMonth : M.varianceYTD)(orgId, pid, m)
+        - sum(rows, (r) => (month ? r.monthImpacts[m] : r.impacts[m]) || 0))));
       return out;
     };
 

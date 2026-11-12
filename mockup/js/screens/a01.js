@@ -34,7 +34,10 @@
     const all = M.pointsFor(state.orgId, state.periodId);
     const rows = sortedRows();
     const filtered = filters.type || filters.status || filters.org;
-    const other = M.otherVariance(state.orgId, state.periodId, all);
+    // The Point table shows the selected month only (concept slide 38: "Unit: JPY M (June)"); KPI cards stay YTD.
+    const other = M.otherVariance(state.orgId, state.periodId, all, 'month');
+    const monthVar = Object.fromEntries(METRICS.map((m) => [m, M.varianceMonth(state.orgId, state.periodId, m)]));
+    const mon = A.monthLabel(state.periodId);
     const summary = A.db.ai_comment.find((c) => c.comment_type === 'A01_SUMMARY' && c.org_id === state.orgId && c.as_of_period_id === state.periodId && c.is_current);
     const run = summary && A.db.ai_run.find((r) => r.run_id === summary.run_id);
     const pointOrgs = [...new Set(all.flatMap((r) => r.orgs))];
@@ -44,7 +47,7 @@
     const scopeOrgs = M.leafOrgs(state.orgId);
     const dash = '<span class="faint">—</span>';
     const pair = (m, a, b) => `<span class="${A.tone(m, a)}">${fmtSigned(a)}</span><span class="faint"> / </span><span class="${A.tone(m, b)}">${b === null ? '–' : fmtSigned(b)}</span>`;
-    const cell = (r, m) => (applicable[m] ? `<td class="num ${A.tone(m, r.impacts[m])}">${fmtSigned(r.impacts[m])}</td>` : `<td class="num faint">${esc(t('na'))}</td>`);
+    const cell = (r, m) => (applicable[m] ? `<td class="num ${A.tone(m, r.monthImpacts[m])}">${fmtSigned(r.monthImpacts[m] ?? 0)}</td>` : `<td class="num faint">${esc(t('na'))}</td>`);
     const subCell = (r, m) => {
       if (!applicable[m]) return '<td></td>';
       if (r.isNew || r.vsInit[m] === null) return `<td class="num">${dash}</td>`;
@@ -79,8 +82,8 @@
     const sumActual = M.r2(all.reduce((s, r) => s + r.actualEffect, 0));
     const otherRow = filtered ? '' : `<tr class="other-row"><td colspan="4" title="${esc(t('other_note'))}">${esc(t('other_unidentified'))} <span class="small">— ${esc(t('other_note'))}</span></td>
       ${METRICS.map((m) => (applicable[m] ? `<td class="num">${fmtSigned(other[m])}</td>` : '<td></td>')).join('')}<td class="num">${dash}</td><td colspan="3"></td></tr>
-      <tr class="other-row total-row"><td colspan="4">${esc(t('units_total'))} (= ${esc(t('kpi_budget_var'))})</td>
-      ${kpis.map((k) => (k.applicable ? `<td class="num ${A.tone(k.metric, k.variance)}">${fmtSigned(k.variance)}</td>` : '<td></td>')).join('')}
+      <tr class="other-row total-row"><td colspan="4">${esc(t('units_total'))} (= ${esc(t('month_budget_var', { month: mon }))})</td>
+      ${METRICS.map((m) => (applicable[m] ? `<td class="num ${A.tone(m, monthVar[m])}">${fmtSigned(monthVar[m])}</td>` : '<td></td>')).join('')}
       <td class="num">${dash}</td><td colspan="2"></td>
       <td class="num nowrap" title="${esc(t('plan_lbl'))} / ${esc(t('actual_lbl'))}">${fmtSigned(sumPlan)} / ${fmtSigned(sumActual)}</td></tr>`;
     const opt = (v, label, cur) => `<option value="${v}" ${v === cur ? 'selected' : ''}>${esc(label)}</option>`;
@@ -110,7 +113,7 @@
         <div class="table-wrap"><table class="grid-table">
           <thead>
             <tr><th rowspan="2">${esc(t('point_id'))}</th><th rowspan="2">${esc(t('type'))}</th><th rowspan="2">${esc(t('description'))}</th><th rowspan="2">${esc(t('orgs'))}</th>
-              <th colspan="4" class="group-head">${esc(t('impact'))} (${esc(t('jpy_m'))})</th>
+              <th colspan="4" class="group-head">${esc(t('month_impact', { month: mon }))} (${esc(t('jpy_m'))})</th>
               <th class="num" rowspan="2">${esc(t('overall_impact'))}<br><span class="small">${esc(t('annual_op_impact'))}</span></th>
               <th rowspan="2">${esc(t('status'))}</th><th rowspan="2">${esc(t('actions'))}</th>
               <th class="num" rowspan="2">${esc(t('action_effect'))}<br><span class="small">${esc(t('action_effect_sub'))}</span></th></tr>
