@@ -1,0 +1,322 @@
+[
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "org_id": "SL",
+  "driver_id": "PRICE_PCT",
+  "metric_id": "REV",
+  "impact_per_unit_month": 2.5841,
+  "importance_rank": 1,
+  "significance": "HIGH",
+  "typical_fy_op_impact": 46.5
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "org_id": "SL",
+  "driver_id": "PRICE_PCT",
+  "metric_id": "GP",
+  "impact_per_unit_month": 2.5841,
+  "importance_rank": 1,
+  "significance": "HIGH",
+  "typical_fy_op_impact": 46.5
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "org_id": "SL",
+  "driver_id": "PRICE_PCT",
+  "metric_id": "SGA",
+  "impact_per_unit_month": 0,
+  "importance_rank": 1,
+  "significance": "HIGH",
+  "typical_fy_op_impact": 46.5
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "org_id": "SL",
+  "driver_id": "PRICE_PCT",
+  "metric_id": "OP",
+  "impact_per_unit_month": 2.5841,
+  "importance_rank": 1,
+  "significance": "HIGH",
+  "typical_fy_op_impact": 46.5
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "org_id": "SL",
+  "driver_id": "VOLUME_PCT",
+  "metric_id": "REV",
+  "impact_per_unit_month": 2.5841,
+  "importance_rank": 2,
+  "significance": "HIGH",
+  "typical_fy_op_impact": 41.3
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "org_id": "SL",
+  "driver_id": "VOLUME_PCT",
+  "metric_id": "GP",
+  "impact_per_unit_month": 0.917,
+  "importance_rank": 2,
+  "significance": "HIGH",
+  "typical_fy_op_impact": 41.3
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "org_id": "SL",
+  "driver_id": "VOLUME_PCT",
+  "metric_id": "SGA",
+  "impact_per_unit_month": 0,
+  "importance_rank": 2,
+  "significance": "HIGH",
+  "typical_fy_op_impact": 41.3
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "org_id": "SL",
+  "driver_id": "VOLUME_PCT",
+  "metric_id": "OP",
+  "impact_per_unit_month": 0.917,
+  "importance_rank": 2,
+  "significance": "HIGH",
+  "typical_fy_op_impact": 41.3
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "org_id": "SL",
+  "driver_id": "FX_JPY_THB",
+  "metric_id": "REV",
+  "impact_per_unit_month": 60.0943,
+  "importance_rank": 3,
+  "significance": "MEDIUM",
+  "typical_fy_op_impact": 8.9
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "org_id": "SL",
+  "driver_id": "FX_JPY_THB",
+  "metric_id": "GP",
+  "impact_per_unit_month": 14.4845,
+  "importance_rank": 3,
+  "significance": "MEDIUM",
+  "typical_fy_op_impact": 8.9
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "org_id": "SL",
+  "driver_id": "FX_JPY_THB",
+  "metric_id": "SGA",
+  "impact_per_unit_month": 9.5258,
+  "importance_rank": 3,
+  "significance": "MEDIUM",
+  "typical_fy_op_impact": 8.9
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "org_id": "SL",
+  "driver_id": "FX_JPY_THB",
+  "metric_id": "OP",
+  "impact_per_unit_month": 4.9587,
+  "importance_rank": 3,
+  "significance": "MEDIUM",
+  "typical_fy_op_impact": 8.9
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "org_id": "OS",
+  "driver_id": "PRICE_PCT",
+  "metric_id": "REV",
+  "impact_per_unit_month": 1.7083,
+  "importance_rank": 1,
+  "significance": "HIGH",
+  "typical_fy_op_impact": 30.7
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "org_id": "OS",
+  "driver_id": "PRICE_PCT",
+  "metric_id": "GP",
+  "impact_per_unit_month": 1.7083,
+  "importance_rank": 1,
+  "significance": "HIGH",
+  "typical_fy_op_impact": 30.7
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "org_id": "OS",
+  "driver_id": "PRICE_PCT",
+  "metric_id": "SGA",
+  "impact_per_unit_month": 0,
+  "importance_rank": 1,
+  "significance": "HIGH",
+  "typical_fy_op_impact": 30.7
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "org_id": "OS",
+  "driver_id": "PRICE_PCT",
+  "metric_id": "OP",
+  "impact_per_unit_month": 1.7083,
+  "importance_rank": 1,
+  "significance": "HIGH",
+  "typical_fy_op_impact": 30.7
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "org_id": "OS",
+  "driver_id": "VOLUME_PCT",
+  "metric_id": "REV",
+  "impact_per_unit_month": 1.7083,
+  "importance_rank": 2,
+  "significance": "HIGH",
+  "typical_fy_op_impact": 27.4
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "org_id": "OS",
+  "driver_id": "VOLUME_PCT",
+  "metric_id": "GP",
+  "impact_per_unit_month": 0.6097,
+  "importance_rank": 2,
+  "significance": "HIGH",
+  "typical_fy_op_impact": 27.4
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "org_id": "OS",
+  "driver_id": "VOLUME_PCT",
+  "metric_id": "SGA",
+  "impact_per_unit_month": 0,
+  "importance_rank": 2,
+  "significance": "HIGH",
+  "typical_fy_op_impact": 27.4
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "org_id": "OS",
+  "driver_id": "VOLUME_PCT",
+  "metric_id": "OP",
+  "impact_per_unit_month": 0.6097,
+  "importance_rank": 2,
+  "significance": "HIGH",
+  "typical_fy_op_impact": 27.4
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "org_id": "OS",
+  "driver_id": "FX_JPY_THB",
+  "metric_id": "REV",
+  "impact_per_unit_month": 39.7274,
+  "importance_rank": 3,
+  "significance": "MEDIUM",
+  "typical_fy_op_impact": 5.6
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "org_id": "OS",
+  "driver_id": "FX_JPY_THB",
+  "metric_id": "GP",
+  "impact_per_unit_month": 9.6693,
+  "importance_rank": 3,
+  "significance": "MEDIUM",
+  "typical_fy_op_impact": 5.6
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "org_id": "OS",
+  "driver_id": "FX_JPY_THB",
+  "metric_id": "SGA",
+  "impact_per_unit_month": 6.5375,
+  "importance_rank": 3,
+  "significance": "MEDIUM",
+  "typical_fy_op_impact": 5.6
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "org_id": "OS",
+  "driver_id": "FX_JPY_THB",
+  "metric_id": "OP",
+  "impact_per_unit_month": 3.1318,
+  "importance_rank": 3,
+  "significance": "MEDIUM",
+  "typical_fy_op_impact": 5.6
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "org_id": "MF",
+  "driver_id": "MATERIAL_PCT",
+  "metric_id": "GP",
+  "impact_per_unit_month": -1.9522,
+  "importance_rank": 1,
+  "significance": "HIGH",
+  "typical_fy_op_impact": 87.9
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "org_id": "MF",
+  "driver_id": "MATERIAL_PCT",
+  "metric_id": "SGA",
+  "impact_per_unit_month": 0,
+  "importance_rank": 1,
+  "significance": "HIGH",
+  "typical_fy_op_impact": 87.9
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "org_id": "MF",
+  "driver_id": "MATERIAL_PCT",
+  "metric_id": "OP",
+  "impact_per_unit_month": -1.9522,
+  "importance_rank": 1,
+  "significance": "HIGH",
+  "typical_fy_op_impact": 87.9
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "org_id": "MF",
+  "driver_id": "FX_JPY_THB",
+  "metric_id": "GP",
+  "impact_per_unit_month": -1.6667,
+  "importance_rank": 2,
+  "significance": "LOW",
+  "typical_fy_op_impact": 3
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "org_id": "MF",
+  "driver_id": "FX_JPY_THB",
+  "metric_id": "SGA",
+  "impact_per_unit_month": 0,
+  "importance_rank": 2,
+  "significance": "LOW",
+  "typical_fy_op_impact": 3
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "org_id": "MF",
+  "driver_id": "FX_JPY_THB",
+  "metric_id": "OP",
+  "impact_per_unit_month": -1.6667,
+  "importance_rank": 2,
+  "significance": "LOW",
+  "typical_fy_op_impact": 3
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "org_id": "AD",
+  "driver_id": "FX_JPY_THB",
+  "metric_id": "SGA",
+  "impact_per_unit_month": 1,
+  "importance_rank": 1,
+  "significance": "LOW",
+  "typical_fy_op_impact": 1.8
+ },
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "org_id": "AD",
+  "driver_id": "FX_JPY_THB",
+  "metric_id": "OP",
+  "impact_per_unit_month": -1,
+  "importance_rank": 1,
+  "significance": "LOW",
+  "typical_fy_op_impact": 1.8
+ }
+]

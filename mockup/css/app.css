@@ -182,3 +182,46 @@ table.grid-table { width: 100%; border-collapse: collapse; font-size: 12.5px; }
 .tag.st-new { background: var(--bad-soft); color: var(--bad); border-color: #f1c4cc; }
 .grid-table tr.total-row td { font-style: normal; font-weight: 600; color: var(--text); background: var(--warn-soft); }
 .nowrap { white-space: nowrap; }
+
+/* F-01 Forecast (concept slide 48) / P-02 Individual Factor (slide 49) */
+.page-head .actions .sel { border: 1px solid var(--border-strong); border-radius: 6px; padding: 4px 8px; background: var(--surface); max-width: 340px; }
+.scen-row { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; flex-wrap: wrap; }
+.seg { display: inline-flex; border: 1px solid var(--border-strong); border-radius: 8px; overflow: hidden; background: var(--surface); }
+.seg-btn { border: 0; border-right: 1px solid var(--border); background: none; padding: 6px 14px; cursor: pointer; display: flex; align-items: baseline; gap: 6px; }
+.seg-btn:last-child { border-right: 0; }
+.seg-btn .n { color: var(--muted); }
+.seg-btn b { font-variant-numeric: tabular-nums; margin-left: 4px; }
+.seg-btn:hover { background: var(--surface-2); }
+.seg-btn.on { background: var(--accent-soft); color: var(--accent-ink); box-shadow: inset 0 -2px 0 var(--accent); }
+.grid.f01-main { grid-template-columns: minmax(0, 1.45fr) minmax(0, 1fr); margin-bottom: 0; }
+@media (max-width: 1100px) { .grid.f01-main { grid-template-columns: 1fr; } }
+.bridge td { padding: 7px 8px; }
+.bridge tr.b-base td { background: #f3f5f8; }
+.bridge tr.b-add td { background: #eef7f4; }
+.bridge tr.b-sub td { color: var(--muted); }
+.bridge tr.b-landing td { background: var(--info-soft); font-weight: 600; }
+.bridge tr.b-var td { font-weight: 600; }
+.model-note { margin-top: 10px; padding: 8px 10px; border: 1px dashed var(--border-strong); border-radius: 6px; font-size: 12px; display: flex; flex-direction: column; gap: 3px; }
+.tag.ml { background: #e8f1fb; color: #1d5ea8; border-color: #c6dbf3; }
+.tag.warn { background: var(--warn-soft); color: var(--warn); border-color: #f0d9a9; }
+.tag.sig-HIGH { background: var(--bad-soft); color: var(--bad); border-color: #f1c4cc; }
+.tag.sig-MEDIUM { background: var(--warn-soft); color: var(--warn); border-color: #f0d9a9; }
+.tag.sig-LOW { background: var(--surface-2); color: var(--muted); }
+.tag.ps-ON_TRACK, .tag.ps-EFFECTIVE, .tag.ps-COMPLETED { background: var(--good-soft); color: var(--good); border-color: #bfe3c9; }
+.tag.ps-DELAYED, .tag.ps-AT_RISK { background: var(--warn-soft); color: var(--warn); border-color: #f0d9a9; }
+.grid-table.factors tr.off td { color: var(--faint); }
+.grid-table.factors tr.off td .id { color: var(--faint); }
+.infobox { background: var(--info-soft); color: #1d4f86; padding: 8px 12px; border-radius: 6px; margin-bottom: 12px; font-size: 12.5px; }
+.btn.small { padding: 3px 10px; font-size: 12px; }
+.card h2 .btn { font-weight: 400; }
+.chk-row { display: flex; flex-wrap: wrap; gap: 6px 16px; }
+.chk { display: inline-flex; align-items: center; gap: 5px; color: var(--text) !important; font-size: 12.5px !important; }
+.form-grid .chk input { width: auto; }
+.amount-grid { margin-top: 6px; }
+.amount-grid td, .amount-grid th { padding: 4px 6px; }
+.amount-grid input.amt { width: 62px; border: 1px solid var(--border-strong); border-radius: 4px; padding: 3px 4px; text-align: right; font-variant-numeric: tabular-nums; }
+.amount-grid input.amt.tot { width: 70px; font-weight: 600; }
+.amount-grid tr.op-row td { background: var(--surface-2); font-weight: 600; }
+.sens-list { margin: 6px 0 2px; padding-left: 18px; font-size: 12px; }
+.ai-box ul { margin: 6px 0 0; padding-left: 18px; }
+.form-grid .inline-sel select { width: auto; min-width: 130px; }

@@ -87,6 +87,14 @@
     return db.dim_organization.slice().sort((a, b) => a.sort_order - b.sort_order)
       .filter((o) => scopes.some((s) => M.inScope(o.org_id, s.org_id))).map((o) => o.org_id);
   }
+  /** Org heads confirm Forecast versions only for organizations in their scope (README §4.3). */
+  function canConfirm(orgId) {
+    return userScopes().some((s) => s.can_confirm_forecast && M.inScope(orgId, s.org_id));
+  }
+  /** Individual Factors can be registered for organizations in the user's scope. */
+  function canEditOrg(orgId) {
+    return userScopes().some((s) => M.inScope(orgId, s.org_id));
+  }
   function canDecide(action) {
     return userScopes().some((s) => s.can_decide_action && M.inScope(action.owner_org_id, s.org_id));
   }
@@ -120,13 +128,13 @@
       return `<svg class="chart" viewBox="0 0 ${width} ${h}" role="img"><line class="axis" x1="${zero}" x2="${zero}" y1="4" y2="${h - 12}"/>${rows}</svg>`;
     },
     /** Monthly grouped bars (budget / actual) with optional line series (prior year, forecast). */
-    monthly(series, { width = 560, height = 220, labels }) {
+    monthly(series, { width = 560, height = 220, labels, zero = true }) {
       const pad = { l: 44, r: 10, t: 10, b: 26 };
       const n = labels.length;
       const vals = series.flatMap((s) => s.values.filter((v) => v !== null && v !== undefined));
-      let min = Math.min(0, ...vals), max = Math.max(0, ...vals);
+      let min = zero ? Math.min(0, ...vals) : Math.min(...vals), max = zero ? Math.max(0, ...vals) : Math.max(...vals);
       if (max === min) max = min + 1;
-      const span = max - min; max += span * 0.08; if (min < 0) min -= span * 0.08;
+      const span = max - min; max += span * 0.08; if (min < 0 || !zero) min -= span * 0.08;
       const pw = width - pad.l - pad.r, ph = height - pad.t - pad.b;
       const y = (v) => pad.t + ph - ((v - min) / (max - min)) * ph;
       const bw = pw / n;
@@ -138,7 +146,7 @@
         const v = min + ((max - min) * i) / ticks;
         out += `<line class="gridline" x1="${pad.l}" x2="${width - pad.r}" y1="${y(v)}" y2="${y(v)}"/><text x="${pad.l - 6}" y="${y(v) + 4}" text-anchor="end">${fmt(v, tickDigits)}</text>`;
       }
-      out += `<line class="axis" x1="${pad.l}" x2="${width - pad.r}" y1="${y(0)}" y2="${y(0)}"/>`;
+      if (min <= 0 && max >= 0) out += `<line class="axis" x1="${pad.l}" x2="${width - pad.r}" y1="${y(0)}" y2="${y(0)}"/>`;
       labels.forEach((lb, i) => { out += `<text x="${pad.l + bw * i + bw / 2}" y="${height - 8}" text-anchor="middle">${esc(lb)}</text>`; });
       const inner = bw * 0.72, each = inner / Math.max(bars.length, 1);
       bars.forEach((s, si) => s.values.forEach((v, i) => {
@@ -151,10 +159,12 @@
         const pts = s.values.map((v, i) => (v === null || v === undefined ? null : [pad.l + bw * i + bw / 2, y(v)]));
         let d = '', pen = false;
         pts.forEach((p) => { if (!p) { pen = false; return; } d += (pen ? 'L' : 'M') + p[0].toFixed(1) + ',' + p[1].toFixed(1); pen = true; });
-        out += `<path d="${d}" fill="none" stroke="${s.color}" stroke-width="2" ${s.dash ? 'stroke-dasharray="4 3"' : ''}/>`;
+        out += `<path d="${d}" fill="none" stroke="${s.color}" stroke-width="${s.width || 2}" ${s.dash ? `stroke-dasharray="${s.dash === true ? '4 3' : s.dash}"` : ''}/>`;
         pts.forEach((p, i) => { if (p) out += `<circle cx="${p[0]}" cy="${p[1]}" r="2.5" fill="${s.color}"><title>${esc(s.name)} ${esc(labels[i])}: ${fmt(s.values[i])}</title></circle>`; });
       });
-      const legend = series.map((s) => `<span><i style="background:${s.color}"></i>${esc(s.name)}</span>`).join('');
+      const legend = series.map((s) => (s.type === 'line'
+        ? `<span><svg width="18" height="8" style="vertical-align:middle;margin-right:5px"><line x1="0" x2="18" y1="4" y2="4" stroke="${s.color}" stroke-width="${s.width || 2}" ${s.dash ? `stroke-dasharray="${s.dash === true ? '4 3' : s.dash}"` : ''}/></svg>${esc(s.name)}</span>`
+        : `<span><i style="background:${s.color}"></i>${esc(s.name)}</span>`)).join('');
       return `<svg class="chart" viewBox="0 0 ${width} ${height}" role="img">${out}</svg><div class="legend">${legend}</div>`;
     },
   };
@@ -325,7 +335,7 @@
 
   const App = {
     db, state, get M() { return M; }, set M(v) { M = v; }, t, esc, $, $$, fmt, fmtSigned, tone, periodLabel, monthLabel, orgName, userName, user, metricName,
-    aiText, aiPlain, actionName, actionNamePlain, actionDesc, pointTitle, selectablePeriods, userOrgs, canDecide, ytdLabel,
+    aiText, aiPlain, actionName, actionNamePlain, actionDesc, pointTitle, selectablePeriods, userOrgs, canDecide, canConfirm, canEditOrg, ytdLabel,
     Chart, openModal, toast, decide, rebuild, audit, go, render, SCREENS, SCREEN_ID, nowIso,
     start() {
       initContext(); bindShell();

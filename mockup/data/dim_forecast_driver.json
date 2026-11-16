@@ -1,0 +1,34 @@
+[
+ {
+  "driver_id": "FX_JPY_THB",
+  "unit": "JPY/THB",
+  "value_type": "LEVEL",
+  "budget_value": 4.3,
+  "typical_change": 0.2,
+  "decimals": 2
+ },
+ {
+  "driver_id": "VOLUME_PCT",
+  "unit": "%",
+  "value_type": "PCT",
+  "budget_value": 0,
+  "typical_change": 5,
+  "decimals": 1
+ },
+ {
+  "driver_id": "PRICE_PCT",
+  "unit": "%",
+  "value_type": "PCT",
+  "budget_value": 0,
+  "typical_change": 2,
+  "decimals": 1
+ },
+ {
+  "driver_id": "MATERIAL_PCT",
+  "unit": "%",
+  "value_type": "PCT",
+  "budget_value": 0,
+  "typical_change": 5,
+  "decimals": 1
+ }
+]

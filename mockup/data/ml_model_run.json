@@ -1,0 +1,23 @@
+[
+ {
+  "forecast_run_id": "FCB-202706-01",
+  "as_of_period_id": 202706,
+  "notebook": "nb_forecast_baseline",
+  "model_name": "Ridge regression",
+  "model_version": "fc-ridge-0.3 (mock)",
+  "grain": "month × organization × account group",
+  "training_from": 202404,
+  "training_to": 202706,
+  "training_months": 39,
+  "features": "revenue lags (1, 3, 12 months), order backlog, customer orders, JPY/THB, material price index, working days, month of year",
+  "target_adjustment": "actuals minus realized Action effects and flagged Factor events",
+  "backtest_method": "rolling origin, 1–9 months ahead",
+  "backtest_mape_rev": 3.8,
+  "backtest_mape_gp": 6.1,
+  "backtest_mape_sga": 2.9,
+  "backtest_mape_op": 9.6,
+  "interval_level": 80,
+  "status": "SUCCEEDED",
+  "run_at": "2027-07-04T01:00:00Z"
+ }
+]

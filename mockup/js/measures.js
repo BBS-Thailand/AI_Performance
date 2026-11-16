@@ -249,6 +249,10 @@
 
     /* ---------- Individual Factors ---------- */
     M.factor = (id) => db.app_factor.find((f) => f.factor_id === id);
+    M.factorType = (cat) => (db.dim_factor_type || []).find((x) => x.category === cat) || { category: cat, input_mode: 'AMOUNT', driver_id: null };
+    M.factorTypes = () => (db.dim_factor_type || []).slice().sort((a, b) => a.sort_order - b.sort_order);
+    M.driver = (id) => (db.dim_forecast_driver || []).find((d) => d.driver_id === id);
+    M.factorOrgs = (id) => db.app_factor_org.filter((o) => o.factor_id === id).map((o) => o.org_id);
     M.factorsFor = (orgId, pid) => {
       const fy = periodById.get(pid).fiscal_year;
       const fyP = M.fyPeriods(fy);
@@ -261,6 +265,49 @@
       db.app_factor_amount.filter((a) => a.factor_id === factorId && a.metric_id === metric
         && inScope(a.org_id, orgId) && (!periods || periods.includes(a.period_id))),
       (a) => a.amount);
+
+    /* ---------- ML forecast run (notebook output) ---------- */
+    /** Latest model run made from the given closed month (null if the notebook has not run for it). */
+    M.modelRun = (pid) => (db.ml_model_run || []).filter((r) => r.as_of_period_id === pid)
+      .sort((a, b) => String(b.run_at).localeCompare(String(a.run_at)))[0] || null;
+    /** Sensitivity of a leaf org to a driver: { REV, GP, SGA, OP } JPY M per +1 unit per month. */
+    M.sensitivity = (orgId, driverId, runId) => {
+      const rows = (db.ml_driver_sensitivity || []).filter((s) => s.org_id === orgId && s.driver_id === driverId && (!runId || s.forecast_run_id === runId));
+      if (!rows.length) return null;
+      const out = { rank: rows[0].importance_rank, significance: rows[0].significance, typicalOp: rows[0].typical_fy_op_impact };
+      rows.forEach((r) => (out[r.metric_id] = r.impact_per_unit_month));
+      return out;
+    };
+    /** Drivers ranked by importance for a scope (leaf orgs aggregated by typical FY OP impact). */
+    M.keyDrivers = (orgId, runId) => {
+      const leaves = new Set(leafOrgs(orgId));
+      const by = new Map();
+      (db.ml_driver_sensitivity || []).filter((s) => leaves.has(s.org_id) && s.metric_id === 'OP' && (!runId || s.forecast_run_id === runId)).forEach((s) => {
+        const cur = by.get(s.driver_id) || { driver_id: s.driver_id, opPerUnit: 0, typicalOp: 0, orgs: [] };
+        cur.opPerUnit = Math.round((cur.opPerUnit + s.impact_per_unit_month) * 10000) / 10000;
+        cur.typicalOp = r2(cur.typicalOp + s.typical_fy_op_impact);
+        cur.orgs.push(s.org_id);
+        by.set(s.driver_id, cur);
+      });
+      return [...by.values()].sort((a, b) => b.typicalOp - a.typicalOp);
+    };
+    /** Monthly P&L amounts for a driver change in one leaf org: [{period_id, REV, GP, SGA, OP}] (OP = GP − SG&A). */
+    M.driverAmounts = (orgId, driverId, delta, periods, runId) => {
+      const k = M.sensitivity(orgId, driverId, runId);
+      if (!k) return null;
+      return periods.map((p) => {
+        const row = { period_id: p };
+        ['REV', 'GP', 'SGA'].forEach((mt) => { if (k[mt] !== undefined) row[mt] = r2(delta * k[mt]); });
+        row.OP = r2((row.GP || 0) - (row.SGA || 0));
+        return row;
+      });
+    };
+    /** 80% range of the no-Action forecast (FY), summed over leaf orgs. */
+    M.baselineRange = (orgId, metric, runId) => {
+      const leaves = new Set(leafOrgs(orgId));
+      const rows = (db.ml_forecast_range || []).filter((r) => leaves.has(r.org_id) && r.metric_id === metric && (!runId || r.forecast_run_id === runId));
+      return rows.length ? { low: sum(rows, (r) => r.low), high: sum(rows, (r) => r.high) } : null;
+    };
 
     /* ---------- Forecast ---------- */
     function baselineValue(orgId, periods, metric) {
@@ -280,41 +327,66 @@
       M.factorsFor(orgId, pid).forEach((f) => (sel[f.factor_id] = f.default_included));
       return sel;
     };
-    /** Live (unconfirmed) Forecast for a leaf organization. */
+    /** Adopted Actions that count in the Forecast (option 2). Stopped Actions keep only what they realized. */
+    M.forecastActions = (orgId, pid) => M.boardActions(orgId, pid, true);
+    /** Action contribution for one month: measured actual (closed) or outlook reforecast from progress (open). */
+    const actionMonth = (a, metric, p, pid) => {
+      const r = M.effectRows(a.action_id, metric).find((x) => x.period_id === p);
+      if (!r) return 0;
+      if (p <= pid || a.execution_state === 'STOPPED') return p <= pid ? r.actual_effect || 0 : 0;
+      return r.outlook_effect ?? r.actual_effect ?? 0;
+    };
+    /**
+     * Live (unconfirmed) Forecast for a leaf organization — the three options:
+     *   ① baseline (no Actions, ML) · ② + adopted Actions · ③ + included Individual Factors = landing.
+     */
     M.forecastLive = (orgId, pid, metric, selection) => {
       const fy = periodById.get(pid).fiscal_year;
       const fyP = M.fyPeriods(fy);
       const sel = selection || M.defaultFactorSelection(orgId, pid);
       const budget = M.budgetAnnual(orgId, fy, metric);
       const baseline = baselineValue(orgId, fyP, metric);
-      const actions = M.boardActions(orgId, pid, true).filter((a) => a.execution_state !== 'STOPPED');
-      const action = sum(actions, (a) => M.actionTotals(a.action_id, pid, metric).outlookFY);
-      const factors = M.factorsFor(orgId, pid);
-      const factor = sum(factors.filter((f) => sel[f.factor_id]), (f) => M.factorAmount(f.factor_id, orgId, metric, fyP));
-      const landing = r2(baseline + action + factor);
-      return { metric, budget, baseline, action, factor, landing, variance: r2(landing - budget) };
+      const actions = M.forecastActions(orgId, pid);
+      const action = sum(actions, (a) => sum(fyP, (p) => actionMonth(a, metric, p, pid)));
+      const factors = M.factorsFor(orgId, pid).filter((f) => sel[f.factor_id]);
+      const factor = sum(factors, (f) => M.factorAmount(f.factor_id, orgId, metric, fyP));
+      const withActions = r2(baseline + action);
+      const landing = r2(withActions + factor);
+      return { metric, budget, baseline, action, factor, withActions, landing, variance: r2(landing - budget), actionCount: actions.length, factorCount: factors.length };
     };
+    /** Monthly series: closed months = actual; open months = the three option layers. */
     M.forecastMonthlyLive = (orgId, pid, metric, selection) => {
       const fy = periodById.get(pid).fiscal_year;
       const sel = selection || M.defaultFactorSelection(orgId, pid);
-      const actions = M.boardActions(orgId, pid, true).filter((a) => a.execution_state !== 'STOPPED');
+      const actions = M.forecastActions(orgId, pid);
       const factors = M.factorsFor(orgId, pid).filter((f) => sel[f.factor_id]);
       return M.fyPeriods(fy).map((p) => {
         const budget = factValue('BUD', [p], orgId, metric);
-        if (p <= pid) return { period_id: p, actual: factValue('ACT', [p], orgId, metric), forecast: null, budget };
+        if (p <= pid) return { period_id: p, actual: factValue('ACT', [p], orgId, metric), forecast: null, baseline: null, withActions: null, budget };
         const base = baselineValue(orgId, [p], metric);
-        const act = sum(actions, (a) => {
-          const r = M.effectRows(a.action_id, metric).find((x) => x.period_id === p);
-          return r ? (r.outlook_effect ?? r.actual_effect ?? 0) : 0;
-        });
+        const act = sum(actions, (a) => actionMonth(a, metric, p, pid));
         const fac = sum(factors, (f) => M.factorAmount(f.factor_id, orgId, metric, [p]));
-        return { period_id: p, actual: null, forecast: r2(base + act + fac), budget };
+        return { period_id: p, actual: null, baseline: base, withActions: r2(base + act), forecast: r2(base + act + fac), action: act, factor: fac, budget };
       });
     };
     M.versionsFor = (orgId) => db.app_forecast_version.filter((v) => v.org_id === orgId)
       .sort((a, b) => b.version_no - a.version_no);
+    M.version = (vid) => db.app_forecast_version.find((v) => v.forecast_version_id === vid) || null;
     M.latestVersion = (orgId, pid) => M.versionsFor(orgId).find((v) => v.as_of_period_id <= pid) || null;
     M.versionLine = (vid, metric) => db.app_forecast_version_line.find((l) => l.forecast_version_id === vid && l.metric_id === metric);
+    /** Frozen figures of one confirmed version, in the same shape as forecastLive. */
+    M.versionFigures = (vid, metric) => {
+      const l = M.versionLine(vid, metric);
+      if (!l) return null;
+      const withActions = r2(l.baseline_no_action + l.action_contribution);
+      return { metric, budget: l.budget_annual, baseline: l.baseline_no_action, action: l.action_contribution, factor: l.factor_contribution,
+        withActions, landing: l.landing, variance: r2(l.landing - l.budget_annual) };
+    };
+    M.versionMonthly = (vids, metric, fy) => M.fyPeriods(fy).map((p) => {
+      const rows = db.app_forecast_version_monthly.filter((m) => vids.includes(m.forecast_version_id) && m.metric_id === metric && m.period_id === p);
+      const pick = (k) => (rows.length && rows.some((r) => r[k] !== null && r[k] !== undefined) ? sum(rows, (r) => r[k] || 0) : null);
+      return { period_id: p, actual: pick('actual'), forecast: pick('forecast'), baseline: pick('baseline'), withActions: pick('with_actions'), budget: pick('budget') };
+    });
     /** Company / division Forecast = Σ latest confirmed versions of leaf organizations (read-only). */
     M.forecastRollup = (orgId, pid, metric) => {
       const parts = leafOrgs(orgId).map((l) => ({ org_id: l, version: M.latestVersion(l, pid) }));
@@ -322,8 +394,9 @@
       const f = (k) => sum(lines, (l) => l[k]);
       const landing = f('landing');
       const budget = f('budget_annual');
+      const baseline = f('baseline_no_action'), action = f('action_contribution');
       return {
-        metric, budget, baseline: f('baseline_no_action'), action: f('action_contribution'),
+        metric, budget, baseline, action, withActions: r2(baseline + action),
         factor: f('factor_contribution'), landing, variance: r2(landing - budget),
         parts, missing: parts.filter((x) => !x.version).map((x) => x.org_id),
       };
@@ -331,11 +404,7 @@
     M.forecastMonthlyRollup = (orgId, pid, metric) => {
       const fy = periodById.get(pid).fiscal_year;
       const vids = leafOrgs(orgId).map((l) => M.latestVersion(l, pid)).filter(Boolean).map((v) => v.forecast_version_id);
-      return M.fyPeriods(fy).map((p) => {
-        const rows = db.app_forecast_version_monthly.filter((m) => vids.includes(m.forecast_version_id) && m.metric_id === metric && m.period_id === p);
-        const pick = (k) => (rows.some((r) => r[k] !== null) ? sum(rows, (r) => r[k] || 0) : null);
-        return { period_id: p, actual: pick('actual'), forecast: pick('forecast'), budget: pick('budget') };
-      });
+      return M.versionMonthly(vids, metric, fy);
     };
 
     /* ---------- AI comments ---------- */

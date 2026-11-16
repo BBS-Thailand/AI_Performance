@@ -1502,5 +1502,101 @@
   "is_base": false,
   "translated_at": "2027-07-03T00:00:00Z",
   "reviewed_by": null
+ },
+ {
+  "comment_id": "CM-F01-202706-SL",
+  "language_code": "en",
+  "text": "Without Actions, the forecast model projects operating profit of JPY 255M (80% range 241.4 to 268.6), based on the actual trend and order backlog. 2 adopted Action(s) add +8.5M (plan 10M; open months follow the progress-based outlook). Included Individual Factors contribute +8M (EV-003 +8). Landing is 271.5M, −18.5M vs budget. The most influential driver is selling price: +1% changes the remaining-year operating profit by +23.3M.",
+  "is_base": true,
+  "translated_at": null,
+  "reviewed_by": null
+ },
+ {
+  "comment_id": "CM-F01-202706-SL",
+  "language_code": "ja",
+  "text": "アクションなしの場合、予測モデルは実績トレンドと受注残から営業利益を255百万円（80%区間 241.4〜268.6）と予測しています。採用済みアクション2件が+8.5百万円寄与します（計画10百万円。未経過月は進捗に基づく見込み）。反映した個別要因は+8百万円です（EV-003 +8）。着地見込みは271.5百万円、予算比−18.5百万円です。最も影響の大きいドライバーは販売単価で、+1%の変化で残期間の営業利益が+23.3百万円変動します。",
+  "is_base": false,
+  "translated_at": "2027-07-03T00:00:00Z",
+  "reviewed_by": null
+ },
+ {
+  "comment_id": "CM-F01-202706-SL",
+  "language_code": "th",
+  "text": "หากไม่มีแอคชัน โมเดลพยากรณ์คาดการณ์กำไรจากการดำเนินงาน 255 ล้านเยน (ช่วง 80% 241.4–268.6) จากแนวโน้มจริงและยอดคำสั่งซื้อคงค้าง แอคชันที่อนุมัติ 2 รายการเพิ่ม +8.5 ล้านเยน (แผน 10) ปัจจัยเฉพาะที่รวมไว้ +8 ล้านเยน (EV-003 +8) คาดการณ์ ณ สิ้นปี 271.5 ล้านเยน (−18.5 เทียบงบประมาณ) ตัวขับเคลื่อนที่มีผลมากที่สุดคือราคาขาย: +1% เปลี่ยนกำไรช่วงที่เหลือ +23.3 ล้านเยน",
+  "is_base": false,
+  "translated_at": "2027-07-03T00:00:00Z",
+  "reviewed_by": null
+ },
+ {
+  "comment_id": "CM-F01-202706-OS",
+  "language_code": "en",
+  "text": "Without Actions, the forecast model projects operating profit of JPY 165M (80% range 156.4 to 173.6), based on the actual trend and order backlog. 2 adopted Action(s) add +5.5M (plan 7M; open months follow the progress-based outlook). Included Individual Factors contribute −1M (EV-002 −1). Landing is 169.5M, −10.5M vs budget. Not included: EV-004 −2; including it would give 167.5M. The most influential driver is selling price: +1% changes the remaining-year operating profit by +15.4M.",
+  "is_base": true,
+  "translated_at": null,
+  "reviewed_by": null
+ },
+ {
+  "comment_id": "CM-F01-202706-OS",
+  "language_code": "ja",
+  "text": "アクションなしの場合、予測モデルは実績トレンドと受注残から営業利益を165百万円（80%区間 156.4〜173.6）と予測しています。採用済みアクション2件が+5.5百万円寄与します（計画7百万円。未経過月は進捗に基づく見込み）。反映した個別要因は−1百万円です（EV-002 −1）。着地見込みは169.5百万円、予算比−10.5百万円です。未反映：EV-004 −2。反映すると167.5百万円になります。最も影響の大きいドライバーは販売単価で、+1%の変化で残期間の営業利益が+15.4百万円変動します。",
+  "is_base": false,
+  "translated_at": "2027-07-03T00:00:00Z",
+  "reviewed_by": null
+ },
+ {
+  "comment_id": "CM-F01-202706-OS",
+  "language_code": "th",
+  "text": "หากไม่มีแอคชัน โมเดลพยากรณ์คาดการณ์กำไรจากการดำเนินงาน 165 ล้านเยน (ช่วง 80% 156.4–173.6) จากแนวโน้มจริงและยอดคำสั่งซื้อคงค้าง แอคชันที่อนุมัติ 2 รายการเพิ่ม +5.5 ล้านเยน (แผน 7) ปัจจัยเฉพาะที่รวมไว้ −1 ล้านเยน (EV-002 −1) คาดการณ์ ณ สิ้นปี 169.5 ล้านเยน (−10.5 เทียบงบประมาณ) ยังไม่รวม: EV-004 −2 ตัวขับเคลื่อนที่มีผลมากที่สุดคือราคาขาย: +1% เปลี่ยนกำไรช่วงที่เหลือ +15.4 ล้านเยน",
+  "is_base": false,
+  "translated_at": "2027-07-03T00:00:00Z",
+  "reviewed_by": null
+ },
+ {
+  "comment_id": "CM-F01-202706-MF",
+  "language_code": "en",
+  "text": "Without Actions, the forecast model projects operating profit of JPY −42M (80% range −44.1 to −39.9), based on the actual trend and order backlog. 2 adopted Action(s) add +6.5M (plan 10.5M; open months follow the progress-based outlook). Included Individual Factors contribute −4.5M (EV-001 −4.5). Landing is −40M, ±0M vs budget. The most influential driver is material prices: +1% changes the remaining-year operating profit by −17.6M.",
+  "is_base": true,
+  "translated_at": null,
+  "reviewed_by": null
+ },
+ {
+  "comment_id": "CM-F01-202706-MF",
+  "language_code": "ja",
+  "text": "アクションなしの場合、予測モデルは実績トレンドと受注残から営業利益を−42百万円（80%区間 −44.1〜−39.9）と予測しています。採用済みアクション2件が+6.5百万円寄与します（計画10.5百万円。未経過月は進捗に基づく見込み）。反映した個別要因は−4.5百万円です（EV-001 −4.5）。着地見込みは−40百万円、予算比±0百万円です。最も影響の大きいドライバーは材料価格で、+1%の変化で残期間の営業利益が−17.6百万円変動します。",
+  "is_base": false,
+  "translated_at": "2027-07-03T00:00:00Z",
+  "reviewed_by": null
+ },
+ {
+  "comment_id": "CM-F01-202706-MF",
+  "language_code": "th",
+  "text": "หากไม่มีแอคชัน โมเดลพยากรณ์คาดการณ์กำไรจากการดำเนินงาน −42 ล้านเยน (ช่วง 80% −44.1–−39.9) จากแนวโน้มจริงและยอดคำสั่งซื้อคงค้าง แอคชันที่อนุมัติ 2 รายการเพิ่ม +6.5 ล้านเยน (แผน 10.5) ปัจจัยเฉพาะที่รวมไว้ −4.5 ล้านเยน (EV-001 −4.5) คาดการณ์ ณ สิ้นปี −40 ล้านเยน (±0 เทียบงบประมาณ) ตัวขับเคลื่อนที่มีผลมากที่สุดคือราคาวัตถุดิบ: +1% เปลี่ยนกำไรช่วงที่เหลือ −17.6 ล้านเยน",
+  "is_base": false,
+  "translated_at": "2027-07-03T00:00:00Z",
+  "reviewed_by": null
+ },
+ {
+  "comment_id": "CM-F01-202706-AD",
+  "language_code": "en",
+  "text": "Without Actions, the forecast model projects operating profit of JPY −50M (80% range −52.7 to −47.3), based on the actual trend and order backlog. 1 adopted Action(s) add +1.5M (plan 2.5M; open months follow the progress-based outlook). No Individual Factors are included. Landing is −48.5M, +11.5M vs budget. The most influential driver is JPY/THB exchange rate: +0.1 JPY/THB changes the remaining-year operating profit by −0.9M.",
+  "is_base": true,
+  "translated_at": null,
+  "reviewed_by": null
+ },
+ {
+  "comment_id": "CM-F01-202706-AD",
+  "language_code": "ja",
+  "text": "アクションなしの場合、予測モデルは実績トレンドと受注残から営業利益を−50百万円（80%区間 −52.7〜−47.3）と予測しています。採用済みアクション1件が+1.5百万円寄与します（計画2.5百万円。未経過月は進捗に基づく見込み）。反映した個別要因はありません。着地見込みは−48.5百万円、予算比+11.5百万円です。最も影響の大きいドライバーは為替（円/バーツ）で、+0.1円/バーツの変化で残期間の営業利益が−0.9百万円変動します。",
+  "is_base": false,
+  "translated_at": "2027-07-03T00:00:00Z",
+  "reviewed_by": null
+ },
+ {
+  "comment_id": "CM-F01-202706-AD",
+  "language_code": "th",
+  "text": "หากไม่มีแอคชัน โมเดลพยากรณ์คาดการณ์กำไรจากการดำเนินงาน −50 ล้านเยน (ช่วง 80% −52.7–−47.3) จากแนวโน้มจริงและยอดคำสั่งซื้อคงค้าง แอคชันที่อนุมัติ 1 รายการเพิ่ม +1.5 ล้านเยน (แผน 2.5) ไม่มีปัจจัยเฉพาะที่รวมไว้ คาดการณ์ ณ สิ้นปี −48.5 ล้านเยน (+11.5 เทียบงบประมาณ) ตัวขับเคลื่อนที่มีผลมากที่สุดคืออัตราแลกเปลี่ยนเยน/บาท: +0.1 เยน/บาท เปลี่ยนกำไรช่วงที่เหลือ −0.9 ล้านเยน",
+  "is_base": false,
+  "translated_at": "2027-07-03T00:00:00Z",
+  "reviewed_by": null
  }
 ]

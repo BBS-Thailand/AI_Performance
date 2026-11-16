@@ -1,0 +1,44 @@
+[
+ {
+  "category": "FX",
+  "input_mode": "DRIVER",
+  "driver_id": "FX_JPY_THB",
+  "sort_order": 1
+ },
+ {
+  "category": "VOLUME",
+  "input_mode": "DRIVER",
+  "driver_id": "VOLUME_PCT",
+  "sort_order": 2
+ },
+ {
+  "category": "PRICE",
+  "input_mode": "DRIVER",
+  "driver_id": "PRICE_PCT",
+  "sort_order": 3
+ },
+ {
+  "category": "MATERIAL",
+  "input_mode": "DRIVER",
+  "driver_id": "MATERIAL_PCT",
+  "sort_order": 4
+ },
+ {
+  "category": "ORDER_DELAY",
+  "input_mode": "AMOUNT",
+  "driver_id": null,
+  "sort_order": 5
+ },
+ {
+  "category": "LAUNCH",
+  "input_mode": "AMOUNT",
+  "driver_id": null,
+  "sort_order": 6
+ },
+ {
+  "category": "EVENT",
+  "input_mode": "AMOUNT",
+  "driver_id": null,
+  "sort_order": 7
+ }
+]

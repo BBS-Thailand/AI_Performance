@@ -1029,7 +1029,8 @@
   "entity_id": "CO",
   "base_language": "en",
   "version": 1,
-  "is_current": true
+  "is_current": true,
+  "basis_landing_op": 352.5
  },
  {
   "comment_id": "CM-A04-202706-CO",
@@ -1042,5 +1043,57 @@
   "base_language": "en",
   "version": 1,
   "is_current": true
+ },
+ {
+  "comment_id": "CM-F01-202706-SL",
+  "run_id": "RUN-202706",
+  "as_of_period_id": 202706,
+  "org_id": "SL",
+  "comment_type": "F01_EXPLANATION",
+  "entity_type": "org",
+  "entity_id": "SL",
+  "base_language": "en",
+  "version": 1,
+  "is_current": true,
+  "basis_landing_op": 271.5
+ },
+ {
+  "comment_id": "CM-F01-202706-OS",
+  "run_id": "RUN-202706",
+  "as_of_period_id": 202706,
+  "org_id": "OS",
+  "comment_type": "F01_EXPLANATION",
+  "entity_type": "org",
+  "entity_id": "OS",
+  "base_language": "en",
+  "version": 1,
+  "is_current": true,
+  "basis_landing_op": 169.5
+ },
+ {
+  "comment_id": "CM-F01-202706-MF",
+  "run_id": "RUN-202706",
+  "as_of_period_id": 202706,
+  "org_id": "MF",
+  "comment_type": "F01_EXPLANATION",
+  "entity_type": "org",
+  "entity_id": "MF",
+  "base_language": "en",
+  "version": 1,
+  "is_current": true,
+  "basis_landing_op": -40
+ },
+ {
+  "comment_id": "CM-F01-202706-AD",
+  "run_id": "RUN-202706",
+  "as_of_period_id": 202706,
+  "org_id": "AD",
+  "comment_type": "F01_EXPLANATION",
+  "entity_type": "org",
+  "entity_id": "AD",
+  "base_language": "en",
+  "version": 1,
+  "is_current": true,
+  "basis_landing_op": -48.5
  }
 ]

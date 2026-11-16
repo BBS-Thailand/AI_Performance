@@ -394,9 +394,27 @@ app_action.forEach((a) => {
 });
 
 /* --------------------------------------------------------- Individual Factors */
+// Fixed factor catalog (users pick from this list only). DRIVER types are converted to P&L amounts with the
+// forecast model's sensitivities; AMOUNT types are entered by the user as monthly changes per Metric.
+const dim_factor_type = [
+  { category: 'FX', input_mode: 'DRIVER', driver_id: 'FX_JPY_THB', sort_order: 1 },
+  { category: 'VOLUME', input_mode: 'DRIVER', driver_id: 'VOLUME_PCT', sort_order: 2 },
+  { category: 'PRICE', input_mode: 'DRIVER', driver_id: 'PRICE_PCT', sort_order: 3 },
+  { category: 'MATERIAL', input_mode: 'DRIVER', driver_id: 'MATERIAL_PCT', sort_order: 4 },
+  { category: 'ORDER_DELAY', input_mode: 'AMOUNT', driver_id: null, sort_order: 5 },
+  { category: 'LAUNCH', input_mode: 'AMOUNT', driver_id: null, sort_order: 6 },
+  { category: 'EVENT', input_mode: 'AMOUNT', driver_id: null, sort_order: 7 },
+];
+// Model drivers. budget_value = assumption used in the budget; typical_change = 1 sigma monthly move (ranks importance).
+const dim_forecast_driver = [
+  { driver_id: 'FX_JPY_THB', unit: 'JPY/THB', value_type: 'LEVEL', budget_value: 4.3, typical_change: 0.2, decimals: 2 },
+  { driver_id: 'VOLUME_PCT', unit: '%', value_type: 'PCT', budget_value: 0, typical_change: 5, decimals: 1 },
+  { driver_id: 'PRICE_PCT', unit: '%', value_type: 'PCT', budget_value: 0, typical_change: 2, decimals: 1 },
+  { driver_id: 'MATERIAL_PCT', unit: '%', value_type: 'PCT', budget_value: 0, typical_change: 5, decimals: 1 },
+];
 const FACTORS = [
   { id: 'EV-001', cat: 'FX', org: 'MF', start: 202707, end: 202803, reg: 202706, incl: true, by: 'u04',
-    amounts: { GP: -4.5, OP: -4.5 }, memo: 'Treasury FX outlook 2027-06: JPY/THB assumed 4.6 (budget 4.3).' },
+    driver: { id: 'FX_JPY_THB', from: 4.3, to: 4.6 }, memo: 'Treasury FX outlook 2027-06: JPY/THB assumed 4.6 (budget 4.3).' },
   { id: 'EV-002', cat: 'EVENT', org: 'OS', start: 202710, end: 202710, reg: 202706, incl: true, by: 'u03',
     amounts: { SGA: 1.0, OP: -1.0 }, memo: 'Booth and travel cost estimate for the Bangkok industrial exhibition.' },
   { id: 'EV-003', cat: 'LAUNCH', org: 'SL', start: 202711, end: 202803, reg: 202706, incl: true, by: 'u02',
@@ -407,8 +425,11 @@ const FACTORS = [
 const app_factor = [], app_factor_org = [], app_factor_amount = [];
 for (const f of FACTORS) {
   app_factor.push({ factor_id: f.id, category: f.cat, title_comment_id: `CM-FTITLE-${f.id}`, start_period_id: f.start, end_period_id: f.end,
+    input_mode: f.driver ? 'DRIVER' : 'AMOUNT', driver_id: f.driver ? f.driver.id : null, driver_from: f.driver ? f.driver.from : null, driver_to: f.driver ? f.driver.to : null,
+    sensitivity_run_id: f.driver ? 'FCB-202706-01' : null,
     evidence_memo: f.memo, registered_period_id: f.reg, default_included: f.incl, is_deleted: false, created_by: f.by, created_at: '2027-06-25T00:00:00Z' });
   app_factor_org.push({ factor_id: f.id, org_id: f.org });
+  if (f.driver) continue; // amounts are calculated from model sensitivities after the forecast run (below)
   const months = FY27.filter((p) => p >= f.start && p <= f.end);
   for (const [mt, total] of Object.entries(f.amounts)) {
     allocate(c(total), months.map(() => 1)).forEach((v, i) => app_factor_amount.push({ factor_id: f.id, org_id: f.org, metric_id: mt, period_id: months[i], amount: m(v) }));
@@ -476,6 +497,81 @@ for (const org of ['SL', 'OS', 'MF', 'AD']) {
     ? OPEN27.flatMap((p) => [{ p, a: '5030', v: 1 }, { p, a: '5040', v: 1 }])
     : budOpen('COGS');
   push(cogsRows, cogsOpen);
+}
+
+/* ------------------------------------------- ML forecast run (simulated notebook output) */
+// Production: a Fabric notebook trains a regression on monthly history (actuals minus realized Action effects and
+// flagged Factor events), backtests it, and writes these tables. Here they are calibrated to the baseline above.
+const ml_model_run = [{
+  forecast_run_id: RUN, as_of_period_id: AS_OF, notebook: 'nb_forecast_baseline', model_name: 'Ridge regression', model_version: 'fc-ridge-0.3 (mock)',
+  grain: 'month × organization × account group', training_from: 202404, training_to: AS_OF, training_months: 39,
+  features: 'revenue lags (1, 3, 12 months), order backlog, customer orders, JPY/THB, material price index, working days, month of year',
+  target_adjustment: 'actuals minus realized Action effects and flagged Factor events',
+  backtest_method: 'rolling origin, 1–9 months ahead', backtest_mape_rev: 3.8, backtest_mape_gp: 6.1, backtest_mape_sga: 2.9, backtest_mape_op: 9.6,
+  interval_level: 80, status: 'SUCCEEDED', run_at: '2027-07-04T01:00:00Z',
+}];
+const r1 = (v) => Math.round(v * 10) / 10;
+const r4 = (v) => Math.round(v * 10000) / 10000;
+// Average open-month baseline per org and accounts (JPY M per month) → sensitivities.
+const avgOpen = (org, accts) => fact_baseline_forecast.filter((b) => b.org_id === org && OPEN27.includes(b.period_id) && accts.includes(b.account_id))
+  .reduce((x, b) => x + b.amount, 0) / OPEN27.length;
+const SGA_ACCTS = ['6010', '6020', '6030', '6040', '6050'];
+const SENS = {}; // org → driver → { REV, GP, SGA } change per +1 unit per month
+for (const org of ['SL', 'OS']) {
+  const rev = avgOpen(org, ['4010', '4020']), cogs = avgOpen(org, ['5010']), sga = avgOpen(org, SGA_ACCTS);
+  SENS[org] = {
+    FX_JPY_THB: { REV: rev / 4.3, GP: (rev - cogs) / 4.3, SGA: sga / 4.3 },   // translation of THB results into JPY
+    VOLUME_PCT: { REV: rev / 100, GP: (rev - 0.85 * cogs) / 100, SGA: 0 },    // 85% of standard cost is variable
+    PRICE_PCT: { REV: rev / 100, GP: rev / 100, SGA: 0 },
+  };
+}
+SENS.MF = {
+  FX_JPY_THB: { GP: -5 / 3, SGA: 0 },                                                                 // imported materials (regression coefficient)
+  MATERIAL_PCT: { GP: -0.6 * (avgOpen('SL', ['5010']) + avgOpen('OS', ['5010'])) / 100, SGA: 0 },  // material ≈ 60% of standard cost
+};
+SENS.AD = { FX_JPY_THB: { SGA: avgOpen('AD', SGA_ACCTS) / 4.3 } };
+const ml_driver_sensitivity = [];
+for (const [org, drivers] of Object.entries(SENS)) {
+  const ranked = Object.entries(drivers).map(([d, k]) => {
+    const drv = dim_forecast_driver.find((x) => x.driver_id === d);
+    const op = (k.GP || 0) - (k.SGA || 0);
+    return { d, k, op, typical: Math.abs(op * drv.typical_change * OPEN27.length) };
+  }).sort((a, b) => b.typical - a.typical);
+  ranked.forEach(({ d, k, op, typical }, i) => {
+    const sig = typical >= 15 ? 'HIGH' : typical >= 4 ? 'MEDIUM' : 'LOW';
+    const coefs = { ...k, OP: op };
+    for (const mt of ['REV', 'GP', 'SGA', 'OP']) {
+      if (coefs[mt] === undefined || (NA[org] || []).includes(mt)) continue;
+      ml_driver_sensitivity.push({ forecast_run_id: RUN, org_id: org, driver_id: d, metric_id: mt, impact_per_unit_month: r4(coefs[mt]),
+        importance_rank: i + 1, significance: sig, typical_fy_op_impact: r1(typical) });
+    }
+  });
+}
+// Driver-based Factors: monthly amounts = change × sensitivity (OP = GP − SG&A keeps the identity after rounding).
+for (const f of FACTORS.filter((x) => x.driver)) {
+  const months = FY27.filter((p) => p >= f.start && p <= f.end);
+  const delta = f.driver.to - f.driver.from;
+  const coef = (mt) => (ml_driver_sensitivity.find((s) => s.org_id === f.org && s.driver_id === f.driver.id && s.metric_id === mt) || {}).impact_per_unit_month;
+  for (const p of months) {
+    const amt = {};
+    for (const mt of ['REV', 'GP', 'SGA']) if (coef(mt) !== undefined) amt[mt] = Math.round(delta * coef(mt) * 100) / 100;
+    amt.OP = Math.round(((amt.GP || 0) - (amt.SGA || 0)) * 100) / 100;
+    for (const [mt, v] of Object.entries(amt)) if (v !== 0 || mt === 'OP') app_factor_amount.push({ factor_id: f.id, org_id: f.org, metric_id: mt, period_id: p, amount: v });
+  }
+}
+// 80% range of the no-Action forecast (FY total, per leaf org and Metric), from backtest error on the open months.
+const ml_forecast_range = [];
+for (const org of ['SL', 'OS', 'MF', 'AD']) {
+  for (const mt of ['REV', 'GP', 'SGA', 'OP']) {
+    if ((NA[org] || []).includes(mt)) continue;
+    const cls = { REV: ['REVENUE'], GP: ['REVENUE', 'COGS'], SGA: ['SGA'], OP: ['REVENUE', 'COGS', 'SGA'] }[mt];
+    const val = (pred) => fact_baseline_forecast.filter((b) => b.org_id === org && pred(b.period_id) && cls.includes(CLASS[b.account_id]))
+      .reduce((x, b) => x + b.amount * (mt === 'SGA' || CLASS[b.account_id] === 'REVENUE' ? 1 : -1), 0);
+    const fy = val(() => true), open = val((p) => OPEN27.includes(p));
+    const mape = ml_model_run[0][`backtest_mape_${mt.toLowerCase()}`] / 100;
+    const half = Math.max((Math.abs(open) * mape * 1.28) / Math.sqrt(3), 0.5); // monthly errors partly cancel over 9 months
+    ml_forecast_range.push({ forecast_run_id: RUN, org_id: org, metric_id: mt, baseline_fy: r1(fy), low: r1(fy - half), high: r1(fy + half) });
+  }
 }
 
 /* -------------------------------------------------------- users & AI text */
@@ -682,7 +778,8 @@ const db = {
   app_user, app_user_org_scope, app_user_preference,
   app_point, app_point_impact_snapshot, app_point_cause,
   app_action, app_action_decision, app_action_measurement, app_action_target_metric, app_action_effect_monthly, app_action_progress,
-  app_factor, app_factor_org, app_factor_amount, app_action_factor_exclusion,
+  dim_factor_type, dim_forecast_driver, app_factor, app_factor_org, app_factor_amount, app_action_factor_exclusion,
+  ml_model_run, ml_driver_sensitivity, ml_forecast_range,
   app_forecast_version: [], app_forecast_version_line: [], app_forecast_version_monthly: [], app_forecast_factor_selection: [], app_forecast_version_action: [],
   ai_run, ai_comment, ai_comment_text,
   app_chat_thread, app_chat_participant, app_chat_message, app_chat_read, app_audit_event,
@@ -717,13 +814,63 @@ for (const v of VERSIONS) {
     monthly.forEach((x) => {
       const isActual = x.period_id <= v.asOf;
       let fc = isActual ? null : (x.forecast ?? x.actual);
-      if (!isActual) fc = M.r2(fc + m(shiftParts[open.indexOf(x)]));
-      db.app_forecast_version_monthly.push({ forecast_version_id: vid, metric_id: mt, period_id: x.period_id, actual: isActual ? x.actual : null, forecast: fc, budget: x.budget });
+      let base = isActual ? null : (x.baseline ?? x.actual), wa = isActual ? null : (x.withActions ?? x.actual);
+      if (!isActual) { const sh = m(shiftParts[open.indexOf(x)]); fc = M.r2(fc + sh); base = M.r2(base + sh); wa = M.r2(wa + sh); }
+      db.app_forecast_version_monthly.push({ forecast_version_id: vid, metric_id: mt, period_id: x.period_id, actual: isActual ? x.actual : null,
+        baseline: base, with_actions: wa, forecast: fc, budget: x.budget });
     });
   }
   Object.entries(sel).forEach(([fid, inc]) => db.app_forecast_factor_selection.push({ forecast_version_id: vid, factor_id: fid, is_included: inc,
     applied_amount_op: inc ? M.factorAmount(fid, v.org, 'OP', M.fyPeriods(2027)) : 0 }));
   M.boardActions(v.org, AS_OF, true).forEach((a) => db.app_forecast_version_action.push({ forecast_version_id: vid, action_id: a.action_id, metric_id: 'OP', outlook_effect: M.actionTotals(a.action_id, AS_OF, 'OP').outlookFY }));
+}
+M = build(db);
+
+/* ------------------------------- F-01 AI explanation per department (simulated AI, written after the ML run) */
+{
+  const s1 = (v) => (v > 0 ? '+' : v < 0 ? '−' : '±') + Math.abs(Math.round(v * 10) / 10);
+  const n1 = (v) => (v < 0 ? '−' : '') + Math.abs(Math.round(v * 10) / 10);
+  const DRV = { FX_JPY_THB: ['JPY/THB exchange rate', '為替（円/バーツ）', 'อัตราแลกเปลี่ยนเยน/บาท'], VOLUME_PCT: ['sales volume', '販売数量', 'ปริมาณขาย'],
+    PRICE_PCT: ['selling price', '販売単価', 'ราคาขาย'], MATERIAL_PCT: ['material prices', '材料価格', 'ราคาวัตถุดิบ'] };
+  const UNIT = { FX_JPY_THB: ['+0.1 JPY/THB', '+0.1円/バーツ', '+0.1 เยน/บาท'], VOLUME_PCT: ['+1%', '+1%', '+1%'], PRICE_PCT: ['+1%', '+1%', '+1%'], MATERIAL_PCT: ['+1%', '+1%', '+1%'] };
+  for (const org of ['SL', 'OS', 'MF', 'AD']) {
+    const f = M.forecastLive(org, AS_OF, 'OP');
+    const rg = M.baselineRange(org, 'OP');
+    const acts = M.forecastActions(org, AS_OF);
+    const plan = acts.reduce((x, a) => x + M.actionTotals(a.action_id, AS_OF, 'OP').planAnnual, 0);
+    const factors = M.factorsFor(org, AS_OF);
+    const inc = factors.filter((x) => x.default_included), exc = factors.filter((x) => !x.default_included);
+    const fa = (x) => M.factorAmount(x.factor_id, org, 'OP', FY27);
+    const top = M.keyDrivers(org)[0];
+    const per = top ? (top.driver_id === 'FX_JPY_THB' ? top.opPerUnit * 0.1 : top.opPerUnit) * OPEN27.length : 0;
+    const txt = (i) => {
+      const L = [i === 0 ? 'en' : i === 1 ? 'ja' : 'th'];
+      const incList = inc.map((x) => `${x.factor_id} ${s1(fa(x))}`).join(', ');
+      const excList = exc.map((x) => `${x.factor_id} ${s1(fa(x))}`).join(', ');
+      if (L[0] === 'en') return `Without Actions, the forecast model projects operating profit of JPY ${n1(f.baseline)}M (80% range ${n1(rg.low)} to ${n1(rg.high)}), based on the actual trend and order backlog. `
+        + `${acts.length} adopted Action(s) add ${s1(f.action)}M (plan ${n1(plan)}M; open months follow the progress-based outlook). `
+        + (inc.length ? `Included Individual Factors contribute ${s1(f.factor)}M (${incList}). ` : 'No Individual Factors are included. ')
+        + `Landing is ${n1(f.landing)}M, ${s1(f.variance)}M vs budget.`
+        + (exc.length ? ` Not included: ${excList}; including it would give ${n1(f.landing + exc.reduce((x, y) => x + fa(y), 0))}M.` : '')
+        + (top ? ` The most influential driver is ${DRV[top.driver_id][0]}: ${UNIT[top.driver_id][0]} changes the remaining-year operating profit by ${s1(per)}M.` : '');
+      if (L[0] === 'ja') return `アクションなしの場合、予測モデルは実績トレンドと受注残から営業利益を${n1(f.baseline)}百万円（80%区間 ${n1(rg.low)}〜${n1(rg.high)}）と予測しています。`
+        + `採用済みアクション${acts.length}件が${s1(f.action)}百万円寄与します（計画${n1(plan)}百万円。未経過月は進捗に基づく見込み）。`
+        + (inc.length ? `反映した個別要因は${s1(f.factor)}百万円です（${incList}）。` : '反映した個別要因はありません。')
+        + `着地見込みは${n1(f.landing)}百万円、予算比${s1(f.variance)}百万円です。`
+        + (exc.length ? `未反映：${excList}。反映すると${n1(f.landing + exc.reduce((x, y) => x + fa(y), 0))}百万円になります。` : '')
+        + (top ? `最も影響の大きいドライバーは${DRV[top.driver_id][1]}で、${UNIT[top.driver_id][1]}の変化で残期間の営業利益が${s1(per)}百万円変動します。` : '');
+      return `หากไม่มีแอคชัน โมเดลพยากรณ์คาดการณ์กำไรจากการดำเนินงาน ${n1(f.baseline)} ล้านเยน (ช่วง 80% ${n1(rg.low)}–${n1(rg.high)}) จากแนวโน้มจริงและยอดคำสั่งซื้อคงค้าง `
+        + `แอคชันที่อนุมัติ ${acts.length} รายการเพิ่ม ${s1(f.action)} ล้านเยน (แผน ${n1(plan)}) `
+        + (inc.length ? `ปัจจัยเฉพาะที่รวมไว้ ${s1(f.factor)} ล้านเยน (${incList}) ` : 'ไม่มีปัจจัยเฉพาะที่รวมไว้ ')
+        + `คาดการณ์ ณ สิ้นปี ${n1(f.landing)} ล้านเยน (${s1(f.variance)} เทียบงบประมาณ)`
+        + (exc.length ? ` ยังไม่รวม: ${excList}` : '')
+        + (top ? ` ตัวขับเคลื่อนที่มีผลมากที่สุดคือ${DRV[top.driver_id][2]}: ${UNIT[top.driver_id][2]} เปลี่ยนกำไรช่วงที่เหลือ ${s1(per)} ล้านเยน` : '');
+    };
+    comment(`CM-F01-202706-${org}`, 'F01_EXPLANATION', 'org', org, 202706, org, { en: txt(0), ja: txt(1), th: txt(2) });
+    ai_comment[ai_comment.length - 1].basis_landing_op = f.landing; // lets F-01 flag the text as outdated after changes
+  }
+  const co = ai_comment.find((x) => x.comment_id === 'CM-F01-202706-CO');
+  if (co) co.basis_landing_op = 352.5;
 }
 M = build(db);
 
@@ -752,6 +899,24 @@ assertEq('Company Action contribution', roll.action, 22);
 assertEq('Company included Factors', roll.factor, 2.5);
 assertEq('Company landing', roll.landing, 352.5);
 assertEq('Company landing vs budget', roll.variance, -17.5);
+assertEq('EV-001 (FX driver × model sensitivity) OP', M.factorAmount('EV-001', 'MF', 'OP', FY27), -4.5);
+for (const o of ['SL', 'OS', 'MF', 'AD']) {
+  for (const mt of ['REV', 'GP', 'SGA', 'OP']) {
+    const f = M.forecastLive(o, AS_OF, mt);
+    const mon = M.forecastMonthlyLive(o, AS_OF, mt);
+    const closedAct = mon.filter((x) => x.actual !== null).reduce((s, x) => s + x.actual, 0);
+    const closedBase = M.baselineValue(o, CLOSED27, mt);
+    // Closed months: actual = baseline (actual − realized) + realized Action effect. Open months: the three layers.
+    const openSum = (k) => mon.filter((x) => x.actual === null).reduce((s, x) => s + x[k], 0);
+    const realized = M.r2(closedAct - closedBase);
+    if (Math.abs(M.r2(closedBase + openSum('baseline')) - f.baseline) > 0.011) throw new Error(`Monthly baseline ≠ FY baseline for ${o} ${mt}`);
+    if (Math.abs(M.r2(closedAct + openSum('withActions')) - f.withActions) > 0.011) throw new Error(`Monthly option ② ≠ FY for ${o} ${mt} (realized ${realized})`);
+    if (Math.abs(M.r2(closedAct + openSum('forecast')) - f.landing) > 0.011) throw new Error(`Monthly landing ≠ FY landing for ${o} ${mt}`);
+  }
+  const v = M.latestVersion(o, AS_OF);
+  assertEq(`${o} live landing = confirmed ${v.forecast_version_id}`, M.forecastLive(o, AS_OF, 'OP').landing, M.versionFigures(v.forecast_version_id, 'OP').landing);
+}
+console.log('  ✓ Monthly layers (baseline / with Actions / landing) add up to the FY figures for every department and Metric');
 for (const pid of [202704, 202705, 202706]) {
   for (const o of ['CO', 'SL', 'OS', 'MF', 'AD']) {
     const g = M.actualYTD(o, pid, 'GP'), s = M.actualYTD(o, pid, 'SGA'), op = M.actualYTD(o, pid, 'OP');

@@ -127,7 +127,7 @@
 | amount | DECIMAL(18,2) | Natural positive balance |
 | load_id | STRING | Pipeline run that produced the row (traceability) |
 
-**`fact_baseline_forecast`** — forecast **without Actions** (output of forecast model, TBD)
+**`fact_baseline_forecast`** — forecast **without Actions** = option ① (written by the forecast notebook, see §3.1)
 | Column | Type | Notes |
 |---|---|---|
 | forecast_run_id | STRING | |
@@ -139,6 +139,22 @@
 > **Why closed months exclude Action effects:** `Landing = Baseline + Action contribution + Factors`
 > counts realized Action effect once, in the Action contribution. Otherwise it would be counted
 > twice (already inside actuals).
+
+### 3.1 Forecast model output (ML notebook)
+The numbers come from a **regression model in a Fabric notebook**; the AI only explains them. The notebook
+trains on monthly history (**actuals minus realized Action effects and flagged Factor events**, so the
+baseline never double counts), backtests it, and writes:
+
+| Table | Columns |
+|---|---|
+| `ml_model_run` | forecast_run_id, as_of_period_id, notebook, model_name, model_version, grain, training_from, training_to, training_months, features, target_adjustment, backtest_method, backtest_mape_rev / _gp / _sga / _op, interval_level, status, run_at |
+| `ml_driver_sensitivity` | forecast_run_id, org_id (leaf), driver_id, metric_id, impact_per_unit_month (JPY M per +1 unit per month), importance_rank, significance (`HIGH`/`MEDIUM`/`LOW`), typical_fy_op_impact |
+| `ml_forecast_range` | forecast_run_id, org_id, metric_id, baseline_fy, low, high (80% range of option ①) |
+| `dim_forecast_driver` | driver_id (`FX_JPY_THB`, `VOLUME_PCT`, `PRICE_PCT`, `MATERIAL_PCT`), unit, value_type (`LEVEL`/`PCT`), budget_value, typical_change, decimals |
+
+The pipeline order is: P&L load → notebook (`fact_baseline_forecast`, `ml_*`) → semantic model refresh →
+AI explanation (`ai_comment` `F01_EXPLANATION`). Users toggling Factors in F-01 recalculate in the
+browser from these tables — no notebook or AI call.
 
 ## 4. Application layer — Fabric SQL database
 
@@ -175,9 +191,10 @@
 ### 4.4 Individual Factors
 | Table | Columns |
 |---|---|
-| `app_factor` | factor_id (`EV-001`), category (`FX`, `ORDER_DELAY`, `LAUNCH`, `EVENT`, `OTHER`), title_comment_id, start_period_id, end_period_id, evidence_memo, registered_period_id, default_included (default checkbox in F-01), is_deleted |
+| `dim_factor_type` | category (fixed list: `FX`, `VOLUME`, `PRICE`, `MATERIAL`, `ORDER_DELAY`, `LAUNCH`, `EVENT`), input_mode (`DRIVER` / `AMOUNT`), driver_id, sort_order |
+| `app_factor` | factor_id (`EV-001`), category (→ `dim_factor_type`), title (user text) or title_comment_id (AI text), start_period_id, end_period_id, input_mode, driver_id, driver_from, driver_to, sensitivity_run_id, evidence_memo, registered_period_id, default_included (default checkbox in F-01), is_deleted, created_by, created_at |
 | `app_factor_org` | factor_id, org_id |
-| `app_factor_amount` | factor_id, org_id, metric_id, period_id, amount (signed metric change) |
+| `app_factor_amount` | factor_id, org_id, metric_id, period_id, amount (signed metric change). `DRIVER` factors: amount = (driver_to − driver_from) × `ml_driver_sensitivity` of `sensitivity_run_id`, calculated by P-02 on save (OP = GP − SG&A); `AMOUNT` factors: typed by the user |
 | `app_action_factor_exclusion` | action_id, factor_id, metric_id, period_from, period_to, excluded_amount, method_comment_id |
 
 ### 4.5 Forecast versions
@@ -185,7 +202,7 @@
 |---|---|
 | `app_forecast_version` | forecast_version_id, org_id, fiscal_year, as_of_period_id, version_no, confirmed_at, confirmed_by, baseline_run_id, note |
 | `app_forecast_version_line` | forecast_version_id, metric_id, budget_annual, baseline_no_action, action_contribution, factor_contribution, landing — **frozen snapshot** |
-| `app_forecast_version_monthly` | forecast_version_id, metric_id, period_id, actual, forecast, budget |
+| `app_forecast_version_monthly` | forecast_version_id, metric_id, period_id, actual, baseline (option ①), with_actions (option ②), forecast (option ③ = landing), budget |
 | `app_forecast_factor_selection` | forecast_version_id, factor_id, is_included, applied_amount_op |
 | `app_forecast_version_action` | forecast_version_id, action_id, metric_id, outlook_effect |
 
@@ -223,9 +240,11 @@ Variance YTD  := [Actual YTD] - [Budget YTD]
 Is Favorable  := [Variance YTD] * SELECTEDVALUE ( dim_metric[favorable_direction] ) > 0
 Budget Annual := CALCULATE ( [Budget], ALLEXCEPT on fiscal_year )
 Baseline No Action  := SUM ( fact_baseline_forecast[amount] × sign )  -- latest run for as-of period
-Action Contribution := Σ realized actual_effect (closed months) + Σ outlook_effect (open months)
+Action Contribution := Σ realized actual_effect (closed months) + Σ outlook_effect (open months, reforecast from A-04 progress)
+                       -- adopted Actions only; a Proposed Action never enters the Forecast
+With Actions        := [Baseline No Action] + [Action Contribution]            -- option ②
 Included Factors    := Σ app_factor_amount where factor is included
-Landing             := [Baseline No Action] + [Action Contribution] + [Included Factors]
+Landing             := [With Actions] + [Included Factors]                      -- option ③
 Landing vs Budget   := [Landing] - [Budget Annual]
 Other Unidentified  := [Variance YTD] - Σ Point impacts (current snapshot, org level)
 Other Unidentified (Month) := [Variance Month] - Σ impact_month (A-01 table)
@@ -239,7 +258,7 @@ Other Unidentified (Month) := [Variance Month] - Σ impact_month (A-01 table)
 2. Company variance per Metric = Σ parent Point impacts + Other.
 3. Parent Point impact = Σ child Point impacts.
 4. `OP = GP − SGA` for actual, budget, baseline, landing.
-5. `Landing = Baseline + Action contribution + Included Factors`.
+5. `Landing = Baseline + Action contribution + Included Factors`; the monthly layers (baseline / with Actions / landing) add up to the FY figures.
 6. Company Forecast = Σ latest confirmed org versions.
 7. A-03 / A-04 / A-05 / F-01 Action totals are identical for the same scope.
 

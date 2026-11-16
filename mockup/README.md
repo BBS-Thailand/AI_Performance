@@ -29,7 +29,7 @@ The generator asserts the reconciliations (slide figures, Point + Other = varian
 |---|---|
 | 1 (done) | Shell and global context, A-01, A-02, P-01, Adopt / Reject / Hold / Cancel adoption, permissions, override notice |
 | 2 | A-03, A-04, A-05, C-03 |
-| 3 | F-01, P-02, version confirmation |
+| 3 (done) | F-01 (three forecast options, model info, key drivers), P-02 (fixed factor list; driver or amount input), version confirmation and company roll-up |
 | 4 | B-01, B-02, C-01, FN-01, FN-02 |
 
 Demo tips: switch **Demo user** to see permission scopes (for example, the Overseas Sales head can't decide
