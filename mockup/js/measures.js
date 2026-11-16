@@ -494,6 +494,99 @@
       return M.versionMonthly(vids, metric, fy);
     };
 
+    /* ---------- BI cube (B-01 BI Analysis / B-02 Reporting) ---------- */
+    /* One query function over the same facts as every other screen, so B-01 / B-02 agree with A-01 and F-01.
+     * Dimensions follow README §5.1; `period` is the month, `org` the department (leaf organization). */
+    const custById = new Map(db.dim_customer.map((c) => [c.customer_id, c]));
+    const prodById = new Map(db.dim_product.map((p) => [p.product_id, p]));
+    const acctById = new Map(db.dim_account.map((a) => [a.account_id, a]));
+    const naIf = (v) => (v === undefined || v === null || v === '-' ? 'NA' : v);
+    const BI_DIMS = {
+      division: (f) => orgById.get(f.org_id).parent_org_id,
+      org: (f) => f.org_id,
+      quarter: (f, pid) => periodById.get(pid).fiscal_quarter,
+      period: (f, pid) => pid,
+      region: (f) => naIf((custById.get(f.customer_id) || {}).region),
+      customer: (f) => f.customer_id,
+      product_category: (f) => naIf((prodById.get(f.product_id) || {}).product_category),
+      product: (f) => f.product_id,
+      account_class: (f) => acctById.get(f.account_id).account_class,
+      account: (f) => f.account_id,
+    };
+    /** Dimensions the confirmed Forecast exists for (organization × month × Metric only). */
+    const FCST_DIMS = new Set(['division', 'org', 'quarter', 'period', 'scenario']);
+    M.BI_DIM_KEYS = [...Object.keys(BI_DIMS), 'scenario'];
+    M.BI_MEASURES = ['REV', 'COGS', 'GP', 'SGA', 'OP'];
+    M.BI_SCENARIOS = ['ACT', 'BUD', 'PY', 'FCST'];
+    M.customer = (id) => custById.get(id);
+    M.product = (id) => prodById.get(id);
+    M.account = (id) => acctById.get(id);
+    /** Cost of sales (COGS) is not one of the four Metrics; it is derived as Revenue − Gross profit. */
+    M.biSign = (acct, measure) => (measure === 'COGS' ? M.accountSign(acct, 'REV') - M.accountSign(acct, 'GP') : M.accountSign(acct, measure));
+    M.biApplicable = (orgId, measure) => M.isApplicable(orgId, measure === 'COGS' ? 'GP' : measure);
+    M.biFavorable = (measure, v) => (measure === 'COGS' ? v < 0 : M.isFavorable(measure, v));
+    M.fcstSupports = (dims) => dims.every((d) => FCST_DIMS.has(d));
+    /**
+     * Σ measure grouped by dimensions.
+     *   scenarios: ACT / BUD (fact_financial), PY (actual of the same months one year earlier),
+     *              FCST (latest confirmed Forecast version of each department as of `asOf`:
+     *              closed months = actual, open months = landing forecast → equals F-01).
+     *   filters:   { dimension: member } (all must match).
+     * Returns { rows: [{ key: [member per groupBy], value }], fcstUnsupported, missing: [org without version] }.
+     */
+    M.biQuery = ({ orgId, periods, measure, scenarios = ['ACT'], groupBy = [], filters = {}, asOf }) => {
+      const leaves = leafOrgs(orgId);
+      const leafSet = new Set(leaves);
+      const acc = new Map();
+      const fEntries = Object.entries(filters);
+      const dimVal = (d, f, pid, sc) => (d === 'scenario' ? sc : BI_DIMS[d](f, pid));
+      const add = (f, pid, sc, v) => {
+        for (const [d, want] of fEntries) if (String(dimVal(d, f, pid, sc)) !== String(want)) return;
+        const key = groupBy.map((d) => dimVal(d, f, pid, sc));
+        const k = key.join('\u0001');
+        const cur = acc.get(k);
+        if (cur) cur.value += v; else acc.set(k, { key, value: v });
+      };
+      const usedDims = [...groupBy, ...fEntries.map(([d]) => d)];
+      const out = { rows: [], fcstUnsupported: false, missing: [] };
+      for (const sc of scenarios) {
+        if (sc === 'FCST') {
+          if (!M.fcstSupports(usedDims)) { out.fcstUnsupported = true; continue; }
+          const metrics = measure === 'COGS' ? [['REV', 1], ['GP', -1]] : [[measure, 1]];
+          const ps = new Set(periods);
+          for (const leaf of leaves) {
+            const v = M.latestVersion(leaf, asOf);
+            if (!v) { out.missing.push(leaf); continue; }
+            for (const row of db.app_forecast_version_monthly) {
+              if (row.forecast_version_id !== v.forecast_version_id || !ps.has(row.period_id)) continue;
+              const mt = metrics.find((x) => x[0] === row.metric_id);
+              if (!mt) continue;
+              const val = row.actual ?? row.forecast;
+              if (val === null || val === undefined) continue;
+              add({ org_id: leaf }, row.period_id, sc, val * mt[1]);
+            }
+          }
+          continue;
+        }
+        const src = sc === 'PY' ? 'ACT' : sc;
+        const shift = sc === 'PY' ? 100 : 0; // period_id is YYYYMM → same month of the prior year
+        for (const p of periods) {
+          for (const f of factIdx.get(src + '|' + (p - shift)) || []) {
+            if (!leafSet.has(f.org_id)) continue;
+            const sg = M.biSign(f.account_id, measure);
+            if (sg) add(f, p, sc, f.amount * sg);
+          }
+        }
+      }
+      out.rows = [...acc.values()].map((x) => ({ key: x.key, value: r2(x.value) }));
+      return out;
+    };
+    /** Single value of the cube (no grouping); null when no fact contributed. */
+    M.biValue = (orgId, periods, measure, scenario, filters, asOf) => {
+      const q = M.biQuery({ orgId, periods, measure, scenarios: [scenario], filters: filters || {}, asOf });
+      return q.rows.length ? q.rows[0].value : null;
+    };
+
     /* ---------- AI comments ---------- */
     const textIdx = new Map(db.ai_comment_text.map((t) => [t.comment_id + '|' + t.language_code, t]));
     M.commentText = (commentId, lang) => {

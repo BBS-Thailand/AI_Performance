@@ -30,7 +30,7 @@ The generator asserts the reconciliations (slide figures, Point + Other = varian
 | 1 (done) | Shell and global context, A-01, A-02, P-01, Adopt / Reject / Hold / Cancel adoption, permissions, override notice |
 | 2 | A-03 (done: Action Board, Metric filter, status counts, progress update → outlook reforecast → F-01), A-04 (done: stacked monthly effects, legend, reconciled table, AI comment), A-05 (done: effect figures, measured-figure graph, AI assessment, change history), C-03 |
 | 3 (done) | F-01 (three forecast options, model info, key drivers), P-02 (fixed factor list; driver or amount input), version confirmation and company roll-up |
-| 4 | B-01, B-02, C-01, FN-01, FN-02 |
+| 4 | B-01 (done: left panel with Dimensions, Measures and Saved views as in the concept slide; pivot table with one or more measures, scenario, filters, drill-down, and a chart below), B-02 (done: nine standard reports by category, favorites, single-month / YTD, budget and prior-year comparison, confirmed Forecast version, AI Comment section under the report), C-01, FN-01, FN-02 |
 
 Demo tips: on A-03, the ✎ next to a progress value (owning organization, latest closed month) reforecasts the outlook; F-01 and A-04 update at once. Switch **Demo user** to see permission scopes (for example, the Overseas Sales head can't decide
-Sales Dept. Actions). Changes are kept in memory only; reload or **Reset demo data** to start over.
+Sales Dept. Actions). On B-01, tick up to two dimensions in the left panel (first = rows, second = columns), click ▸ on a row to drill down (region → customer, quarter → month …) and click a saved view to reload a layout. Changes are kept in memory only; reload or **Reset demo data** to start over.
