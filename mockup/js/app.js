@@ -129,7 +129,7 @@
     },
     /** Monthly grouped bars (budget / actual) with optional line series (prior year, forecast). */
     monthly(series, { width = 560, height = 220, labels, zero = true }) {
-      const pad = { l: 44, r: 10, t: 10, b: 26 };
+      const pad = { l: 44, r: series.some((s) => s.endLabel) ? 56 : 10, t: 10, b: 26 };
       const n = labels.length;
       const vals = series.flatMap((s) => s.values.filter((v) => v !== null && v !== undefined));
       let min = zero ? Math.min(0, ...vals) : Math.min(...vals), max = zero ? Math.max(0, ...vals) : Math.max(...vals);
@@ -162,12 +162,84 @@
         out += `<path d="${d}" fill="none" stroke="${s.color}" stroke-width="${s.width || 2}" ${s.dash ? `stroke-dasharray="${s.dash === true ? '4 3' : s.dash}"` : ''}/>`;
         pts.forEach((p, i) => { if (p) out += `<circle cx="${p[0]}" cy="${p[1]}" r="2.5" fill="${s.color}"><title>${esc(s.name)} ${esc(labels[i])}: ${fmt(s.values[i])}</title></circle>`; });
       });
+      // Direct end labels (value in text ink beside a colored marker), nudged apart so they never overlap.
+      const ends = series.filter((s) => s.type === 'line' && s.endLabel).map((s) => {
+        const i = s.values.map((v) => v !== null && v !== undefined).lastIndexOf(true);
+        return i < 0 ? null : { s, x: pad.l + bw * i + bw / 2, y: y(s.values[i]), v: s.values[i] };
+      }).filter(Boolean).sort((a, b) => a.y - b.y);
+      ends.forEach((e, k) => { e.ly = k ? Math.max(e.y, ends[k - 1].ly + 12) : e.y; });
+      ends.forEach((e) => {
+        out += `<circle cx="${e.x}" cy="${e.y}" r="4" fill="${e.s.color}" stroke="var(--surface)" stroke-width="2"/>`
+          + `<rect x="${e.x + 8}" y="${e.ly - 4}" width="8" height="8" rx="2" fill="${e.s.color}"/><text x="${e.x + 19}" y="${e.ly + 4}" class="end-label">${fmt(e.v)}</text>`;
+      });
       const legend = series.map((s) => (s.type === 'line'
         ? `<span><svg width="18" height="8" style="vertical-align:middle;margin-right:5px"><line x1="0" x2="18" y1="4" y2="4" stroke="${s.color}" stroke-width="${s.width || 2}" ${s.dash ? `stroke-dasharray="${s.dash === true ? '4 3' : s.dash}"` : ''}/></svg>${esc(s.name)}</span>`
         : `<span><i style="background:${s.color}"></i>${esc(s.name)}</span>`)).join('');
       return `<svg class="chart" viewBox="0 0 ${width} ${height}" role="img">${out}</svg><div class="legend">${legend}</div>`;
     },
   };
+
+  /**
+   * Monthly stacked bars (A-04). series: [{id, name, color, values[]}]; months up to splitAt (index) are
+   * actual (solid), later months outlook (light). Positive values stack up, negative values stack down.
+   */
+  Chart.stacked = function (series, { width = 640, height = 270, labels, keys, splitAt = -1 }) {
+    const pad = { l: 44, r: 10, t: 22, b: 40 };
+    const n = labels.length;
+    const posT = labels.map((_, i) => series.reduce((s, x) => s + Math.max(0, x.values[i] || 0), 0));
+    const negT = labels.map((_, i) => series.reduce((s, x) => s + Math.min(0, x.values[i] || 0), 0));
+    let max = Math.max(0, ...posT), min = Math.min(0, ...negT);
+    if (max === min) max = 1;
+    // Round tick step (1 / 2 / 2.5 / 5 × 10^k) so the axis reads 0, 0.5, 1.0 … like the concept chart.
+    const raw = (max - min) / 4, mag = 10 ** Math.floor(Math.log10(raw));
+    const step = [1, 2, 2.5, 5, 10].map((k) => k * mag).find((s) => s >= raw);
+    max = Math.ceil((max * 1.08) / step) * step; min = Math.floor((min * 1.08) / step) * step;
+    const pw = width - pad.l - pad.r, ph = height - pad.t - pad.b;
+    const y = (v) => pad.t + ph - ((v - min) / (max - min)) * ph;
+    const bw = pw / n, barW = Math.min(bw * 0.62, 34);
+    const digits = step < 1 ? (step * 10 % 1 ? 2 : 1) : 0;
+    let out = '';
+    for (let v = min; v <= max + step / 2; v += step) {
+      out += `<line class="gridline" x1="${pad.l}" x2="${width - pad.r}" y1="${y(v)}" y2="${y(v)}"/><text x="${pad.l - 6}" y="${y(v) + 4}" text-anchor="end">${fmt(v, digits)}</text>`;
+    }
+    out += `<line class="axis" x1="${pad.l}" x2="${width - pad.r}" y1="${y(0)}" y2="${y(0)}"/>`;
+    labels.forEach((lb, i) => {
+      const cx = pad.l + bw * i + bw / 2;
+      out += `<text x="${cx}" y="${height - pad.b + 16}" text-anchor="middle">${esc(lb)}</text>`;
+      let up = 0, down = 0;
+      series.forEach((s) => {
+        const v = s.values[i];
+        if (!v) return;
+        const from = v > 0 ? up : down, to = from + v;
+        if (v > 0) up = to; else down = to;
+        const top = Math.min(y(from), y(to)), hh = Math.abs(y(to) - y(from));
+        const light = i > splitAt;
+        out += `<rect class="seg" data-series="${esc(s.id)}" data-key="${keys ? keys[i] : i}" x="${cx - barW / 2}" y="${top}" width="${barW}" height="${Math.max(hh, 0.8)}"
+          fill="${s.color}" fill-opacity="${light ? 0.38 : 1}" stroke="var(--surface)" stroke-width="1"><title>${esc(s.name)} · ${esc(lb)}: ${fmtSigned(v, 2)} (${esc(light ? t('outlook') : t('actual'))})</title></rect>`;
+      });
+      const net = posT[i] + negT[i];
+      if (posT[i] || negT[i]) {
+        const ty = net >= 0 ? y(posT[i]) - 5 : y(negT[i]) + 13;
+        out += `<text class="bar-total" x="${cx}" y="${ty}" text-anchor="middle">${fmt(net, 2)}</text>`;
+      }
+    });
+    if (splitAt >= 0 && splitAt < n - 1) {
+      const sx = pad.l + bw * (splitAt + 1);
+      out += `<line class="split" x1="${sx}" x2="${sx}" y1="${pad.t - 14}" y2="${height - pad.b}"/>`
+        + `<text class="split-label" x="${sx}" y="${height - 6}" text-anchor="middle">← ${esc(t('actual'))} | ${esc(t('outlook'))} →</text>`;
+    }
+    return `<svg class="chart stacked" viewBox="0 0 ${width} ${height}" role="img">${out}</svg>`;
+  };
+
+  /* Categorical colors per Action (dataviz reference palette, fixed slot order). The color follows the
+   * Action, not its rank: initial Actions get slots by ID, Actions adopted later take the next free slot. */
+  const SERIES = ['#2a78d6', '#eb6834', '#1baf7a', '#eda100', '#e87ba4', '#008300', '#6250d6', '#e34948'];
+  const colorSlot = new Map();
+  db.app_action.filter((a) => a.decision_state === 'ADOPTED').map((a) => a.action_id).sort().forEach((id, i) => colorSlot.set(id, i));
+  function actionColor(id) {
+    if (!colorSlot.has(id)) colorSlot.set(id, colorSlot.size);
+    return SERIES[colorSlot.get(id) % SERIES.length];
+  }
 
   /* ========================================================= modal & toast */
   function openModal(html, { small = false, onMount } = {}) {
@@ -242,6 +314,38 @@
     }
     rebuild();
     return true;
+  }
+
+  /**
+   * Progress update by the owning organization (A-03). Writes the progress row for the latest closed month,
+   * reforecasts the open-month outlook for every target Metric (simulated AI rule in M.reforecast) and logs
+   * the change. F-01 reads the new outlook immediately; confirmed Forecast versions stay unchanged.
+   */
+  function updateProgress(actionId, pct, note) {
+    const a = M.action(actionId);
+    const pid = M.latestClosed();
+    if (!canEditOrg(a.owner_org_id)) { toast(t('progress_no_perm'), true); return null; }
+    if (state.periodId !== pid) { toast(t('progress_locked', { month: periodLabel(pid) }), true); return null; }
+    const rf = M.reforecast(actionId, pid, pct);
+    db.app_action_effect_monthly.filter((e) => e.action_id === actionId && e.period_id > pid).forEach((e) => {
+      if (rf.scale !== null) e.outlook_effect = M.r2((e.outlook_effect ?? 0) * rf.scale);
+      else e.outlook_effect = M.r2((e.planned_effect || 0) * rf.planScale);
+    });
+    const old = db.app_action_progress.find((p) => p.action_id === actionId && p.period_id === pid);
+    const row = { action_id: actionId, period_id: pid, progress_pct: pct, ai_status: rf.status, outlook_total_op: M.r2(rf.outlookNew),
+      comment_id: old && pct === old.progress_pct ? old.comment_id : null, updated_by: state.userId, updated_at: nowIso() };
+    if (old) Object.assign(old, row); else db.app_action_progress.push(row);
+    if (pct >= 100 && a.end_period_id <= pid) a.execution_state = 'COMPLETED';
+    else if (pct > 0 && a.execution_state === 'NOT_STARTED') a.execution_state = 'IN_PROGRESS';
+    audit(actionId, 'PROGRESS_UPDATE', `${rf.oldPct}% → ${pct}% · outlook OP ${rf.outlookOld} → ${row.outlook_total_op} · ${rf.status}${note ? ' · ' + note : ''}`);
+    if (note) {
+      let th = db.app_chat_thread.find((x) => x.action_id === actionId);
+      if (!th) { th = { thread_id: `TH-${actionId}`, action_id: actionId }; db.app_chat_thread.push(th); }
+      db.app_chat_message.push({ message_id: `MS-L${db.app_chat_message.length + 1}`, thread_id: th.thread_id, author_id: state.userId, message_type: 'MESSAGE',
+        body: `[${t('update_progress')}: ${rf.oldPct}% → ${pct}%] ${note}`, mentions: '', email_notified: false, due_date: null, sent_at: nowIso() });
+    }
+    rebuild();
+    return rf;
   }
 
   /* ================================================================ shell */
@@ -336,7 +440,9 @@
   const App = {
     db, state, get M() { return M; }, set M(v) { M = v; }, t, esc, $, $$, fmt, fmtSigned, tone, periodLabel, monthLabel, orgName, userName, user, metricName,
     aiText, aiPlain, actionName, actionNamePlain, actionDesc, pointTitle, selectablePeriods, userOrgs, canDecide, canConfirm, canEditOrg, ytdLabel,
-    Chart, openModal, toast, decide, rebuild, audit, go, render, SCREENS, SCREEN_ID, nowIso,
+    Chart, openModal, toast, decide, rebuild, audit, go, render, SCREENS, SCREEN_ID, nowIso, actionColor, updateProgress,
+    /** Metric selection shared by the A-03 / A-04 tabs (README §10: kept when switching). */
+    boardUi: { metrics: ['OP'], metric: 'OP', range: 'HIST', status: '' },
     start() {
       initContext(); bindShell();
       // Deep link (e.g. notifications): #A02:PT-001, #A01

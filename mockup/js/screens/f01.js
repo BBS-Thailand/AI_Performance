@@ -66,7 +66,7 @@
   function scenarioBar(ctx) {
     const { t, esc, fmt } = A;
     const f = figures(ctx, ui.metric);
-    const btn = (s, n, v) => `<button class="seg-btn ${ui.scenario === s ? 'on' : ''}" data-scen="${s}"><span class="n">${n}</span>${esc(t('scen_' + s))}<b>${fmt(v)}</b></button>`;
+    const btn = (s, n, v) => `<button class="seg-btn sc-${s} ${ui.scenario === s ? 'on' : ''}" data-scen="${s}"><i class="sw"></i><span class="n">${n}</span>${esc(t('scen_' + s))}<b>${fmt(v)}</b></button>`;
     return `<div class="seg" role="group" aria-label="${esc(t('scenario'))}">
       ${btn('BASE', '①', f.baseline)}${btn('ACTIONS', '②', f.withActions)}${btn('LANDING', '③', f.landing)}</div>`;
   }
@@ -80,11 +80,11 @@
     const s = ui.scenario;
     const series = [
       { name: t('budget'), type: 'line', color: 'var(--chart-budget)', dash: '2 3', values: rows.map((r) => r.budget) },
-      { name: t('actual'), type: 'line', color: 'var(--chart-actual)', width: 2.5, values: rows.map((r) => r.actual) },
-      { name: '① ' + t('scen_BASE'), type: 'line', color: '#8a96a3', dash: '5 3', width: s === 'BASE' ? 2.5 : 1.5, values: join('baseline') },
+      { name: t('actual'), type: 'line', color: 'var(--fc-actual)', width: 2.5, values: rows.map((r) => r.actual) },
+      { name: '① ' + t('scen_BASE'), type: 'line', color: 'var(--fc-base)', dash: '5 3', width: s === 'BASE' ? 2.5 : 2, endLabel: true, values: join('baseline') },
     ];
-    if (s !== 'BASE') series.push({ name: '② ' + t('scen_ACTIONS'), type: 'line', color: '#3b8f7f', dash: '5 3', width: s === 'ACTIONS' ? 2.5 : 1.5, values: join('withActions') });
-    if (s === 'LANDING') series.push({ name: '③ ' + t('scen_LANDING'), type: 'line', color: 'var(--chart-forecast)', width: 2.8, values: join('forecast') });
+    if (s !== 'BASE') series.push({ name: '② ' + t('scen_ACTIONS'), type: 'line', color: 'var(--fc-actions)', dash: '5 3', width: s === 'ACTIONS' ? 2.5 : 2, endLabel: true, values: join('withActions') });
+    if (s === 'LANDING') series.push({ name: '③ ' + t('scen_LANDING'), type: 'line', color: 'var(--fc-landing)', width: 2.8, endLabel: true, values: join('forecast') });
     return A.Chart.monthly(series, { labels, width: 620, height: 250, zero: false });
   }
 

@@ -247,6 +247,72 @@
     M.actionDecisions = (id) => db.app_action_decision.filter((d) => d.action_id === id)
       .sort((a, b) => String(a.decided_at).localeCompare(String(b.decided_at)));
 
+    /** Monthly effect for A-04: closed months (≤ pid) show measured actual, later months the outlook. */
+    M.actionMonthly = (id, metric, pid) => {
+      const fy = periodById.get(pid).fiscal_year;
+      const rows = new Map(M.effectRows(id, metric).map((r) => [r.period_id, r]));
+      return M.fyPeriods(fy).map((p) => {
+        const r = rows.get(p);
+        if (!r) return { period_id: p, plan: 0, value: null, isActual: p <= pid };
+        const isActual = p <= pid;
+        return { period_id: p, plan: r.planned_effect || 0, isActual, value: isActual ? (r.actual_effect ?? null) : (r.outlook_effect ?? r.actual_effect ?? null) };
+      });
+    };
+    /** A-03 count bucket: IN_PROGRESS / EFFECTIVE / DELAYED / COMPLETED (AT_RISK counts as delayed). */
+    M.actionBucket = (a, pid) => {
+      const prog = M.actionProgress(a.action_id, pid);
+      const st = prog ? prog.ai_status : null;
+      if (a.execution_state === 'COMPLETED' || st === 'COMPLETED') return 'COMPLETED';
+      if (st === 'EFFECTIVE') return 'EFFECTIVE';
+      if (st === 'DELAYED' || st === 'AT_RISK') return 'DELAYED';
+      return 'IN_PROGRESS';
+    };
+    /** Share of the Action term elapsed at the end of pid (0–100). */
+    M.expectedProgress = (a, pid) => {
+      const term = db.dim_fiscal_period.map((p) => p.period_id).filter((p) => p >= a.start_period_id && p <= a.end_period_id);
+      if (!term.length) return 0;
+      return Math.round((term.filter((p) => p <= pid).length / term.length) * 100);
+    };
+    /**
+     * Simulated AI reforecast after a progress update (README §3.5: owner updates progress; money is never typed).
+     * Starting from the current outlook, each progress point moves the open-month outlook by 0.5% of the
+     * open-month plan (+10 points → +5% of plan), kept between 0 and 120% of plan, so a progress change
+     * always moves the outlook in the same direction. AI status compares year-end outlook with plan.
+     */
+    M.REFORECAST_WEIGHT = 0.5;
+    M.reforecast = (id, pid, newPct) => {
+      const a = actionById.get(id);
+      const cur = M.actionProgress(id, pid);
+      const oldPct = cur ? cur.progress_pct : 0;
+      const expected = M.expectedProgress(a, pid);
+      const open = M.effectRows(id, 'OP').filter((r) => r.period_id > pid);
+      const curOpen = sum(open, (r) => r.outlook_effect ?? 0);
+      const planOpen = sum(open, (r) => r.planned_effect || 0);
+      let newOpen = curOpen + planOpen * ((newPct - oldPct) / 100) * M.REFORECAST_WEIGHT;
+      const lo = Math.min(0, planOpen * 1.2), hi = Math.max(0, planOpen * 1.2);
+      newOpen = r2(Math.min(hi, Math.max(lo, newOpen)));
+      const tot = M.actionTotals(id, pid, 'OP');
+      const outlookNew = r2(tot.actualToDate + newOpen);
+      const ratio = tot.planAnnual ? outlookNew / tot.planAnnual : 1;
+      let status;
+      if (newPct >= 100) status = 'COMPLETED';
+      else if (newPct === oldPct && cur) status = cur.ai_status;
+      else if (ratio >= 0.9) status = tot.actualToDate > 0 && tot.actualToDate >= tot.planToDate ? 'EFFECTIVE' : 'ON_TRACK';
+      else if (ratio >= 0.7) status = 'DELAYED';
+      else status = 'AT_RISK';
+      return { oldPct, newPct, expected, curOpen, newOpen, planOpen, outlookOld: tot.outlookFY, outlookNew, delta: r2(outlookNew - tot.outlookFY),
+        oldStatus: cur ? cur.ai_status : null, status, scale: Math.abs(curOpen) > 0.001 ? newOpen / curOpen : null, planScale: planOpen ? newOpen / planOpen : 0 };
+    };
+    /** Unread messages in an Action thread for a user (app_chat_read.last_read_message_id). */
+    M.chatUnread = (actionId, userId) => {
+      const th = db.app_chat_thread.find((x) => x.action_id === actionId);
+      if (!th) return null;
+      const msgs = db.app_chat_message.filter((x) => x.thread_id === th.thread_id).sort((a, b) => String(a.sent_at).localeCompare(String(b.sent_at)));
+      const rd = db.app_chat_read.find((x) => x.thread_id === th.thread_id && x.user_id === userId);
+      const i = rd ? msgs.findIndex((x) => x.message_id === rd.last_read_message_id) : -1;
+      return { total: msgs.length, unread: msgs.length - (i + 1) };
+    };
+
     /* ---------- Individual Factors ---------- */
     M.factor = (id) => db.app_factor.find((f) => f.factor_id === id);
     M.factorType = (cat) => (db.dim_factor_type || []).find((x) => x.category === cat) || { category: cat, input_mode: 'AMOUNT', driver_id: null };

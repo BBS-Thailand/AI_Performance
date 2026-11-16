@@ -183,10 +183,18 @@ browser from these tables — no notebook or AI call.
 | `app_action_measurement` | action_id, measurement_mode (`DIRECT`/`PROXY`), is_measurable, source_tables, source_filter, baseline_method, baseline_value, formula, proxy_indicator, proxy_reliability, ai_comment_id |
 | `app_action_target_metric` | action_id, metric_id |
 | `app_action_effect_monthly` | action_id, metric_id, period_id, planned_effect (frozen at adoption), actual_effect (measured, after Factor exclusion; NULL for open months), outlook_effect (current reforecast; open months), excluded_factor_amount |
-| `app_action_progress` | action_id, period_id, progress_pct, ai_status (`ON_TRACK`, `DELAYED`, `AT_RISK`, `EFFECTIVE`, `COMPLETED`), outlook_total_op (snapshot for "outlook vs initial plan"), comment_id, updated_by |
+| `app_action_progress` | action_id, period_id, progress_pct, ai_status (`ON_TRACK`, `DELAYED`, `AT_RISK`, `EFFECTIVE`, `COMPLETED`), outlook_total_op (snapshot for "outlook vs initial plan"), comment_id, updated_by, updated_at |
 
 > **No manual effect entry.** `actual_effect` is written only by the measurement job.
 > `planned_effect` is written once by P-01 AI analysis and never overwritten after adoption.
+>
+> **Progress update (A-03).** The owning organization enters only `progress_pct`, and only for the latest closed
+> month. The update writes the `app_action_progress` row, reforecasts `outlook_effect` for the open months of every
+> target Metric, sets `ai_status` and writes an audit event; an optional note is posted to the Action thread (C-03).
+> Mockup rule (stand-in for the production AI/ML reforecast): starting from the current outlook, each progress
+> point moves the open-month outlook by 0.5% of the open-month plan (+10 points → +5%), kept within 0–120% of plan;
+> `ai_status` compares year-end outlook with plan (≥90% `ON_TRACK`/`EFFECTIVE`, ≥70% `DELAYED`, else `AT_RISK`;
+> 100% → `COMPLETED`). F-01 live figures use the new outlook at once; confirmed Forecast versions do not change.
 
 ### 4.4 Individual Factors
 | Table | Columns |
@@ -212,7 +220,7 @@ browser from these tables — no notebook or AI call.
 | Table | Columns |
 |---|---|
 | `ai_run` | run_id, run_type (`MONTHLY_ANALYSIS`, `ACTION_ASSESSMENT`, `FORECAST_EXPLANATION`), as_of_period_id, model_name, prompt_version, source_load_id, status, started_at, finished_at |
-| `ai_comment` | comment_id, run_id, as_of_period_id, org_id, comment_type (`A01_SUMMARY`, `POINT_TITLE`, `POINT_CAUSE`, `ACTION_EXPLANATION`, `ACTION_ASSESSMENT`, `F01_EXPLANATION`, `A04_INSIGHT`), entity_type, entity_id, base_language, version, is_current |
+| `ai_comment` | comment_id, run_id, as_of_period_id, org_id, comment_type (`A01_SUMMARY`, `POINT_TITLE`, `POINT_CAUSE`, `ACTION_EXPLANATION`, `ACTION_ASSESSMENT`, `F01_EXPLANATION`, `A04_INSIGHT`), entity_type, entity_id, metric_id (A04_INSIGHT: one comment per org × Metric), base_language, version, is_current, basis_landing_op / basis_outlook (figure the text was written from; the screen flags the text as outdated when the live figure differs) |
 | `ai_comment_text` | comment_id, language_code, text, is_base, translated_at, reviewed_by |
 
 Rules: numbers live in structured tables, not only in text; analysis is generated once in the base
@@ -240,7 +248,7 @@ Variance YTD  := [Actual YTD] - [Budget YTD]
 Is Favorable  := [Variance YTD] * SELECTEDVALUE ( dim_metric[favorable_direction] ) > 0
 Budget Annual := CALCULATE ( [Budget], ALLEXCEPT on fiscal_year )
 Baseline No Action  := SUM ( fact_baseline_forecast[amount] × sign )  -- latest run for as-of period
-Action Contribution := Σ realized actual_effect (closed months) + Σ outlook_effect (open months, reforecast from A-04 progress)
+Action Contribution := Σ realized actual_effect (closed months) + Σ outlook_effect (open months, reforecast from A-03 progress)
                        -- adopted Actions only; a Proposed Action never enters the Forecast
 With Actions        := [Baseline No Action] + [Action Contribution]            -- option ②
 Included Factors    := Σ app_factor_amount where factor is included
@@ -260,12 +268,12 @@ Other Unidentified (Month) := [Variance Month] - Σ impact_month (A-01 table)
 4. `OP = GP − SGA` for actual, budget, baseline, landing.
 5. `Landing = Baseline + Action contribution + Included Factors`; the monthly layers (baseline / with Actions / landing) add up to the FY figures.
 6. Company Forecast = Σ latest confirmed org versions.
-7. A-03 / A-04 / A-05 / F-01 Action totals are identical for the same scope.
+7. A-03 / A-04 / A-05 / F-01 Action totals are identical for the same scope (all adopted Actions incl. completed / stopped), and the A-04 monthly bars add up to the year-end outlook.
 
 ## 7. Mockup implementation notes
 - `mockup/tools/generate-mock-data.mjs` writes every table above to `mockup/data/<table>.json` (and a `mock-db.js` bundle) and **fails if any §6 reconciliation breaks**.
 - `mockup/js/measures.js` implements the §5 measures in JavaScript; it is the reference for the DAX implementation and its results are the expected values for semantic-model tests.
-- Mockup writes (Adopt / Reject / Hold / Cancel, new Actions) mutate the in-memory tables the same way the production User Data Functions should (append-only decisions, audit events, override notices).
+- Mockup writes (Adopt / Reject / Hold / Cancel, new Actions) mutate the in-memory tables the same way the production User Data Functions should (append-only decisions, audit events, override notices). Progress updates (A-03) follow the rule in §4.3.
 
 ## 8. Open source-mapping items (TBD)
 | Item | Status |

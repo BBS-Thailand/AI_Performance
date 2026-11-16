@@ -1488,22 +1488,6 @@
   "reviewed_by": null
  },
  {
-  "comment_id": "CM-A04-202706-CO",
-  "language_code": "en",
-  "text": "Action effects peak in Q3 (Jul–Dec) when joint demand planning and the local supplier switch run together. From January only three Actions remain active, and expected monthly effect falls below JPY 1.5M. Line 2 yield (−3.0M vs plan) and the Vietnam expansion (−1.0M) are the largest shortfalls.",
-  "is_base": true,
-  "translated_at": null,
-  "reviewed_by": null
- },
- {
-  "comment_id": "CM-A04-202706-CO",
-  "language_code": "ja",
-  "text": "アクション効果は共同需要計画と現地調達切替が重なる第3四半期（7〜12月）にピークとなります。1月以降は3件のみが継続し、月次見込み効果は1.5百万円を下回ります。最大の未達はライン2歩留まり（計画比−3.0百万円）とベトナム展開（−1.0百万円）です。",
-  "is_base": false,
-  "translated_at": "2027-07-03T00:00:00Z",
-  "reviewed_by": null
- },
- {
   "comment_id": "CM-F01-202706-SL",
   "language_code": "en",
   "text": "Without Actions, the forecast model projects operating profit of JPY 255M (80% range 241.4 to 268.6), based on the actual trend and order backlog. 2 adopted Action(s) add +8.5M (plan 10M; open months follow the progress-based outlook). Included Individual Factors contribute +8M (EV-003 +8). Landing is 271.5M, −18.5M vs budget. The most influential driver is selling price: +1% changes the remaining-year operating profit by +23.3M.",
@@ -1595,6 +1579,558 @@
   "comment_id": "CM-F01-202706-AD",
   "language_code": "th",
   "text": "หากไม่มีแอคชัน โมเดลพยากรณ์คาดการณ์กำไรจากการดำเนินงาน −50 ล้านเยน (ช่วง 80% −52.7–−47.3) จากแนวโน้มจริงและยอดคำสั่งซื้อคงค้าง แอคชันที่อนุมัติ 1 รายการเพิ่ม +1.5 ล้านเยน (แผน 2.5) ไม่มีปัจจัยเฉพาะที่รวมไว้ คาดการณ์ ณ สิ้นปี −48.5 ล้านเยน (+11.5 เทียบงบประมาณ) ตัวขับเคลื่อนที่มีผลมากที่สุดคืออัตราแลกเปลี่ยนเยน/บาท: +0.1 เยน/บาท เปลี่ยนกำไรช่วงที่เหลือ −0.9 ล้านเยน",
+  "is_base": false,
+  "translated_at": "2027-07-03T00:00:00Z",
+  "reviewed_by": null
+ },
+ {
+  "comment_id": "CM-A04-202706-CO-REV",
+  "language_code": "en",
+  "text": "Action effects on revenue peak in Jul (6.16M). From January 2 Actions remain active, about 2.32M per month; consider additional Actions for Q4. Year-end outlook is 46M against a plan of 56M (10M short of plan). The largest shortfall is ACT-001-SL-A01 (4M short of plan).",
+  "is_base": true,
+  "translated_at": null,
+  "reviewed_by": null
+ },
+ {
+  "comment_id": "CM-A04-202706-CO-REV",
+  "language_code": "ja",
+  "text": "売上高へのアクション効果は7月にピーク（6.16百万円）となります。1月以降に継続するアクションは2件で、月あたり約2.32百万円です。第4四半期に向けた追加アクションを検討してください。期末見込みは46百万円で、計画56百万円に対し10百万円未達です。最大の未達はACT-001-SL-A01（計画比4百万円未達）です。",
+  "is_base": false,
+  "translated_at": "2027-07-03T00:00:00Z",
+  "reviewed_by": null
+ },
+ {
+  "comment_id": "CM-A04-202706-CO-REV",
+  "language_code": "th",
+  "text": "ผลของแอคชันต่อรายได้สูงสุดในเดือนก.ค. (6.16 ล้านเยน) ตั้งแต่มกราคมเหลือแอคชันที่ดำเนินอยู่ 2 รายการ ประมาณ 2.32 ล้านเยนต่อเดือน ควรพิจารณาแอคชันเพิ่มเติมสำหรับไตรมาส 4 คาดการณ์สิ้นปี 46 ล้านเยน เทียบแผน 56 ล้านเยน (ต่ำกว่าแผน 10 ล้านเยน) ต่ำกว่าแผนมากที่สุดคือ ACT-001-SL-A01 (4 ล้านเยน)",
+  "is_base": false,
+  "translated_at": "2027-07-03T00:00:00Z",
+  "reviewed_by": null
+ },
+ {
+  "comment_id": "CM-A04-202706-CO-GP",
+  "language_code": "en",
+  "text": "Action effects on gross profit peak in Jul (2.27M). From January 4 Actions remain active, about 1.29M per month. Year-end outlook is 18M against a plan of 24.5M (6.5M short of plan). The largest shortfall is ACT-007-MF-A01 (3M short of plan).",
+  "is_base": true,
+  "translated_at": null,
+  "reviewed_by": null
+ },
+ {
+  "comment_id": "CM-A04-202706-CO-GP",
+  "language_code": "ja",
+  "text": "売上総利益へのアクション効果は7月にピーク（2.27百万円）となります。1月以降に継続するアクションは4件で、月あたり約1.29百万円です。期末見込みは18百万円で、計画24.5百万円に対し6.5百万円未達です。最大の未達はACT-007-MF-A01（計画比3百万円未達）です。",
+  "is_base": false,
+  "translated_at": "2027-07-03T00:00:00Z",
+  "reviewed_by": null
+ },
+ {
+  "comment_id": "CM-A04-202706-CO-GP",
+  "language_code": "th",
+  "text": "ผลของแอคชันต่อกำไรขั้นต้นสูงสุดในเดือนก.ค. (2.27 ล้านเยน) ตั้งแต่มกราคมเหลือแอคชันที่ดำเนินอยู่ 4 รายการ ประมาณ 1.29 ล้านเยนต่อเดือน คาดการณ์สิ้นปี 18 ล้านเยน เทียบแผน 24.5 ล้านเยน (ต่ำกว่าแผน 6.5 ล้านเยน) ต่ำกว่าแผนมากที่สุดคือ ACT-007-MF-A01 (3 ล้านเยน)",
+  "is_base": false,
+  "translated_at": "2027-07-03T00:00:00Z",
+  "reviewed_by": null
+ },
+ {
+  "comment_id": "CM-A04-202706-CO-SGA",
+  "language_code": "en",
+  "text": "Action effects on SG&A peak in Jun (−1.1M). From January 1 Action remains active, about −0.13M per month; consider additional Actions for Q4. Year-end outlook is −4M against a plan of −5.5M (1.5M short of plan). The largest shortfall is ACT-005-AD-U01 (1M short of plan).",
+  "is_base": true,
+  "translated_at": null,
+  "reviewed_by": null
+ },
+ {
+  "comment_id": "CM-A04-202706-CO-SGA",
+  "language_code": "ja",
+  "text": "販管費へのアクション効果は6月にピーク（−1.1百万円）となります。1月以降に継続するアクションは1件で、月あたり約−0.13百万円です。第4四半期に向けた追加アクションを検討してください。期末見込みは−4百万円で、計画−5.5百万円に対し1.5百万円未達です。最大の未達はACT-005-AD-U01（計画比1百万円未達）です。",
+  "is_base": false,
+  "translated_at": "2027-07-03T00:00:00Z",
+  "reviewed_by": null
+ },
+ {
+  "comment_id": "CM-A04-202706-CO-SGA",
+  "language_code": "th",
+  "text": "ผลของแอคชันต่อค่าใช้จ่ายขายและบริหารสูงสุดในเดือนมิ.ย. (−1.1 ล้านเยน) ตั้งแต่มกราคมเหลือแอคชันที่ดำเนินอยู่ 1 รายการ ประมาณ −0.13 ล้านเยนต่อเดือน ควรพิจารณาแอคชันเพิ่มเติมสำหรับไตรมาส 4 คาดการณ์สิ้นปี −4 ล้านเยน เทียบแผน −5.5 ล้านเยน (ต่ำกว่าแผน 1.5 ล้านเยน) ต่ำกว่าแผนมากที่สุดคือ ACT-005-AD-U01 (1 ล้านเยน)",
+  "is_base": false,
+  "translated_at": "2027-07-03T00:00:00Z",
+  "reviewed_by": null
+ },
+ {
+  "comment_id": "CM-A04-202706-CO-OP",
+  "language_code": "en",
+  "text": "Action effects on operating profit peak in Jul (2.41M). From January 5 Actions remain active, about 1.42M per month. Year-end outlook is 22M against a plan of 30M (8M short of plan). The largest shortfall is ACT-007-MF-A01 (3M short of plan).",
+  "is_base": true,
+  "translated_at": null,
+  "reviewed_by": null
+ },
+ {
+  "comment_id": "CM-A04-202706-CO-OP",
+  "language_code": "ja",
+  "text": "営業利益へのアクション効果は7月にピーク（2.41百万円）となります。1月以降に継続するアクションは5件で、月あたり約1.42百万円です。期末見込みは22百万円で、計画30百万円に対し8百万円未達です。最大の未達はACT-007-MF-A01（計画比3百万円未達）です。",
+  "is_base": false,
+  "translated_at": "2027-07-03T00:00:00Z",
+  "reviewed_by": null
+ },
+ {
+  "comment_id": "CM-A04-202706-CO-OP",
+  "language_code": "th",
+  "text": "ผลของแอคชันต่อกำไรจากการดำเนินงานสูงสุดในเดือนก.ค. (2.41 ล้านเยน) ตั้งแต่มกราคมเหลือแอคชันที่ดำเนินอยู่ 5 รายการ ประมาณ 1.42 ล้านเยนต่อเดือน คาดการณ์สิ้นปี 22 ล้านเยน เทียบแผน 30 ล้านเยน (ต่ำกว่าแผน 8 ล้านเยน) ต่ำกว่าแผนมากที่สุดคือ ACT-007-MF-A01 (3 ล้านเยน)",
+  "is_base": false,
+  "translated_at": "2027-07-03T00:00:00Z",
+  "reviewed_by": null
+ },
+ {
+  "comment_id": "CM-A04-202706-DSL-REV",
+  "language_code": "en",
+  "text": "Action effects on revenue peak in Jul (6.16M). From January 2 Actions remain active, about 2.32M per month; consider additional Actions for Q4. Year-end outlook is 46M against a plan of 56M (10M short of plan). The largest shortfall is ACT-001-SL-A01 (4M short of plan).",
+  "is_base": true,
+  "translated_at": null,
+  "reviewed_by": null
+ },
+ {
+  "comment_id": "CM-A04-202706-DSL-REV",
+  "language_code": "ja",
+  "text": "売上高へのアクション効果は7月にピーク（6.16百万円）となります。1月以降に継続するアクションは2件で、月あたり約2.32百万円です。第4四半期に向けた追加アクションを検討してください。期末見込みは46百万円で、計画56百万円に対し10百万円未達です。最大の未達はACT-001-SL-A01（計画比4百万円未達）です。",
+  "is_base": false,
+  "translated_at": "2027-07-03T00:00:00Z",
+  "reviewed_by": null
+ },
+ {
+  "comment_id": "CM-A04-202706-DSL-REV",
+  "language_code": "th",
+  "text": "ผลของแอคชันต่อรายได้สูงสุดในเดือนก.ค. (6.16 ล้านเยน) ตั้งแต่มกราคมเหลือแอคชันที่ดำเนินอยู่ 2 รายการ ประมาณ 2.32 ล้านเยนต่อเดือน ควรพิจารณาแอคชันเพิ่มเติมสำหรับไตรมาส 4 คาดการณ์สิ้นปี 46 ล้านเยน เทียบแผน 56 ล้านเยน (ต่ำกว่าแผน 10 ล้านเยน) ต่ำกว่าแผนมากที่สุดคือ ACT-001-SL-A01 (4 ล้านเยน)",
+  "is_base": false,
+  "translated_at": "2027-07-03T00:00:00Z",
+  "reviewed_by": null
+ },
+ {
+  "comment_id": "CM-A04-202706-DSL-GP",
+  "language_code": "en",
+  "text": "Action effects on gross profit peak in Jul (1.54M). From January 2 Actions remain active, about 0.58M per month; consider additional Actions for Q4. Year-end outlook is 11.5M against a plan of 14M (2.5M short of plan). The largest shortfall is ACT-001-SL-A01 (1M short of plan).",
+  "is_base": true,
+  "translated_at": null,
+  "reviewed_by": null
+ },
+ {
+  "comment_id": "CM-A04-202706-DSL-GP",
+  "language_code": "ja",
+  "text": "売上総利益へのアクション効果は7月にピーク（1.54百万円）となります。1月以降に継続するアクションは2件で、月あたり約0.58百万円です。第4四半期に向けた追加アクションを検討してください。期末見込みは11.5百万円で、計画14百万円に対し2.5百万円未達です。最大の未達はACT-001-SL-A01（計画比1百万円未達）です。",
+  "is_base": false,
+  "translated_at": "2027-07-03T00:00:00Z",
+  "reviewed_by": null
+ },
+ {
+  "comment_id": "CM-A04-202706-DSL-GP",
+  "language_code": "th",
+  "text": "ผลของแอคชันต่อกำไรขั้นต้นสูงสุดในเดือนก.ค. (1.54 ล้านเยน) ตั้งแต่มกราคมเหลือแอคชันที่ดำเนินอยู่ 2 รายการ ประมาณ 0.58 ล้านเยนต่อเดือน ควรพิจารณาแอคชันเพิ่มเติมสำหรับไตรมาส 4 คาดการณ์สิ้นปี 11.5 ล้านเยน เทียบแผน 14 ล้านเยน (ต่ำกว่าแผน 2.5 ล้านเยน) ต่ำกว่าแผนมากที่สุดคือ ACT-001-SL-A01 (1 ล้านเยน)",
+  "is_base": false,
+  "translated_at": "2027-07-03T00:00:00Z",
+  "reviewed_by": null
+ },
+ {
+  "comment_id": "CM-A04-202706-DSL-SGA",
+  "language_code": "en",
+  "text": "Action effects on SG&A peak in May (−0.9M). No Action remains active from January; consider additional Actions for Q4. Year-end outlook is −2.5M against a plan of −3M (0.5M short of plan). The largest shortfall is ACT-004-SL-A01 (0.5M short of plan).",
+  "is_base": true,
+  "translated_at": null,
+  "reviewed_by": null
+ },
+ {
+  "comment_id": "CM-A04-202706-DSL-SGA",
+  "language_code": "ja",
+  "text": "販管費へのアクション効果は5月にピーク（−0.9百万円）となります。1月以降に継続するアクションはありません。第4四半期に向けた追加アクションを検討してください。期末見込みは−2.5百万円で、計画−3百万円に対し0.5百万円未達です。最大の未達はACT-004-SL-A01（計画比0.5百万円未達）です。",
+  "is_base": false,
+  "translated_at": "2027-07-03T00:00:00Z",
+  "reviewed_by": null
+ },
+ {
+  "comment_id": "CM-A04-202706-DSL-SGA",
+  "language_code": "th",
+  "text": "ผลของแอคชันต่อค่าใช้จ่ายขายและบริหารสูงสุดในเดือนพ.ค. (−0.9 ล้านเยน) ตั้งแต่มกราคมไม่มีแอคชันที่ดำเนินอยู่ ควรพิจารณาแอคชันเพิ่มเติมสำหรับไตรมาส 4 คาดการณ์สิ้นปี −2.5 ล้านเยน เทียบแผน −3 ล้านเยน (ต่ำกว่าแผน 0.5 ล้านเยน) ต่ำกว่าแผนมากที่สุดคือ ACT-004-SL-A01 (0.5 ล้านเยน)",
+  "is_base": false,
+  "translated_at": "2027-07-03T00:00:00Z",
+  "reviewed_by": null
+ },
+ {
+  "comment_id": "CM-A04-202706-DSL-OP",
+  "language_code": "en",
+  "text": "Action effects on operating profit peak in Jul (1.54M). From January 2 Actions remain active, about 0.58M per month; consider additional Actions for Q4. Year-end outlook is 14M against a plan of 17M (3M short of plan). The largest shortfall is ACT-001-SL-A01 (1M short of plan).",
+  "is_base": true,
+  "translated_at": null,
+  "reviewed_by": null
+ },
+ {
+  "comment_id": "CM-A04-202706-DSL-OP",
+  "language_code": "ja",
+  "text": "営業利益へのアクション効果は7月にピーク（1.54百万円）となります。1月以降に継続するアクションは2件で、月あたり約0.58百万円です。第4四半期に向けた追加アクションを検討してください。期末見込みは14百万円で、計画17百万円に対し3百万円未達です。最大の未達はACT-001-SL-A01（計画比1百万円未達）です。",
+  "is_base": false,
+  "translated_at": "2027-07-03T00:00:00Z",
+  "reviewed_by": null
+ },
+ {
+  "comment_id": "CM-A04-202706-DSL-OP",
+  "language_code": "th",
+  "text": "ผลของแอคชันต่อกำไรจากการดำเนินงานสูงสุดในเดือนก.ค. (1.54 ล้านเยน) ตั้งแต่มกราคมเหลือแอคชันที่ดำเนินอยู่ 2 รายการ ประมาณ 0.58 ล้านเยนต่อเดือน ควรพิจารณาแอคชันเพิ่มเติมสำหรับไตรมาส 4 คาดการณ์สิ้นปี 14 ล้านเยน เทียบแผน 17 ล้านเยน (ต่ำกว่าแผน 3 ล้านเยน) ต่ำกว่าแผนมากที่สุดคือ ACT-001-SL-A01 (1 ล้านเยน)",
+  "is_base": false,
+  "translated_at": "2027-07-03T00:00:00Z",
+  "reviewed_by": null
+ },
+ {
+  "comment_id": "CM-A04-202706-SL-REV",
+  "language_code": "en",
+  "text": "Action effects on revenue peak in Jul (3.76M). No Action remains active from January; consider additional Actions for Q4. Year-end outlook is 24M against a plan of 28M (4M short of plan). The largest shortfall is ACT-001-SL-A01 (4M short of plan).",
+  "is_base": true,
+  "translated_at": null,
+  "reviewed_by": null
+ },
+ {
+  "comment_id": "CM-A04-202706-SL-REV",
+  "language_code": "ja",
+  "text": "売上高へのアクション効果は7月にピーク（3.76百万円）となります。1月以降に継続するアクションはありません。第4四半期に向けた追加アクションを検討してください。期末見込みは24百万円で、計画28百万円に対し4百万円未達です。最大の未達はACT-001-SL-A01（計画比4百万円未達）です。",
+  "is_base": false,
+  "translated_at": "2027-07-03T00:00:00Z",
+  "reviewed_by": null
+ },
+ {
+  "comment_id": "CM-A04-202706-SL-REV",
+  "language_code": "th",
+  "text": "ผลของแอคชันต่อรายได้สูงสุดในเดือนก.ค. (3.76 ล้านเยน) ตั้งแต่มกราคมไม่มีแอคชันที่ดำเนินอยู่ ควรพิจารณาแอคชันเพิ่มเติมสำหรับไตรมาส 4 คาดการณ์สิ้นปี 24 ล้านเยน เทียบแผน 28 ล้านเยน (ต่ำกว่าแผน 4 ล้านเยน) ต่ำกว่าแผนมากที่สุดคือ ACT-001-SL-A01 (4 ล้านเยน)",
+  "is_base": false,
+  "translated_at": "2027-07-03T00:00:00Z",
+  "reviewed_by": null
+ },
+ {
+  "comment_id": "CM-A04-202706-SL-GP",
+  "language_code": "en",
+  "text": "Action effects on gross profit peak in Jul (0.94M). No Action remains active from January; consider additional Actions for Q4. Year-end outlook is 6M against a plan of 7M (1M short of plan). The largest shortfall is ACT-001-SL-A01 (1M short of plan).",
+  "is_base": true,
+  "translated_at": null,
+  "reviewed_by": null
+ },
+ {
+  "comment_id": "CM-A04-202706-SL-GP",
+  "language_code": "ja",
+  "text": "売上総利益へのアクション効果は7月にピーク（0.94百万円）となります。1月以降に継続するアクションはありません。第4四半期に向けた追加アクションを検討してください。期末見込みは6百万円で、計画7百万円に対し1百万円未達です。最大の未達はACT-001-SL-A01（計画比1百万円未達）です。",
+  "is_base": false,
+  "translated_at": "2027-07-03T00:00:00Z",
+  "reviewed_by": null
+ },
+ {
+  "comment_id": "CM-A04-202706-SL-GP",
+  "language_code": "th",
+  "text": "ผลของแอคชันต่อกำไรขั้นต้นสูงสุดในเดือนก.ค. (0.94 ล้านเยน) ตั้งแต่มกราคมไม่มีแอคชันที่ดำเนินอยู่ ควรพิจารณาแอคชันเพิ่มเติมสำหรับไตรมาส 4 คาดการณ์สิ้นปี 6 ล้านเยน เทียบแผน 7 ล้านเยน (ต่ำกว่าแผน 1 ล้านเยน) ต่ำกว่าแผนมากที่สุดคือ ACT-001-SL-A01 (1 ล้านเยน)",
+  "is_base": false,
+  "translated_at": "2027-07-03T00:00:00Z",
+  "reviewed_by": null
+ },
+ {
+  "comment_id": "CM-A04-202706-SL-SGA",
+  "language_code": "en",
+  "text": "Action effects on SG&A peak in May (−0.9M). No Action remains active from January; consider additional Actions for Q4. Year-end outlook is −2.5M against a plan of −3M (0.5M short of plan). The largest shortfall is ACT-004-SL-A01 (0.5M short of plan).",
+  "is_base": true,
+  "translated_at": null,
+  "reviewed_by": null
+ },
+ {
+  "comment_id": "CM-A04-202706-SL-SGA",
+  "language_code": "ja",
+  "text": "販管費へのアクション効果は5月にピーク（−0.9百万円）となります。1月以降に継続するアクションはありません。第4四半期に向けた追加アクションを検討してください。期末見込みは−2.5百万円で、計画−3百万円に対し0.5百万円未達です。最大の未達はACT-004-SL-A01（計画比0.5百万円未達）です。",
+  "is_base": false,
+  "translated_at": "2027-07-03T00:00:00Z",
+  "reviewed_by": null
+ },
+ {
+  "comment_id": "CM-A04-202706-SL-SGA",
+  "language_code": "th",
+  "text": "ผลของแอคชันต่อค่าใช้จ่ายขายและบริหารสูงสุดในเดือนพ.ค. (−0.9 ล้านเยน) ตั้งแต่มกราคมไม่มีแอคชันที่ดำเนินอยู่ ควรพิจารณาแอคชันเพิ่มเติมสำหรับไตรมาส 4 คาดการณ์สิ้นปี −2.5 ล้านเยน เทียบแผน −3 ล้านเยน (ต่ำกว่าแผน 0.5 ล้านเยน) ต่ำกว่าแผนมากที่สุดคือ ACT-004-SL-A01 (0.5 ล้านเยน)",
+  "is_base": false,
+  "translated_at": "2027-07-03T00:00:00Z",
+  "reviewed_by": null
+ },
+ {
+  "comment_id": "CM-A04-202706-SL-OP",
+  "language_code": "en",
+  "text": "Action effects on operating profit peak in Jun (1.3M). No Action remains active from January; consider additional Actions for Q4. Year-end outlook is 8.5M against a plan of 10M (1.5M short of plan). The largest shortfall is ACT-001-SL-A01 (1M short of plan).",
+  "is_base": true,
+  "translated_at": null,
+  "reviewed_by": null
+ },
+ {
+  "comment_id": "CM-A04-202706-SL-OP",
+  "language_code": "ja",
+  "text": "営業利益へのアクション効果は6月にピーク（1.3百万円）となります。1月以降に継続するアクションはありません。第4四半期に向けた追加アクションを検討してください。期末見込みは8.5百万円で、計画10百万円に対し1.5百万円未達です。最大の未達はACT-001-SL-A01（計画比1百万円未達）です。",
+  "is_base": false,
+  "translated_at": "2027-07-03T00:00:00Z",
+  "reviewed_by": null
+ },
+ {
+  "comment_id": "CM-A04-202706-SL-OP",
+  "language_code": "th",
+  "text": "ผลของแอคชันต่อกำไรจากการดำเนินงานสูงสุดในเดือนมิ.ย. (1.3 ล้านเยน) ตั้งแต่มกราคมไม่มีแอคชันที่ดำเนินอยู่ ควรพิจารณาแอคชันเพิ่มเติมสำหรับไตรมาส 4 คาดการณ์สิ้นปี 8.5 ล้านเยน เทียบแผน 10 ล้านเยน (ต่ำกว่าแผน 1.5 ล้านเยน) ต่ำกว่าแผนมากที่สุดคือ ACT-001-SL-A01 (1 ล้านเยน)",
+  "is_base": false,
+  "translated_at": "2027-07-03T00:00:00Z",
+  "reviewed_by": null
+ },
+ {
+  "comment_id": "CM-A04-202706-OS-REV",
+  "language_code": "en",
+  "text": "Action effects on revenue peak in Jul (2.4M). From January 2 Actions remain active, about 2.32M per month. Year-end outlook is 22M against a plan of 28M (6M short of plan). The largest shortfall is ACT-003-OS-A01 (4M short of plan).",
+  "is_base": true,
+  "translated_at": null,
+  "reviewed_by": null
+ },
+ {
+  "comment_id": "CM-A04-202706-OS-REV",
+  "language_code": "ja",
+  "text": "売上高へのアクション効果は7月にピーク（2.4百万円）となります。1月以降に継続するアクションは2件で、月あたり約2.32百万円です。期末見込みは22百万円で、計画28百万円に対し6百万円未達です。最大の未達はACT-003-OS-A01（計画比4百万円未達）です。",
+  "is_base": false,
+  "translated_at": "2027-07-03T00:00:00Z",
+  "reviewed_by": null
+ },
+ {
+  "comment_id": "CM-A04-202706-OS-REV",
+  "language_code": "th",
+  "text": "ผลของแอคชันต่อรายได้สูงสุดในเดือนก.ค. (2.4 ล้านเยน) ตั้งแต่มกราคมเหลือแอคชันที่ดำเนินอยู่ 2 รายการ ประมาณ 2.32 ล้านเยนต่อเดือน คาดการณ์สิ้นปี 22 ล้านเยน เทียบแผน 28 ล้านเยน (ต่ำกว่าแผน 6 ล้านเยน) ต่ำกว่าแผนมากที่สุดคือ ACT-003-OS-A01 (4 ล้านเยน)",
+  "is_base": false,
+  "translated_at": "2027-07-03T00:00:00Z",
+  "reviewed_by": null
+ },
+ {
+  "comment_id": "CM-A04-202706-OS-GP",
+  "language_code": "en",
+  "text": "Action effects on gross profit peak in Jul (0.6M). From January 2 Actions remain active, about 0.58M per month. Year-end outlook is 5.5M against a plan of 7M (1.5M short of plan). The largest shortfall is ACT-003-OS-A01 (1M short of plan).",
+  "is_base": true,
+  "translated_at": null,
+  "reviewed_by": null
+ },
+ {
+  "comment_id": "CM-A04-202706-OS-GP",
+  "language_code": "ja",
+  "text": "売上総利益へのアクション効果は7月にピーク（0.6百万円）となります。1月以降に継続するアクションは2件で、月あたり約0.58百万円です。期末見込みは5.5百万円で、計画7百万円に対し1.5百万円未達です。最大の未達はACT-003-OS-A01（計画比1百万円未達）です。",
+  "is_base": false,
+  "translated_at": "2027-07-03T00:00:00Z",
+  "reviewed_by": null
+ },
+ {
+  "comment_id": "CM-A04-202706-OS-GP",
+  "language_code": "th",
+  "text": "ผลของแอคชันต่อกำไรขั้นต้นสูงสุดในเดือนก.ค. (0.6 ล้านเยน) ตั้งแต่มกราคมเหลือแอคชันที่ดำเนินอยู่ 2 รายการ ประมาณ 0.58 ล้านเยนต่อเดือน คาดการณ์สิ้นปี 5.5 ล้านเยน เทียบแผน 7 ล้านเยน (ต่ำกว่าแผน 1.5 ล้านเยน) ต่ำกว่าแผนมากที่สุดคือ ACT-003-OS-A01 (1 ล้านเยน)",
+  "is_base": false,
+  "translated_at": "2027-07-03T00:00:00Z",
+  "reviewed_by": null
+ },
+ {
+  "comment_id": "CM-A04-202706-OS-OP",
+  "language_code": "en",
+  "text": "Action effects on operating profit peak in Jul (0.6M). From January 2 Actions remain active, about 0.58M per month. Year-end outlook is 5.5M against a plan of 7M (1.5M short of plan). The largest shortfall is ACT-003-OS-A01 (1M short of plan).",
+  "is_base": true,
+  "translated_at": null,
+  "reviewed_by": null
+ },
+ {
+  "comment_id": "CM-A04-202706-OS-OP",
+  "language_code": "ja",
+  "text": "営業利益へのアクション効果は7月にピーク（0.6百万円）となります。1月以降に継続するアクションは2件で、月あたり約0.58百万円です。期末見込みは5.5百万円で、計画7百万円に対し1.5百万円未達です。最大の未達はACT-003-OS-A01（計画比1百万円未達）です。",
+  "is_base": false,
+  "translated_at": "2027-07-03T00:00:00Z",
+  "reviewed_by": null
+ },
+ {
+  "comment_id": "CM-A04-202706-OS-OP",
+  "language_code": "th",
+  "text": "ผลของแอคชันต่อกำไรจากการดำเนินงานสูงสุดในเดือนก.ค. (0.6 ล้านเยน) ตั้งแต่มกราคมเหลือแอคชันที่ดำเนินอยู่ 2 รายการ ประมาณ 0.58 ล้านเยนต่อเดือน คาดการณ์สิ้นปี 5.5 ล้านเยน เทียบแผน 7 ล้านเยน (ต่ำกว่าแผน 1.5 ล้านเยน) ต่ำกว่าแผนมากที่สุดคือ ACT-003-OS-A01 (1 ล้านเยน)",
+  "is_base": false,
+  "translated_at": "2027-07-03T00:00:00Z",
+  "reviewed_by": null
+ },
+ {
+  "comment_id": "CM-A04-202706-DOP-GP",
+  "language_code": "en",
+  "text": "Action effects on gross profit peak in Jul (0.73M). From January 2 Actions remain active, about 0.71M per month. Year-end outlook is 6.5M against a plan of 10.5M (4M short of plan). The largest shortfall is ACT-007-MF-A01 (3M short of plan).",
+  "is_base": true,
+  "translated_at": null,
+  "reviewed_by": null
+ },
+ {
+  "comment_id": "CM-A04-202706-DOP-GP",
+  "language_code": "ja",
+  "text": "売上総利益へのアクション効果は7月にピーク（0.73百万円）となります。1月以降に継続するアクションは2件で、月あたり約0.71百万円です。期末見込みは6.5百万円で、計画10.5百万円に対し4百万円未達です。最大の未達はACT-007-MF-A01（計画比3百万円未達）です。",
+  "is_base": false,
+  "translated_at": "2027-07-03T00:00:00Z",
+  "reviewed_by": null
+ },
+ {
+  "comment_id": "CM-A04-202706-DOP-GP",
+  "language_code": "th",
+  "text": "ผลของแอคชันต่อกำไรขั้นต้นสูงสุดในเดือนก.ค. (0.73 ล้านเยน) ตั้งแต่มกราคมเหลือแอคชันที่ดำเนินอยู่ 2 รายการ ประมาณ 0.71 ล้านเยนต่อเดือน คาดการณ์สิ้นปี 6.5 ล้านเยน เทียบแผน 10.5 ล้านเยน (ต่ำกว่าแผน 4 ล้านเยน) ต่ำกว่าแผนมากที่สุดคือ ACT-007-MF-A01 (3 ล้านเยน)",
+  "is_base": false,
+  "translated_at": "2027-07-03T00:00:00Z",
+  "reviewed_by": null
+ },
+ {
+  "comment_id": "CM-A04-202706-DOP-OP",
+  "language_code": "en",
+  "text": "Action effects on operating profit peak in Jul (0.73M). From January 2 Actions remain active, about 0.71M per month. Year-end outlook is 6.5M against a plan of 10.5M (4M short of plan). The largest shortfall is ACT-007-MF-A01 (3M short of plan).",
+  "is_base": true,
+  "translated_at": null,
+  "reviewed_by": null
+ },
+ {
+  "comment_id": "CM-A04-202706-DOP-OP",
+  "language_code": "ja",
+  "text": "営業利益へのアクション効果は7月にピーク（0.73百万円）となります。1月以降に継続するアクションは2件で、月あたり約0.71百万円です。期末見込みは6.5百万円で、計画10.5百万円に対し4百万円未達です。最大の未達はACT-007-MF-A01（計画比3百万円未達）です。",
+  "is_base": false,
+  "translated_at": "2027-07-03T00:00:00Z",
+  "reviewed_by": null
+ },
+ {
+  "comment_id": "CM-A04-202706-DOP-OP",
+  "language_code": "th",
+  "text": "ผลของแอคชันต่อกำไรจากการดำเนินงานสูงสุดในเดือนก.ค. (0.73 ล้านเยน) ตั้งแต่มกราคมเหลือแอคชันที่ดำเนินอยู่ 2 รายการ ประมาณ 0.71 ล้านเยนต่อเดือน คาดการณ์สิ้นปี 6.5 ล้านเยน เทียบแผน 10.5 ล้านเยน (ต่ำกว่าแผน 4 ล้านเยน) ต่ำกว่าแผนมากที่สุดคือ ACT-007-MF-A01 (3 ล้านเยน)",
+  "is_base": false,
+  "translated_at": "2027-07-03T00:00:00Z",
+  "reviewed_by": null
+ },
+ {
+  "comment_id": "CM-A04-202706-MF-GP",
+  "language_code": "en",
+  "text": "Action effects on gross profit peak in Jul (0.73M). From January 2 Actions remain active, about 0.71M per month. Year-end outlook is 6.5M against a plan of 10.5M (4M short of plan). The largest shortfall is ACT-007-MF-A01 (3M short of plan).",
+  "is_base": true,
+  "translated_at": null,
+  "reviewed_by": null
+ },
+ {
+  "comment_id": "CM-A04-202706-MF-GP",
+  "language_code": "ja",
+  "text": "売上総利益へのアクション効果は7月にピーク（0.73百万円）となります。1月以降に継続するアクションは2件で、月あたり約0.71百万円です。期末見込みは6.5百万円で、計画10.5百万円に対し4百万円未達です。最大の未達はACT-007-MF-A01（計画比3百万円未達）です。",
+  "is_base": false,
+  "translated_at": "2027-07-03T00:00:00Z",
+  "reviewed_by": null
+ },
+ {
+  "comment_id": "CM-A04-202706-MF-GP",
+  "language_code": "th",
+  "text": "ผลของแอคชันต่อกำไรขั้นต้นสูงสุดในเดือนก.ค. (0.73 ล้านเยน) ตั้งแต่มกราคมเหลือแอคชันที่ดำเนินอยู่ 2 รายการ ประมาณ 0.71 ล้านเยนต่อเดือน คาดการณ์สิ้นปี 6.5 ล้านเยน เทียบแผน 10.5 ล้านเยน (ต่ำกว่าแผน 4 ล้านเยน) ต่ำกว่าแผนมากที่สุดคือ ACT-007-MF-A01 (3 ล้านเยน)",
+  "is_base": false,
+  "translated_at": "2027-07-03T00:00:00Z",
+  "reviewed_by": null
+ },
+ {
+  "comment_id": "CM-A04-202706-MF-OP",
+  "language_code": "en",
+  "text": "Action effects on operating profit peak in Jul (0.73M). From January 2 Actions remain active, about 0.71M per month. Year-end outlook is 6.5M against a plan of 10.5M (4M short of plan). The largest shortfall is ACT-007-MF-A01 (3M short of plan).",
+  "is_base": true,
+  "translated_at": null,
+  "reviewed_by": null
+ },
+ {
+  "comment_id": "CM-A04-202706-MF-OP",
+  "language_code": "ja",
+  "text": "営業利益へのアクション効果は7月にピーク（0.73百万円）となります。1月以降に継続するアクションは2件で、月あたり約0.71百万円です。期末見込みは6.5百万円で、計画10.5百万円に対し4百万円未達です。最大の未達はACT-007-MF-A01（計画比3百万円未達）です。",
+  "is_base": false,
+  "translated_at": "2027-07-03T00:00:00Z",
+  "reviewed_by": null
+ },
+ {
+  "comment_id": "CM-A04-202706-MF-OP",
+  "language_code": "th",
+  "text": "ผลของแอคชันต่อกำไรจากการดำเนินงานสูงสุดในเดือนก.ค. (0.73 ล้านเยน) ตั้งแต่มกราคมเหลือแอคชันที่ดำเนินอยู่ 2 รายการ ประมาณ 0.71 ล้านเยนต่อเดือน คาดการณ์สิ้นปี 6.5 ล้านเยน เทียบแผน 10.5 ล้านเยน (ต่ำกว่าแผน 4 ล้านเยน) ต่ำกว่าแผนมากที่สุดคือ ACT-007-MF-A01 (3 ล้านเยน)",
+  "is_base": false,
+  "translated_at": "2027-07-03T00:00:00Z",
+  "reviewed_by": null
+ },
+ {
+  "comment_id": "CM-A04-202706-DCP-SGA",
+  "language_code": "en",
+  "text": "Action effects on SG&A peak in Jun (−0.2M). From January 1 Action remains active, about −0.13M per month; consider additional Actions for Q4. Year-end outlook is −1.5M against a plan of −2.5M (1M short of plan). The largest shortfall is ACT-005-AD-U01 (1M short of plan).",
+  "is_base": true,
+  "translated_at": null,
+  "reviewed_by": null
+ },
+ {
+  "comment_id": "CM-A04-202706-DCP-SGA",
+  "language_code": "ja",
+  "text": "販管費へのアクション効果は6月にピーク（−0.2百万円）となります。1月以降に継続するアクションは1件で、月あたり約−0.13百万円です。第4四半期に向けた追加アクションを検討してください。期末見込みは−1.5百万円で、計画−2.5百万円に対し1百万円未達です。最大の未達はACT-005-AD-U01（計画比1百万円未達）です。",
+  "is_base": false,
+  "translated_at": "2027-07-03T00:00:00Z",
+  "reviewed_by": null
+ },
+ {
+  "comment_id": "CM-A04-202706-DCP-SGA",
+  "language_code": "th",
+  "text": "ผลของแอคชันต่อค่าใช้จ่ายขายและบริหารสูงสุดในเดือนมิ.ย. (−0.2 ล้านเยน) ตั้งแต่มกราคมเหลือแอคชันที่ดำเนินอยู่ 1 รายการ ประมาณ −0.13 ล้านเยนต่อเดือน ควรพิจารณาแอคชันเพิ่มเติมสำหรับไตรมาส 4 คาดการณ์สิ้นปี −1.5 ล้านเยน เทียบแผน −2.5 ล้านเยน (ต่ำกว่าแผน 1 ล้านเยน) ต่ำกว่าแผนมากที่สุดคือ ACT-005-AD-U01 (1 ล้านเยน)",
+  "is_base": false,
+  "translated_at": "2027-07-03T00:00:00Z",
+  "reviewed_by": null
+ },
+ {
+  "comment_id": "CM-A04-202706-DCP-OP",
+  "language_code": "en",
+  "text": "Action effects on operating profit peak in Jun (0.2M). From January 1 Action remains active, about 0.13M per month; consider additional Actions for Q4. Year-end outlook is 1.5M against a plan of 2.5M (1M short of plan). The largest shortfall is ACT-005-AD-U01 (1M short of plan).",
+  "is_base": true,
+  "translated_at": null,
+  "reviewed_by": null
+ },
+ {
+  "comment_id": "CM-A04-202706-DCP-OP",
+  "language_code": "ja",
+  "text": "営業利益へのアクション効果は6月にピーク（0.2百万円）となります。1月以降に継続するアクションは1件で、月あたり約0.13百万円です。第4四半期に向けた追加アクションを検討してください。期末見込みは1.5百万円で、計画2.5百万円に対し1百万円未達です。最大の未達はACT-005-AD-U01（計画比1百万円未達）です。",
+  "is_base": false,
+  "translated_at": "2027-07-03T00:00:00Z",
+  "reviewed_by": null
+ },
+ {
+  "comment_id": "CM-A04-202706-DCP-OP",
+  "language_code": "th",
+  "text": "ผลของแอคชันต่อกำไรจากการดำเนินงานสูงสุดในเดือนมิ.ย. (0.2 ล้านเยน) ตั้งแต่มกราคมเหลือแอคชันที่ดำเนินอยู่ 1 รายการ ประมาณ 0.13 ล้านเยนต่อเดือน ควรพิจารณาแอคชันเพิ่มเติมสำหรับไตรมาส 4 คาดการณ์สิ้นปี 1.5 ล้านเยน เทียบแผน 2.5 ล้านเยน (ต่ำกว่าแผน 1 ล้านเยน) ต่ำกว่าแผนมากที่สุดคือ ACT-005-AD-U01 (1 ล้านเยน)",
+  "is_base": false,
+  "translated_at": "2027-07-03T00:00:00Z",
+  "reviewed_by": null
+ },
+ {
+  "comment_id": "CM-A04-202706-AD-SGA",
+  "language_code": "en",
+  "text": "Action effects on SG&A peak in Jun (−0.2M). From January 1 Action remains active, about −0.13M per month; consider additional Actions for Q4. Year-end outlook is −1.5M against a plan of −2.5M (1M short of plan). The largest shortfall is ACT-005-AD-U01 (1M short of plan).",
+  "is_base": true,
+  "translated_at": null,
+  "reviewed_by": null
+ },
+ {
+  "comment_id": "CM-A04-202706-AD-SGA",
+  "language_code": "ja",
+  "text": "販管費へのアクション効果は6月にピーク（−0.2百万円）となります。1月以降に継続するアクションは1件で、月あたり約−0.13百万円です。第4四半期に向けた追加アクションを検討してください。期末見込みは−1.5百万円で、計画−2.5百万円に対し1百万円未達です。最大の未達はACT-005-AD-U01（計画比1百万円未達）です。",
+  "is_base": false,
+  "translated_at": "2027-07-03T00:00:00Z",
+  "reviewed_by": null
+ },
+ {
+  "comment_id": "CM-A04-202706-AD-SGA",
+  "language_code": "th",
+  "text": "ผลของแอคชันต่อค่าใช้จ่ายขายและบริหารสูงสุดในเดือนมิ.ย. (−0.2 ล้านเยน) ตั้งแต่มกราคมเหลือแอคชันที่ดำเนินอยู่ 1 รายการ ประมาณ −0.13 ล้านเยนต่อเดือน ควรพิจารณาแอคชันเพิ่มเติมสำหรับไตรมาส 4 คาดการณ์สิ้นปี −1.5 ล้านเยน เทียบแผน −2.5 ล้านเยน (ต่ำกว่าแผน 1 ล้านเยน) ต่ำกว่าแผนมากที่สุดคือ ACT-005-AD-U01 (1 ล้านเยน)",
+  "is_base": false,
+  "translated_at": "2027-07-03T00:00:00Z",
+  "reviewed_by": null
+ },
+ {
+  "comment_id": "CM-A04-202706-AD-OP",
+  "language_code": "en",
+  "text": "Action effects on operating profit peak in Jun (0.2M). From January 1 Action remains active, about 0.13M per month; consider additional Actions for Q4. Year-end outlook is 1.5M against a plan of 2.5M (1M short of plan). The largest shortfall is ACT-005-AD-U01 (1M short of plan).",
+  "is_base": true,
+  "translated_at": null,
+  "reviewed_by": null
+ },
+ {
+  "comment_id": "CM-A04-202706-AD-OP",
+  "language_code": "ja",
+  "text": "営業利益へのアクション効果は6月にピーク（0.2百万円）となります。1月以降に継続するアクションは1件で、月あたり約0.13百万円です。第4四半期に向けた追加アクションを検討してください。期末見込みは1.5百万円で、計画2.5百万円に対し1百万円未達です。最大の未達はACT-005-AD-U01（計画比1百万円未達）です。",
+  "is_base": false,
+  "translated_at": "2027-07-03T00:00:00Z",
+  "reviewed_by": null
+ },
+ {
+  "comment_id": "CM-A04-202706-AD-OP",
+  "language_code": "th",
+  "text": "ผลของแอคชันต่อกำไรจากการดำเนินงานสูงสุดในเดือนมิ.ย. (0.2 ล้านเยน) ตั้งแต่มกราคมเหลือแอคชันที่ดำเนินอยู่ 1 รายการ ประมาณ 0.13 ล้านเยนต่อเดือน ควรพิจารณาแอคชันเพิ่มเติมสำหรับไตรมาส 4 คาดการณ์สิ้นปี 1.5 ล้านเยน เทียบแผน 2.5 ล้านเยน (ต่ำกว่าแผน 1 ล้านเยน) ต่ำกว่าแผนมากที่สุดคือ ACT-005-AD-U01 (1 ล้านเยน)",
   "is_base": false,
   "translated_at": "2027-07-03T00:00:00Z",
   "reviewed_by": null

@@ -725,9 +725,6 @@ comment('CM-F01-202706-CO', 'F01_EXPLANATION', 'org', 'CO', 202706, 'CO', {
   en: 'Company landing for operating profit is JPY 352.5M, JPY 17.5M below the original budget of 370M. Without Actions the forecast would be 328M. Adopted Actions contribute +22M (plan 30M) and included Individual Factors +2.5M (sensor housing launch +8M, FX −4.5M, exhibition −1M). Excluding the possible Customer F delay (EV-004) keeps 2M of risk outside the landing.',
   ja: '全社の営業利益着地見込みは352.5百万円で、当初予算370百万円を17.5百万円下回ります。アクションなしの予測は328百万円です。採用済みアクションが+22百万円（計画30百万円）、個別要因が+2.5百万円（センサーハウジング発売+8、為替−4.5、展示会−1）寄与します。顧客Fの遅延可能性（EV-004）は2百万円のリスクとして着地見込みに含めていません。',
   th: 'คาดการณ์กำไรจากการดำเนินงานทั้งบริษัท ณ สิ้นปีอยู่ที่ 352.5 ล้านเยน ต่ำกว่างบประมาณเดิม 370 ล้านเยนอยู่ 17.5 ล้านเยน หากไม่มีแอคชันจะอยู่ที่ 328 ล้านเยน แอคชันที่อนุมัติแล้วเพิ่ม +22 ล้านเยน (แผน 30) และปัจจัยเฉพาะที่รวมไว้ +2.5 ล้านเยน' });
-comment('CM-A04-202706-CO', 'A04_INSIGHT', 'org', 'CO', 202706, 'CO', {
-  en: 'Action effects peak in Q3 (Jul–Dec) when joint demand planning and the local supplier switch run together. From January only three Actions remain active, and expected monthly effect falls below JPY 1.5M. Line 2 yield (−3.0M vs plan) and the Vietnam expansion (−1.0M) are the largest shortfalls.',
-  ja: 'アクション効果は共同需要計画と現地調達切替が重なる第3四半期（7〜12月）にピークとなります。1月以降は3件のみが継続し、月次見込み効果は1.5百万円を下回ります。最大の未達はライン2歩留まり（計画比−3.0百万円）とベトナム展開（−1.0百万円）です。' });
 
 /* ------------------------------------------------------------- chat & audit */
 const app_chat_thread = ACTIONS.filter((a) => a.decision !== 'PROPOSED').map((a) => ({ thread_id: `TH-${a.id}`, action_id: a.id }));
@@ -874,6 +871,51 @@ M = build(db);
 }
 M = build(db);
 
+/* ------------------------------- A-04 AI insight per organization and Metric (simulated AI, written after measurement) */
+{
+  const MON = { en: ['Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec', 'Jan', 'Feb', 'Mar'], ja: ['4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月', '1月', '2月', '3月'],
+    th: ['เม.ย.', 'พ.ค.', 'มิ.ย.', 'ก.ค.', 'ส.ค.', 'ก.ย.', 'ต.ค.', 'พ.ย.', 'ธ.ค.', 'ม.ค.', 'ก.พ.', 'มี.ค.'] };
+  const MN = { REV: ['revenue', '売上高', 'รายได้'], GP: ['gross profit', '売上総利益', 'กำไรขั้นต้น'], SGA: ['SG&A', '販管費', 'ค่าใช้จ่ายขายและบริหาร'], OP: ['operating profit', '営業利益', 'กำไรจากการดำเนินงาน'] };
+  const n2 = (v) => (v < 0 ? '−' : '') + Math.abs(Math.round(v * 100) / 100);
+  const s2 = (v) => (v > 0 ? '+' : v < 0 ? '−' : '±') + Math.abs(Math.round(v * 100) / 100);
+  for (const org of dim_organization.map((o) => o.org_id)) {
+    for (const mt of ['REV', 'GP', 'SGA', 'OP']) {
+      if (!M.isApplicable(org, mt)) continue;
+      const acts = M.boardActions(org, AS_OF, true).filter((a) => M.actionTargets(a.action_id).includes(mt));
+      if (!acts.length) continue;
+      const fav = mt === 'SGA' ? -1 : 1; // SG&A savings are negative effects
+      const monthly = FY27.map((p, i) => acts.reduce((s, a) => s + (M.actionMonthly(a.action_id, mt, AS_OF)[i].value || 0), 0));
+      const peakI = monthly.reduce((best, v, i) => (v * fav > monthly[best] * fav ? i : best), 0);
+      const tail = monthly.slice(9);
+      const tailAvg = tail.reduce((x, y) => x + y, 0) / 3;
+      const tailActive = acts.filter((a) => M.actionMonthly(a.action_id, mt, AS_OF).slice(9).some((x) => x.value)).length;
+      const tots = acts.map((a) => ({ a, t: M.actionTotals(a.action_id, AS_OF, mt) }));
+      const plan = tots.reduce((x, y) => x + y.t.planAnnual, 0), out = tots.reduce((x, y) => x + y.t.outlookFY, 0);
+      const short = tots.filter((x) => x.t.outlookVsPlan * fav < -0.005).sort((x, y) => x.t.outlookVsPlan * fav - y.t.outlookVsPlan * fav)[0];
+      const thin = tailActive <= 1 || Math.abs(tailAvg) < Math.abs(monthly[peakI]) * 0.4;
+      const L = (k) => ({ en: 0, ja: 1, th: 2 }[k]);
+      const gap = out - plan, behind = gap * fav < -0.005, ab = (v) => n2(Math.abs(v));
+      const txt = (lg) => {
+        const pk = MON[lg][peakI], pv = n2(monthly[peakI]), mn = MN[mt][L(lg)];
+        if (lg === 'en') return `Action effects on ${mn} peak in ${pk} (${pv}M). `
+          + (tailActive ? `From January ${tailActive} Action${tailActive > 1 ? 's remain' : ' remains'} active, about ${n2(tailAvg)}M per month${thin ? '; consider additional Actions for Q4' : ''}. ` : 'No Action remains active from January; consider additional Actions for Q4. ')
+          + `Year-end outlook is ${n2(out)}M against a plan of ${n2(plan)}M (${Math.abs(gap) < 0.005 ? 'on plan' : `${ab(gap)}M ${behind ? 'short of' : 'ahead of'} plan`}).`
+          + (short ? ` The largest shortfall is ${short.a.action_id} (${ab(short.t.outlookVsPlan)}M short of plan).` : ' No Action is behind plan.');
+        if (lg === 'ja') return `${mn}へのアクション効果は${pk}にピーク（${pv}百万円）となります。`
+          + (tailActive ? `1月以降に継続するアクションは${tailActive}件で、月あたり約${n2(tailAvg)}百万円です。${thin ? '第4四半期に向けた追加アクションを検討してください。' : ''}` : '1月以降に継続するアクションはありません。第4四半期に向けた追加アクションを検討してください。')
+          + `期末見込みは${n2(out)}百万円で、計画${n2(plan)}百万円に対し${Math.abs(gap) < 0.005 ? '計画どおり' : `${ab(gap)}百万円${behind ? '未達' : '上回り'}`}です。`
+          + (short ? `最大の未達は${short.a.action_id}（計画比${ab(short.t.outlookVsPlan)}百万円未達）です。` : '計画を下回るアクションはありません。');
+        return `ผลของแอคชันต่อ${mn}สูงสุดในเดือน${pk} (${pv} ล้านเยน) `
+          + (tailActive ? `ตั้งแต่มกราคมเหลือแอคชันที่ดำเนินอยู่ ${tailActive} รายการ ประมาณ ${n2(tailAvg)} ล้านเยนต่อเดือน${thin ? ' ควรพิจารณาแอคชันเพิ่มเติมสำหรับไตรมาส 4' : ''} ` : 'ตั้งแต่มกราคมไม่มีแอคชันที่ดำเนินอยู่ ควรพิจารณาแอคชันเพิ่มเติมสำหรับไตรมาส 4 ')
+          + `คาดการณ์สิ้นปี ${n2(out)} ล้านเยน เทียบแผน ${n2(plan)} ล้านเยน (${Math.abs(gap) < 0.005 ? 'ตามแผน' : `${behind ? 'ต่ำกว่าแผน' : 'สูงกว่าแผน'} ${ab(gap)} ล้านเยน`})`
+          + (short ? ` ต่ำกว่าแผนมากที่สุดคือ ${short.a.action_id} (${ab(short.t.outlookVsPlan)} ล้านเยน)` : ' ไม่มีแอคชันที่ต่ำกว่าแผน');
+      };
+      comment(`CM-A04-${AS_OF}-${org}-${mt}`, 'A04_INSIGHT', 'org', org, AS_OF, org, { en: txt('en'), ja: txt('ja'), th: txt('th') });
+      Object.assign(ai_comment[ai_comment.length - 1], { metric_id: mt, basis_outlook: M.r2(out) }); // A-04 flags the text as outdated when the outlook changes
+    }
+  }
+}
+
 /* ------------------------------------------------------------ reconciliation */
 console.log('Reconciliation checks:');
 assertEq('Company YTD Revenue', M.actualYTD('CO', AS_OF, 'REV'), 1250);
@@ -913,10 +955,18 @@ for (const o of ['SL', 'OS', 'MF', 'AD']) {
     if (Math.abs(M.r2(closedAct + openSum('withActions')) - f.withActions) > 0.011) throw new Error(`Monthly option ② ≠ FY for ${o} ${mt} (realized ${realized})`);
     if (Math.abs(M.r2(closedAct + openSum('forecast')) - f.landing) > 0.011) throw new Error(`Monthly landing ≠ FY landing for ${o} ${mt}`);
   }
+  for (const mt of ['REV', 'GP', 'SGA', 'OP']) {
+    // A-03 / A-04 Action totals (all adopted Actions, history included) = F-01 Action contribution (README acceptance: reconcile plan/actual/outlook).
+    const board = M.r2(M.boardActions(o, AS_OF, true).filter((a) => M.actionTargets(a.action_id).includes(mt)).reduce((s, a) => s + M.actionTotals(a.action_id, AS_OF, mt).outlookFY, 0));
+    const monthlySum = M.r2(M.boardActions(o, AS_OF, true).filter((a) => M.actionTargets(a.action_id).includes(mt)).reduce((s, a) => s + M.actionMonthly(a.action_id, mt, AS_OF).reduce((x, r) => x + (r.value || 0), 0), 0));
+    if (Math.abs(board - M.forecastLive(o, AS_OF, mt).action) > 0.011) throw new Error(`A-03 total ≠ F-01 Action contribution for ${o} ${mt}: ${board} vs ${M.forecastLive(o, AS_OF, mt).action}`);
+    if (Math.abs(board - monthlySum) > 0.011) throw new Error(`A-04 monthly bars ≠ year-end outlook for ${o} ${mt}`);
+  }
   const v = M.latestVersion(o, AS_OF);
   assertEq(`${o} live landing = confirmed ${v.forecast_version_id}`, M.forecastLive(o, AS_OF, 'OP').landing, M.versionFigures(v.forecast_version_id, 'OP').landing);
 }
 console.log('  ✓ Monthly layers (baseline / with Actions / landing) add up to the FY figures for every department and Metric');
+console.log('  ✓ A-03 / A-04 Action totals = F-01 Action contribution; A-04 monthly bars add up to the year-end outlook');
 for (const pid of [202704, 202705, 202706]) {
   for (const o of ['CO', 'SL', 'OS', 'MF', 'AD']) {
     const g = M.actualYTD(o, pid, 'GP'), s = M.actualYTD(o, pid, 'SGA'), op = M.actualYTD(o, pid, 'OP');
