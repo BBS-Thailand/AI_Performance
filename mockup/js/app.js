@@ -267,7 +267,13 @@
   }
 
   /* ============================================== mutations (mock "UDF" writes) */
-  const nowIso = () => new Date().toISOString();
+  /** Demo clock: the mock data lives in FY2027, so writes are stamped on day 8 of the month after the latest
+   *  closed period (with the real time of day) to keep histories in order. Production uses the server time. */
+  const nowIso = () => {
+    const p = M.period(M.latestClosed());
+    const y = p.calendar_month === 12 ? p.calendar_year + 1 : p.calendar_year, mo = p.calendar_month === 12 ? 1 : p.calendar_month + 1;
+    return `${y}-${String(mo).padStart(2, "0")}-08T${new Date().toISOString().slice(11)}`;
+  };
   function rebuild() { M = Measures.build(db); App.M = M; }
   function audit(resourceId, eventType, newValue, actorType = 'USER') {
     db.app_audit_event.push({ event_id: `AE-L${db.app_audit_event.length + 1}`, resource_type: 'action', resource_id: resourceId, actor_type: actorType,
@@ -333,7 +339,7 @@
     });
     const old = db.app_action_progress.find((p) => p.action_id === actionId && p.period_id === pid);
     const row = { action_id: actionId, period_id: pid, progress_pct: pct, ai_status: rf.status, outlook_total_op: M.r2(rf.outlookNew),
-      comment_id: old && pct === old.progress_pct ? old.comment_id : null, updated_by: state.userId, updated_at: nowIso() };
+      comment_id: old ? old.comment_id : null, assessment_stale: true, updated_by: state.userId, updated_at: nowIso() };
     if (old) Object.assign(old, row); else db.app_action_progress.push(row);
     if (pct >= 100 && a.end_period_id <= pid) a.execution_state = 'COMPLETED';
     else if (pct > 0 && a.execution_state === 'NOT_STARTED') a.execution_state = 'IN_PROGRESS';
@@ -445,9 +451,10 @@
     boardUi: { metrics: ['OP'], metric: 'OP', range: 'HIST', status: '' },
     start() {
       initContext(); bindShell();
-      // Deep link (e.g. notifications): #A02:PT-001, #A01
+      // Deep link (e.g. notifications): #A02:PT-001, #A05:ACT-001-SL-A01, #A01
       const [scr, id] = decodeURIComponent(location.hash.slice(1)).split(':');
       if (scr === 'A02' && id && M.point(id)) { state.screen = 'A02'; state.params = { pointId: id, order: M.pointsFor(state.orgId, state.periodId).sort((a, b) => Math.abs(b.overall) - Math.abs(a.overall)).map((r) => r.point.point_id) }; }
+      else if (scr === 'A05' && id && M.action(id)) { state.screen = 'A05'; state.params = { actionId: id }; }
       else if (scr && SCREEN_ID[scr]) state.screen = scr;
       render();
     },

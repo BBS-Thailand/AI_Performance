@@ -351,6 +351,61 @@
   };
   Object.entries(BOARD).forEach(([lang, obj]) => Object.assign(T[lang], obj));
 
+  /* A-05 Action Status */
+  const STATUS = {
+    en: {
+      back_exec: 'Executing actions (A-03)', chat_btn: 'Chat', pick_action: 'Action', pick_hint: 'Choose an Action (or double-click one on A-03 / A-04).',
+      not_in_scope: '{id} does not belong to the selected organization. Choose an Action from the list.', not_adopted: 'This Action is not adopted, so it has no execution status. Open it from A-02 (P-01).',
+      a05_effect_on: 'Effect figures on',
+      kpi_plan: 'Planned effect (period)', kpi_plan_sub: 'Planned at start (AI calc.)', kpi_expected: 'Expected through {month}', kpi_expected_sub: 'Plan prorated by period',
+      kpi_actual: 'Actual effect', kpi_actual_sub: '{p}% of expected', kpi_outlook: 'Year-end outlook', kpi_outlook_sub: 'If continued as is · {p}% of plan',
+      kpi_progress_sub: 'Expected {p}% for the elapsed term', kpi_factor: 'Individual factor (excluded)', no_factor: 'No overlapping factor',
+      fig_title: '{fig} (monthly, JPY M) · gap to "without action" = Action effect', fig_REV: 'Revenue of the measured scope', fig_COGS: 'Material cost of the measured scope', fig_SGA: 'Expense of the measured scope',
+      fig_basis: 'Baseline: {b} · Formula: {f}', s_without: 'Without action', s_plan: 'Plan (with action)', s_actual: 'Actual', s_outlook: 'Outlook if continued',
+      from_a04: 'From A-04', month_detail: '{m} · {metric}: plan {p} / {k} {v}',
+      ai_situation: 'Situation', ai_evaluation: 'Evaluation and next steps', ai_measure: 'How the effect is measured', ai_factors: 'Individual factors',
+      ai_no_factor: 'No Individual Factor overlaps this Action, so nothing is excluded.', no_assessment: 'No AI assessment yet.',
+      ai_pending: 'Progress was updated by {u} after this assessment. The AI assessment refreshes at the next run.',
+      hist_title: 'Change history', hist_hint: 'Adoption, progress, AI judgments and chat', col_date: 'Date', col_content: 'Content', col_by: 'By', by_ai: 'AI', by_system: 'System',
+      hist_ADOPT: 'Adopted (Point {p})', hist_REJECT: 'Rejected: {r}', hist_HOLD: 'On hold: {r}', hist_CANCEL_ADOPTION: 'Adoption cancelled',
+      hist_AI: '{m} close: progress {pct}% · actual {a} · outlook {o} · judgment: {s}', hist_PROGRESS: 'Progress updated {a}% → {b}% · outlook {o1} → {o2} (AI reforecast) · judgment: {s}',
+      hist_CHAT: 'Chat: {b}', hist_REQ: 'Progress request: {b}', hist_SYS: 'Notice: {b}',
+    },
+    ja: {
+      back_exec: '実行中アクション（A-03）', chat_btn: 'チャット', pick_action: 'アクション', pick_hint: 'アクションを選択してください（A-03 / A-04でダブルクリックでも開けます）。',
+      not_in_scope: '{id} は選択中の組織に属していません。一覧からアクションを選択してください。', not_adopted: 'このアクションは未採用のため実行状況がありません。A-02（P-01）から開いてください。',
+      a05_effect_on: '効果の表示指標',
+      kpi_plan: '計画効果（期間）', kpi_plan_sub: '開始時計画（AI算出）', kpi_expected: '{month}までの想定', kpi_expected_sub: '計画を期間按分', kpi_actual: '実績効果', kpi_actual_sub: '想定の{p}%',
+      kpi_outlook: '期末見込み', kpi_outlook_sub: '現状継続の場合・計画の{p}%', kpi_progress_sub: '経過期間の想定進捗 {p}%', kpi_factor: '個別要因（除外）', no_factor: '重複する要因なし',
+      fig_title: '{fig}（月次、百万円）・「アクションなし」との差＝アクション効果', fig_REV: '測定範囲の売上高', fig_COGS: '測定範囲の材料費', fig_SGA: '測定範囲の経費',
+      fig_basis: 'ベースライン：{b}・計算式：{f}', s_without: 'アクションなし', s_plan: '計画（アクションあり）', s_actual: '実績', s_outlook: '現状継続の見込み',
+      from_a04: 'A-04から', month_detail: '{m}・{metric}：計画 {p} / {k} {v}',
+      ai_situation: '状況', ai_evaluation: '評価と次のステップ', ai_measure: '効果の測定方法', ai_factors: '個別要因',
+      ai_no_factor: 'このアクションと重複する個別要因はないため、除外はありません。', no_assessment: 'AI評価はまだありません。',
+      ai_pending: 'この評価の後に{u}が進捗を更新しました。AI評価は次回の実行で更新されます。',
+      hist_title: '変更履歴', hist_hint: '採用、進捗、AI判定、チャット', col_date: '日付', col_content: '内容', col_by: '実施者', by_ai: 'AI', by_system: 'システム',
+      hist_ADOPT: '採用（ポイント {p}）', hist_REJECT: '不採用：{r}', hist_HOLD: '保留：{r}', hist_CANCEL_ADOPTION: '採用取消',
+      hist_AI: '{m}締め：進捗{pct}%・実績 {a}・見込み {o}・判定：{s}', hist_PROGRESS: '進捗更新 {a}% → {b}%・見込み {o1} → {o2}（AI再予測）・判定：{s}', hist_CHAT: 'チャット：{b}', hist_REQ: '進捗依頼：{b}', hist_SYS: '通知：{b}',
+    },
+    th: {
+      back_exec: 'แอคชันที่ดำเนินการ (A-03)', chat_btn: 'แชท', pick_action: 'แอคชัน', pick_hint: 'เลือกแอคชัน (หรือดับเบิลคลิกใน A-03 / A-04)',
+      not_in_scope: '{id} ไม่ได้อยู่ในหน่วยงานที่เลือก กรุณาเลือกแอคชันจากรายการ', not_adopted: 'แอคชันนี้ยังไม่ได้รับอนุมัติจึงไม่มีสถานะการดำเนินการ เปิดได้จาก A-02 (P-01)',
+      a05_effect_on: 'แสดงผลต่อ',
+      kpi_plan: 'ผลตามแผน (ทั้งช่วง)', kpi_plan_sub: 'แผนตอนเริ่ม (AI คำนวณ)', kpi_expected: 'ที่คาดไว้ถึง{month}', kpi_expected_sub: 'แผนเฉลี่ยตามช่วงเวลา', kpi_actual: 'ผลจริง', kpi_actual_sub: '{p}% ของที่คาดไว้',
+      kpi_outlook: 'คาดการณ์สิ้นปี', kpi_outlook_sub: 'หากดำเนินต่อแบบเดิม · {p}% ของแผน', kpi_progress_sub: 'คาดไว้ {p}% ตามระยะเวลาที่ผ่านไป', kpi_factor: 'ปัจจัยเฉพาะ (ไม่รวม)', no_factor: 'ไม่มีปัจจัยที่ซ้ำซ้อน',
+      fig_title: '{fig} (รายเดือน, ล้านเยน) · ส่วนต่างจาก "ไม่มีแอคชัน" = ผลของแอคชัน', fig_REV: 'รายได้ของขอบเขตที่วัด', fig_COGS: 'ต้นทุนวัตถุดิบของขอบเขตที่วัด', fig_SGA: 'ค่าใช้จ่ายของขอบเขตที่วัด',
+      fig_basis: 'ฐาน: {b} · สูตร: {f}', s_without: 'ไม่มีแอคชัน', s_plan: 'แผน (มีแอคชัน)', s_actual: 'จริง', s_outlook: 'คาดการณ์หากดำเนินต่อ',
+      from_a04: 'จาก A-04', month_detail: '{m} · {metric}: แผน {p} / {k} {v}',
+      ai_situation: 'สถานการณ์', ai_evaluation: 'การประเมินและขั้นตอนถัดไป', ai_measure: 'วิธีวัดผล', ai_factors: 'ปัจจัยเฉพาะ',
+      ai_no_factor: 'ไม่มีปัจจัยเฉพาะที่ซ้ำกับแอคชันนี้ จึงไม่มีการหักออก', no_assessment: 'ยังไม่มีการประเมินของ AI',
+      ai_pending: '{u} อัปเดตความคืบหน้าหลังการประเมินนี้ การประเมินของ AI จะอัปเดตในการรันครั้งถัดไป',
+      hist_title: 'ประวัติการเปลี่ยนแปลง', hist_hint: 'การอนุมัติ ความคืบหน้า การประเมินของ AI และแชท', col_date: 'วันที่', col_content: 'รายละเอียด', col_by: 'โดย', by_ai: 'AI', by_system: 'ระบบ',
+      hist_ADOPT: 'อนุมัติ (ประเด็น {p})', hist_REJECT: 'ปฏิเสธ: {r}', hist_HOLD: 'พักไว้: {r}', hist_CANCEL_ADOPTION: 'ยกเลิกการอนุมัติ',
+      hist_AI: 'ปิดเดือน{m}: ความคืบหน้า {pct}% · จริง {a} · คาดการณ์ {o} · ประเมิน: {s}', hist_PROGRESS: 'อัปเดตความคืบหน้า {a}% → {b}% · คาดการณ์ {o1} → {o2} (AI พยากรณ์ใหม่) · ประเมิน: {s}', hist_CHAT: 'แชท: {b}', hist_REQ: 'ขอความคืบหน้า: {b}', hist_SYS: 'แจ้งเตือน: {b}',
+    },
+  };
+  Object.entries(STATUS).forEach(([lang, obj]) => Object.assign(T[lang], obj));
+
   let current = 'en';
   function t(key, vars) {
     let s = (T[current] && T[current][key]) ?? T.en[key] ?? key;

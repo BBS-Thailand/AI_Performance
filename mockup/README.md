@@ -5,7 +5,7 @@ It reads only the tables defined in [../docs/data-model.md](../docs/data-model.m
 JavaScript copy of the semantic-model measures, so the Fabric app can later swap the data source.
 
 ## Open
-Double-click `index.html` (no server or internet needed). Deep links: `index.html#A02:PT-001`.
+Double-click `index.html` (no server or internet needed). Deep links: `index.html#A02:PT-001`, `index.html#A05:ACT-001-SL-A01`.
 
 ## Regenerate mock data
 ```sh
@@ -28,7 +28,7 @@ The generator asserts the reconciliations (slide figures, Point + Other = varian
 | Stage | Screens |
 |---|---|
 | 1 (done) | Shell and global context, A-01, A-02, P-01, Adopt / Reject / Hold / Cancel adoption, permissions, override notice |
-| 2 | A-03 (done: Action Board, Metric filter, status counts, progress update → outlook reforecast → F-01), A-04 (done: stacked monthly effects, legend, reconciled table, AI comment), A-05, C-03 |
+| 2 | A-03 (done: Action Board, Metric filter, status counts, progress update → outlook reforecast → F-01), A-04 (done: stacked monthly effects, legend, reconciled table, AI comment), A-05 (done: effect figures, measured-figure graph, AI assessment, change history), C-03 |
 | 3 (done) | F-01 (three forecast options, model info, key drivers), P-02 (fixed factor list; driver or amount input), version confirmation and company roll-up |
 | 4 | B-01, B-02, C-01, FN-01, FN-02 |
 

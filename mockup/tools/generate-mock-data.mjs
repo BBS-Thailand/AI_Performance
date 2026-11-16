@@ -366,9 +366,13 @@ const MEAS = {
   'ACT-007-MF-A01': ['DIRECT', 'fact_financial (5040); production yield log', 'org_id = MF; Line 2', 'Line 2 yield 92.0% (Apr–May 2027)', '(actual yield − baseline yield) × material cost per point'],
   'ACT-008-SL-A01': ['DIRECT', 'fact_financial (4010, 5010)', 'org_id = SL; product_id = P04; customer_id IN (C01, C02)', 'Budgeted P04 revenue for C01 and C02', '(actual revenue − baseline revenue) × gross margin 25%'],
 };
+// Monthly level of the measured figure before the Action (JPY M, in the effect-kind Metric: revenue of the
+// measured scope, material cost, expense). A-05 draws "without action" at this level; plan / actual / outlook = level ± effect.
+const BASELINE_LEVEL = { 'ACT-001-SL-A01': 12, 'ACT-001-SL-A02': 0, 'ACT-001-SL-U01': 12, 'ACT-001-OS-A01': 6, 'ACT-002-MF-A01': 9, 'ACT-002-MF-A02': 9,
+  'ACT-003-OS-A01': 0, 'ACT-004-SL-A01': 5, 'ACT-005-AD-U01': 3.2, 'ACT-006-OS-A01': 0, 'ACT-007-MF-A01': 7.5, 'ACT-008-SL-A01': 4 };
 for (const [id, [mode, src, filter, baseline, formula]] of Object.entries(MEAS)) {
   app_action_measurement.push({ action_id: id, measurement_mode: mode, is_measurable: id !== 'ACT-002-MF-A02', source_tables: src, source_filter: filter,
-    baseline_method: baseline, formula, proxy_indicator: mode === 'PROXY' ? src : null, proxy_reliability: mode === 'PROXY' ? (id === 'ACT-006-OS-A01' ? 'MEDIUM' : 'LOW') : null,
+    baseline_method: baseline, baseline_value: BASELINE_LEVEL[id] ?? null, formula, proxy_indicator: mode === 'PROXY' ? src : null, proxy_reliability: mode === 'PROXY' ? (id === 'ACT-006-OS-A01' ? 'MEDIUM' : 'LOW') : null,
     ai_comment_id: `CM-AEXPL-${id}` });
 }
 const DECISIONS = [

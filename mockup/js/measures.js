@@ -258,6 +258,27 @@
         return { period_id: p, plan: r.planned_effect || 0, isActual, value: isActual ? (r.actual_effect ?? null) : (r.outlook_effect ?? r.actual_effect ?? null) };
       });
     };
+    M.actionMeasurement = (id) => db.app_action_measurement.find((x) => x.action_id === id) || null;
+    /**
+     * A-05 effect graph: the measured figure itself (revenue of the scope, material cost, expense) by month of the
+     * Action term. without = measurement baseline level; plan / actual / outlook = level ± effect, so the gap to
+     * "without" is the Action effect. Cost figures (COGS) fall when the GP effect is positive.
+     */
+    M.actionFigure = (id, pid) => {
+      const a = actionById.get(id);
+      const meas = M.actionMeasurement(id);
+      const level = meas && meas.baseline_value !== null && meas.baseline_value !== undefined ? meas.baseline_value : 0;
+      const metric = a.effect_kind === 'COGS' ? 'GP' : a.effect_kind;
+      const sign = a.effect_kind === 'COGS' ? -1 : 1;
+      const rows = M.effectRows(id, metric);
+      return rows.map((r) => ({
+        period_id: r.period_id,
+        without: level,
+        plan: r2(level + sign * (r.planned_effect || 0)),
+        actual: r.period_id <= pid && r.actual_effect !== null ? r2(level + sign * r.actual_effect) : null,
+        outlook: r.period_id > pid ? r2(level + sign * (r.outlook_effect ?? r.actual_effect ?? 0)) : null,
+      }));
+    };
     /** A-03 count bucket: IN_PROGRESS / EFFECTIVE / DELAYED / COMPLETED (AT_RISK counts as delayed). */
     M.actionBucket = (a, pid) => {
       const prog = M.actionProgress(a.action_id, pid);

@@ -180,10 +180,10 @@ browser from these tables — no notebook or AI call.
 |---|---|
 | `app_action` | action_id, point_id (child Point), owner_org_id, origin (`AI`/`USER`), seq_no, action_name + description (user-entered, original language), action_name_comment_id + description_comment_id (AI-generated, multilingual via `ai_comment_text`), effect_kind (`REV`/`COGS`/`SGA`), start_period_id, end_period_id, decision_state (`PROPOSED`, `ADOPTED`, `REJECTED`, `ON_HOLD`), execution_state (`NOT_STARTED`, `IN_PROGRESS`, `PAUSED`, `STOPPED`, `COMPLETED`), hold_until_period_id, adopted_period_id, latest_decider, latest_decided_at |
 | `app_action_decision` | decision_id, action_id, decision (`ADOPT`, `REJECT`, `HOLD`, `CANCEL_ADOPTION`), reason, hold_until_period_id, decided_by, decided_at, overrides_decision_id — **append-only** |
-| `app_action_measurement` | action_id, measurement_mode (`DIRECT`/`PROXY`), is_measurable, source_tables, source_filter, baseline_method, baseline_value, formula, proxy_indicator, proxy_reliability, ai_comment_id |
+| `app_action_measurement` | action_id, measurement_mode (`DIRECT`/`PROXY`), is_measurable, source_tables, source_filter, baseline_method, baseline_value (monthly level of the measured figure; A-05 draws plan / actual / outlook as this level ± effect), formula, proxy_indicator, proxy_reliability, ai_comment_id |
 | `app_action_target_metric` | action_id, metric_id |
 | `app_action_effect_monthly` | action_id, metric_id, period_id, planned_effect (frozen at adoption), actual_effect (measured, after Factor exclusion; NULL for open months), outlook_effect (current reforecast; open months), excluded_factor_amount |
-| `app_action_progress` | action_id, period_id, progress_pct, ai_status (`ON_TRACK`, `DELAYED`, `AT_RISK`, `EFFECTIVE`, `COMPLETED`), outlook_total_op (snapshot for "outlook vs initial plan"), comment_id, updated_by, updated_at |
+| `app_action_progress` | action_id, period_id, progress_pct, ai_status (`ON_TRACK`, `DELAYED`, `AT_RISK`, `EFFECTIVE`, `COMPLETED`), outlook_total_op (snapshot for "outlook vs initial plan"), comment_id, assessment_stale (progress changed after the AI assessment), updated_by, updated_at |
 
 > **No manual effect entry.** `actual_effect` is written only by the measurement job.
 > `planned_effect` is written once by P-01 AI analysis and never overwritten after adoption.
