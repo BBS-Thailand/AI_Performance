@@ -229,14 +229,14 @@ language and **translated** to the other six; re-runs create a new `version` (ne
 ### 4.7 Collaboration and audit
 | Table | Columns |
 |---|---|
-| `app_chat_thread` | thread_id, action_id (1:1) |
-| `app_chat_participant` | thread_id, user_id, added_by (created on adoption: Corporate Planning + the owning organization; authorized users add / remove) |
-| `app_chat_message` | message_id, thread_id, author_id, message_type (`MESSAGE`, `PROGRESS_REQUEST`, `SYSTEM`, `AI` = an @AI answer shared by its asker), body, mentions, email_notified, due_date, sent_at, language_code, ai_question, ai_model. Append-only: no edit or delete |
+| `app_chat_thread` | thread_id, action_id (1:1), created_by, created_at — one chat per adopted Action, started by a user (never created automatically) |
+| `app_chat_participant` | thread_id, user_id, added_by (the starter invites people; the starter and authorized users invite / remove later; every invitee always gets an email + an `INVITE` notification) |
+| `app_chat_message` | message_id, thread_id, author_id, message_type (`MESSAGE`, `PROGRESS_REQUEST`, `SYSTEM`, `AI` = an AI answer visible to every participant; author_id = the requester), body, mentions, email_notified, due_date, sent_at, language_code, ai_question (the @AI question, or `SUMMARY`), ai_model, ai_unverified (numbers in the answer not found in the Action data). Append-only: no edit or delete |
 | `app_chat_message_text` | message_id, language_code, body, translated_by (`AI` / `MOCK`), translated_at — translations shown by the C-03 Translate button |
-| `app_notification` | notification_id, user_id, thread_id, message_id, kind (`MENTION`, `MESSAGE`, `AI_SHARED`, `SYSTEM`), email_sent, created_at, read_at — in-app bell; the same record drives the email (Power Automate / Graph) |
+| `app_notification` | notification_id, user_id, thread_id, message_id, kind (`MENTION`, `MESSAGE`, `AI`, `INVITE`, `SYSTEM`), from_id, email_sent, created_at, read_at — in-app bell; the same record drives the email (Power Automate / Graph) |
 | `app_chat_read` | thread_id, user_id, last_read_message_id (unread counts; own messages never count) |
 
-> **C-03 AI:** `@AI` questions and their answers are private to the asker (not stored) until shared, which posts one `AI` message. The AI receives only the Action’s own figures, assessment, history and thread, quotes those figures and never estimates new numbers. The mockup calls Claude from the browser with the presenter’s own API key (session storage only, default model Claude Haiku 5.5); without a key it shows pre-written replies built from the same data.
+> **C-03 AI:** an `@AI` question is posted as a normal message and the answer follows as an `AI` message that every participant sees; **Summarize** posts an `AI` message too. Only **Draft reply** stays private (it is written in the user’s name). Override notices and progress notes go to the chat only when one exists. The AI receives only the Action’s own figures, assessment, history and thread, quotes those figures and never estimates new numbers. The mockup calls Claude from the browser with the presenter’s own API key (session storage only, default model Claude Haiku 5.5); without a key it shows pre-written replies built from the same data.
 | `app_audit_event` | event_id, resource_type, resource_id, actor_type (`USER`/`AI`/`SYSTEM`), actor_id, event_type, old_value, new_value, occurred_at |
 | `app_saved_bi_view` | view_id, owner_id, name, definition_json (`rows`, `cols`, `measures` [list; `measure` = first, kept for older views], `scenario` — `ALL` when scenario is on an axis, `range` `MONTH`/`YTD`/`FY`, `filters` [{dim, value}]), shared |
 | `app_report_favorite` | user_id, report_id (B-02 favorites; the mockup keeps it in memory only) |

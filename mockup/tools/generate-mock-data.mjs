@@ -731,17 +731,19 @@ comment('CM-F01-202706-CO', 'F01_EXPLANATION', 'org', 'CO', 202706, 'CO', {
   th: 'คาดการณ์กำไรจากการดำเนินงานทั้งบริษัท ณ สิ้นปีอยู่ที่ 352.5 ล้านเยน ต่ำกว่างบประมาณเดิม 370 ล้านเยนอยู่ 17.5 ล้านเยน หากไม่มีแอคชันจะอยู่ที่ 328 ล้านเยน แอคชันที่อนุมัติแล้วเพิ่ม +22 ล้านเยน (แผน 30) และปัจจัยเฉพาะที่รวมไว้ +2.5 ล้านเยน' });
 
 /* ------------------------------------------------------------- chat & audit */
-const app_chat_thread = ACTIONS.filter((a) => a.decision !== 'PROPOSED').map((a) => ({ thread_id: `TH-${a.id}`, action_id: a.id }));
-const app_chat_participant = app_chat_thread.flatMap((t) => {
-  const org = t.action_id.split('-')[2];
-  const owners = app_user_org_scope.filter((s) => s.org_id === org).map((s) => s.user_id);
-  return ['u01', ...owners].map((u) => ({ thread_id: t.thread_id, user_id: u, added_by: 'u01' }));
-});
+// Chats are started by a user, who invites the participants (nothing is created on adoption). Seed: the four chats people started.
+const CHATS = [
+  ['ACT-001-SL-A01', 'u02', '2027-06-05T01:55:00Z', ['u06', 'u01']],
+  ['ACT-003-OS-A01', 'u03', '2027-06-26T08:55:00Z', ['u01']],
+  ['ACT-005-AD-U01', 'u05', '2027-06-24T02:55:00Z', ['u01']],
+  ['ACT-007-MF-A01', 'u04', '2027-06-28T05:55:00Z', ['u01']],
+];
+const app_chat_thread = CHATS.map(([action, by, at]) => ({ thread_id: `TH-${action}`, action_id: action, created_by: by, created_at: at }));
+const app_chat_participant = CHATS.flatMap(([action, by, , invited]) => [by, ...invited].map((u) => ({ thread_id: `TH-${action}`, user_id: u, added_by: by })));
 const MSG = [
   ['ACT-001-SL-A01', 'u02', 'MESSAGE', 'Kick-off with Customer B procurement held. They will share the 6-month forecast every month.', [], false, null, '2027-06-05T02:00:00Z'],
   ['ACT-001-SL-A01', 'u06', 'MESSAGE', 'First forecast received. Q3 gear demand is 8% below last year, drive modules flat.', [], false, null, '2027-06-18T07:30:00Z'],
   ['ACT-001-SL-A01', 'u01', 'PROGRESS_REQUEST', '@Tanaka please update the Q3 framework order status before the July review.', ['u02'], true, '2027-07-20', '2027-07-02T01:00:00Z'],
-  ['ACT-002-MF-A02', null, 'SYSTEM', 'Adoption by Suzuki (Manufacturing Head) was overridden: rejected by Sato (Corporate Planning). Reason: FX exposure is hedged centrally by Treasury.', ['u04'], true, null, '2027-06-12T08:15:00Z'],
   ['ACT-005-AD-U01', 'u05', 'MESSAGE', 'Landlord rejected the first proposal. Preparing market rent comparison for July.', [], false, null, '2027-06-24T03:00:00Z'],
   ['ACT-005-AD-U01', 'u01', 'PROGRESS_REQUEST', '@Nittaya please share the market rent comparison when ready.', ['u05'], true, '2027-07-15', '2027-07-01T02:00:00Z'],
   ['ACT-007-MF-A01', 'u04', 'MESSAGE', 'Equipment parts delayed to end of August. Evaluating parameter-only change for August.', [], false, null, '2027-06-28T06:00:00Z'],
@@ -750,7 +752,7 @@ const MSG = [
 ];
 const app_chat_message = MSG.map(([action, author, type, body, mentions, email, due, at], i) => ({
   message_id: `MS-${pad(i + 1)}`, thread_id: `TH-${action}`, author_id: author, message_type: type, body, mentions: mentions.join(','), email_notified: email, due_date: due, sent_at: at,
-  language_code: 'en', ai_question: null, ai_model: null,
+  language_code: 'en', ai_question: null, ai_model: null, ai_unverified: null,
 }));
 // Ready translations of the seed messages (the app translates new ones with the AI on request; C-03 Translate button).
 const MSG_TR = {
@@ -758,7 +760,6 @@ const MSG_TR = {
     'Customer B 購買部門とのキックオフを実施しました。今後は毎月6か月分の需要予測を共有してもらえます。',
     '最初の予測を受領しました。第3四半期のギア需要は前年比8%減、駆動モジュールは横ばいです。',
     '@Tanaka 7月のレビューまでに第3四半期の包括発注の状況を更新してください。',
-    'Suzuki（製造部長）による採用は上書きされました：Sato（経営企画）が不採用。理由：為替エクスポージャーは財務部で一括ヘッジしているため。',
     '家主に最初の提案を断られました。7月に向けて周辺賃料の比較資料を準備中です。',
     '@Nittaya 周辺賃料の比較資料ができたら共有してください。',
     '設備部品の納入が8月末に遅れます。8月はパラメーター変更のみで対応する案を検討中です。',
@@ -769,7 +770,6 @@ const MSG_TR = {
     'จัดประชุมเริ่มต้นกับฝ่ายจัดซื้อของ Customer B แล้ว ทางลูกค้าจะแชร์ประมาณการความต้องการ 6 เดือนทุกเดือน',
     'ได้รับประมาณการครั้งแรกแล้ว ความต้องการเกียร์ไตรมาส 3 ต่ำกว่าปีก่อน 8% ส่วนโมดูลขับเคลื่อนทรงตัว',
     '@Tanaka โปรดอัปเดตสถานะคำสั่งซื้อแบบเหมาไตรมาส 3 ก่อนการรีวิวเดือนกรกฎาคม',
-    'การอนุมัติโดย Suzuki (หัวหน้าฝ่ายผลิต) ถูกยกเลิก: Sato (ฝ่ายวางแผนองค์กร) ปฏิเสธ เหตุผล: ความเสี่ยงอัตราแลกเปลี่ยนได้รับการป้องกันความเสี่ยงจากส่วนกลางโดยฝ่ายการเงิน',
     'เจ้าของอาคารปฏิเสธข้อเสนอแรก กำลังเตรียมข้อมูลเปรียบเทียบค่าเช่าตลาดสำหรับเดือนกรกฎาคม',
     '@Nittaya โปรดแชร์ข้อมูลเปรียบเทียบค่าเช่าตลาดเมื่อพร้อม',
     'ชิ้นส่วนอุปกรณ์ล่าช้าไปถึงปลายเดือนสิงหาคม กำลังพิจารณาทางเลือกปรับเฉพาะพารามิเตอร์สำหรับเดือนสิงหาคม',
@@ -781,17 +781,21 @@ const app_chat_message_text = Object.entries(MSG_TR).flatMap(([lang, list]) => l
   message_id: `MS-${pad(i + 1)}`, language_code: lang, body, translated_by: 'MOCK', translated_at: app_chat_message[i].sent_at,
 })));
 if (app_chat_message_text.length !== app_chat_message.length * 2) throw new Error('Every seed chat message needs ja and th translations');
+app_chat_message.forEach((m) => {
+  if (!app_chat_thread.some((t) => t.thread_id === m.thread_id)) throw new Error(`${m.message_id}: no chat was started for ${m.thread_id}`);
+  if (m.author_id && !app_chat_participant.some((p) => p.thread_id === m.thread_id && p.user_id === m.author_id)) throw new Error(`${m.message_id}: author is not a participant`);
+});
 const app_chat_read = [
   { thread_id: 'TH-ACT-001-SL-A01', user_id: 'u01', last_read_message_id: 'MS-02' },
-  { thread_id: 'TH-ACT-005-AD-U01', user_id: 'u01', last_read_message_id: 'MS-05' },
-  { thread_id: 'TH-ACT-007-MF-A01', user_id: 'u01', last_read_message_id: 'MS-07' },
+  { thread_id: 'TH-ACT-005-AD-U01', user_id: 'u01', last_read_message_id: 'MS-04' },
+  { thread_id: 'TH-ACT-007-MF-A01', user_id: 'u01', last_read_message_id: 'MS-06' },
   { thread_id: 'TH-ACT-001-SL-A01', user_id: 'u02', last_read_message_id: 'MS-02' },
 ];
 // In-app notifications (bell) for mentions; read when the user has read past the message in that thread.
 const msgOrder = (id) => Number(String(id).slice(3));
 const app_notification = app_chat_message.flatMap((msg) => (msg.mentions ? msg.mentions.split(',') : []).filter((u) => u !== msg.author_id).map((u) => {
   const rd = app_chat_read.find((r) => r.thread_id === msg.thread_id && r.user_id === u);
-  return { user_id: u, thread_id: msg.thread_id, message_id: msg.message_id, kind: msg.message_type === 'SYSTEM' ? 'SYSTEM' : 'MENTION', email_sent: msg.email_notified,
+  return { user_id: u, thread_id: msg.thread_id, message_id: msg.message_id, kind: msg.message_type === 'SYSTEM' ? 'SYSTEM' : 'MENTION', from_id: msg.author_id, email_sent: msg.email_notified,
     created_at: msg.sent_at, read_at: rd && msgOrder(rd.last_read_message_id) >= msgOrder(msg.message_id) ? msg.sent_at : null };
 })).map((n, i) => ({ notification_id: `NT-${pad(i + 1)}`, ...n }));
 const app_audit_event = [];

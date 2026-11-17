@@ -461,6 +461,11 @@ td.prog .mini i { display: block; height: 3px; background: #1d5ea8; border-radiu
 .c3-row textarea { flex: 1; border: 1px solid var(--border-strong); border-radius: 6px; padding: 6px 8px; resize: vertical; background: var(--surface); }
 .c3-row .btn { min-width: 78px; }
 .c3-opts { display: flex; gap: 14px; align-items: center; flex-wrap: wrap; margin-top: 6px; font-size: 12px; }
+.c3-start { padding: 16px 14px; }
+.c3-start h2 { margin-top: 0; }
+.c3-invite { display: flex; flex-wrap: wrap; gap: 6px 18px; margin: 10px 0; padding: 10px 12px; border: 1px solid var(--border); border-radius: 8px; background: var(--surface-2); }
+.c3-invite label { display: inline-flex; gap: 6px; align-items: center; font-size: 13px; }
+.c3-start .btn.primary { margin-top: 10px; }
 .c3-side .card { margin-bottom: 14px; }
 .c3-st { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; margin-bottom: 8px; }
 .c3-people { list-style: none; margin: 0 0 8px; padding: 0; }

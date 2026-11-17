@@ -302,7 +302,6 @@
       db.app_action_effect_monthly.filter((e) => e.action_id === actionId).forEach((e) => {
         if (M.period(e.period_id).is_closed) { e.actual_effect = 0; e.outlook_effect = null; } else { e.outlook_effect = e.planned_effect; e.actual_effect = null; }
       });
-      if (App.Chat) App.Chat.ensureParticipants(actionId); // C-03 thread with default participants
     } else if (decision === 'REJECT') { a.decision_state = 'REJECTED'; a.adopted_period_id = null; }
     else if (decision === 'HOLD') { a.decision_state = 'ON_HOLD'; a.hold_until_period_id = holdUntil; a.adopted_period_id = null; }
     else if (decision === 'CANCEL_ADOPTION') {
@@ -310,14 +309,13 @@
       db.app_action_effect_monthly.filter((e) => e.action_id === actionId).forEach((e) => { e.actual_effect = null; e.outlook_effect = null; });
     }
     audit(actionId, `DECISION_${decision}`, reason || (holdUntil ? `hold until ${holdUntil}` : decision));
-    // Override by a different (higher-level) user → system notice in the Action thread (C-03).
+    // Override by a different (higher-level) user → system notice in the Action chat (C-03), if someone has started one.
     if (prev && prev.decided_by !== state.userId) {
-      let th = db.app_chat_thread.find((x) => x.action_id === actionId);
-      if (!th) { th = { thread_id: `TH-${actionId}`, action_id: actionId }; db.app_chat_thread.push(th); }
-      db.app_chat_message.push({ message_id: `MS-L${db.app_chat_message.length + 1}`, thread_id: th.thread_id, author_id: null, message_type: 'SYSTEM',
+      const th = db.app_chat_thread.find((x) => x.action_id === actionId);
+      if (th) db.app_chat_message.push({ message_id: `MS-L${db.app_chat_message.length + 1}`, thread_id: th.thread_id, author_id: null, message_type: 'SYSTEM',
         body: `Decision by ${userName(prev.decided_by)} (${prev.decision}) was overridden: ${decision} by ${userName(state.userId)}.${reason ? ' Reason: ' + reason : ''}`,
         mentions: prev.decided_by, email_notified: true, due_date: null, sent_at: nowIso() });
-      toast(t('override_notice'));
+      if (th) toast(t('override_notice'));
     }
     rebuild();
     return true;
@@ -345,9 +343,9 @@
     if (pct >= 100 && a.end_period_id <= pid) a.execution_state = 'COMPLETED';
     else if (pct > 0 && a.execution_state === 'NOT_STARTED') a.execution_state = 'IN_PROGRESS';
     audit(actionId, 'PROGRESS_UPDATE', `${rf.oldPct}% → ${pct}% · outlook OP ${rf.outlookOld} → ${row.outlook_total_op} · ${rf.status}${note ? ' · ' + note : ''}`);
-    if (note) {
-      let th = db.app_chat_thread.find((x) => x.action_id === actionId);
-      if (!th) { th = { thread_id: `TH-${actionId}`, action_id: actionId }; db.app_chat_thread.push(th); }
+    // The note is always in the change history; it is also posted to the Action chat when one exists (chats are started by users).
+    const th = note && db.app_chat_thread.find((x) => x.action_id === actionId);
+    if (th) {
       db.app_chat_message.push({ message_id: `MS-L${db.app_chat_message.length + 1}`, thread_id: th.thread_id, author_id: state.userId, message_type: 'MESSAGE',
         body: `[${t('update_progress')}: ${rf.oldPct}% → ${pct}%] ${note}`, mentions: '', email_notified: false, due_date: null, sent_at: nowIso(), language_code: state.lang });
     }

@@ -5,36 +5,29 @@
   "thread_id": "TH-ACT-001-SL-A01",
   "message_id": "MS-03",
   "kind": "MENTION",
+  "from_id": "u01",
   "email_sent": true,
   "created_at": "2027-07-02T01:00:00Z",
   "read_at": null
  },
  {
   "notification_id": "NT-02",
-  "user_id": "u04",
-  "thread_id": "TH-ACT-002-MF-A02",
-  "message_id": "MS-04",
-  "kind": "SYSTEM",
-  "email_sent": true,
-  "created_at": "2027-06-12T08:15:00Z",
-  "read_at": null
- },
- {
-  "notification_id": "NT-03",
   "user_id": "u05",
   "thread_id": "TH-ACT-005-AD-U01",
-  "message_id": "MS-06",
+  "message_id": "MS-05",
   "kind": "MENTION",
+  "from_id": "u01",
   "email_sent": true,
   "created_at": "2027-07-01T02:00:00Z",
   "read_at": null
  },
  {
-  "notification_id": "NT-04",
+  "notification_id": "NT-03",
   "user_id": "u04",
   "thread_id": "TH-ACT-007-MF-A01",
-  "message_id": "MS-08",
+  "message_id": "MS-07",
   "kind": "MENTION",
+  "from_id": "u01",
   "email_sent": true,
   "created_at": "2027-07-01T03:00:00Z",
   "read_at": null

@@ -3,8 +3,11 @@
   'use strict';
   const A = window.App;
   const C = () => A.Chat;
-  /** Per-session UI state: private @AI answers (never stored in the thread until shared), shown translations, unsent text. */
-  const local = { actionId: null, privates: {}, shown: new Set(), draft: {}, email: true, seq: 0 };
+  /**
+   * Per-session UI state: AI answers being written (pending, posted for everyone when done), private Draft-reply cards
+   * and errors, shown translations, unsent text, people ticked to invite when starting a chat.
+   */
+  const local = { actionId: null, pending: {}, privates: {}, shown: new Set(), draft: {}, invite: {}, email: true, seq: 0 };
 
   const fmtWhen = (iso) => C().fmtWhen(iso);
   const statusOf = (a) => {
@@ -15,6 +18,13 @@
   function threadsInScope() {
     const { M, state } = A;
     return A.db.app_chat_thread.map((th) => M.action(th.action_id)).filter((a) => a && M.inScope(a.owner_org_id, state.orgId))
+      .sort((x, y) => x.action_id.localeCompare(y.action_id));
+  }
+  /** Actions that can have a chat on this page: adopted Actions of the selected organization, plus any that already have one. */
+  function actionsInScope() {
+    const { M, state } = A;
+    const withChat = new Set(A.db.app_chat_thread.map((th) => th.action_id));
+    return A.db.app_action.filter((a) => M.inScope(a.owner_org_id, state.orgId) && (a.decision_state === 'ADOPTED' || withChat.has(a.action_id)))
       .sort((x, y) => x.action_id.localeCompare(y.action_id));
   }
 
@@ -33,23 +43,34 @@
       ? `<button class="linkbtn" data-tr="${msg.message_id}">${esc(tr ? t('c3_show_original', { lang: I18N.langName(lang) }) : t('c3_translate'))}</button>${tr ? ` <span class="hint">${esc(t('c3_translated', { by: tr.translated_by === 'AI' ? 'AI' : t('c3_tr_mock') }))}</span>` : ''}` : '';
     if (msg.message_type === 'SYSTEM') return `<div class="c3-msg sys"><span>${esc(body)}</span> <span class="hint">${esc(fmtWhen(msg.sent_at))}</span></div>`;
     const mine = msg.author_id === state.userId;
-    const meta = msg.message_type === 'AI'
-      ? `<b class="ai-who">AI</b> <span class="hint">${esc(t('c3_shared_by', { who: A.userName(msg.author_id) }))}${msg.ai_model ? ' · ' + esc(C().modelName(msg.ai_model)) : ' · ' + esc(t('c3_demo_tag'))}</span>`
+    const isAi = msg.message_type === 'AI';
+    const meta = isAi
+      ? `<b class="ai-who">AI</b> <span class="hint">${esc(t(msg.ai_question === 'SUMMARY' ? 'c3_ai_summary_by' : 'c3_ai_reply_to', { who: A.userName(msg.author_id) }))}${msg.ai_model ? ' · ' + esc(C().modelName(msg.ai_model)) : ' · ' + esc(t('c3_demo_tag'))}</span>`
       : `<b>${esc(A.userName(msg.author_id))}</b>`;
     const due = msg.due_date ? new Intl.DateTimeFormat(I18N.locale(), { month: 'numeric', day: 'numeric' }).format(new Date(msg.due_date + 'T00:00:00Z')) : '–';
     const req = msg.message_type === 'PROGRESS_REQUEST' ? ` <span class="tag warn">${esc(t('c3_req_tag', { d: due }))}</span>` : '';
-    const q = msg.message_type === 'AI' ? `<div class="c3-q">${esc(t('c3_ai_asked', { who: A.userName(msg.author_id) }))} ${richBody(msg.ai_question || '', a.action_id)}</div>` : '';
-    return `<div class="c3-msg ${msg.message_type === 'AI' ? 'ai' : mine ? 'mine' : 'other'}">
+    // An @AI answer sits right under its question; a summary has no question message, so no quote is needed either.
+    const flag = isAi && msg.ai_unverified ? `<div class="warnline">⚠ ${esc(t('c3_unknown_nums', { n: msg.ai_unverified }))}</div>` : '';
+    return `<div class="c3-msg ${isAi ? 'ai' : mine ? 'mine' : 'other'}">
       <div class="c3-meta">${meta} <span class="hint">${esc(fmtWhen(msg.sent_at))}</span>${req}${msg.email_notified ? ` <span class="hint" title="${esc(t('c3_email_too'))}">✉</span>` : ''}</div>
-      ${q}<div class="c3-body">${richBody(body, a.action_id)}</div>${trBtn ? `<div class="c3-tr">${trBtn}</div>` : ''}</div>`;
+      <div class="c3-body">${richBody(body, a.action_id)}</div>${flag}${trBtn ? `<div class="c3-tr">${trBtn}</div>` : ''}</div>`;
   }
 
+  /** An AI answer being written: shown as an AI bubble, posted to the chat (for everyone) when complete. */
+  function pendingHtml(p) {
+    const { esc, t } = A;
+    return `<div class="c3-msg ai" data-pid="${p.id}">
+      <div class="c3-meta"><b class="ai-who">AI</b> <span class="hint">${esc(t(p.kind === 'SUMMARY' ? 'c3_ai_summary_by' : 'c3_ai_reply_to', { who: A.userName(A.state.userId) }))} · ${esc(p.demo ? t('c3_demo_tag') : C().modelName(p.model))}</span> <span class="hint">${esc(t('c3_thinking'))}</span></div>
+      <div class="c3-body" data-ptext>${esc(p.text || '')}</div></div>`;
+  }
+
+  /** Private cards: Draft reply (written in your name, so only you see it) and AI errors. */
   function privateHtml(p) {
     const { esc, t } = A;
     const head = p.kind === 'SUMMARY' ? t('c3_summarize') : p.kind === 'DRAFT' ? t('c3_draft') : p.question;
     const flags = p.unknown && p.unknown.length ? `<div class="warnline">⚠ ${esc(t('c3_unknown_nums', { n: p.unknown.join(', ') }))}</div>` : '';
     const actions = p.status === 'done' ? `
-        ${p.kind === 'DRAFT' ? `<button class="btn small primary" data-use="${p.id}">${esc(t('c3_use_draft'))}</button>` : `<button class="btn small primary" data-share="${p.id}">${esc(t('c3_share'))}</button>`}
+        <button class="btn small primary" data-use="${p.id}">${esc(t('c3_use_draft'))}</button>
         <button class="btn small ghost" data-discard="${p.id}">${esc(t('c3_discard'))}</button>`
       : p.status === 'error' ? `<button class="btn small ghost" data-discard="${p.id}">${esc(t('c3_discard'))}</button>` : `<span class="hint">${esc(t('c3_thinking'))}</span>`;
     return `<div class="c3-private" data-pid="${p.id}">
@@ -96,11 +117,14 @@
     const can = C().canManage(a);
     const list = C().participants(a.action_id).map((u) => `<li><span>${esc(A.userName(u))}</span>${can && u !== A.state.userId ? `<button class="linkbtn bad" data-rm="${u}" title="${esc(t('c3_remove'))}">✕</button>` : ''}</li>`).join('');
     const cand = can ? C().candidates(a) : [];
+    const th = C().thread(a.action_id);
+    const by = th && th.created_by ? `<p class="hint">${esc(t('c3_started_by', { who: A.userName(th.created_by), when: th.created_at ? fmtWhen(th.created_at) : '' }))}</p>` : '';
     return `<div class="card">
       <h2>${esc(t('c3_participants'))} <span class="muted small">(${C().participants(a.action_id).length})</span></h2>
-      <ul class="c3-people">${list}</ul>
-      ${can ? (cand.length ? `<div class="c3-add"><select id="c3-add">${cand.map((u) => `<option value="${u}">${esc(A.userName(u))}</option>`).join('')}</select><button class="btn small" data-add>${esc(t('c3_add'))}</button></div>` : `<p class="hint">${esc(t('c3_no_cand'))}</p>`)
-        : `<p class="hint">${esc(t('c3_manage_hint'))}</p>`}
+      ${by}<ul class="c3-people">${list}</ul>
+      ${can ? (cand.length ? `<div class="c3-add"><select id="c3-add">${cand.map((u) => `<option value="${u}">${esc(A.userName(u))}</option>`).join('')}</select><button class="btn small" data-add>${esc(t('c3_invite'))}</button></div>` : `<p class="hint">${esc(t('c3_no_cand'))}</p>`)
+        : ''}
+      <p class="hint">${esc(t('c3_manage_hint'))}</p>
     </div>`;
   }
 
@@ -118,30 +142,54 @@
       <tbody>${rows || `<tr><td colspan="6" class="muted">–</td></tr>`}</tbody></table></div><p class="hint">${esc(t('c3_threads_hint'))}</p></div>`;
   }
 
+  /** No chat yet: the user starts it and picks who to invite (more people can be invited later). */
+  function startView(a) {
+    const { esc, t } = A;
+    const can = C().canStart(a);
+    const ticked = local.invite[a.action_id] || new Set();
+    const cand = can ? C().candidates(a) : [];
+    const body = can ? `
+        <p>${esc(t('c3_start_hint'))}</p>
+        <div class="c3-invite">${cand.map((u) => `<label><input type="checkbox" data-inv="${u}" ${ticked.has(u) ? 'checked' : ''}> ${esc(A.userName(u))}</label>`).join('') || `<span class="muted">${esc(t('c3_no_cand'))}</span>`}</div>
+        <p class="hint">✉ ${esc(t('c3_invite_email_note'))}</p>
+        <button class="btn primary" data-start>💬 ${esc(t('c3_start'))}</button>`
+      : `<p class="muted">${esc(t('c3_cannot_start'))}</p>`;
+    return `
+      <div class="grid c03-main">
+        <div class="card c3-thread">
+          <div class="c3-head"><span class="id">${a.action_id}</span> <b>${A.actionName(a)}</b> <span class="sep">(${esc(A.orgName(a.owner_org_id))})</span></div>
+          <div class="c3-start"><h2>${esc(t('c3_no_chat'))}</h2>${body}</div>
+        </div>
+        <div class="c3-side">${figures(a)}</div>
+      </div>`;
+  }
+
   function render(params) {
     const { esc, t, M, state } = A;
     if (params && params.actionId) local.actionId = params.actionId;
-    const list = threadsInScope();
+    const list = actionsInScope();
     const a0 = local.actionId ? M.action(local.actionId) : null;
     const a = a0 && list.includes(a0) ? a0 : null;
+    const hasChat = (x) => !!C().thread(x.action_id);
     const head = `<div class="page-head">
         <h1>C-03 ${esc(t('scr_C03'))}</h1>
         <span class="scope">${esc(A.orgName(state.orgId))}</span>
         <div class="actions">
           <label class="muted small" for="c3-pick">${esc(t('pick_action'))}</label>
-          <select id="c3-pick"><option value="">${esc(t('c3_all_threads'))}</option>${list.map((x) => `<option value="${x.action_id}" ${a && a.action_id === x.action_id ? 'selected' : ''}>${x.action_id} ${esc(A.actionNamePlain(x))}</option>`).join('')}</select>
+          <select id="c3-pick"><option value="">${esc(t('c3_all_threads'))}</option>${list.map((x) => `<option value="${x.action_id}" ${a && a.action_id === x.action_id ? 'selected' : ''}>${x.action_id} ${esc(A.actionNamePlain(x))}${hasChat(x) ? '' : ' — ' + esc(t('c3_no_chat_tag'))}</option>`).join('')}</select>
           ${a ? `<button class="btn" data-a05>◀ ${esc(t('scr_A05'))} (A-05)</button>` : ''}
           <button class="btn" data-go="A03">◀ ${esc(t('back_exec'))}</button>
         </div></div>`;
     if (!a) {
-      const note = a0 ? `<div class="warnline">⚠ ${esc(t('not_in_scope', { id: a0.action_id }))}</div>` : '';
+      const note = a0 ? `<div class="warnline">⚠ ${esc(t(M.inScope(a0.owner_org_id, state.orgId) ? 'c3_not_adopted' : 'not_in_scope', { id: a0.action_id }))}</div>` : '';
       return head + note + threadList();
     }
+    if (!hasChat(a)) return head + startView(a);
     C().markRead(a.action_id);
     const st = statusOf(a);
     const part = C().isParticipant(a.action_id);
     const msgs = C().messages(a.action_id).map((m) => messageHtml(m, a)).join('');
-    const privs = (local.privates[a.action_id] || []).map(privateHtml).join('');
+    const privs = (local.pending[a.action_id] || []).map(pendingHtml).join('') + (local.privates[a.action_id] || []).map(privateHtml).join('');
     const composer = part ? `
       <div class="c3-compose">
         <div class="c3-tools">
@@ -155,7 +203,7 @@
         </div>
         <div class="c3-opts"><label><input type="checkbox" id="c3-email" ${local.email ? 'checked' : ''}> ${esc(t('c3_email_opt'))}</label>
           <span class="hint">${esc(t('c3_ai_hint'))}</span></div>
-      </div>` : `<div class="c3-compose"><p class="muted">${esc(t('c3_not_participant'))}</p></div>`;
+      </div>` : `<div class="c3-compose"><p class="muted">${esc(t('c3_not_participant', { who: A.userName(C().thread(a.action_id).created_by) }))}</p></div>`;
     return head + `
       <div class="grid c03-main">
         <div class="card c3-thread">
@@ -172,14 +220,20 @@
   function scrollDown(root) { const box = root.querySelector('#c3-msgs'); if (box) box.scrollTop = box.scrollHeight; }
   function keepDraft(root) { const ta = root.querySelector('#c3-text'); if (ta && local.actionId) local.draft[local.actionId] = ta.value; }
 
-  /** Run an @AI request privately; the answer streams into its private card. */
+  /**
+   * Run an AI request. ASK (@AI) and SUMMARY stream into an AI bubble and are posted to the chat for every participant;
+   * DRAFT stays private (it is written in your name) until you use it as your message. Errors stay private.
+   */
   async function runAi(root, kind, question) {
     const id = local.actionId;
     const p = { id: `P${++local.seq}`, kind, question, text: '', status: 'streaming', demo: !C().settings.key, model: C().settings.model, unknown: [] };
-    (local.privates[id] = local.privates[id] || []).push(p);
+    const bucket = kind === 'DRAFT' ? local.privates : local.pending;
+    (bucket[id] = bucket[id] || []).push(p);
     A.render();
+    const email = local.email;
+    let res = null;
     try {
-      const res = await C().ask(id, kind, question, (snap) => {
+      res = await C().ask(id, kind, question, (snap) => {
         p.text = snap;
         const el = document.querySelector(`[data-pid="${p.id}"] [data-ptext]`);
         if (el) { el.textContent = snap; scrollDown(document); }
@@ -188,8 +242,25 @@
     } catch (e) {
       Object.assign(p, { status: 'error', error: e.message });
     }
-    if (A.state.screen === 'C03' && local.actionId === id) { keepDraft(document); A.render(); }
+    let posted = null;
+    if (kind !== 'DRAFT') {
+      local.pending[id] = (local.pending[id] || []).filter((x) => x !== p);
+      if (p.status === 'error') (local.privates[id] = local.privates[id] || []).push(p);
+      else {
+        // An @AI reply follows its question, which already notified everyone; a summary notifies on its own.
+        posted = C().post(id, { body: p.text, type: 'AI', aiQuestion: kind === 'SUMMARY' ? 'SUMMARY' : question, aiModel: p.demo ? null : p.model,
+          aiUnverified: p.unknown, email: kind === 'SUMMARY' && email, notifyKind: kind === 'ASK' ? null : undefined });
+      }
+    }
+    if (A.state.screen === 'C03' && local.actionId === id) {
+      keepDraft(document); A.render();
+      if (posted && kind === 'SUMMARY') {
+        if (email && posted.recipients.length) C().emailPreview(posted.msg, posted.recipients);
+        else A.toast(t('c3_ai_posted', { n: posted.recipients.length }));
+      }
+    }
   }
+  const t = (...x) => A.t(...x);
 
   function mount(root) {
     const { t } = A;
@@ -203,6 +274,22 @@
     });
     if (!local.actionId || !root.querySelector('.c3-thread')) return;
     const id = local.actionId;
+
+    // Start a chat (no chat yet for this Action)
+    const startBtn = root.querySelector('[data-start]');
+    if (startBtn) {
+      const ticked = local.invite[id] = local.invite[id] || new Set();
+      root.querySelectorAll('[data-inv]').forEach((c) => c.addEventListener('change', () => { if (c.checked) ticked.add(c.dataset.inv); else ticked.delete(c.dataset.inv); }));
+      startBtn.addEventListener('click', () => {
+        const res = C().startThread(id, [...ticked]);
+        if (!res) return;
+        delete local.invite[id];
+        A.render();
+        A.toast(t('c3_started_ok', { n: res.recipients.length }));
+        if (res.recipients.length) C().emailPreview(res.msg, res.recipients); // invitation email always goes out
+      });
+      return;
+    }
     // The shell rendered before this thread was marked read: refresh the bell count.
     const bell = document.querySelector('.bell-wrap');
     if (bell) bell.outerHTML = C().bellHtml();
@@ -235,8 +322,8 @@
       const text = ta.value.trim();
       if (!text) return;
       local.draft[id] = '';
-      if (C().parseMentions(text, id).ai) { runAi(root, 'ASK', text); return; } // @AI: private until shared
       const res = C().post(id, { body: text, email: local.email });
+      if (C().parseMentions(text, id).ai) { runAi(root, 'ASK', text); return; } // @AI: the question is posted, the answer follows for everyone
       A.render();
       if (local.email && res.recipients.length) C().emailPreview(res.msg, res.recipients);
       else A.toast(t('c3_sent_notified', { n: res.recipients.length }));
@@ -246,18 +333,8 @@
     if (ta) ta.addEventListener('keydown', (e) => { if (e.key === 'Enter' && (e.ctrlKey || e.metaKey)) { e.preventDefault(); send(); } });
     root.querySelectorAll('[data-ai]').forEach((b) => b.addEventListener('click', () => { keepDraft(root); runAi(root, b.dataset.ai, null); }));
 
-    // Private AI answers
+    // Private cards (Draft reply, errors)
     const privs = () => local.privates[id] || [];
-    root.querySelectorAll('[data-share]').forEach((b) => b.addEventListener('click', () => {
-      const p = privs().find((x) => x.id === b.dataset.share);
-      if (!p) return;
-      const q = p.kind === 'SUMMARY' ? t('c3_summarize') : p.question;
-      const res = C().post(id, { body: p.text, type: 'AI', aiQuestion: q, aiModel: p.demo ? null : p.model, email: local.email });
-      local.privates[id] = privs().filter((x) => x !== p);
-      keepDraft(root); A.render();
-      if (local.email && res.recipients.length) C().emailPreview(res.msg, res.recipients);
-      else A.toast(t('c3_shared_ok', { n: res.recipients.length }));
-    }));
     root.querySelectorAll('[data-use]').forEach((b) => b.addEventListener('click', () => {
       const p = privs().find((x) => x.id === b.dataset.use);
       if (!p) return;
@@ -282,7 +359,10 @@
 
     // Participants
     const add = root.querySelector('[data-add]');
-    if (add) add.addEventListener('click', () => { if (C().addParticipant(id, root.querySelector('#c3-add').value)) { keepDraft(root); A.render(); } });
+    if (add) add.addEventListener('click', () => {
+      const res = C().addParticipant(id, root.querySelector('#c3-add').value);
+      if (res) { keepDraft(root); A.render(); C().emailPreview(res.msg, res.recipients); }
+    });
     root.querySelectorAll('[data-rm]').forEach((b) => b.addEventListener('click', () => { if (C().removeParticipant(id, b.dataset.rm)) { keepDraft(root); A.render(); } }));
   }
 
