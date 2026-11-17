@@ -1,0 +1,128 @@
+[
+ {
+  "message_id": "MS-01",
+  "language_code": "ja",
+  "body": "Customer B 購買部門とのキックオフを実施しました。今後は毎月6か月分の需要予測を共有してもらえます。",
+  "translated_by": "MOCK",
+  "translated_at": "2027-06-05T02:00:00Z"
+ },
+ {
+  "message_id": "MS-02",
+  "language_code": "ja",
+  "body": "最初の予測を受領しました。第3四半期のギア需要は前年比8%減、駆動モジュールは横ばいです。",
+  "translated_by": "MOCK",
+  "translated_at": "2027-06-18T07:30:00Z"
+ },
+ {
+  "message_id": "MS-03",
+  "language_code": "ja",
+  "body": "@Tanaka 7月のレビューまでに第3四半期の包括発注の状況を更新してください。",
+  "translated_by": "MOCK",
+  "translated_at": "2027-07-02T01:00:00Z"
+ },
+ {
+  "message_id": "MS-04",
+  "language_code": "ja",
+  "body": "Suzuki（製造部長）による採用は上書きされました：Sato（経営企画）が不採用。理由：為替エクスポージャーは財務部で一括ヘッジしているため。",
+  "translated_by": "MOCK",
+  "translated_at": "2027-06-12T08:15:00Z"
+ },
+ {
+  "message_id": "MS-05",
+  "language_code": "ja",
+  "body": "家主に最初の提案を断られました。7月に向けて周辺賃料の比較資料を準備中です。",
+  "translated_by": "MOCK",
+  "translated_at": "2027-06-24T03:00:00Z"
+ },
+ {
+  "message_id": "MS-06",
+  "language_code": "ja",
+  "body": "@Nittaya 周辺賃料の比較資料ができたら共有してください。",
+  "translated_by": "MOCK",
+  "translated_at": "2027-07-01T02:00:00Z"
+ },
+ {
+  "message_id": "MS-07",
+  "language_code": "ja",
+  "body": "設備部品の納入が8月末に遅れます。8月はパラメーター変更のみで対応する案を検討中です。",
+  "translated_by": "MOCK",
+  "translated_at": "2027-06-28T06:00:00Z"
+ },
+ {
+  "message_id": "MS-08",
+  "language_code": "ja",
+  "body": "ありがとうございます。次回の更新では、パラメーター変更のみの案の想定効果も含めてください。",
+  "translated_by": "MOCK",
+  "translated_at": "2027-07-01T03:00:00Z"
+ },
+ {
+  "message_id": "MS-09",
+  "language_code": "ja",
+  "body": "2社目の代理店候補が辞退しました。ハイフォンで探索を再開します。",
+  "translated_by": "MOCK",
+  "translated_at": "2027-06-26T09:00:00Z"
+ },
+ {
+  "message_id": "MS-01",
+  "language_code": "th",
+  "body": "จัดประชุมเริ่มต้นกับฝ่ายจัดซื้อของ Customer B แล้ว ทางลูกค้าจะแชร์ประมาณการความต้องการ 6 เดือนทุกเดือน",
+  "translated_by": "MOCK",
+  "translated_at": "2027-06-05T02:00:00Z"
+ },
+ {
+  "message_id": "MS-02",
+  "language_code": "th",
+  "body": "ได้รับประมาณการครั้งแรกแล้ว ความต้องการเกียร์ไตรมาส 3 ต่ำกว่าปีก่อน 8% ส่วนโมดูลขับเคลื่อนทรงตัว",
+  "translated_by": "MOCK",
+  "translated_at": "2027-06-18T07:30:00Z"
+ },
+ {
+  "message_id": "MS-03",
+  "language_code": "th",
+  "body": "@Tanaka โปรดอัปเดตสถานะคำสั่งซื้อแบบเหมาไตรมาส 3 ก่อนการรีวิวเดือนกรกฎาคม",
+  "translated_by": "MOCK",
+  "translated_at": "2027-07-02T01:00:00Z"
+ },
+ {
+  "message_id": "MS-04",
+  "language_code": "th",
+  "body": "การอนุมัติโดย Suzuki (หัวหน้าฝ่ายผลิต) ถูกยกเลิก: Sato (ฝ่ายวางแผนองค์กร) ปฏิเสธ เหตุผล: ความเสี่ยงอัตราแลกเปลี่ยนได้รับการป้องกันความเสี่ยงจากส่วนกลางโดยฝ่ายการเงิน",
+  "translated_by": "MOCK",
+  "translated_at": "2027-06-12T08:15:00Z"
+ },
+ {
+  "message_id": "MS-05",
+  "language_code": "th",
+  "body": "เจ้าของอาคารปฏิเสธข้อเสนอแรก กำลังเตรียมข้อมูลเปรียบเทียบค่าเช่าตลาดสำหรับเดือนกรกฎาคม",
+  "translated_by": "MOCK",
+  "translated_at": "2027-06-24T03:00:00Z"
+ },
+ {
+  "message_id": "MS-06",
+  "language_code": "th",
+  "body": "@Nittaya โปรดแชร์ข้อมูลเปรียบเทียบค่าเช่าตลาดเมื่อพร้อม",
+  "translated_by": "MOCK",
+  "translated_at": "2027-07-01T02:00:00Z"
+ },
+ {
+  "message_id": "MS-07",
+  "language_code": "th",
+  "body": "ชิ้นส่วนอุปกรณ์ล่าช้าไปถึงปลายเดือนสิงหาคม กำลังพิจารณาทางเลือกปรับเฉพาะพารามิเตอร์สำหรับเดือนสิงหาคม",
+  "translated_by": "MOCK",
+  "translated_at": "2027-06-28T06:00:00Z"
+ },
+ {
+  "message_id": "MS-08",
+  "language_code": "th",
+  "body": "ขอบคุณครับ โปรดใส่ผลที่คาดว่าจะได้จากทางเลือกปรับเฉพาะพารามิเตอร์ในการอัปเดตครั้งถัดไป",
+  "translated_by": "MOCK",
+  "translated_at": "2027-07-01T03:00:00Z"
+ },
+ {
+  "message_id": "MS-09",
+  "language_code": "th",
+  "body": "ผู้สมัครตัวแทนจำหน่ายรายที่สองถอนตัว เริ่มค้นหาใหม่ที่ไฮฟอง",
+  "translated_by": "MOCK",
+  "translated_at": "2027-06-26T09:00:00Z"
+ }
+]

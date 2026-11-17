@@ -750,13 +750,50 @@ const MSG = [
 ];
 const app_chat_message = MSG.map(([action, author, type, body, mentions, email, due, at], i) => ({
   message_id: `MS-${pad(i + 1)}`, thread_id: `TH-${action}`, author_id: author, message_type: type, body, mentions: mentions.join(','), email_notified: email, due_date: due, sent_at: at,
+  language_code: 'en', ai_question: null, ai_model: null,
 }));
+// Ready translations of the seed messages (the app translates new ones with the AI on request; C-03 Translate button).
+const MSG_TR = {
+  ja: [
+    'Customer B 購買部門とのキックオフを実施しました。今後は毎月6か月分の需要予測を共有してもらえます。',
+    '最初の予測を受領しました。第3四半期のギア需要は前年比8%減、駆動モジュールは横ばいです。',
+    '@Tanaka 7月のレビューまでに第3四半期の包括発注の状況を更新してください。',
+    'Suzuki（製造部長）による採用は上書きされました：Sato（経営企画）が不採用。理由：為替エクスポージャーは財務部で一括ヘッジしているため。',
+    '家主に最初の提案を断られました。7月に向けて周辺賃料の比較資料を準備中です。',
+    '@Nittaya 周辺賃料の比較資料ができたら共有してください。',
+    '設備部品の納入が8月末に遅れます。8月はパラメーター変更のみで対応する案を検討中です。',
+    'ありがとうございます。次回の更新では、パラメーター変更のみの案の想定効果も含めてください。',
+    '2社目の代理店候補が辞退しました。ハイフォンで探索を再開します。',
+  ],
+  th: [
+    'จัดประชุมเริ่มต้นกับฝ่ายจัดซื้อของ Customer B แล้ว ทางลูกค้าจะแชร์ประมาณการความต้องการ 6 เดือนทุกเดือน',
+    'ได้รับประมาณการครั้งแรกแล้ว ความต้องการเกียร์ไตรมาส 3 ต่ำกว่าปีก่อน 8% ส่วนโมดูลขับเคลื่อนทรงตัว',
+    '@Tanaka โปรดอัปเดตสถานะคำสั่งซื้อแบบเหมาไตรมาส 3 ก่อนการรีวิวเดือนกรกฎาคม',
+    'การอนุมัติโดย Suzuki (หัวหน้าฝ่ายผลิต) ถูกยกเลิก: Sato (ฝ่ายวางแผนองค์กร) ปฏิเสธ เหตุผล: ความเสี่ยงอัตราแลกเปลี่ยนได้รับการป้องกันความเสี่ยงจากส่วนกลางโดยฝ่ายการเงิน',
+    'เจ้าของอาคารปฏิเสธข้อเสนอแรก กำลังเตรียมข้อมูลเปรียบเทียบค่าเช่าตลาดสำหรับเดือนกรกฎาคม',
+    '@Nittaya โปรดแชร์ข้อมูลเปรียบเทียบค่าเช่าตลาดเมื่อพร้อม',
+    'ชิ้นส่วนอุปกรณ์ล่าช้าไปถึงปลายเดือนสิงหาคม กำลังพิจารณาทางเลือกปรับเฉพาะพารามิเตอร์สำหรับเดือนสิงหาคม',
+    'ขอบคุณครับ โปรดใส่ผลที่คาดว่าจะได้จากทางเลือกปรับเฉพาะพารามิเตอร์ในการอัปเดตครั้งถัดไป',
+    'ผู้สมัครตัวแทนจำหน่ายรายที่สองถอนตัว เริ่มค้นหาใหม่ที่ไฮฟอง',
+  ],
+};
+const app_chat_message_text = Object.entries(MSG_TR).flatMap(([lang, list]) => list.map((body, i) => ({
+  message_id: `MS-${pad(i + 1)}`, language_code: lang, body, translated_by: 'MOCK', translated_at: app_chat_message[i].sent_at,
+})));
+if (app_chat_message_text.length !== app_chat_message.length * 2) throw new Error('Every seed chat message needs ja and th translations');
 const app_chat_read = [
   { thread_id: 'TH-ACT-001-SL-A01', user_id: 'u01', last_read_message_id: 'MS-02' },
   { thread_id: 'TH-ACT-005-AD-U01', user_id: 'u01', last_read_message_id: 'MS-05' },
   { thread_id: 'TH-ACT-007-MF-A01', user_id: 'u01', last_read_message_id: 'MS-07' },
   { thread_id: 'TH-ACT-001-SL-A01', user_id: 'u02', last_read_message_id: 'MS-02' },
 ];
+// In-app notifications (bell) for mentions; read when the user has read past the message in that thread.
+const msgOrder = (id) => Number(String(id).slice(3));
+const app_notification = app_chat_message.flatMap((msg) => (msg.mentions ? msg.mentions.split(',') : []).filter((u) => u !== msg.author_id).map((u) => {
+  const rd = app_chat_read.find((r) => r.thread_id === msg.thread_id && r.user_id === u);
+  return { user_id: u, thread_id: msg.thread_id, message_id: msg.message_id, kind: msg.message_type === 'SYSTEM' ? 'SYSTEM' : 'MENTION', email_sent: msg.email_notified,
+    created_at: msg.sent_at, read_at: rd && msgOrder(rd.last_read_message_id) >= msgOrder(msg.message_id) ? msg.sent_at : null };
+})).map((n, i) => ({ notification_id: `NT-${pad(i + 1)}`, ...n }));
 const app_audit_event = [];
 app_action_decision.forEach((d) => app_audit_event.push({ event_id: `AE-${pad(app_audit_event.length + 1)}`, resource_type: 'action', resource_id: d.action_id, actor_type: 'USER', actor_id: d.decided_by,
   event_type: `DECISION_${d.decision}`, old_value: null, new_value: d.reason || d.decision, occurred_at: d.decided_at }));
@@ -783,7 +820,7 @@ const db = {
   ml_model_run, ml_driver_sensitivity, ml_forecast_range,
   app_forecast_version: [], app_forecast_version_line: [], app_forecast_version_monthly: [], app_forecast_factor_selection: [], app_forecast_version_action: [],
   ai_run, ai_comment, ai_comment_text,
-  app_chat_thread, app_chat_participant, app_chat_message, app_chat_read, app_audit_event,
+  app_chat_thread, app_chat_participant, app_chat_message, app_chat_message_text, app_chat_read, app_notification, app_audit_event,
   app_saved_bi_view: [
     { view_id: 'BV-01', owner_id: 'u01', name: 'Regional revenue trend', definition_json: JSON.stringify({ rows: 'region', cols: 'period', measure: 'REV', scenario: 'ACT' }), shared: true },
     { view_id: 'BV-02', owner_id: 'u01', name: 'Product cost ratio', definition_json: JSON.stringify({ rows: 'product_category', cols: 'scenario', measure: 'GP', scenario: 'ALL' }), shared: true },

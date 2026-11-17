@@ -302,6 +302,7 @@
       db.app_action_effect_monthly.filter((e) => e.action_id === actionId).forEach((e) => {
         if (M.period(e.period_id).is_closed) { e.actual_effect = 0; e.outlook_effect = null; } else { e.outlook_effect = e.planned_effect; e.actual_effect = null; }
       });
+      if (App.Chat) App.Chat.ensureParticipants(actionId); // C-03 thread with default participants
     } else if (decision === 'REJECT') { a.decision_state = 'REJECTED'; a.adopted_period_id = null; }
     else if (decision === 'HOLD') { a.decision_state = 'ON_HOLD'; a.hold_until_period_id = holdUntil; a.adopted_period_id = null; }
     else if (decision === 'CANCEL_ADOPTION') {
@@ -348,7 +349,7 @@
       let th = db.app_chat_thread.find((x) => x.action_id === actionId);
       if (!th) { th = { thread_id: `TH-${actionId}`, action_id: actionId }; db.app_chat_thread.push(th); }
       db.app_chat_message.push({ message_id: `MS-L${db.app_chat_message.length + 1}`, thread_id: th.thread_id, author_id: state.userId, message_type: 'MESSAGE',
-        body: `[${t('update_progress')}: ${rf.oldPct}% → ${pct}%] ${note}`, mentions: '', email_notified: false, due_date: null, sent_at: nowIso() });
+        body: `[${t('update_progress')}: ${rf.oldPct}% → ${pct}%] ${note}`, mentions: '', email_notified: false, due_date: null, sent_at: nowIso(), language_code: state.lang });
     }
     rebuild();
     return rf;
@@ -375,6 +376,7 @@
       <div class="product">${esc(t('app_title'))}</div>
       <nav>${MENU.map((m) => `<button data-menu="${m.home}" class="${m === activeMenu ? 'active' : ''}">${esc(t(m.key))}</button>`).join('')}</nav>
       <div class="spacer"></div>
+      ${App.Chat ? App.Chat.bellHtml() : ''}
       <span class="sim-badge" title="${esc(t('simulated_note'))}">${esc(t('simulated'))}</span>`;
     $('#contextbar').innerHTML = `
       <div class="crumb">${crumbs.join('')}</div>
@@ -455,7 +457,7 @@
       // Deep link (e.g. notifications): #A02:PT-001, #A05:ACT-001-SL-A01, #A01
       const [scr, id] = decodeURIComponent(location.hash.slice(1)).split(':');
       if (scr === 'A02' && id && M.point(id)) { state.screen = 'A02'; state.params = { pointId: id, order: M.pointsFor(state.orgId, state.periodId).sort((a, b) => Math.abs(b.overall) - Math.abs(a.overall)).map((r) => r.point.point_id) }; }
-      else if (scr === 'A05' && id && M.action(id)) { state.screen = 'A05'; state.params = { actionId: id }; }
+      else if ((scr === 'A05' || scr === 'C03') && id && M.action(id)) { state.screen = scr; state.params = { actionId: id }; }
       else if (scr && SCREEN_ID[scr]) state.screen = scr;
       render();
     },
