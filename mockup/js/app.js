@@ -446,7 +446,7 @@
   const App = {
     db, state, get M() { return M; }, set M(v) { M = v; }, t, esc, $, $$, fmt, fmtSigned, tone, periodLabel, monthLabel, orgName, userName, user, metricName,
     aiText, aiPlain, actionName, actionNamePlain, actionDesc, pointTitle, selectablePeriods, userOrgs, canDecide, canConfirm, canEditOrg, ytdLabel,
-    Chart, openModal, toast, decide, rebuild, audit, go, render, SCREENS, SCREEN_ID, nowIso, actionColor, updateProgress,
+    Chart, SERIES, openModal, toast, decide, rebuild, audit, go, render, SCREENS, SCREEN_ID, nowIso, actionColor, updateProgress,
     /** Metric selection shared by the A-03 / A-04 tabs (README §10: kept when switching). */
     boardUi: { metrics: ['OP'], metric: 'OP', range: 'HIST', status: '' },
     start() {

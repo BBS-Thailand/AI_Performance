@@ -234,7 +234,8 @@ language and **translated** to the other six; re-runs create a new `version` (ne
 | `app_chat_message` | message_id, thread_id, author_id, message_type (`MESSAGE`, `PROGRESS_REQUEST`, `SYSTEM`), body, mentions, email_notified, due_date, sent_at |
 | `app_chat_read` | thread_id, user_id, last_read_message_id (unread counts) |
 | `app_audit_event` | event_id, resource_type, resource_id, actor_type (`USER`/`AI`/`SYSTEM`), actor_id, event_type, old_value, new_value, occurred_at |
-| `app_saved_bi_view` | view_id, owner_id, name, definition_json, shared |
+| `app_saved_bi_view` | view_id, owner_id, name, definition_json (`rows`, `cols`, `measures` [list; `measure` = first, kept for older views], `scenario` — `ALL` when scenario is on an axis, `range` `MONTH`/`YTD`/`FY`, `filters` [{dim, value}]), shared |
+| `app_report_favorite` | user_id, report_id (B-02 favorites; the mockup keeps it in memory only) |
 
 ## 5. Semantic model (Direct Lake) — key measures
 
@@ -256,7 +257,19 @@ Landing             := [With Actions] + [Included Factors]                      
 Landing vs Budget   := [Landing] - [Budget Annual]
 Other Unidentified  := [Variance YTD] - Σ Point impacts (current snapshot, org level)
 Other Unidentified (Month) := [Variance Month] - Σ impact_month (A-01 table)
+-- B-01 / B-02
+Cost of Sales       := [Revenue] - [Gross profit]                               -- not a Metric; derived
+Prior Year          := CALCULATE ( [Actual], same fiscal months of the previous year )
+Forecast Confirmed  := Σ app_forecast_version_monthly ( COALESCE ( actual, forecast ) )
+                       -- latest confirmed version of each leaf org as of the selected month;
+                       -- full-year total = Landing of F-01. Exists by organization × month × Metric only.
 ```
+
+**B-01 / B-02 dimensions:** division, department (`dim_organization`), quarter, month (`dim_fiscal_period`),
+region, customer (`dim_customer`), product category, product (`dim_product`), account class, account
+(`dim_account`), scenario (Actual, Budget, Prior year, Forecast confirmed). Customer and product exist only
+on revenue and standard cost-of-sales rows; other rows show as "(not allocated)". The confirmed Forecast is
+not available by customer, product or account.
 
 **RLS:** role `OrgScope` filters `dim_organization` to rows whose `org_path` starts with any
 `org_path` in `app_user_org_scope` for `USERPRINCIPALNAME()`. All app tables relate through `org_id`.
@@ -269,6 +282,8 @@ Other Unidentified (Month) := [Variance Month] - Σ impact_month (A-01 table)
 5. `Landing = Baseline + Action contribution + Included Factors`; the monthly layers (baseline / with Actions / landing) add up to the FY figures.
 6. Company Forecast = Σ latest confirmed org versions.
 7. A-03 / A-04 / A-05 / F-01 Action totals are identical for the same scope (all adopted Actions incl. completed / stopped), and the A-04 monthly bars add up to the year-end outlook.
+
+8. B-01 / B-02 agree with the other screens for the same scope: Actual and Budget = A-01 KPI values; any dimension breakdown adds up to the Metric total; Forecast confirmed (full year) = F-01 landing of the confirmed versions; the Action progress report = A-03 totals.
 
 ## 7. Mockup implementation notes
 - `mockup/tools/generate-mock-data.mjs` writes every table above to `mockup/data/<table>.json` (and a `mock-db.js` bundle) and **fails if any §6 reconciliation breaks**.
