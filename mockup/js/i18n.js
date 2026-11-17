@@ -886,5 +886,7 @@
     get: () => current,
     locale: () => (LANGS.find((l) => l.code === current) || LANGS[0]).locale,
     langName: (code) => (LANGS.find((l) => l.code === code) || {}).name || code,
+    /** Modules register their own strings: add({ en: {...}, ja: {...}, ... }). */
+    add: (dict) => Object.entries(dict).forEach(([lang, obj]) => { if (T[lang]) Object.assign(T[lang], obj); }),
   };
 })(window);

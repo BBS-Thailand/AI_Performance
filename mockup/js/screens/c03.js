@@ -80,21 +80,7 @@
       ${flags}<div class="c3-pact">${actions}</div></div>`;
   }
 
-  function aiBar() {
-    const { esc, t } = A;
-    const s = C().settings;
-    const prov = C().PROVIDERS.find((p) => p.id === s.provider) || C().PROVIDERS[0];
-    const keyState = s.key
-      ? `<span class="tag ps-ON_TRACK">✓ ${esc(t('c3_key_set'))}</span> <button class="linkbtn" data-key-clear>${esc(t('c3_key_clear'))}</button>`
-      : `<input type="password" id="c3-key" placeholder="${esc(t('c3_key_ph'))}" autocomplete="off" spellcheck="false"><button class="btn small" data-key-save>${esc(t('c3_key_save'))}</button>`;
-    return `<div class="c3-aibar">
-      <span class="ai-who">AI</span>
-      <label class="ctl">${esc(t('c3_provider'))} <select id="c3-provider">${C().PROVIDERS.map((p) => `<option value="${p.id}" ${p.id === prov.id ? 'selected' : ''}>${esc(p.name)}</option>`).join('')}</select></label>
-      <label class="ctl">${esc(t('c3_model'))} <select id="c3-model">${prov.models.map((m) => `<option value="${m.id}" ${m.id === s.model ? 'selected' : ''}>${esc(m.name)}</option>`).join('')}</select></label>
-      <span class="ctl">${esc(t('c3_key'))} ${keyState}</span>
-      <span class="hint c3-keyhint">${esc(s.key ? t('c3_key_hint_set') : t('c3_key_hint'))}</span>
-    </div>`;
-  }
+  const aiBar = () => C().aiBarHtml(); // shared with the C-01 panel (chat.js)
 
   function figures(a) {
     const { esc, t, fmt, M, state } = A;
@@ -295,21 +281,8 @@
     if (bell) bell.outerHTML = C().bellHtml();
     scrollDown(root);
 
-    // AI settings
-    const prov = root.querySelector('#c3-provider');
-    if (prov) prov.addEventListener('change', () => { C().settings.provider = prov.value; keepDraft(root); A.render(); });
-    const model = root.querySelector('#c3-model');
-    if (model) model.addEventListener('change', () => { C().settings.model = model.value; });
-    const save = root.querySelector('[data-key-save]');
-    if (save) save.addEventListener('click', () => {
-      const v = root.querySelector('#c3-key').value.trim();
-      if (!v) return;
-      C().settings.key = v; keepDraft(root); A.render(); A.toast(t('c3_key_saved'));
-    });
-    const keyIn = root.querySelector('#c3-key');
-    if (keyIn) keyIn.addEventListener('keydown', (e) => { if (e.key === 'Enter') save.click(); });
-    const clr = root.querySelector('[data-key-clear]');
-    if (clr) clr.addEventListener('click', () => { C().settings.key = ''; keepDraft(root); A.render(); });
+    // AI settings (shared bar)
+    C().bindAiBar(root.querySelector('.c3-thread'), () => keepDraft(root));
 
     // Composer
     const ta = root.querySelector('#c3-text');

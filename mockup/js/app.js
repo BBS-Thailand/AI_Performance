@@ -105,7 +105,7 @@
 
   /* ================================================================ charts */
   const Chart = {
-    /** Diverging horizontal bars. items: [{label, value, highlight}] */
+    /** Diverging horizontal bars. items: [{label, value, highlight, color?}] (color defaults to good/bad by sign) */
     hbar(items, { width = 640, rowH = 24, labelW = 190 } = {}) {
       if (!items.length) return `<div class="placeholder">–</div>`;
       const h = items.length * rowH + 24;
@@ -118,7 +118,7 @@
         const y = 8 + i * rowH;
         const w = sc(it.value);
         const x = w >= 0 ? zero : zero + w;
-        const col = it.value >= 0 ? 'var(--good)' : 'var(--bad)';
+        const col = it.color || (it.value >= 0 ? 'var(--good)' : 'var(--bad)');
         const op = it.highlight === false ? 0.35 : 1;
         const short = it.label.length > 26 ? it.label.slice(0, 25) + '…' : it.label;
         return `<text x="${labelW - 8}" y="${y + rowH / 2 + 4}" text-anchor="end" ${it.highlight ? 'style="font-weight:600;fill:var(--text)"' : ''}>${esc(short)}<title>${esc(it.label)}</title></text>
@@ -395,7 +395,8 @@
     const panel = $('#chatpanel');
     panel.classList.toggle('hidden', !state.chatOpen);
     if (!state.chatOpen) return;
-    panel.innerHTML = `<div class="card" style="margin:12px;box-shadow:none">
+    if (App.AiChat) { App.AiChat.render(); return; } // C-01 (js/aichat.js)
+    panel.innerHTML =`<div class="card" style="margin:12px;box-shadow:none">
       <h2>C-01 ${esc(t('ai_chat'))}</h2>
       <div class="ai-box small">
         <div><b>${esc(t('period'))}:</b> ${esc(ytdLabel())}</div>

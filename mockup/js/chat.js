@@ -33,6 +33,41 @@
   };
   const modelName = (id) => PROVIDERS.flatMap((p) => p.models).find((m) => m.id === id)?.name || id;
 
+  /** AI settings bar (provider · model · API key) shared by C-03 and the C-01 panel; one key serves both. */
+  function aiBarHtml() {
+    const { esc } = A;
+    const s = settings;
+    const prov = PROVIDERS.find((p) => p.id === s.provider) || PROVIDERS[0];
+    const keyState = s.key
+      ? `<span class="tag ps-ON_TRACK">✓ ${esc(t('c3_key_set'))}</span> <button class="linkbtn" data-key-clear>${esc(t('c3_key_clear'))}</button>`
+      : `<input type="password" data-ai-key placeholder="${esc(t('c3_key_ph'))}" autocomplete="off" spellcheck="false" aria-label="${esc(t('c3_key'))}"><button class="btn small" data-key-save>${esc(t('c3_key_save'))}</button>`;
+    return `<div class="c3-aibar">
+      <span class="ai-who">AI</span>
+      <label class="ctl">${esc(t('c3_provider'))} <select data-ai-provider>${PROVIDERS.map((p) => `<option value="${p.id}" ${p.id === prov.id ? 'selected' : ''}>${esc(p.name)}</option>`).join('')}</select></label>
+      <label class="ctl">${esc(t('c3_model'))} <select data-ai-model>${prov.models.map((m) => `<option value="${m.id}" ${m.id === s.model ? 'selected' : ''}>${esc(m.name)}</option>`).join('')}</select></label>
+      <span class="ctl">${esc(t('c3_key'))} ${keyState}</span>
+      <span class="hint c3-keyhint">${esc(s.key ? t('c3_key_hint_set') : t('c3_key_hint'))}</span>
+    </div>`;
+  }
+  /** Wire the bar inside root. before(): save unsent text before the page re-renders. */
+  function bindAiBar(root, before = () => {}) {
+    const rerender = () => { before(); A.render(); };
+    const prov = root.querySelector('[data-ai-provider]');
+    if (prov) prov.addEventListener('change', () => { settings.provider = prov.value; rerender(); });
+    const model = root.querySelector('[data-ai-model]');
+    if (model) model.addEventListener('change', () => { settings.model = model.value; rerender(); });
+    const save = root.querySelector('[data-key-save]');
+    const keyIn = root.querySelector('[data-ai-key]');
+    if (save) save.addEventListener('click', () => {
+      const v = keyIn.value.trim();
+      if (!v) return;
+      settings.key = v; rerender(); A.toast(t('c3_key_saved'));
+    });
+    if (keyIn) keyIn.addEventListener('keydown', (e) => { if (e.key === 'Enter') save.click(); });
+    const clr = root.querySelector('[data-key-clear]');
+    if (clr) clr.addEventListener('click', () => { settings.key = ''; rerender(); });
+  }
+
   /* ============================================================ thread data */
   const db = () => A.db;
   const thread = (actionId) => db().app_chat_thread.find((x) => x.action_id === actionId);
@@ -372,7 +407,7 @@
   }
 
   A.Chat = {
-    PROVIDERS, settings, modelName, thread, messages, participants, isParticipant, canManage, canStart, candidates, parseMentions,
+    PROVIDERS, settings, modelName, aiBarHtml, bindAiBar, loadSdk, LANG_EN, unknownNumbers, thread, messages, participants, isParticipant, canManage, canStart, candidates, parseMentions,
     post, startThread, addParticipant, removeParticipant, markRead, bellHtml, emailPreview, ask, translate, storedTranslation, actionContext, firstName, fmtWhen,
   };
 })();
