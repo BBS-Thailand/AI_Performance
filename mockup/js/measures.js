@@ -331,7 +331,7 @@
       const msgs = db.app_chat_message.filter((x) => x.thread_id === th.thread_id).sort((a, b) => String(a.sent_at).localeCompare(String(b.sent_at)));
       const rd = db.app_chat_read.find((x) => x.thread_id === th.thread_id && x.user_id === userId);
       const i = rd ? msgs.findIndex((x) => x.message_id === rd.last_read_message_id) : -1;
-      return { total: msgs.length, unread: msgs.length - (i + 1) };
+      return { total: msgs.length, unread: msgs.slice(i + 1).filter((x) => x.author_id !== userId).length }; // own posts never count as unread
     };
 
     /* ---------- Individual Factors ---------- */

@@ -8,7 +8,11 @@
   "mentions": "",
   "email_notified": false,
   "due_date": null,
-  "sent_at": "2027-06-05T02:00:00Z"
+  "sent_at": "2027-06-05T02:00:00Z",
+  "language_code": "en",
+  "ai_question": null,
+  "ai_model": null,
+  "ai_unverified": null
  },
  {
   "message_id": "MS-02",
@@ -19,7 +23,11 @@
   "mentions": "",
   "email_notified": false,
   "due_date": null,
-  "sent_at": "2027-06-18T07:30:00Z"
+  "sent_at": "2027-06-18T07:30:00Z",
+  "language_code": "en",
+  "ai_question": null,
+  "ai_model": null,
+  "ai_unverified": null
  },
  {
   "message_id": "MS-03",
@@ -30,21 +38,14 @@
   "mentions": "u02",
   "email_notified": true,
   "due_date": "2027-07-20",
-  "sent_at": "2027-07-02T01:00:00Z"
+  "sent_at": "2027-07-02T01:00:00Z",
+  "language_code": "en",
+  "ai_question": null,
+  "ai_model": null,
+  "ai_unverified": null
  },
  {
   "message_id": "MS-04",
-  "thread_id": "TH-ACT-002-MF-A02",
-  "author_id": null,
-  "message_type": "SYSTEM",
-  "body": "Adoption by Suzuki (Manufacturing Head) was overridden: rejected by Sato (Corporate Planning). Reason: FX exposure is hedged centrally by Treasury.",
-  "mentions": "u04",
-  "email_notified": true,
-  "due_date": null,
-  "sent_at": "2027-06-12T08:15:00Z"
- },
- {
-  "message_id": "MS-05",
   "thread_id": "TH-ACT-005-AD-U01",
   "author_id": "u05",
   "message_type": "MESSAGE",
@@ -52,10 +53,14 @@
   "mentions": "",
   "email_notified": false,
   "due_date": null,
-  "sent_at": "2027-06-24T03:00:00Z"
+  "sent_at": "2027-06-24T03:00:00Z",
+  "language_code": "en",
+  "ai_question": null,
+  "ai_model": null,
+  "ai_unverified": null
  },
  {
-  "message_id": "MS-06",
+  "message_id": "MS-05",
   "thread_id": "TH-ACT-005-AD-U01",
   "author_id": "u01",
   "message_type": "PROGRESS_REQUEST",
@@ -63,10 +68,14 @@
   "mentions": "u05",
   "email_notified": true,
   "due_date": "2027-07-15",
-  "sent_at": "2027-07-01T02:00:00Z"
+  "sent_at": "2027-07-01T02:00:00Z",
+  "language_code": "en",
+  "ai_question": null,
+  "ai_model": null,
+  "ai_unverified": null
  },
  {
-  "message_id": "MS-07",
+  "message_id": "MS-06",
   "thread_id": "TH-ACT-007-MF-A01",
   "author_id": "u04",
   "message_type": "MESSAGE",
@@ -74,10 +83,14 @@
   "mentions": "",
   "email_notified": false,
   "due_date": null,
-  "sent_at": "2027-06-28T06:00:00Z"
+  "sent_at": "2027-06-28T06:00:00Z",
+  "language_code": "en",
+  "ai_question": null,
+  "ai_model": null,
+  "ai_unverified": null
  },
  {
-  "message_id": "MS-08",
+  "message_id": "MS-07",
   "thread_id": "TH-ACT-007-MF-A01",
   "author_id": "u01",
   "message_type": "MESSAGE",
@@ -85,10 +98,14 @@
   "mentions": "u04",
   "email_notified": true,
   "due_date": null,
-  "sent_at": "2027-07-01T03:00:00Z"
+  "sent_at": "2027-07-01T03:00:00Z",
+  "language_code": "en",
+  "ai_question": null,
+  "ai_model": null,
+  "ai_unverified": null
  },
  {
-  "message_id": "MS-09",
+  "message_id": "MS-08",
   "thread_id": "TH-ACT-003-OS-A01",
   "author_id": "u03",
   "message_type": "MESSAGE",
@@ -96,6 +113,10 @@
   "mentions": "",
   "email_notified": false,
   "due_date": null,
-  "sent_at": "2027-06-26T09:00:00Z"
+  "sent_at": "2027-06-26T09:00:00Z",
+  "language_code": "en",
+  "ai_question": null,
+  "ai_model": null,
+  "ai_unverified": null
  }
 ]

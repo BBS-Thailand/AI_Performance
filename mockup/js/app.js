@@ -309,14 +309,13 @@
       db.app_action_effect_monthly.filter((e) => e.action_id === actionId).forEach((e) => { e.actual_effect = null; e.outlook_effect = null; });
     }
     audit(actionId, `DECISION_${decision}`, reason || (holdUntil ? `hold until ${holdUntil}` : decision));
-    // Override by a different (higher-level) user → system notice in the Action thread (C-03).
+    // Override by a different (higher-level) user → system notice in the Action chat (C-03), if someone has started one.
     if (prev && prev.decided_by !== state.userId) {
-      let th = db.app_chat_thread.find((x) => x.action_id === actionId);
-      if (!th) { th = { thread_id: `TH-${actionId}`, action_id: actionId }; db.app_chat_thread.push(th); }
-      db.app_chat_message.push({ message_id: `MS-L${db.app_chat_message.length + 1}`, thread_id: th.thread_id, author_id: null, message_type: 'SYSTEM',
+      const th = db.app_chat_thread.find((x) => x.action_id === actionId);
+      if (th) db.app_chat_message.push({ message_id: `MS-L${db.app_chat_message.length + 1}`, thread_id: th.thread_id, author_id: null, message_type: 'SYSTEM',
         body: `Decision by ${userName(prev.decided_by)} (${prev.decision}) was overridden: ${decision} by ${userName(state.userId)}.${reason ? ' Reason: ' + reason : ''}`,
         mentions: prev.decided_by, email_notified: true, due_date: null, sent_at: nowIso() });
-      toast(t('override_notice'));
+      if (th) toast(t('override_notice'));
     }
     rebuild();
     return true;
@@ -344,11 +343,11 @@
     if (pct >= 100 && a.end_period_id <= pid) a.execution_state = 'COMPLETED';
     else if (pct > 0 && a.execution_state === 'NOT_STARTED') a.execution_state = 'IN_PROGRESS';
     audit(actionId, 'PROGRESS_UPDATE', `${rf.oldPct}% → ${pct}% · outlook OP ${rf.outlookOld} → ${row.outlook_total_op} · ${rf.status}${note ? ' · ' + note : ''}`);
-    if (note) {
-      let th = db.app_chat_thread.find((x) => x.action_id === actionId);
-      if (!th) { th = { thread_id: `TH-${actionId}`, action_id: actionId }; db.app_chat_thread.push(th); }
+    // The note is always in the change history; it is also posted to the Action chat when one exists (chats are started by users).
+    const th = note && db.app_chat_thread.find((x) => x.action_id === actionId);
+    if (th) {
       db.app_chat_message.push({ message_id: `MS-L${db.app_chat_message.length + 1}`, thread_id: th.thread_id, author_id: state.userId, message_type: 'MESSAGE',
-        body: `[${t('update_progress')}: ${rf.oldPct}% → ${pct}%] ${note}`, mentions: '', email_notified: false, due_date: null, sent_at: nowIso() });
+        body: `[${t('update_progress')}: ${rf.oldPct}% → ${pct}%] ${note}`, mentions: '', email_notified: false, due_date: null, sent_at: nowIso(), language_code: state.lang });
     }
     rebuild();
     return rf;
@@ -375,6 +374,7 @@
       <div class="product">${esc(t('app_title'))}</div>
       <nav>${MENU.map((m) => `<button data-menu="${m.home}" class="${m === activeMenu ? 'active' : ''}">${esc(t(m.key))}</button>`).join('')}</nav>
       <div class="spacer"></div>
+      ${App.Chat ? App.Chat.bellHtml() : ''}
       <span class="sim-badge" title="${esc(t('simulated_note'))}">${esc(t('simulated'))}</span>`;
     $('#contextbar').innerHTML = `
       <div class="crumb">${crumbs.join('')}</div>
@@ -455,7 +455,7 @@
       // Deep link (e.g. notifications): #A02:PT-001, #A05:ACT-001-SL-A01, #A01
       const [scr, id] = decodeURIComponent(location.hash.slice(1)).split(':');
       if (scr === 'A02' && id && M.point(id)) { state.screen = 'A02'; state.params = { pointId: id, order: M.pointsFor(state.orgId, state.periodId).sort((a, b) => Math.abs(b.overall) - Math.abs(a.overall)).map((r) => r.point.point_id) }; }
-      else if (scr === 'A05' && id && M.action(id)) { state.screen = 'A05'; state.params = { actionId: id }; }
+      else if ((scr === 'A05' || scr === 'C03') && id && M.action(id)) { state.screen = scr; state.params = { actionId: id }; }
       else if (scr && SCREEN_ID[scr]) state.screen = scr;
       render();
     },

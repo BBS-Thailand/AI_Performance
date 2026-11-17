@@ -86,6 +86,7 @@
         case 'CHAT_MESSAGE': content = t('hist_CHAT', { b: e.new_value }); break;
         case 'CHAT_PROGRESS_REQUEST': content = t('hist_REQ', { b: e.new_value }); break;
         case 'CHAT_SYSTEM': content = t('hist_SYS', { b: e.new_value }); break;
+        case 'CHAT_AI': content = t('hist_CHAT_AI', { b: e.new_value }); break;
         default: content = `${e.event_type}: ${e.new_value}`;
       }
       const kind = e.event_type.startsWith('DECISION') ? 'dec' : e.event_type === 'AI_ASSESSMENT' ? 'ai' : e.event_type.startsWith('CHAT') ? 'chat' : 'prog';
