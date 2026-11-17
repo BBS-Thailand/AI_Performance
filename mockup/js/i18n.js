@@ -578,6 +578,16 @@
     vi: { exp_working: 'Đang tạo PDF…', exp_done: 'Đã xuất: {file}', exp_failed: 'Xuất thất bại. Vui lòng thử lại.', exp_by: 'Người xuất', exp_at: 'Thời điểm xuất', exp_screen: 'Màn hình' },
   };
   Object.entries(EXPORT).forEach(([lang, obj]) => Object.assign(T[lang], obj));
+  const EXPORT_XLSX = {
+    en: { exp_working_xlsx: 'Creating Excel…', exp_pdf_hint: 'Whole screen as shown', exp_xlsx_hint: 'Data of the tables on this screen', exp_no_tables: 'This screen has no table to export to Excel.', exp_info: 'Info' },
+    ja: { exp_working_xlsx: 'Excelを作成中…', exp_pdf_hint: '画面全体を表示のまま出力', exp_xlsx_hint: '画面上の表のデータを出力', exp_no_tables: 'この画面にはExcelに出力できる表がありません。', exp_info: '情報' },
+    th: { exp_working_xlsx: 'กำลังสร้าง Excel…', exp_pdf_hint: 'ทั้งหน้าจอตามที่แสดง', exp_xlsx_hint: 'ข้อมูลของตารางในหน้าจอนี้', exp_no_tables: 'หน้าจอนี้ไม่มีตารางให้ส่งออกเป็น Excel', exp_info: 'ข้อมูล' },
+    'zh-Hans': { exp_working_xlsx: '正在生成Excel…', exp_pdf_hint: '按显示内容导出整个画面', exp_xlsx_hint: '导出画面中表格的数据', exp_no_tables: '此画面没有可导出到Excel的表格。', exp_info: '信息' },
+    'zh-Hant': { exp_working_xlsx: '正在產生Excel…', exp_pdf_hint: '依顯示內容匯出整個畫面', exp_xlsx_hint: '匯出畫面中表格的資料', exp_no_tables: '此畫面沒有可匯出至Excel的表格。', exp_info: '資訊' },
+    id: { exp_working_xlsx: 'Membuat Excel…', exp_pdf_hint: 'Seluruh layar seperti yang ditampilkan', exp_xlsx_hint: 'Data tabel di layar ini', exp_no_tables: 'Layar ini tidak memiliki tabel untuk diekspor ke Excel.', exp_info: 'Info' },
+    vi: { exp_working_xlsx: 'Đang tạo Excel…', exp_pdf_hint: 'Toàn bộ màn hình như đang hiển thị', exp_xlsx_hint: 'Dữ liệu các bảng trên màn hình này', exp_no_tables: 'Màn hình này không có bảng để xuất ra Excel.', exp_info: 'Thông tin' },
+  };
+  Object.entries(EXPORT_XLSX).forEach(([lang, obj]) => Object.assign(T[lang], obj));
 
   /* ---- C-03 Action chat ---- */
   const CHAT = {

@@ -385,7 +385,7 @@
         <select id="ctx-org">${userOrgs().map((o) => `<option value="${o}" ${o === state.orgId ? 'selected' : ''}>${'  '.repeat(M.org(o).org_level - 1)}${esc(orgName(o))}</option>`).join('')}</select></div>
       <div class="ctl"><label for="ctx-lang">${esc(t('language'))}</label>
         <select id="ctx-lang">${I18N.LANGS.map((l) => `<option value="${l.code}" ${l.code === I18N.get() ? 'selected' : ''}>${esc(l.name)}</option>`).join('')}</select></div>
-      <button class="btn" data-fn="FN01">${esc(t('screen_output'))}</button>
+      <button class="btn" data-fn="FN01" aria-haspopup="menu">${esc(t('screen_output'))}</button>
       <button class="btn" data-fn="FN02">${esc(t('formatted_output'))}</button>
       <button class="btn toggle ${state.chatOpen ? 'on' : ''}" data-fn="C01">${esc(t('ai_chat'))}</button>
       <div class="ctl"><label for="ctx-user">${esc(t('user'))}</label>
@@ -431,7 +431,7 @@
       const fn = e.target.closest('[data-fn]');
       if (fn) {
         if (fn.dataset.fn === 'C01') { state.chatOpen = !state.chatOpen; renderShell(); renderChat(); }
-        else if (fn.dataset.fn === 'FN01') App.exportScreen();
+        else if (fn.dataset.fn === 'FN01') App.openExportMenu(fn);
         else toast(`FN-02: ${t('coming_next')}`);
         return;
       }
