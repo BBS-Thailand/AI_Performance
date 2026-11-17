@@ -347,6 +347,7 @@
   function systemPrompt(lang) {
     return [
       'You are the AI assistant (C-01) of an AI performance management app. It is a mockup: all data is simulated. The user asks about the screen they are looking at.',
+      C().langRule(lang),
       'Rules:',
       '1. Scope: answer about the period and organization in the context line, the data on the current screen, and data related to it: what the figures are made of or calculated from (accounts, formulas), breakdowns (department, customer, product, region, account, month), budget and prior-year comparisons, and the Points, Actions, Individual Factors and Forecast that affect them. Do not answer about other fiscal years or organizations outside the selected one: say it is outside the current context and suggest switching the period or organization in the header. Decline unrelated topics in one sentence.',
       '2. Numbers: get every figure from the tools and quote it as returned (JPY million unless stated). Never estimate, forecast or invent a number and do not do arithmetic yourself: the tools return variances, shares and what-if results. If no tool gives the figure, say so.',
@@ -354,7 +355,7 @@
       '4. Read-only: you cannot change data. If asked to add, adopt or update something, name the screen that does it and add an open_screen button.',
       '5. Charts: for a breakdown or a monthly trend call query_financials with chart=true; the app draws it under your answer. Call open_screen when the user should look at a screen.',
       '6. Mention where figures come from briefly when it helps, e.g. "(A-01, YTD Jun 2027)"; the app also lists the tool sources under your answer.',
-      `7. Write in ${C().LANG_EN[lang] || 'English'}. Plain text: short paragraphs or lines starting with "- "; no markdown headings, tables or bold. Keep it under about 150 words unless asked for a report comment. Do not narrate your tool calls.`,
+      `7. Write in ${C().langLabel(lang)}. Plain text: short paragraphs or lines starting with "- "; no markdown headings, tables or bold. Keep it under about 150 words unless asked for a report comment. Do not narrate your tool calls.`,
     ].join('\n');
   }
 
@@ -362,7 +363,8 @@
     return inEnglish(() => {
       const c = ctx();
       const focus = c.params.pointId ? `; point in focus ${c.params.pointId}` : c.params.actionId ? `; action in focus ${c.params.actionId}` : '';
-      return `[Context: screen ${scrName(c.screen)}; period ${A.periodLabel(c.pid)} (YTD ${ytdRange(c.pid)}); organization ${A.orgName(c.orgId)}${focus}]`;
+      // The reply language rides with every question, so it wins over earlier turns asked in another language.
+      return `[Context: screen ${scrName(c.screen)}; period ${A.periodLabel(c.pid)} (YTD ${ytdRange(c.pid)}); organization ${A.orgName(c.orgId)}${focus}; reply in ${C().langLabel(A.state.lang)}]`;
     });
   }
 

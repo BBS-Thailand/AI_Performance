@@ -250,6 +250,11 @@
 
   /* ================================================================== AI */
   const LANG_EN = { en: 'English', ja: 'Japanese', th: 'Thai', 'zh-Hans': 'Simplified Chinese', 'zh-Hant': 'Traditional Chinese', id: 'Indonesian', vi: 'Vietnamese' };
+  /** "Thai (ไทย)": the reply language in English and in its own script, so the model cannot mistake it. */
+  const langLabel = (lang) => `${LANG_EN[lang] || 'English'} (${I18N.langName(lang)})`;
+  /** Stated first in the rules and repeated with each question: earlier answers or data in another language
+   *  (e.g. Vietnam-related Actions) must not pull the reply into that language. */
+  const langRule = (lang) => `Reply language: ${langLabel(lang)}. Write the whole answer in ${LANG_EN[lang] || 'English'}, even if the question, the data or earlier messages are in another language. Keep IDs, names and numbers as they are.`;
   const isoDay = (iso) => String(iso).slice(0, 16).replace('T', ' ');
 
   /** The only facts the AI may use: this Action's figures, assessment, history and thread (all from the mock data). */
@@ -305,11 +310,12 @@
     }[kind];
     return [
       'You are the AI assistant inside the Action chat (screen C-03) of a performance management app. People use this thread to talk about one improvement Action. Your answer is posted in the thread and every participant reads it.',
+      langRule(lang),
       'Rules:',
       '1. Talk only about this Action: its progress, effect, plan, history and the conversation in the thread. If asked about anything else, reply in one sentence that this chat is for this Action and suggest the AI chat (C-01) for other questions.',
       '2. Use only figures that appear in the ACTION DATA. Quote them as given, in JPY million. Never estimate, forecast, recalculate, add up or invent a number, and do not answer what-if questions with numbers. If a question needs a new number (for example "what if it starts in August?"), say the app has not calculated it and suggest updating progress on A-03, which recalculates the outlook.',
       '3. If the data does not contain the answer, say so plainly.',
-      `4. Write in ${LANG_EN[lang] || 'English'}. Plain text only: no markdown headings, tables or bold. Keep it under about 120 words.`,
+      `4. Write in ${langLabel(lang)}. Plain text only: no markdown headings, tables or bold. Keep it under about 120 words.`,
       `Task: ${task}`,
     ].join('\n');
   }
@@ -366,7 +372,7 @@
     const body = {
       model, max_tokens: 1024,
       system: systemPrompt(kind, lang) + '\n\nACTION DATA\n' + context,
-      messages: [{ role: 'user', content: question || (kind === 'SUMMARY' ? 'Summarize this Action.' : 'Draft my next reply.') }],
+      messages: [{ role: 'user', content: `${question || (kind === 'SUMMARY' ? 'Summarize this Action.' : 'Draft my next reply.')}\n[Reply in ${langLabel(lang)}.]` }],
     };
     if (model === 'claude-haiku-5-5') body.thinking = { type: 'disabled' }; // quick chat replies; other models keep their default
     try {
@@ -393,7 +399,7 @@
     const Anthropic = await loadSdk().catch(() => { throw new Error(t('c3_err_sdk')); });
     const client = new Anthropic({ apiKey: settings.key, dangerouslyAllowBrowser: true });
     const body = { model: settings.model, max_tokens: 1024,
-      system: `Translate the chat message into ${LANG_EN[lang] || lang}. Keep names, IDs, numbers and @mentions unchanged. Output only the translation.`,
+      system: `Translate the chat message into ${langLabel(lang)}. Keep names, IDs, numbers and @mentions unchanged. Output only the translation.`,
       messages: [{ role: 'user', content: msg.body }] };
     if (settings.model === 'claude-haiku-5-5') body.thinking = { type: 'disabled' };
     try {
@@ -408,7 +414,7 @@
   }
 
   A.Chat = {
-    PROVIDERS, settings, modelName, aiBarHtml, bindAiBar, loadSdk, LANG_EN, unknownNumbers, thread, messages, participants, isParticipant, canManage, canStart, candidates, parseMentions,
+    PROVIDERS, settings, modelName, aiBarHtml, bindAiBar, loadSdk, LANG_EN, langLabel, langRule, unknownNumbers, thread, messages, participants, isParticipant, canManage, canStart, candidates, parseMentions,
     post, startThread, addParticipant, removeParticipant, markRead, bellHtml, emailPreview, ask, translate, storedTranslation, actionContext, firstName, fmtWhen,
   };
 })();
