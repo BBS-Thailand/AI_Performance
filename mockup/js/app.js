@@ -431,7 +431,8 @@
       const fn = e.target.closest('[data-fn]');
       if (fn) {
         if (fn.dataset.fn === 'C01') { state.chatOpen = !state.chatOpen; renderShell(); renderChat(); }
-        else toast(`${fn.dataset.fn === 'FN01' ? 'FN-01' : 'FN-02'}: ${t('coming_next')}`);
+        else if (fn.dataset.fn === 'FN01') App.exportScreen();
+        else toast(`FN-02: ${t('coming_next')}`);
         return;
       }
       if (e.target.closest('[data-reset]')) { try { localStorage.removeItem(STORE_KEY); } catch (err) { /* ignore */ } location.reload(); }
