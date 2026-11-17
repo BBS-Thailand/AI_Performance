@@ -7,7 +7,14 @@
    * Per-session UI state: AI answers being written (pending, posted for everyone when done), private Draft-reply cards
    * and errors, shown translations, unsent text, people ticked to invite when starting a chat.
    */
-  const local = { actionId: null, pending: {}, privates: {}, shown: new Set(), draft: {}, invite: {}, email: true, seq: 0 };
+  // Kept per demo user, so switching the user never shows someone else's unsent text, drafts or ticks.
+  const perUser = {};
+  const mine = (uid = A.state.userId) => perUser[uid] || (perUser[uid] = { pending: {}, privates: {}, draft: {}, invite: {} });
+  const local = {
+    actionId: null, shown: new Set(), email: true, seq: 0,
+    get pending() { return mine().pending; }, get privates() { return mine().privates; },
+    get draft() { return mine().draft; }, get invite() { return mine().invite; },
+  };
 
   const fmtWhen = (iso) => C().fmtWhen(iso);
   const statusOf = (a) => {
@@ -213,7 +220,9 @@
   async function runAi(root, kind, question) {
     const id = local.actionId;
     const p = { id: `P${++local.seq}`, kind, question, text: '', status: 'streaming', demo: !C().settings.key, model: C().settings.model, unknown: [] };
-    const bucket = kind === 'DRAFT' ? local.privates : local.pending;
+    const uid = A.state.userId; // the requester, even if the demo user is switched while the AI writes
+    const me = mine(uid);
+    const bucket = kind === 'DRAFT' ? me.privates : me.pending;
     (bucket[id] = bucket[id] || []).push(p);
     A.render();
     const email = local.email;
@@ -230,17 +239,17 @@
     }
     let posted = null;
     if (kind !== 'DRAFT') {
-      local.pending[id] = (local.pending[id] || []).filter((x) => x !== p);
-      if (p.status === 'error') (local.privates[id] = local.privates[id] || []).push(p);
+      me.pending[id] = (me.pending[id] || []).filter((x) => x !== p);
+      if (p.status === 'error') (me.privates[id] = me.privates[id] || []).push(p);
       else {
         // An @AI reply follows its question, which already notified everyone; a summary notifies on its own.
         posted = C().post(id, { body: p.text, type: 'AI', aiQuestion: kind === 'SUMMARY' ? 'SUMMARY' : question, aiModel: p.demo ? null : p.model,
-          aiUnverified: p.unknown, email: kind === 'SUMMARY' && email, notifyKind: kind === 'ASK' ? null : undefined });
+          aiUnverified: p.unknown, email: kind === 'SUMMARY' && email, notifyKind: kind === 'ASK' ? null : undefined, authorId: uid });
       }
     }
     if (A.state.screen === 'C03' && local.actionId === id) {
       keepDraft(document); A.render();
-      if (posted && kind === 'SUMMARY') {
+      if (posted && kind === 'SUMMARY' && A.state.userId === uid) {
         if (email && posted.recipients.length) C().emailPreview(posted.msg, posted.recipients);
         else A.toast(t('c3_ai_posted', { n: posted.recipients.length }));
       }

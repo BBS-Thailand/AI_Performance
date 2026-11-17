@@ -340,7 +340,9 @@
   /* =========================================================== conversation */
   // Session-only: turns of { q, ctx, text, steps[], sources[], charts[], buttons[], status, demo, model, unknown[] }.
   const S0 = () => ({ turns: [], history: [], busy: false, draft: '' });
-  let conv = S0();
+  // One private conversation per (demo) user: switching the user never shows someone else's chat.
+  const convs = {};
+  const cur = (uid = A.state.userId) => convs[uid] || (convs[uid] = S0());
 
   function systemPrompt(lang) {
     return [
@@ -364,7 +366,7 @@
     });
   }
 
-  async function askAi(turn, rerender, update) {
+  async function askAi(conv, turn, rerender, update) {
     let Anthropic;
     try { Anthropic = await C().loadSdk(); } catch (e) { throw new Error(t('c3_err_sdk')); }
     const settings = C().settings;
@@ -542,6 +544,7 @@
     const p = panel();
     if (!p) return;
     const { esc } = A;
+    const conv = cur();
     const turns = conv.turns.map(turnHtml).join('');
     const sugg = conv.busy ? '' : `<div class="ac-sugg"><div class="hint">${esc(t('ac_suggest'))}</div>${suggestions().map((s) => `<button class="chip" data-ac-sugg="${s.id}">${esc(s.q)}</button>`).join('')}</div>`;
     const keyNote = C().settings.key ? '' : `<p class="hint">${esc(t('ac_needs_key'))}</p>`;
@@ -561,13 +564,16 @@
   const scrollDown = () => { const b = document.getElementById('ac-msgs'); if (b) b.scrollTop = b.scrollHeight; };
 
   async function ask(q, suggestionId) {
+    const conv = cur(); // the asker's conversation, even if the demo user is switched while the AI writes
     if (conv.busy || !q.trim()) return;
     const turn = newTurn(q.trim());
     conv.turns.push(turn);
     conv.busy = true;
     conv.draft = '';
     render(); scrollDown();
+    const mineShown = () => cur() === conv && A.state.chatOpen;
     const update = () => {
+      if (!mineShown()) return;
       const el = document.querySelector(`#chatpanel [data-turn="${conv.turns.indexOf(turn)}"] [data-ac-text]`);
       if (el) { el.textContent = turn.text; scrollDown(); }
     };
@@ -580,17 +586,18 @@
         for (let k = 0; k <= full.length; k += 8) { turn.text = full.slice(0, k); update(); await new Promise((r) => setTimeout(r, 10)); }
         turn.text = full;
       } else {
-        await askAi(turn, () => { if (A.state.chatOpen) { render(); scrollDown(); } }, update);
+        await askAi(conv, turn, () => { if (mineShown()) { render(); scrollDown(); } }, update);
       }
       turn.status = 'done';
     } catch (e) {
       Object.assign(turn, { status: 'error', error: e.message });
     }
     conv.busy = false;
-    if (A.state.chatOpen) { render(); scrollDown(); }
+    if (mineShown()) { render(); scrollDown(); }
   }
 
   function mount(p) {
+    const conv = cur();
     const ta = p.querySelector('#ac-text');
     if (ta) {
       ta.addEventListener('input', () => { conv.draft = ta.value; });
@@ -605,14 +612,14 @@
       if (btn) A.go(btn.screen, btn.params);
     }));
     const nw = p.querySelector('[data-ac-new]');
-    if (nw) nw.addEventListener('click', () => { if (!conv.busy) { conv = S0(); render(); } });
+    if (nw) nw.addEventListener('click', () => { if (!conv.busy) { convs[A.state.userId] = S0(); render(); } });
     const cl = p.querySelector('[data-ac-close]');
     if (cl) cl.addEventListener('click', () => { A.state.chatOpen = false; A.render(); });
     C().bindAiBar(p, () => { if (ta) conv.draft = ta.value; });
     scrollDown();
   }
 
-  A.AiChat = { render, ask, TOOLS, runTool, reset: () => { conv = S0(); }, get conv() { return conv; } };
+  A.AiChat = { render, ask, TOOLS, runTool, reset: () => { delete convs[A.state.userId]; }, get conv() { return cur(); } };
 
   /* ================================================================ strings */
   I18N.add({

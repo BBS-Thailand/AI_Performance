@@ -115,10 +115,11 @@
    * notifyKind: override the notification kind; null = no notification (e.g. the AI reply right after its @AI question).
    * Returns { msg, recipients } — recipients are the participants who get a notification (and the email if ticked).
    */
-  function post(actionId, { body, type = 'MESSAGE', email = false, aiQuestion = null, aiModel = null, aiUnverified = null, lang = A.state.lang, notifyKind }) {
+  function post(actionId, { body, type = 'MESSAGE', email = false, aiQuestion = null, aiModel = null, aiUnverified = null, lang = A.state.lang, notifyKind, authorId }) {
     const th = thread(actionId);
     if (!th) return { msg: null, recipients: [] };
-    const author = type === 'SYSTEM' ? null : A.state.userId;
+    // authorId: the requester of an AI answer that finished after the demo user was switched.
+    const author = type === 'SYSTEM' ? null : (authorId || A.state.userId);
     // An AI answer may quote "@Name" from the thread; only people's own text creates mentions.
     const ment = type === 'MESSAGE' ? parseMentions(body, actionId) : { users: [], ai: false };
     const msg = { message_id: newId('MS', db().app_chat_message), thread_id: th.thread_id, author_id: author, message_type: type, body,
