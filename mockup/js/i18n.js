@@ -567,6 +567,18 @@
   };
   Object.entries(BI).forEach(([lang, obj]) => Object.assign(T[lang], obj));
 
+  /* ---- FN-01 Screen output ---- */
+  const EXPORT = {
+    en: { exp_working: 'Creating PDF…', exp_done: 'Exported: {file}', exp_failed: 'Export failed. Please try again.', exp_by: 'Exported by', exp_at: 'Exported at', exp_screen: 'Screen' },
+    ja: { exp_working: 'PDFを作成中…', exp_done: '出力しました：{file}', exp_failed: '出力に失敗しました。もう一度お試しください。', exp_by: '出力者', exp_at: '出力日時', exp_screen: '画面' },
+    th: { exp_working: 'กำลังสร้าง PDF…', exp_done: 'ส่งออกแล้ว: {file}', exp_failed: 'ส่งออกไม่สำเร็จ กรุณาลองอีกครั้ง', exp_by: 'ผู้ส่งออก', exp_at: 'เวลาที่ส่งออก', exp_screen: 'หน้าจอ' },
+    'zh-Hans': { exp_working: '正在生成PDF…', exp_done: '已导出：{file}', exp_failed: '导出失败，请重试。', exp_by: '导出人', exp_at: '导出时间', exp_screen: '画面' },
+    'zh-Hant': { exp_working: '正在產生PDF…', exp_done: '已匯出：{file}', exp_failed: '匯出失敗，請再試一次。', exp_by: '匯出者', exp_at: '匯出時間', exp_screen: '畫面' },
+    id: { exp_working: 'Membuat PDF…', exp_done: 'Diekspor: {file}', exp_failed: 'Ekspor gagal. Silakan coba lagi.', exp_by: 'Diekspor oleh', exp_at: 'Waktu ekspor', exp_screen: 'Layar' },
+    vi: { exp_working: 'Đang tạo PDF…', exp_done: 'Đã xuất: {file}', exp_failed: 'Xuất thất bại. Vui lòng thử lại.', exp_by: 'Người xuất', exp_at: 'Thời điểm xuất', exp_screen: 'Màn hình' },
+  };
+  Object.entries(EXPORT).forEach(([lang, obj]) => Object.assign(T[lang], obj));
+
   let current = 'en';
   function t(key, vars) {
     let s = (T[current] && T[current][key]) ?? T.en[key] ?? key;

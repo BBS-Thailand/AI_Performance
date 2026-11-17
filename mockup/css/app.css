@@ -389,3 +389,20 @@ td.prog .mini i { display: block; height: 3px; background: #1d5ea8; border-radiu
 .grid-table.rp-table tr.rp-sub td { font-weight: 600; background: var(--surface-2); }
 .grid-table.rp-table tr.rp-key td { font-weight: 600; background: var(--warn-soft); }
 .grid-table.rp-table tr.rp-muted td { color: var(--muted); }
+
+/* ---- FN-01 Screen output ----
+   `.exporting` is set only on the off-screen clone that html2canvas renders (js/export.js). */
+.export-busy, .export-busy * { cursor: progress !important; }
+.export-head { display: none; }
+.exporting, .exporting body { height: auto; }
+.exporting .topbar, .exporting .contextbar, .exporting .chatpanel, .exporting .toasts, .exporting .modal-backdrop { display: none !important; }
+.exporting .layout { display: block; height: auto; }
+.exporting main { overflow: visible; padding: 0 0 8px; background: #fff; }
+.exporting .export-head { display: block; border-bottom: 2px solid var(--text); padding-bottom: 8px; margin-bottom: 14px; }
+.exporting .export-title { font-size: 15px; font-weight: 600; margin-bottom: 4px; }
+.exporting .export-meta { display: flex; flex-wrap: wrap; gap: 4px 22px; color: var(--muted); font-size: 12px; }
+.exporting .export-meta b { color: var(--text); font-weight: 600; }
+.exporting .card { box-shadow: none; }
+/* Inner scroll areas print in full instead of being clipped. */
+.exporting .table-wrap, .exporting .causes, .exporting .a05-ai { overflow: visible; max-height: none; }
+.exporting .grid-table th, .exporting .grid-table.bi-pivot td:first-child { position: static; }
