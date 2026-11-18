@@ -5,7 +5,7 @@ It reads only the tables defined in [../docs/data-model.md](../docs/data-model.m
 JavaScript copy of the semantic-model measures, so the Fabric app can later swap the data source.
 
 ## Open
-Double-click `index.html` (no server or internet needed). Deep links: `index.html#A02:PT-001`, `index.html#A05:ACT-001-SL-A01`, `index.html#C03:ACT-001-SL-A01`. The C-03 AI uses the internet only when an API key is set.
+Double-click `index.html` (no server or internet needed). Deep links: `index.html#A02:IS-001`, `index.html#A05:ACT-001-SL-A01`, `index.html#C03:ACT-001-SL-A01`. The C-03 AI uses the internet only when an API key is set.
 
 ## Regenerate mock data
 ```sh
@@ -29,7 +29,7 @@ The generator asserts the reconciliations (slide figures, Point + Other = varian
 |---|---|
 | 1 (done) | Shell and global context, A-01, A-02, P-01, Adopt / Reject / Hold / Cancel adoption, permissions, override notice |
 | 2 | A-03 (done: Action Board, Metric filter, status counts, progress update → outlook reforecast → F-01), A-04 (done: stacked monthly effects, legend, reconciled table, AI comment), A-05 (done: effect figures, measured-figure graph, AI assessment, change history), C-03 (done: one chat per adopted Action started by a user who invites participants, @mentions, in-app bell + simulated email, 💬 header list of the chats each user can open with unread counts, @AI and Summarize answers visible to all participants, private Draft reply, Translate) |
-| 3 (done) | F-01 (three forecast options, model info, key drivers), P-02 (fixed factor list; driver or amount input), version confirmation and company roll-up |
+| 3 (done) | F-01 (three forecast options, model info, AI comment naming the key drivers), P-02 (fixed factor list; driver or amount input), version confirmation and company roll-up |
 | 4 | B-01 (done: left panel with Dimensions, Measures and Saved views as in the concept slide; pivot table with one or more measures, scenario, filters, drill-down, and a chart below), B-02 (done: nine standard reports by category, favorites, single-month / YTD, budget and prior-year comparison, confirmed Forecast version, AI Comment section under the report), C-01 (done: right panel from the header AI chat button on every screen; context line; read-only data tools anchored to the screen’s period and organization plus related data; app-drawn charts, sources, [Open …] buttons; what-if “stop this Action” calculated by the app; suggested questions without a key), FN-01, FN-02 |
 
 Demo tips: on A-03, the ✎ next to a progress value (owning organization, latest closed month) reforecasts the outlook; F-01 and A-04 update at once. Switch **Demo user** to see permission scopes (for example, the Overseas Sales head can't decide

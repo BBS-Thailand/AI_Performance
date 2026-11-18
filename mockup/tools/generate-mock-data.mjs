@@ -174,26 +174,26 @@ for (const [org, classes] of Object.entries(ORG_BUDGET)) {
   }
 }
 
-/* ----------------------------------------------- actual = budget + Point deltas */
+/* ----------------------------------------------- actual = budget + Insight deltas */
 for (const [k, v] of [...factMap]) {
   const [s, p, o, a, cu, pr] = k.split('|');
   if (s === 'BUD' && Number(p) <= AS_OF) addFact('ACT', Number(p), o, a, cu, pr, v);
 }
-// Child Point variance drivers (YTD Apr–Jun 2027). rev / cogs / sga are JPY M deltas vs budget.
+// Child Insight variance drivers (YTD Apr–Jun 2027). rev / cogs / sga are JPY M deltas vs budget.
 const POINT_DRIVERS = {
-  'PT-001-SL': { w: [20, 35, 45], rows: [{ o: 'SL', cu: 'C02', pr: 'P01', a: '4010', rev: -14.4, cogs: -10.2 }, { o: 'SL', cu: 'C02', pr: 'P03', a: '4010', rev: -9.6, cogs: -6.8 }] },
-  'PT-001-OS': { w: [20, 35, 45], rows: [{ o: 'OS', cu: 'C06', pr: 'P01', a: '4010', rev: -8, cogs: -6 }] },
-  // PT-002 and PT-004 ease month by month (A-01 shows them improving vs initial / vs last month).
-  'PT-002-MF': { w: [38, 34, 28], rows: [{ o: 'MF', a: '5030', cogs: 8 }] },
-  'PT-003-OS': { w: [20, 35, 45], rows: [{ o: 'OS', cu: 'C04', pr: 'P03', a: '4010', rev: 5, cogs: 3.3 }, { o: 'OS', cu: 'C05', pr: 'P02', a: '4010', rev: 4, cogs: 2.7 }] },
-  'PT-004-SL': { w: [40, 32, 28], rows: [{ o: 'SL', a: '6030', sga: 3 }] },
-  'PT-005-AD': { w: [20, 40, 40], rows: [{ o: 'AD', a: '6040', sga: -4 }] },
-  // PT-006 first appears in June, so A-01 shows it as "Raised in Jun (new)".
-  'PT-006-OS': { w: [0, 0, 100], rows: [{ o: 'OS', cu: 'C07', pr: 'P03', a: '4010', rev: -14, cogs: -10.5 }, { o: 'OS', cu: 'C07', pr: 'P04', a: '4010', rev: -10, cogs: -7.5 }] },
-  'PT-007-MF': { w: [0, 45, 55], rows: [{ o: 'MF', a: '5040', cogs: -5 }] },
-  // PT-008 is a new opportunity in June (concept slide 38: "Growth of high value-added products", Raised in Jun (new)).
-  'PT-008-SL': { w: [0, 0, 100], rows: [{ o: 'SL', cu: 'C03', pr: 'P04', a: '4010', rev: 8, cogs: 5 }] },
-  // OTHER absorbs PT-008 (rev −8, cogs −5 on SL) so the company KPIs stay on the concept figures.
+  'IS-001-SL': { w: [20, 35, 45], rows: [{ o: 'SL', cu: 'C02', pr: 'P01', a: '4010', rev: -14.4, cogs: -10.2 }, { o: 'SL', cu: 'C02', pr: 'P03', a: '4010', rev: -9.6, cogs: -6.8 }] },
+  'IS-001-OS': { w: [20, 35, 45], rows: [{ o: 'OS', cu: 'C06', pr: 'P01', a: '4010', rev: -8, cogs: -6 }] },
+  // IS-002 and IS-004 ease month by month (A-01 shows them improving vs initial / vs last month).
+  'IS-002-MF': { w: [38, 34, 28], rows: [{ o: 'MF', a: '5030', cogs: 8 }] },
+  'IS-003-OS': { w: [20, 35, 45], rows: [{ o: 'OS', cu: 'C04', pr: 'P03', a: '4010', rev: 5, cogs: 3.3 }, { o: 'OS', cu: 'C05', pr: 'P02', a: '4010', rev: 4, cogs: 2.7 }] },
+  'IS-004-SL': { w: [40, 32, 28], rows: [{ o: 'SL', a: '6030', sga: 3 }] },
+  'IS-005-AD': { w: [20, 40, 40], rows: [{ o: 'AD', a: '6040', sga: -4 }] },
+  // IS-006 first appears in June, so A-01 shows it as "Raised in Jun (new)".
+  'IS-006-OS': { w: [0, 0, 100], rows: [{ o: 'OS', cu: 'C07', pr: 'P03', a: '4010', rev: -14, cogs: -10.5 }, { o: 'OS', cu: 'C07', pr: 'P04', a: '4010', rev: -10, cogs: -7.5 }] },
+  'IS-007-MF': { w: [0, 45, 55], rows: [{ o: 'MF', a: '5040', cogs: -5 }] },
+  // IS-008 is a new opportunity in June (concept slide 38: "Growth of high value-added products", Raised in Jun (new)).
+  'IS-008-SL': { w: [0, 0, 100], rows: [{ o: 'SL', cu: 'C03', pr: 'P04', a: '4010', rev: 8, cogs: 5 }] },
+  // OTHER absorbs IS-008 (rev −8, cogs −5 on SL) so the company KPIs stay on the concept figures.
   OTHER: { w: [33, 33, 34], rows: [
     { o: 'SL', cu: 'C01', pr: 'P01', a: '4010', rev: -13, cogs: -10.5 }, { o: 'OS', cu: 'C08', pr: 'P02', a: '4010', rev: -3, cogs: -3.5 },
     { o: 'SL', a: '6050', sga: -0.5 }, { o: 'OS', a: '6050', sga: -0.5 }] },
@@ -222,19 +222,19 @@ for (const [k, v] of [...factMap]) {
 }
 FY26.forEach((p) => { addFact('ACT', p, 'MF', '5030', 'NA', 'NA', Math.round((rand() - 0.5) * 120)); addFact('ACT', p, 'MF', '5040', 'NA', 'NA', Math.round((rand() - 0.3) * 150)); });
 
-/* ----------------------------------------------------------------- Points */
+/* ----------------------------------------------------------------- Insights */
 const POINTS = [
   // parent, type, raised, gap dimension, indicator metric, indicator filter, children with annual OP impact by month [Apr, May, Jun]
-  { id: 'PT-001', type: 'ISSUE', raised: 202704, gap: 'CUSTOMER', ind: 'REV', filter: { customer_id: ['C02', 'C06'] }, kids: { 'PT-001-SL': [-23, -26, -28], 'PT-001-OS': [-7, -8, -8] } },
-  { id: 'PT-002', type: 'ISSUE', raised: 202704, gap: 'ACCOUNT', ind: 'GP', filter: { account_id: ['5030'] }, kids: { 'PT-002-MF': [-34, -32, -30] } },
-  { id: 'PT-003', type: 'OPPORTUNITY', raised: 202704, gap: 'CUSTOMER', ind: 'REV', filter: { customer_id: ['C04', 'C05'] }, kids: { 'PT-003-OS': [14, 16, 18] } },
-  { id: 'PT-004', type: 'ISSUE', raised: 202704, gap: 'ACCOUNT', ind: 'SGA', filter: { account_id: ['6030'], org_id: ['SL'] }, kids: { 'PT-004-SL': [-15, -13, -12] } },
-  { id: 'PT-005', type: 'OPPORTUNITY', raised: 202704, gap: 'ACCOUNT', ind: 'SGA', filter: { account_id: ['6040'], org_id: ['AD'] }, kids: { 'PT-005-AD': [10, 12, 14] } },
-  { id: 'PT-006', type: 'ISSUE', raised: 202706, gap: 'PRODUCT', ind: 'REV', filter: { customer_id: ['C07'] }, kids: { 'PT-006-OS': [null, null, -14] } },
-  { id: 'PT-007', type: 'OPPORTUNITY', raised: 202705, gap: 'ACCOUNT', ind: 'GP', filter: { account_id: ['5040'] }, kids: { 'PT-007-MF': [null, 14, 16] } },
-  { id: 'PT-008', type: 'OPPORTUNITY', raised: 202706, gap: 'PRODUCT', ind: 'REV', filter: { customer_id: ['C03'], product_id: ['P04'] }, kids: { 'PT-008-SL': [null, null, 12] } },
+  { id: 'IS-001', type: 'ISSUE', raised: 202704, gap: 'CUSTOMER', ind: 'REV', filter: { customer_id: ['C02', 'C06'] }, kids: { 'IS-001-SL': [-23, -26, -28], 'IS-001-OS': [-7, -8, -8] } },
+  { id: 'IS-002', type: 'ISSUE', raised: 202704, gap: 'ACCOUNT', ind: 'GP', filter: { account_id: ['5030'] }, kids: { 'IS-002-MF': [-34, -32, -30] } },
+  { id: 'IS-003', type: 'OPPORTUNITY', raised: 202704, gap: 'CUSTOMER', ind: 'REV', filter: { customer_id: ['C04', 'C05'] }, kids: { 'IS-003-OS': [14, 16, 18] } },
+  { id: 'IS-004', type: 'ISSUE', raised: 202704, gap: 'ACCOUNT', ind: 'SGA', filter: { account_id: ['6030'], org_id: ['SL'] }, kids: { 'IS-004-SL': [-15, -13, -12] } },
+  { id: 'IS-005', type: 'OPPORTUNITY', raised: 202704, gap: 'ACCOUNT', ind: 'SGA', filter: { account_id: ['6040'], org_id: ['AD'] }, kids: { 'IS-005-AD': [10, 12, 14] } },
+  { id: 'IS-006', type: 'ISSUE', raised: 202706, gap: 'PRODUCT', ind: 'REV', filter: { customer_id: ['C07'] }, kids: { 'IS-006-OS': [null, null, -14] } },
+  { id: 'IS-007', type: 'OPPORTUNITY', raised: 202705, gap: 'ACCOUNT', ind: 'GP', filter: { account_id: ['5040'] }, kids: { 'IS-007-MF': [null, 14, 16] } },
+  { id: 'IS-008', type: 'OPPORTUNITY', raised: 202706, gap: 'PRODUCT', ind: 'REV', filter: { customer_id: ['C03'], product_id: ['P04'] }, kids: { 'IS-008-SL': [null, null, 12] } },
 ];
-const POINT_STATUS = { 'PT-001': 'IN_ACTION', 'PT-002': 'IN_ACTION', 'PT-003': 'IN_ACTION', 'PT-004': 'IN_ACTION', 'PT-005': 'IN_ACTION', 'PT-006': 'OPEN', 'PT-007': 'IN_ACTION', 'PT-008': 'OPEN' };
+const POINT_STATUS = { 'IS-001': 'IN_ACTION', 'IS-002': 'IN_ACTION', 'IS-003': 'IN_ACTION', 'IS-004': 'IN_ACTION', 'IS-005': 'IN_ACTION', 'IS-006': 'OPEN', 'IS-007': 'IN_ACTION', 'IS-008': 'OPEN' };
 const app_point = [], app_point_impact_snapshot = [];
 for (const pt of POINTS) {
   app_point.push({ point_id: pt.id, parent_point_id: null, point_no: Number(pt.id.slice(3)), org_id: 'CO', point_type: pt.type, status: POINT_STATUS[pt.id],
@@ -267,49 +267,57 @@ for (const pt of POINTS) {
 }
 // Causes (as of Jun 2027) — numbers here, wording in ai_comment_text.
 const CAUSES = [
-  ['PT-001-SL', -18000, 'units', -4.2, 'fact_financial: customer C02 × product P01, Apr–Jun 2027 vs budget'],
-  ['PT-001-SL', -1200, 'units', -2.8, 'fact_financial: customer C02 × product P03, Apr–Jun 2027 vs budget'],
-  ['PT-001-OS', -6500, 'units', -2.0, 'fact_financial: customer C06 × product P01, Apr–Jun 2027 vs budget'],
-  ['PT-002-MF', 9, '%', -6.0, 'fact_financial: account 5030 (MF), purchase price index'],
-  ['PT-002-MF', 3, 'lots', -2.0, 'fact_financial: account 5030 (MF), spot purchase lots May 2027'],
-  ['PT-003-OS', 4100, 'units', 1.8, 'fact_financial: customer C04 × product P03, Apr–Jun 2027'],
-  ['PT-003-OS', 2600, 'units', 1.2, 'fact_financial: customer C05 × product P02, Apr–Jun 2027'],
-  ['PT-004-SL', 140, 'shipments', -2.1, 'fact_financial: account 6030 (SL), express freight'],
-  ['PT-004-SL', 12, '%', -0.9, 'fact_financial: account 6030 (SL), carrier fuel surcharge'],
-  ['PT-005-AD', 1, 'floor', 2.8, 'fact_financial: account 6040 (AD), rent'],
-  ['PT-005-AD', -18, '% kWh', 1.2, 'fact_financial: account 6040 (AD), utilities'],
-  ['PT-006-OS', 3, 'orders', -4.5, 'fact_financial: customer C07 × products P03/P04, Jun 2027'],
-  ['PT-006-OS', 2.4, 'months stock', -1.5, 'Distributor inventory report (proxy), Jun 2027'],
-  ['PT-007-MF', 3.5, 'pt yield', 5.0, 'fact_financial: account 5040 (MF); production yield log Line 1'],
-  ['PT-008-SL', 1300, 'units', 2.0, 'fact_financial: customer C03 × product P04, Jun 2027 vs budget'],
-  ['PT-008-SL', 6, '% price', 1.0, 'fact_financial: customer C03 × product P04, average selling price Jun 2027'],
+  ['IS-001-SL', -18000, 'units', -4.2, 'fact_financial: customer C02 × product P01, Apr–Jun 2027 vs budget'],
+  ['IS-001-SL', -1200, 'units', -2.8, 'fact_financial: customer C02 × product P03, Apr–Jun 2027 vs budget'],
+  ['IS-001-OS', -6500, 'units', -2.0, 'fact_financial: customer C06 × product P01, Apr–Jun 2027 vs budget'],
+  ['IS-002-MF', 9, '%', -6.0, 'fact_financial: account 5030 (MF), purchase price index'],
+  ['IS-002-MF', 3, 'lots', -2.0, 'fact_financial: account 5030 (MF), spot purchase lots May 2027'],
+  ['IS-003-OS', 4100, 'units', 1.8, 'fact_financial: customer C04 × product P03, Apr–Jun 2027'],
+  ['IS-003-OS', 2600, 'units', 1.2, 'fact_financial: customer C05 × product P02, Apr–Jun 2027'],
+  ['IS-004-SL', 140, 'shipments', -2.1, 'fact_financial: account 6030 (SL), express freight'],
+  ['IS-004-SL', 12, '%', -0.9, 'fact_financial: account 6030 (SL), carrier fuel surcharge'],
+  ['IS-005-AD', 1, 'floor', 2.8, 'fact_financial: account 6040 (AD), rent'],
+  ['IS-005-AD', -18, '% kWh', 1.2, 'fact_financial: account 6040 (AD), utilities'],
+  ['IS-006-OS', 3, 'orders', -4.5, 'fact_financial: customer C07 × products P03/P04, Jun 2027'],
+  ['IS-006-OS', 2.4, 'months stock', -1.5, 'Distributor inventory report (proxy), Jun 2027'],
+  ['IS-007-MF', 3.5, 'pt yield', 5.0, 'fact_financial: account 5040 (MF); production yield log Line 1'],
+  ['IS-008-SL', 1300, 'units', 2.0, 'fact_financial: customer C03 × product P04, Jun 2027 vs budget'],
+  ['IS-008-SL', 6, '% price', 1.0, 'fact_financial: customer C03 × product P04, average selling price Jun 2027'],
 ];
-const app_point_cause = CAUSES.map(([point_id, quantity_value, quantity_unit, impact_op, evidence_ref], i) => ({
-  cause_id: `CS-${pad(i + 1)}`, point_id, as_of_period_id: AS_OF, sort_order: i + 1, quantity_value, quantity_unit, impact_op, evidence_ref, comment_id: `CM-CAUSE-${pad(i + 1)}`,
-}));
+// Each cause carries an impact for all four Metrics (A-02 shows them like the A-01 columns): the OP figure above,
+// split to REV / GP / SG&A in the same ratio as its Insight's YTD impact at AS_OF.
+const snapAt = (pt, mt) => (app_point_impact_snapshot.find((s) => s.point_id === pt && s.as_of_period_id === AS_OF && s.metric_id === mt) || {}).impact_ytd || 0;
+const app_point_cause = CAUSES.map(([point_id, quantity_value, quantity_unit, impact_op, evidence_ref], i) => {
+  const op = snapAt(point_id, 'OP');
+  const part = (mt) => (op ? Math.round((impact_op * snapAt(point_id, mt) * 10) / op) / 10 : 0);
+  return {
+    cause_id: `CS-${pad(i + 1)}`, point_id, as_of_period_id: AS_OF, sort_order: i + 1, quantity_value, quantity_unit,
+    impact_rev: part('REV'), impact_gp: part('GP'), impact_sga: part('SGA'), impact_op, evidence_ref, comment_id: `CM-CAUSE-${pad(i + 1)}`,
+  };
+});
 
 /* ---------------------------------------------------------------- Actions */
 // kind: REV (revenue driven, GM 25%), COGS (cost), SGA. acct = account where effect lands.
 const ACTIONS = [
-  { id: 'ACT-001-SL-A01', point: 'PT-001-SL', org: 'SL', origin: 'AI', kind: 'REV', acct: '4010', start: 202706, end: 202712, plan: 7, outlook: 6, realized: { 202706: 0.4 },
+  { id: 'ACT-001-SL-A01', point: 'IS-001-SL', org: 'SL', origin: 'AI', kind: 'REV', acct: '4010', start: 202706, end: 202712, plan: 7, outlook: 6, realized: { 202706: 0.4 },
     decision: 'ADOPTED', exec: 'IN_PROGRESS', adopted: 202706, prog: { 202706: [20, 'ON_TRACK', 6] } },
-  { id: 'ACT-001-SL-A02', point: 'PT-001-SL', org: 'SL', origin: 'AI', kind: 'REV', acct: '4010', start: 202708, end: 202803, plan: 5, decision: 'PROPOSED', exec: 'NOT_STARTED' },
-  { id: 'ACT-001-SL-U01', point: 'PT-001-SL', org: 'SL', origin: 'USER', kind: 'REV', acct: '4010', start: 202707, end: 202709, plan: 2, decision: 'ON_HOLD', exec: 'NOT_STARTED', holdUntil: 202709 },
-  { id: 'ACT-001-OS-A01', point: 'PT-001-OS', org: 'OS', origin: 'AI', kind: 'REV', acct: '4010', start: 202706, end: 202803, plan: 3, outlook: 2.5, realized: { 202706: 0.2 },
+  { id: 'ACT-001-SL-A02', point: 'IS-001-SL', org: 'SL', origin: 'AI', kind: 'REV', acct: '4010', start: 202708, end: 202803, plan: 5, decision: 'PROPOSED', exec: 'NOT_STARTED' },
+  { id: 'ACT-001-SL-U01', point: 'IS-001-SL', org: 'SL', origin: 'USER', kind: 'REV', acct: '4010', start: 202707, end: 202709, plan: 2, decision: 'ON_HOLD', exec: 'NOT_STARTED', holdUntil: 202709 },
+  { id: 'ACT-001-OS-A01', point: 'IS-001-OS', org: 'OS', origin: 'AI', kind: 'REV', acct: '4010', start: 202706, end: 202803, plan: 3, outlook: 2.5, realized: { 202706: 0.2 },
     decision: 'ADOPTED', exec: 'IN_PROGRESS', adopted: 202706, prog: { 202706: [15, 'ON_TRACK', 2.5] } },
-  { id: 'ACT-002-MF-A01', point: 'PT-002-MF', org: 'MF', origin: 'AI', kind: 'COGS', acct: '5030', start: 202707, end: 202803, plan: 6, outlook: 5, realized: {},
+  { id: 'ACT-002-MF-A01', point: 'IS-002-MF', org: 'MF', origin: 'AI', kind: 'COGS', acct: '5030', start: 202707, end: 202803, plan: 6, outlook: 5, realized: {},
     decision: 'ADOPTED', exec: 'IN_PROGRESS', adopted: 202706, prog: { 202706: [25, 'ON_TRACK', 5] } },
-  { id: 'ACT-002-MF-A02', point: 'PT-002-MF', org: 'MF', origin: 'AI', kind: 'COGS', acct: '5030', start: 202707, end: 202803, plan: 3.5, decision: 'REJECTED', exec: 'NOT_STARTED' },
-  { id: 'ACT-003-OS-A01', point: 'PT-003-OS', org: 'OS', origin: 'AI', kind: 'REV', acct: '4010', start: 202707, end: 202803, plan: 4, outlook: 3, realized: {},
+  { id: 'ACT-002-MF-A02', point: 'IS-002-MF', org: 'MF', origin: 'AI', kind: 'COGS', acct: '5030', start: 202707, end: 202803, plan: 3.5, decision: 'REJECTED', exec: 'NOT_STARTED' },
+  { id: 'ACT-003-OS-A01', point: 'IS-003-OS', org: 'OS', origin: 'AI', kind: 'REV', acct: '4010', start: 202707, end: 202803, plan: 4, outlook: 3, realized: {},
     decision: 'ADOPTED', exec: 'IN_PROGRESS', adopted: 202705, prog: { 202705: [5, 'ON_TRACK', 4], 202706: [10, 'DELAYED', 3] } },
-  { id: 'ACT-004-SL-A01', point: 'PT-004-SL', org: 'SL', origin: 'AI', kind: 'SGA', acct: '6030', start: 202704, end: 202706, plan: 3, outlook: 2.5, realized: { 202704: 0.7, 202705: 0.9, 202706: 0.9 },
+  { id: 'ACT-004-SL-A01', point: 'IS-004-SL', org: 'SL', origin: 'AI', kind: 'SGA', acct: '6030', start: 202704, end: 202706, plan: 3, outlook: 2.5, realized: { 202704: 0.7, 202705: 0.9, 202706: 0.9 },
     decision: 'ADOPTED', exec: 'COMPLETED', adopted: 202704, prog: { 202704: [30, 'ON_TRACK', 3], 202705: [65, 'EFFECTIVE', 2.8], 202706: [100, 'COMPLETED', 2.5] } },
-  { id: 'ACT-005-AD-U01', point: 'PT-005-AD', org: 'AD', origin: 'USER', kind: 'SGA', acct: '6040', start: 202705, end: 202803, plan: 2.5, outlook: 1.5, realized: { 202705: 0.1, 202706: 0.2 },
+  { id: 'ACT-005-AD-U01', point: 'IS-005-AD', org: 'AD', origin: 'USER', kind: 'SGA', acct: '6040', start: 202705, end: 202803, plan: 2.5, outlook: 1.5, realized: { 202705: 0.1, 202706: 0.2 },
     decision: 'ADOPTED', exec: 'IN_PROGRESS', adopted: 202705, prog: { 202705: [20, 'ON_TRACK', 2.5], 202706: [40, 'AT_RISK', 1.5] } },
-  { id: 'ACT-006-OS-A01', point: 'PT-006-OS', org: 'OS', origin: 'AI', kind: 'REV', acct: '4010', start: 202707, end: 202712, plan: 2, decision: 'PROPOSED', exec: 'NOT_STARTED' },
-  { id: 'ACT-007-MF-A01', point: 'PT-007-MF', org: 'MF', origin: 'AI', kind: 'COGS', acct: '5040', start: 202706, end: 202803, plan: 4.5, outlook: 1.5, realized: { 202706: 0 },
+  { id: 'ACT-006-OS-A01', point: 'IS-006-OS', org: 'OS', origin: 'AI', kind: 'REV', acct: '4010', start: 202707, end: 202712, plan: 2, decision: 'PROPOSED', exec: 'NOT_STARTED' },
+  { id: 'ACT-007-MF-A01', point: 'IS-007-MF', org: 'MF', origin: 'AI', kind: 'COGS', acct: '5040', start: 202706, end: 202803, plan: 4.5, outlook: 1.5, realized: { 202706: 0 },
     decision: 'ADOPTED', exec: 'IN_PROGRESS', adopted: 202705, prog: { 202705: [0, 'ON_TRACK', 4.5], 202706: [10, 'DELAYED', 1.5] } },
-  { id: 'ACT-008-SL-A01', point: 'PT-008-SL', org: 'SL', origin: 'AI', kind: 'REV', acct: '4010', start: 202708, end: 202803, plan: 4, decision: 'PROPOSED', exec: 'NOT_STARTED' },
+  { id: 'ACT-008-SL-A01', point: 'IS-008-SL', org: 'SL', origin: 'AI', kind: 'REV', acct: '4010', start: 202708, end: 202803, plan: 4, decision: 'PROPOSED', exec: 'NOT_STARTED' },
 ];
 const TARGETS = { REV: ['REV', 'GP', 'OP'], COGS: ['GP', 'OP'], SGA: ['SGA', 'OP'] };
 const toMetric = (kind, metric, opCents) => {
@@ -624,13 +632,13 @@ comment('CM-SUM-202704-CO', 'A01_SUMMARY', 'org', 'CO', 202704, 'CO', {
   ja: '4月の営業利益は予算を下回りました。主因は顧客Bの数量減少、輸入材料価格の上昇、国内営業の物流費超過です。オフィスコスト削減と東南アジアの需要増が一部を相殺しています。',
   th: 'กำไรจากการดำเนินงานเดือนเมษายนต่ำกว่างบประมาณ สาเหตุหลักคือยอดขายลูกค้า B ลดลง ราคาวัตถุดิบนำเข้าสูงขึ้น และค่าขนส่งในประเทศเกินงบ การลดต้นทุนสำนักงานและความต้องการในเอเชียตะวันออกเฉียงใต้ช่วยชดเชยบางส่วน' });
 comment('CM-SUM-202705-CO', 'A01_SUMMARY', 'org', 'CO', 202705, 'CO', {
-  en: 'The YTD gap to budget widened in May. One new Point was raised: a yield improvement opportunity in manufacturing. Imported material cost pressure eased slightly after April. Three Actions were adopted this month.',
-  ja: '5月は予算差異が拡大しました。新たに1件のポイント（製造歩留まり改善の機会）を検出しました。輸入材料費の圧力は4月以降わずかに緩和しています。今月は3件のアクションが採用されました。',
-  th: 'ช่องว่างสะสมเทียบกับงบประมาณกว้างขึ้นในเดือนพฤษภาคม มีประเด็นใหม่ 1 เรื่อง คือโอกาสปรับปรุงผลผลิตในการผลิต แรงกดดันจากต้นทุนวัตถุดิบนำเข้าลดลงเล็กน้อยหลังเดือนเมษายน เดือนนี้อนุมัติแอคชัน 3 รายการ' });
+  en: 'The YTD gap to budget widened in May. One new Insight was raised: a yield improvement opportunity in manufacturing. Imported material cost pressure eased slightly after April. Three Actions were adopted this month.',
+  ja: '5月は予算差異が拡大しました。新たに1件のインサイト（製造歩留まり改善の機会）を検出しました。輸入材料費の圧力は4月以降わずかに緩和しています。今月は3件のアクションが採用されました。',
+  th: 'ช่องว่างสะสมเทียบกับงบประมาณกว้างขึ้นในเดือนพฤษภาคม มีอินไซต์ใหม่ 1 เรื่อง คือโอกาสปรับปรุงผลผลิตในการผลิต แรงกดดันจากต้นทุนวัตถุดิบนำเข้าลดลงเล็กน้อยหลังเดือนเมษายน เดือนนี้อนุมัติแอคชัน 3 รายการ' });
 comment('CM-SUM-202706-CO', 'A01_SUMMARY', 'org', 'CO', 202706, 'CO', {
-  en: 'YTD operating profit is JPY 86M, JPY 12M below budget. The largest issue is volume decline at Customer B (annualized −36M), followed by imported material cost increase (−30M, improved +4M since April). Two new Points were raised this month: order delays from Customer F in Indonesia (−14M) and an opportunity from domestic growth of high value-added control modules (+12M). Southeast Asian demand (+18M) and manufacturing yield (+16M) partly offset the issues. Adopted Actions have realized JPY 3.4M so far; their year-end outlook is JPY 22M against a plan of 30M, mainly because the Vietnam distributor expansion and the Line 2 yield rollout are delayed.',
-  ja: '当期累計の営業利益は86百万円で、予算を12百万円下回っています。最大の課題は顧客Bの数量減少（年換算−36百万円）、次いで輸入材料費の上昇（−30百万円、4月比+4百万円改善）です。今月は新たに2件のポイントを検出しました。顧客F（インドネシア）の受注遅延（−14百万円）と、高付加価値の制御モジュールの国内での伸長という機会（+12百万円）です。東南アジアの需要拡大（+18百万円）と製造歩留まり改善（+16百万円）が課題を一部相殺しています。採用済みアクションの実現効果は3.4百万円、年度末見込みは計画30百万円に対し22百万円です。主因はベトナム販売網拡大とライン2歩留まり展開の遅れです。',
-  th: 'กำไรจากการดำเนินงานสะสมอยู่ที่ 86 ล้านเยน ต่ำกว่างบประมาณ 12 ล้านเยน ประเด็นใหญ่ที่สุดคือยอดขายลูกค้า B ลดลง (ผลกระทบรายปี −36 ล้านเยน) รองลงมาคือต้นทุนวัตถุดิบนำเข้าสูงขึ้น (−30 ล้านเยน ดีขึ้น +4 ล้านเยนจากเดือนเมษายน) เดือนนี้พบประเด็นใหม่ 2 เรื่อง คือคำสั่งซื้อล่าช้าจากลูกค้า F ในอินโดนีเซีย (−14 ล้านเยน) และโอกาสจากการเติบโตของโมดูลควบคุมมูลค่าเพิ่มสูงในประเทศ (+12 ล้านเยน) ความต้องการในเอเชียตะวันออกเฉียงใต้ (+18 ล้านเยน) และการปรับปรุงผลผลิต (+16 ล้านเยน) ช่วยชดเชยบางส่วน แอคชันที่อนุมัติแล้วสร้างผลจริง 3.4 ล้านเยน และคาดการณ์ ณ สิ้นปี 22 ล้านเยน เทียบกับแผน 30 ล้านเยน เนื่องจากการขยายตัวแทนจำหน่ายในเวียดนามและการปรับปรุงผลผลิตสายการผลิต 2 ล่าช้า' });
+  en: 'YTD operating profit is JPY 86M, JPY 12M below budget. The largest issue is volume decline at Customer B (annualized −36M), followed by imported material cost increase (−30M, improved +4M since April). Two new Insights were raised this month: order delays from Customer F in Indonesia (−14M) and an opportunity from domestic growth of high value-added control modules (+12M). Southeast Asian demand (+18M) and manufacturing yield (+16M) partly offset the issues. Adopted Actions have realized JPY 3.4M so far; their year-end outlook is JPY 22M against a plan of 30M, mainly because the Vietnam distributor expansion and the Line 2 yield rollout are delayed.',
+  ja: '当期累計の営業利益は86百万円で、予算を12百万円下回っています。最大の課題は顧客Bの数量減少（年換算−36百万円）、次いで輸入材料費の上昇（−30百万円、4月比+4百万円改善）です。今月は新たに2件のインサイトを検出しました。顧客F（インドネシア）の受注遅延（−14百万円）と、高付加価値の制御モジュールの国内での伸長という機会（+12百万円）です。東南アジアの需要拡大（+18百万円）と製造歩留まり改善（+16百万円）が課題を一部相殺しています。採用済みアクションの実現効果は3.4百万円、年度末見込みは計画30百万円に対し22百万円です。主因はベトナム販売網拡大とライン2歩留まり展開の遅れです。',
+  th: 'กำไรจากการดำเนินงานสะสมอยู่ที่ 86 ล้านเยน ต่ำกว่างบประมาณ 12 ล้านเยน อินไซต์ใหญ่ที่สุดคือยอดขายลูกค้า B ลดลง (ผลกระทบรายปี −36 ล้านเยน) รองลงมาคือต้นทุนวัตถุดิบนำเข้าสูงขึ้น (−30 ล้านเยน ดีขึ้น +4 ล้านเยนจากเดือนเมษายน) เดือนนี้พบอินไซต์ใหม่ 2 เรื่อง คือคำสั่งซื้อล่าช้าจากลูกค้า F ในอินโดนีเซีย (−14 ล้านเยน) และโอกาสจากการเติบโตของโมดูลควบคุมมูลค่าเพิ่มสูงในประเทศ (+12 ล้านเยน) ความต้องการในเอเชียตะวันออกเฉียงใต้ (+18 ล้านเยน) และการปรับปรุงผลผลิต (+16 ล้านเยน) ช่วยชดเชยบางส่วน แอคชันที่อนุมัติแล้วสร้างผลจริง 3.4 ล้านเยน และคาดการณ์ ณ สิ้นปี 22 ล้านเยน เทียบกับแผน 30 ล้านเยน เนื่องจากการขยายตัวแทนจำหน่ายในเวียดนามและการปรับปรุงผลผลิตสายการผลิต 2 ล่าช้า' });
 comment('CM-SUM-202706-SL', 'A01_SUMMARY', 'org', 'SL', 202706, 'SL', {
   en: 'Sales Dept. YTD operating profit is JPY 9M below budget. Customer B volume decline (annualized −28M) and logistics cost overrun (−12M) are the main issues. Joint demand planning with Customer B started in June; the shipment consolidation Action was completed with JPY 2.5M realized. New this month: Customer C adopted the high-spec control module (+12M opportunity); the AI proposes offering it to Customers A and B.',
   ja: '営業部の当期累計営業利益は予算比9百万円の未達です。顧客Bの数量減少（年換算−28百万円）と物流費超過（−12百万円）が主な課題です。6月に顧客Bとの共同需要計画を開始し、出荷集約アクションは2.5百万円の効果を実現して完了しました。今月新たに、顧客Cが高仕様制御モジュールを採用した機会（+12百万円）を検出しました。AIは顧客A・Bへの提案を推奨しています。' });
@@ -645,16 +653,16 @@ comment('CM-SUM-202706-AD', 'A01_SUMMARY', 'org', 'AD', 202706, 'AD', {
   en: 'Administration SG&A is JPY 4M below budget (favorable) thanks to the returned office floor and lower utilities. The lease renegotiation is behind schedule.',
   ja: '管理部の販管費はオフィスフロア返却と光熱費削減により予算比4百万円の有利です。賃料再交渉は予定より遅れています。',
   th: 'ค่าใช้จ่ายขายและบริหารของฝ่ายบริหารต่ำกว่างบ 4 ล้านเยน (เป็นผลดี) จากการคืนพื้นที่สำนักงานและค่าสาธารณูปโภคที่ลดลง การเจรจาค่าเช่าใหม่ล่าช้ากว่ากำหนด' });
-// Point titles
+// Insight titles
 const TITLES = {
-  'PT-001': ['Volume decline at Customer B (Japan and Thailand)', '顧客B（日本・タイ）の数量減少', 'ยอดขายลูกค้า B (ญี่ปุ่นและไทย) ลดลง'],
-  'PT-002': ['Imported material cost increase', '輸入材料費の上昇', 'ต้นทุนวัตถุดิบนำเข้าสูงขึ้น'],
-  'PT-003': ['Demand growth in Southeast Asia', '東南アジアの需要拡大', 'ความต้องการเติบโตในเอเชียตะวันออกเฉียงใต้'],
-  'PT-004': ['Logistics cost overrun in domestic sales', '国内営業の物流費超過', 'ค่าขนส่งในประเทศเกินงบ'],
-  'PT-005': ['Office cost reduction', 'オフィスコストの削減', 'การลดต้นทุนสำนักงาน'],
-  'PT-006': ['Order delays from Customer F (Indonesia)', '顧客F（インドネシア）の受注遅延', 'คำสั่งซื้อล่าช้าจากลูกค้า F (อินโดนีเซีย)'],
-  'PT-007': ['Manufacturing yield improvement', '製造歩留まりの改善', 'การปรับปรุงผลผลิตการผลิต'],
-  'PT-008': ['Growth of high value-added control modules (domestic)', '高付加価値製品（制御モジュール）の国内での伸長', 'การเติบโตของโมดูลควบคุมมูลค่าเพิ่มสูงในประเทศ'],
+  'IS-001': ['Volume decline at Customer B (Japan and Thailand)', '顧客B（日本・タイ）の数量減少', 'ยอดขายลูกค้า B (ญี่ปุ่นและไทย) ลดลง'],
+  'IS-002': ['Imported material cost increase', '輸入材料費の上昇', 'ต้นทุนวัตถุดิบนำเข้าสูงขึ้น'],
+  'IS-003': ['Demand growth in Southeast Asia', '東南アジアの需要拡大', 'ความต้องการเติบโตในเอเชียตะวันออกเฉียงใต้'],
+  'IS-004': ['Logistics cost overrun in domestic sales', '国内営業の物流費超過', 'ค่าขนส่งในประเทศเกินงบ'],
+  'IS-005': ['Office cost reduction', 'オフィスコストの削減', 'การลดต้นทุนสำนักงาน'],
+  'IS-006': ['Order delays from Customer F (Indonesia)', '顧客F（インドネシア）の受注遅延', 'คำสั่งซื้อล่าช้าจากลูกค้า F (อินโดนีเซีย)'],
+  'IS-007': ['Manufacturing yield improvement', '製造歩留まりの改善', 'การปรับปรุงผลผลิตการผลิต'],
+  'IS-008': ['Growth of high value-added control modules (domestic)', '高付加価値製品（制御モジュール）の国内での伸長', 'การเติบโตของโมดูลควบคุมมูลค่าเพิ่มสูงในประเทศ'],
 };
 for (const [id, [en, ja, th]] of Object.entries(TITLES)) {
   const p = POINTS.find((x) => x.id === id);
@@ -887,6 +895,46 @@ M = build(db);
   const DRV = { FX_JPY_THB: ['JPY/THB exchange rate', '為替（円/バーツ）', 'อัตราแลกเปลี่ยนเยน/บาท'], VOLUME_PCT: ['sales volume', '販売数量', 'ปริมาณขาย'],
     PRICE_PCT: ['selling price', '販売単価', 'ราคาขาย'], MATERIAL_PCT: ['material prices', '材料価格', 'ราคาวัตถุดิบ'] };
   const UNIT = { FX_JPY_THB: ['+0.1 JPY/THB', '+0.1円/バーツ', '+0.1 เยน/บาท'], VOLUME_PCT: ['+1%', '+1%', '+1%'], PRICE_PCT: ['+1%', '+1%', '+1%'], MATERIAL_PCT: ['+1%', '+1%', '+1%'] };
+  // The comment explains the most influential drivers in plain words: "if X changes by …, revenue / operating profit for the
+  // rest of the year would change by about …" (ML model sensitivities, summed over the scope's departments, open months only).
+  const CHANGE = {
+    PRICE_PCT: ['the selling price rises by 1%', '販売単価が1%上がると', 'หากราคาขายเพิ่มขึ้น 1%'],
+    VOLUME_PCT: ['sales volume grows by 1%', '販売数量が1%増えると', 'หากปริมาณขายเพิ่มขึ้น 1%'],
+    MATERIAL_PCT: ['material prices rise by 1%', '材料価格が1%上がると', 'หากราคาวัตถุดิบเพิ่มขึ้น 1%'],
+    FX_JPY_THB: ['the yen weakens by 0.1 JPY per baht', '為替が1バーツあたり0.1円の円安になると', 'หากเงินเยนอ่อนค่าลง 0.1 เยนต่อบาท'],
+  };
+  const REST = ['the rest of the year (Jul–Mar)', '残り期間（7月〜3月）', 'ช่วงที่เหลือของปี (ก.ค.–มี.ค.)'];
+  const a1 = (v) => Math.abs(Math.round(v * 10) / 10);
+  const driverSentence = (org, i) => {
+    const leaves = M.leafOrgs(org);
+    const list = M.keyDrivers(org).map((d) => {
+      const step = d.driver_id === 'FX_JPY_THB' ? 0.1 : 1;
+      const sum = (mt) => leaves.reduce((s, o) => { const k = M.sensitivity(o, d.driver_id); return s + (k && k[mt] ? k[mt] : 0); }, 0) * step * OPEN27.length;
+      return { id: d.driver_id, rev: sum('REV'), op: sum('OP') };
+    }).filter((x) => Math.abs(x.op) >= 0.05).sort((a, b) => Math.abs(b.op) - Math.abs(a.op)).slice(0, 3);
+    if (!list.length) return '';
+    const up = (v, w) => (v >= 0 ? w[0] : w[1]);
+    if (i === 0) {
+      const one = ({ id, rev, op }) => {
+        const c = CHANGE[id][0];
+        const revPart = Math.abs(rev) >= 0.05 ? `revenue would ${up(rev, ['increase', 'decrease'])} by about ${a1(rev)}M and ` : '';
+        return `If ${c}, ${revPart}operating profit would ${up(op, ['increase', 'decrease'])} by about ${a1(op)}M.`;
+      };
+      return `\n\nWhat could still move the landing in ${REST[0]}:${list.map((x) => '\n• ' + one(x)).join('')}`;
+    }
+    if (i === 1) {
+      const one = ({ id, rev, op }) => {
+        const revPart = Math.abs(rev) >= 0.05 ? `売上高は約${a1(rev)}百万円${up(rev, ['増え', '減り'])}、` : '';
+        return `${CHANGE[id][1]}、${revPart}営業利益は約${a1(op)}百万円${up(op, ['増える', '減る'])}見込みです。`;
+      };
+      return `\n\n${REST[1]}の着地見込みを動かし得る主な要因：${list.map((x) => '\n・' + one(x)).join('')}`;
+    }
+    const one = ({ id, rev, op }) => {
+      const revPart = Math.abs(rev) >= 0.05 ? `รายได้จะ${up(rev, ['เพิ่มขึ้น', 'ลดลง'])}ประมาณ ${a1(rev)} ล้านเยน และ` : '';
+      return `${CHANGE[id][2]} ${revPart}กำไรจากการดำเนินงานจะ${up(op, ['เพิ่มขึ้น', 'ลดลง'])}ประมาณ ${a1(op)} ล้านเยน`;
+    };
+    return `\n\nปัจจัยที่อาจเปลี่ยนคาดการณ์ใน${REST[2]}:${list.map((x) => '\n• ' + one(x)).join('')}`;
+  };
   for (const org of ['SL', 'OS', 'MF', 'AD']) {
     const f = M.forecastLive(org, AS_OF, 'OP');
     const rg = M.baselineRange(org, 'OP');
@@ -895,8 +943,6 @@ M = build(db);
     const factors = M.factorsFor(org, AS_OF);
     const inc = factors.filter((x) => x.default_included), exc = factors.filter((x) => !x.default_included);
     const fa = (x) => M.factorAmount(x.factor_id, org, 'OP', FY27);
-    const top = M.keyDrivers(org)[0];
-    const per = top ? (top.driver_id === 'FX_JPY_THB' ? top.opPerUnit * 0.1 : top.opPerUnit) * OPEN27.length : 0;
     const txt = (i) => {
       const L = [i === 0 ? 'en' : i === 1 ? 'ja' : 'th'];
       const incList = inc.map((x) => `${x.factor_id} ${s1(fa(x))}`).join(', ');
@@ -906,25 +952,29 @@ M = build(db);
         + (inc.length ? `Included Individual Factors contribute ${s1(f.factor)}M (${incList}). ` : 'No Individual Factors are included. ')
         + `Landing is ${n1(f.landing)}M, ${s1(f.variance)}M vs budget.`
         + (exc.length ? ` Not included: ${excList}; including it would give ${n1(f.landing + exc.reduce((x, y) => x + fa(y), 0))}M.` : '')
-        + (top ? ` The most influential driver is ${DRV[top.driver_id][0]}: ${UNIT[top.driver_id][0]} changes the remaining-year operating profit by ${s1(per)}M.` : '');
+        + driverSentence(org, 0);
       if (L[0] === 'ja') return `アクションなしの場合、予測モデルは実績トレンドと受注残から営業利益を${n1(f.baseline)}百万円（80%区間 ${n1(rg.low)}〜${n1(rg.high)}）と予測しています。`
         + `採用済みアクション${acts.length}件が${s1(f.action)}百万円寄与します（計画${n1(plan)}百万円。未経過月は進捗に基づく見込み）。`
         + (inc.length ? `反映した個別要因は${s1(f.factor)}百万円です（${incList}）。` : '反映した個別要因はありません。')
         + `着地見込みは${n1(f.landing)}百万円、予算比${s1(f.variance)}百万円です。`
         + (exc.length ? `未反映：${excList}。反映すると${n1(f.landing + exc.reduce((x, y) => x + fa(y), 0))}百万円になります。` : '')
-        + (top ? `最も影響の大きいドライバーは${DRV[top.driver_id][1]}で、${UNIT[top.driver_id][1]}の変化で残期間の営業利益が${s1(per)}百万円変動します。` : '');
+        + driverSentence(org, 1);
       return `หากไม่มีแอคชัน โมเดลพยากรณ์คาดการณ์กำไรจากการดำเนินงาน ${n1(f.baseline)} ล้านเยน (ช่วง 80% ${n1(rg.low)}–${n1(rg.high)}) จากแนวโน้มจริงและยอดคำสั่งซื้อคงค้าง `
         + `แอคชันที่อนุมัติ ${acts.length} รายการเพิ่ม ${s1(f.action)} ล้านเยน (แผน ${n1(plan)}) `
         + (inc.length ? `ปัจจัยเฉพาะที่รวมไว้ ${s1(f.factor)} ล้านเยน (${incList}) ` : 'ไม่มีปัจจัยเฉพาะที่รวมไว้ ')
         + `คาดการณ์ ณ สิ้นปี ${n1(f.landing)} ล้านเยน (${s1(f.variance)} เทียบงบประมาณ)`
         + (exc.length ? ` ยังไม่รวม: ${excList}` : '')
-        + (top ? ` ตัวขับเคลื่อนที่มีผลมากที่สุดคือ${DRV[top.driver_id][2]}: ${UNIT[top.driver_id][2]} เปลี่ยนกำไรช่วงที่เหลือ ${s1(per)} ล้านเยน` : '');
+        + driverSentence(org, 2);
     };
     comment(`CM-F01-202706-${org}`, 'F01_EXPLANATION', 'org', org, 202706, org, { en: txt(0), ja: txt(1), th: txt(2) });
     ai_comment[ai_comment.length - 1].basis_landing_op = f.landing; // lets F-01 flag the text as outdated after changes
   }
   const co = ai_comment.find((x) => x.comment_id === 'CM-F01-202706-CO');
-  if (co) co.basis_landing_op = 352.5;
+  if (co) {
+    co.basis_landing_op = 352.5;
+    // Company comment: add the same driver sentence (text rows keyed by comment_id + language).
+    ai_comment_text.filter((x) => x.comment_id === co.comment_id).forEach((x) => { const i = { en: 0, ja: 1, th: 2 }[x.language_code]; if (i !== undefined) x.text += driverSentence('CO', i); });
+  }
 }
 M = build(db);
 
@@ -988,10 +1038,10 @@ const leafSum = ['SL', 'OS', 'MF', 'AD'].reduce((s, o) => s + M.actualYTD(o, AS_
 assertEq('Σ leaf OP = company OP', M.r2(leafSum), 86);
 const pts = M.pointsFor('CO', AS_OF);
 const other = M.otherVariance('CO', AS_OF, pts);
-assertEq('Point OP impacts + Other = OP variance', M.r2(pts.reduce((s, r) => s + r.impacts.OP, 0) + other.OP), -12);
+assertEq('Insight OP impacts + Other = OP variance', M.r2(pts.reduce((s, r) => s + r.impacts.OP, 0) + other.OP), -12);
 assertEq('Other / unidentified OP', other.OP, -1);
 const otherJun = M.otherVariance('CO', AS_OF, pts, 'month');
-assertEq('June: Point OP impacts + Other = June OP variance', M.r2(pts.reduce((s, r) => s + r.monthImpacts.OP, 0) + otherJun.OP), M.varianceMonth('CO', AS_OF, 'OP'));
+assertEq('June: Insight OP impacts + Other = June OP variance', M.r2(pts.reduce((s, r) => s + r.monthImpacts.OP, 0) + otherJun.OP), M.varianceMonth('CO', AS_OF, 'OP'));
 const roll = M.forecastRollup('CO', AS_OF, 'OP');
 assertEq('Company baseline (no Actions)', roll.baseline, 328);
 assertEq('Company Action contribution', roll.action, 22);
@@ -1031,6 +1081,14 @@ for (const pid of [202704, 202705, 202706]) {
   }
 }
 console.log('  ✓ OP = GP − SG&A for all orgs and periods');
+for (const pt of new Set(app_point_cause.map((c) => c.point_id))) {
+  const cs = app_point_cause.filter((c) => c.point_id === pt);
+  [['REV', 'impact_rev'], ['GP', 'impact_gp'], ['SGA', 'impact_sga'], ['OP', 'impact_op']].forEach(([mt, col]) => {
+    const s = cs.reduce((a, c) => a + c[col], 0);
+    if (Math.abs(s - snapAt(pt, mt)) > 0.15) throw new Error(`A-02 causes ${pt} ${mt}: ${s} ≠ Insight impact ${snapAt(pt, mt)}`);
+  });
+}
+console.log('  ✓ A-02 cause impacts add up to the Insight impact for every Metric');
 
 /* ------------------------------------------------------------------- write */
 for (const [name, rows] of Object.entries(db)) fs.writeFileSync(path.join(outDir, `${name}.json`), JSON.stringify(rows, null, 1));

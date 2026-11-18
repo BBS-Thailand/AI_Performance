@@ -311,7 +311,7 @@
       const lines = [];
       lines.push(`Action: ${a.action_id} "${A.actionNamePlain(a)}"`);
       lines.push(`Description: ${A.aiPlain(a.description_comment_id) || a.description || '-'}`);
-      lines.push(`Point: ${a.point_id}${pt ? ` "${A.aiPlain(pt.title_comment_id)}"` : ''}`);
+      lines.push(`Insight: ${a.point_id}${pt ? ` "${A.aiPlain(pt.title_comment_id)}"` : ''}`);
       lines.push(`Owning organization: ${A.orgName(a.owner_org_id)}`);
       lines.push(`Execution period: ${A.periodLabel(a.start_period_id)} to ${A.periodLabel(a.end_period_id)}`);
       lines.push(`As of: ${A.periodLabel(pid)} (latest closed month in the app: ${A.periodLabel(M.latestClosed())})`);
@@ -367,7 +367,7 @@
 
   /** Numbers in an AI answer that are not in the Action data (rule 2 check, flagged on the posted answer for everyone). */
   function unknownNumbers(answer, context) {
-    const strip = (s) => String(s).replace(/\b(?:ACT|PT|FV|FC|EV|MS|TH)-[\w-]+/g, ' ').replace(/\b\d{4}-\d{2}-\d{2}\b/g, ' ').replace(/\b\d{1,2}[/:]\d{1,2}\b/g, ' ').replace(/\b20\d{2}\b/g, ' ');
+    const strip = (s) => String(s).replace(/\b(?:ACT|IS|FV|FC|EV|MS|TH)-[\w-]+/g, ' ').replace(/\b\d{4}-\d{2}-\d{2}\b/g, ' ').replace(/\b\d{1,2}[/:]\d{1,2}\b/g, ' ').replace(/\b20\d{2}\b/g, ' ');
     const nums = (s) => [...strip(s).matchAll(/[-−]?\d+(?:[.,]\d+)?/g)].map((m) => Number(m[0].replace('−', '-').replace(',', '.'))).filter((n) => !Number.isNaN(n));
     const known = nums(context);
     const ok = (n) => Math.abs(n) <= 12 && Number.isInteger(n) || known.some((k) => Math.abs(Math.abs(k) - Math.abs(n)) < 0.051);

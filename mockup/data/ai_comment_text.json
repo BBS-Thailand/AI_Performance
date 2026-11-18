@@ -26,7 +26,7 @@
  {
   "comment_id": "CM-SUM-202705-CO",
   "language_code": "en",
-  "text": "The YTD gap to budget widened in May. One new Point was raised: a yield improvement opportunity in manufacturing. Imported material cost pressure eased slightly after April. Three Actions were adopted this month.",
+  "text": "The YTD gap to budget widened in May. One new Insight was raised: a yield improvement opportunity in manufacturing. Imported material cost pressure eased slightly after April. Three Actions were adopted this month.",
   "is_base": true,
   "translated_at": null,
   "reviewed_by": null
@@ -34,7 +34,7 @@
  {
   "comment_id": "CM-SUM-202705-CO",
   "language_code": "ja",
-  "text": "5月は予算差異が拡大しました。新たに1件のポイント（製造歩留まり改善の機会）を検出しました。輸入材料費の圧力は4月以降わずかに緩和しています。今月は3件のアクションが採用されました。",
+  "text": "5月は予算差異が拡大しました。新たに1件のインサイト（製造歩留まり改善の機会）を検出しました。輸入材料費の圧力は4月以降わずかに緩和しています。今月は3件のアクションが採用されました。",
   "is_base": false,
   "translated_at": "2027-07-03T00:00:00Z",
   "reviewed_by": null
@@ -42,7 +42,7 @@
  {
   "comment_id": "CM-SUM-202705-CO",
   "language_code": "th",
-  "text": "ช่องว่างสะสมเทียบกับงบประมาณกว้างขึ้นในเดือนพฤษภาคม มีประเด็นใหม่ 1 เรื่อง คือโอกาสปรับปรุงผลผลิตในการผลิต แรงกดดันจากต้นทุนวัตถุดิบนำเข้าลดลงเล็กน้อยหลังเดือนเมษายน เดือนนี้อนุมัติแอคชัน 3 รายการ",
+  "text": "ช่องว่างสะสมเทียบกับงบประมาณกว้างขึ้นในเดือนพฤษภาคม มีอินไซต์ใหม่ 1 เรื่อง คือโอกาสปรับปรุงผลผลิตในการผลิต แรงกดดันจากต้นทุนวัตถุดิบนำเข้าลดลงเล็กน้อยหลังเดือนเมษายน เดือนนี้อนุมัติแอคชัน 3 รายการ",
   "is_base": false,
   "translated_at": "2027-07-03T00:00:00Z",
   "reviewed_by": null
@@ -50,7 +50,7 @@
  {
   "comment_id": "CM-SUM-202706-CO",
   "language_code": "en",
-  "text": "YTD operating profit is JPY 86M, JPY 12M below budget. The largest issue is volume decline at Customer B (annualized −36M), followed by imported material cost increase (−30M, improved +4M since April). Two new Points were raised this month: order delays from Customer F in Indonesia (−14M) and an opportunity from domestic growth of high value-added control modules (+12M). Southeast Asian demand (+18M) and manufacturing yield (+16M) partly offset the issues. Adopted Actions have realized JPY 3.4M so far; their year-end outlook is JPY 22M against a plan of 30M, mainly because the Vietnam distributor expansion and the Line 2 yield rollout are delayed.",
+  "text": "YTD operating profit is JPY 86M, JPY 12M below budget. The largest issue is volume decline at Customer B (annualized −36M), followed by imported material cost increase (−30M, improved +4M since April). Two new Insights were raised this month: order delays from Customer F in Indonesia (−14M) and an opportunity from domestic growth of high value-added control modules (+12M). Southeast Asian demand (+18M) and manufacturing yield (+16M) partly offset the issues. Adopted Actions have realized JPY 3.4M so far; their year-end outlook is JPY 22M against a plan of 30M, mainly because the Vietnam distributor expansion and the Line 2 yield rollout are delayed.",
   "is_base": true,
   "translated_at": null,
   "reviewed_by": null
@@ -58,7 +58,7 @@
  {
   "comment_id": "CM-SUM-202706-CO",
   "language_code": "ja",
-  "text": "当期累計の営業利益は86百万円で、予算を12百万円下回っています。最大の課題は顧客Bの数量減少（年換算−36百万円）、次いで輸入材料費の上昇（−30百万円、4月比+4百万円改善）です。今月は新たに2件のポイントを検出しました。顧客F（インドネシア）の受注遅延（−14百万円）と、高付加価値の制御モジュールの国内での伸長という機会（+12百万円）です。東南アジアの需要拡大（+18百万円）と製造歩留まり改善（+16百万円）が課題を一部相殺しています。採用済みアクションの実現効果は3.4百万円、年度末見込みは計画30百万円に対し22百万円です。主因はベトナム販売網拡大とライン2歩留まり展開の遅れです。",
+  "text": "当期累計の営業利益は86百万円で、予算を12百万円下回っています。最大の課題は顧客Bの数量減少（年換算−36百万円）、次いで輸入材料費の上昇（−30百万円、4月比+4百万円改善）です。今月は新たに2件のインサイトを検出しました。顧客F（インドネシア）の受注遅延（−14百万円）と、高付加価値の制御モジュールの国内での伸長という機会（+12百万円）です。東南アジアの需要拡大（+18百万円）と製造歩留まり改善（+16百万円）が課題を一部相殺しています。採用済みアクションの実現効果は3.4百万円、年度末見込みは計画30百万円に対し22百万円です。主因はベトナム販売網拡大とライン2歩留まり展開の遅れです。",
   "is_base": false,
   "translated_at": "2027-07-03T00:00:00Z",
   "reviewed_by": null
@@ -66,7 +66,7 @@
  {
   "comment_id": "CM-SUM-202706-CO",
   "language_code": "th",
-  "text": "กำไรจากการดำเนินงานสะสมอยู่ที่ 86 ล้านเยน ต่ำกว่างบประมาณ 12 ล้านเยน ประเด็นใหญ่ที่สุดคือยอดขายลูกค้า B ลดลง (ผลกระทบรายปี −36 ล้านเยน) รองลงมาคือต้นทุนวัตถุดิบนำเข้าสูงขึ้น (−30 ล้านเยน ดีขึ้น +4 ล้านเยนจากเดือนเมษายน) เดือนนี้พบประเด็นใหม่ 2 เรื่อง คือคำสั่งซื้อล่าช้าจากลูกค้า F ในอินโดนีเซีย (−14 ล้านเยน) และโอกาสจากการเติบโตของโมดูลควบคุมมูลค่าเพิ่มสูงในประเทศ (+12 ล้านเยน) ความต้องการในเอเชียตะวันออกเฉียงใต้ (+18 ล้านเยน) และการปรับปรุงผลผลิต (+16 ล้านเยน) ช่วยชดเชยบางส่วน แอคชันที่อนุมัติแล้วสร้างผลจริง 3.4 ล้านเยน และคาดการณ์ ณ สิ้นปี 22 ล้านเยน เทียบกับแผน 30 ล้านเยน เนื่องจากการขยายตัวแทนจำหน่ายในเวียดนามและการปรับปรุงผลผลิตสายการผลิต 2 ล่าช้า",
+  "text": "กำไรจากการดำเนินงานสะสมอยู่ที่ 86 ล้านเยน ต่ำกว่างบประมาณ 12 ล้านเยน อินไซต์ใหญ่ที่สุดคือยอดขายลูกค้า B ลดลง (ผลกระทบรายปี −36 ล้านเยน) รองลงมาคือต้นทุนวัตถุดิบนำเข้าสูงขึ้น (−30 ล้านเยน ดีขึ้น +4 ล้านเยนจากเดือนเมษายน) เดือนนี้พบอินไซต์ใหม่ 2 เรื่อง คือคำสั่งซื้อล่าช้าจากลูกค้า F ในอินโดนีเซีย (−14 ล้านเยน) และโอกาสจากการเติบโตของโมดูลควบคุมมูลค่าเพิ่มสูงในประเทศ (+12 ล้านเยน) ความต้องการในเอเชียตะวันออกเฉียงใต้ (+18 ล้านเยน) และการปรับปรุงผลผลิต (+16 ล้านเยน) ช่วยชดเชยบางส่วน แอคชันที่อนุมัติแล้วสร้างผลจริง 3.4 ล้านเยน และคาดการณ์ ณ สิ้นปี 22 ล้านเยน เทียบกับแผน 30 ล้านเยน เนื่องจากการขยายตัวแทนจำหน่ายในเวียดนามและการปรับปรุงผลผลิตสายการผลิต 2 ล่าช้า",
   "is_base": false,
   "translated_at": "2027-07-03T00:00:00Z",
   "reviewed_by": null
@@ -152,7 +152,7 @@
   "reviewed_by": null
  },
  {
-  "comment_id": "CM-TITLE-PT-001",
+  "comment_id": "CM-TITLE-IS-001",
   "language_code": "en",
   "text": "Volume decline at Customer B (Japan and Thailand)",
   "is_base": true,
@@ -160,7 +160,7 @@
   "reviewed_by": null
  },
  {
-  "comment_id": "CM-TITLE-PT-001",
+  "comment_id": "CM-TITLE-IS-001",
   "language_code": "ja",
   "text": "顧客B（日本・タイ）の数量減少",
   "is_base": false,
@@ -168,7 +168,7 @@
   "reviewed_by": null
  },
  {
-  "comment_id": "CM-TITLE-PT-001",
+  "comment_id": "CM-TITLE-IS-001",
   "language_code": "th",
   "text": "ยอดขายลูกค้า B (ญี่ปุ่นและไทย) ลดลง",
   "is_base": false,
@@ -176,7 +176,7 @@
   "reviewed_by": null
  },
  {
-  "comment_id": "CM-TITLE-PT-002",
+  "comment_id": "CM-TITLE-IS-002",
   "language_code": "en",
   "text": "Imported material cost increase",
   "is_base": true,
@@ -184,7 +184,7 @@
   "reviewed_by": null
  },
  {
-  "comment_id": "CM-TITLE-PT-002",
+  "comment_id": "CM-TITLE-IS-002",
   "language_code": "ja",
   "text": "輸入材料費の上昇",
   "is_base": false,
@@ -192,7 +192,7 @@
   "reviewed_by": null
  },
  {
-  "comment_id": "CM-TITLE-PT-002",
+  "comment_id": "CM-TITLE-IS-002",
   "language_code": "th",
   "text": "ต้นทุนวัตถุดิบนำเข้าสูงขึ้น",
   "is_base": false,
@@ -200,7 +200,7 @@
   "reviewed_by": null
  },
  {
-  "comment_id": "CM-TITLE-PT-003",
+  "comment_id": "CM-TITLE-IS-003",
   "language_code": "en",
   "text": "Demand growth in Southeast Asia",
   "is_base": true,
@@ -208,7 +208,7 @@
   "reviewed_by": null
  },
  {
-  "comment_id": "CM-TITLE-PT-003",
+  "comment_id": "CM-TITLE-IS-003",
   "language_code": "ja",
   "text": "東南アジアの需要拡大",
   "is_base": false,
@@ -216,7 +216,7 @@
   "reviewed_by": null
  },
  {
-  "comment_id": "CM-TITLE-PT-003",
+  "comment_id": "CM-TITLE-IS-003",
   "language_code": "th",
   "text": "ความต้องการเติบโตในเอเชียตะวันออกเฉียงใต้",
   "is_base": false,
@@ -224,7 +224,7 @@
   "reviewed_by": null
  },
  {
-  "comment_id": "CM-TITLE-PT-004",
+  "comment_id": "CM-TITLE-IS-004",
   "language_code": "en",
   "text": "Logistics cost overrun in domestic sales",
   "is_base": true,
@@ -232,7 +232,7 @@
   "reviewed_by": null
  },
  {
-  "comment_id": "CM-TITLE-PT-004",
+  "comment_id": "CM-TITLE-IS-004",
   "language_code": "ja",
   "text": "国内営業の物流費超過",
   "is_base": false,
@@ -240,7 +240,7 @@
   "reviewed_by": null
  },
  {
-  "comment_id": "CM-TITLE-PT-004",
+  "comment_id": "CM-TITLE-IS-004",
   "language_code": "th",
   "text": "ค่าขนส่งในประเทศเกินงบ",
   "is_base": false,
@@ -248,7 +248,7 @@
   "reviewed_by": null
  },
  {
-  "comment_id": "CM-TITLE-PT-005",
+  "comment_id": "CM-TITLE-IS-005",
   "language_code": "en",
   "text": "Office cost reduction",
   "is_base": true,
@@ -256,7 +256,7 @@
   "reviewed_by": null
  },
  {
-  "comment_id": "CM-TITLE-PT-005",
+  "comment_id": "CM-TITLE-IS-005",
   "language_code": "ja",
   "text": "オフィスコストの削減",
   "is_base": false,
@@ -264,7 +264,7 @@
   "reviewed_by": null
  },
  {
-  "comment_id": "CM-TITLE-PT-005",
+  "comment_id": "CM-TITLE-IS-005",
   "language_code": "th",
   "text": "การลดต้นทุนสำนักงาน",
   "is_base": false,
@@ -272,7 +272,7 @@
   "reviewed_by": null
  },
  {
-  "comment_id": "CM-TITLE-PT-006",
+  "comment_id": "CM-TITLE-IS-006",
   "language_code": "en",
   "text": "Order delays from Customer F (Indonesia)",
   "is_base": true,
@@ -280,7 +280,7 @@
   "reviewed_by": null
  },
  {
-  "comment_id": "CM-TITLE-PT-006",
+  "comment_id": "CM-TITLE-IS-006",
   "language_code": "ja",
   "text": "顧客F（インドネシア）の受注遅延",
   "is_base": false,
@@ -288,7 +288,7 @@
   "reviewed_by": null
  },
  {
-  "comment_id": "CM-TITLE-PT-006",
+  "comment_id": "CM-TITLE-IS-006",
   "language_code": "th",
   "text": "คำสั่งซื้อล่าช้าจากลูกค้า F (อินโดนีเซีย)",
   "is_base": false,
@@ -296,7 +296,7 @@
   "reviewed_by": null
  },
  {
-  "comment_id": "CM-TITLE-PT-007",
+  "comment_id": "CM-TITLE-IS-007",
   "language_code": "en",
   "text": "Manufacturing yield improvement",
   "is_base": true,
@@ -304,7 +304,7 @@
   "reviewed_by": null
  },
  {
-  "comment_id": "CM-TITLE-PT-007",
+  "comment_id": "CM-TITLE-IS-007",
   "language_code": "ja",
   "text": "製造歩留まりの改善",
   "is_base": false,
@@ -312,7 +312,7 @@
   "reviewed_by": null
  },
  {
-  "comment_id": "CM-TITLE-PT-007",
+  "comment_id": "CM-TITLE-IS-007",
   "language_code": "th",
   "text": "การปรับปรุงผลผลิตการผลิต",
   "is_base": false,
@@ -320,7 +320,7 @@
   "reviewed_by": null
  },
  {
-  "comment_id": "CM-TITLE-PT-008",
+  "comment_id": "CM-TITLE-IS-008",
   "language_code": "en",
   "text": "Growth of high value-added control modules (domestic)",
   "is_base": true,
@@ -328,7 +328,7 @@
   "reviewed_by": null
  },
  {
-  "comment_id": "CM-TITLE-PT-008",
+  "comment_id": "CM-TITLE-IS-008",
   "language_code": "ja",
   "text": "高付加価値製品（制御モジュール）の国内での伸長",
   "is_base": false,
@@ -336,7 +336,7 @@
   "reviewed_by": null
  },
  {
-  "comment_id": "CM-TITLE-PT-008",
+  "comment_id": "CM-TITLE-IS-008",
   "language_code": "th",
   "text": "การเติบโตของโมดูลควบคุมมูลค่าเพิ่มสูงในประเทศ",
   "is_base": false,
@@ -1466,7 +1466,7 @@
  {
   "comment_id": "CM-F01-202706-CO",
   "language_code": "en",
-  "text": "Company landing for operating profit is JPY 352.5M, JPY 17.5M below the original budget of 370M. Without Actions the forecast would be 328M. Adopted Actions contribute +22M (plan 30M) and included Individual Factors +2.5M (sensor housing launch +8M, FX −4.5M, exhibition −1M). Excluding the possible Customer F delay (EV-004) keeps 2M of risk outside the landing.",
+  "text": "Company landing for operating profit is JPY 352.5M, JPY 17.5M below the original budget of 370M. Without Actions the forecast would be 328M. Adopted Actions contribute +22M (plan 30M) and included Individual Factors +2.5M (sensor housing launch +8M, FX −4.5M, exhibition −1M). Excluding the possible Customer F delay (EV-004) keeps 2M of risk outside the landing.\n\nWhat could still move the landing in the rest of the year (Jul–Mar):\n• If the selling price rises by 1%, revenue would increase by about 38.6M and operating profit would increase by about 38.6M.\n• If material prices rise by 1%, operating profit would decrease by about 17.6M.\n• If sales volume grows by 1%, revenue would increase by about 38.6M and operating profit would increase by about 13.7M.",
   "is_base": true,
   "translated_at": null,
   "reviewed_by": null
@@ -1474,7 +1474,7 @@
  {
   "comment_id": "CM-F01-202706-CO",
   "language_code": "ja",
-  "text": "全社の営業利益着地見込みは352.5百万円で、当初予算370百万円を17.5百万円下回ります。アクションなしの予測は328百万円です。採用済みアクションが+22百万円（計画30百万円）、個別要因が+2.5百万円（センサーハウジング発売+8、為替−4.5、展示会−1）寄与します。顧客Fの遅延可能性（EV-004）は2百万円のリスクとして着地見込みに含めていません。",
+  "text": "全社の営業利益着地見込みは352.5百万円で、当初予算370百万円を17.5百万円下回ります。アクションなしの予測は328百万円です。採用済みアクションが+22百万円（計画30百万円）、個別要因が+2.5百万円（センサーハウジング発売+8、為替−4.5、展示会−1）寄与します。顧客Fの遅延可能性（EV-004）は2百万円のリスクとして着地見込みに含めていません。\n\n残り期間（7月〜3月）の着地見込みを動かし得る主な要因：\n・販売単価が1%上がると、売上高は約38.6百万円増え、営業利益は約38.6百万円増える見込みです。\n・材料価格が1%上がると、営業利益は約17.6百万円減る見込みです。\n・販売数量が1%増えると、売上高は約38.6百万円増え、営業利益は約13.7百万円増える見込みです。",
   "is_base": false,
   "translated_at": "2027-07-03T00:00:00Z",
   "reviewed_by": null
@@ -1482,7 +1482,7 @@
  {
   "comment_id": "CM-F01-202706-CO",
   "language_code": "th",
-  "text": "คาดการณ์กำไรจากการดำเนินงานทั้งบริษัท ณ สิ้นปีอยู่ที่ 352.5 ล้านเยน ต่ำกว่างบประมาณเดิม 370 ล้านเยนอยู่ 17.5 ล้านเยน หากไม่มีแอคชันจะอยู่ที่ 328 ล้านเยน แอคชันที่อนุมัติแล้วเพิ่ม +22 ล้านเยน (แผน 30) และปัจจัยเฉพาะที่รวมไว้ +2.5 ล้านเยน",
+  "text": "คาดการณ์กำไรจากการดำเนินงานทั้งบริษัท ณ สิ้นปีอยู่ที่ 352.5 ล้านเยน ต่ำกว่างบประมาณเดิม 370 ล้านเยนอยู่ 17.5 ล้านเยน หากไม่มีแอคชันจะอยู่ที่ 328 ล้านเยน แอคชันที่อนุมัติแล้วเพิ่ม +22 ล้านเยน (แผน 30) และปัจจัยเฉพาะที่รวมไว้ +2.5 ล้านเยน\n\nปัจจัยที่อาจเปลี่ยนคาดการณ์ในช่วงที่เหลือของปี (ก.ค.–มี.ค.):\n• หากราคาขายเพิ่มขึ้น 1% รายได้จะเพิ่มขึ้นประมาณ 38.6 ล้านเยน และกำไรจากการดำเนินงานจะเพิ่มขึ้นประมาณ 38.6 ล้านเยน\n• หากราคาวัตถุดิบเพิ่มขึ้น 1% กำไรจากการดำเนินงานจะลดลงประมาณ 17.6 ล้านเยน\n• หากปริมาณขายเพิ่มขึ้น 1% รายได้จะเพิ่มขึ้นประมาณ 38.6 ล้านเยน และกำไรจากการดำเนินงานจะเพิ่มขึ้นประมาณ 13.7 ล้านเยน",
   "is_base": false,
   "translated_at": "2027-07-03T00:00:00Z",
   "reviewed_by": null
@@ -1490,7 +1490,7 @@
  {
   "comment_id": "CM-F01-202706-SL",
   "language_code": "en",
-  "text": "Without Actions, the forecast model projects operating profit of JPY 255M (80% range 241.4 to 268.6), based on the actual trend and order backlog. 2 adopted Action(s) add +8.5M (plan 10M; open months follow the progress-based outlook). Included Individual Factors contribute +8M (EV-003 +8). Landing is 271.5M, −18.5M vs budget. The most influential driver is selling price: +1% changes the remaining-year operating profit by +23.3M.",
+  "text": "Without Actions, the forecast model projects operating profit of JPY 255M (80% range 241.4 to 268.6), based on the actual trend and order backlog. 2 adopted Action(s) add +8.5M (plan 10M; open months follow the progress-based outlook). Included Individual Factors contribute +8M (EV-003 +8). Landing is 271.5M, −18.5M vs budget.\n\nWhat could still move the landing in the rest of the year (Jul–Mar):\n• If the selling price rises by 1%, revenue would increase by about 23.3M and operating profit would increase by about 23.3M.\n• If sales volume grows by 1%, revenue would increase by about 23.3M and operating profit would increase by about 8.3M.\n• If the yen weakens by 0.1 JPY per baht, revenue would increase by about 54.1M and operating profit would increase by about 4.5M.",
   "is_base": true,
   "translated_at": null,
   "reviewed_by": null
@@ -1498,7 +1498,7 @@
  {
   "comment_id": "CM-F01-202706-SL",
   "language_code": "ja",
-  "text": "アクションなしの場合、予測モデルは実績トレンドと受注残から営業利益を255百万円（80%区間 241.4〜268.6）と予測しています。採用済みアクション2件が+8.5百万円寄与します（計画10百万円。未経過月は進捗に基づく見込み）。反映した個別要因は+8百万円です（EV-003 +8）。着地見込みは271.5百万円、予算比−18.5百万円です。最も影響の大きいドライバーは販売単価で、+1%の変化で残期間の営業利益が+23.3百万円変動します。",
+  "text": "アクションなしの場合、予測モデルは実績トレンドと受注残から営業利益を255百万円（80%区間 241.4〜268.6）と予測しています。採用済みアクション2件が+8.5百万円寄与します（計画10百万円。未経過月は進捗に基づく見込み）。反映した個別要因は+8百万円です（EV-003 +8）。着地見込みは271.5百万円、予算比−18.5百万円です。\n\n残り期間（7月〜3月）の着地見込みを動かし得る主な要因：\n・販売単価が1%上がると、売上高は約23.3百万円増え、営業利益は約23.3百万円増える見込みです。\n・販売数量が1%増えると、売上高は約23.3百万円増え、営業利益は約8.3百万円増える見込みです。\n・為替が1バーツあたり0.1円の円安になると、売上高は約54.1百万円増え、営業利益は約4.5百万円増える見込みです。",
   "is_base": false,
   "translated_at": "2027-07-03T00:00:00Z",
   "reviewed_by": null
@@ -1506,7 +1506,7 @@
  {
   "comment_id": "CM-F01-202706-SL",
   "language_code": "th",
-  "text": "หากไม่มีแอคชัน โมเดลพยากรณ์คาดการณ์กำไรจากการดำเนินงาน 255 ล้านเยน (ช่วง 80% 241.4–268.6) จากแนวโน้มจริงและยอดคำสั่งซื้อคงค้าง แอคชันที่อนุมัติ 2 รายการเพิ่ม +8.5 ล้านเยน (แผน 10) ปัจจัยเฉพาะที่รวมไว้ +8 ล้านเยน (EV-003 +8) คาดการณ์ ณ สิ้นปี 271.5 ล้านเยน (−18.5 เทียบงบประมาณ) ตัวขับเคลื่อนที่มีผลมากที่สุดคือราคาขาย: +1% เปลี่ยนกำไรช่วงที่เหลือ +23.3 ล้านเยน",
+  "text": "หากไม่มีแอคชัน โมเดลพยากรณ์คาดการณ์กำไรจากการดำเนินงาน 255 ล้านเยน (ช่วง 80% 241.4–268.6) จากแนวโน้มจริงและยอดคำสั่งซื้อคงค้าง แอคชันที่อนุมัติ 2 รายการเพิ่ม +8.5 ล้านเยน (แผน 10) ปัจจัยเฉพาะที่รวมไว้ +8 ล้านเยน (EV-003 +8) คาดการณ์ ณ สิ้นปี 271.5 ล้านเยน (−18.5 เทียบงบประมาณ)\n\nปัจจัยที่อาจเปลี่ยนคาดการณ์ในช่วงที่เหลือของปี (ก.ค.–มี.ค.):\n• หากราคาขายเพิ่มขึ้น 1% รายได้จะเพิ่มขึ้นประมาณ 23.3 ล้านเยน และกำไรจากการดำเนินงานจะเพิ่มขึ้นประมาณ 23.3 ล้านเยน\n• หากปริมาณขายเพิ่มขึ้น 1% รายได้จะเพิ่มขึ้นประมาณ 23.3 ล้านเยน และกำไรจากการดำเนินงานจะเพิ่มขึ้นประมาณ 8.3 ล้านเยน\n• หากเงินเยนอ่อนค่าลง 0.1 เยนต่อบาท รายได้จะเพิ่มขึ้นประมาณ 54.1 ล้านเยน และกำไรจากการดำเนินงานจะเพิ่มขึ้นประมาณ 4.5 ล้านเยน",
   "is_base": false,
   "translated_at": "2027-07-03T00:00:00Z",
   "reviewed_by": null
@@ -1514,7 +1514,7 @@
  {
   "comment_id": "CM-F01-202706-OS",
   "language_code": "en",
-  "text": "Without Actions, the forecast model projects operating profit of JPY 165M (80% range 156.4 to 173.6), based on the actual trend and order backlog. 2 adopted Action(s) add +5.5M (plan 7M; open months follow the progress-based outlook). Included Individual Factors contribute −1M (EV-002 −1). Landing is 169.5M, −10.5M vs budget. Not included: EV-004 −2; including it would give 167.5M. The most influential driver is selling price: +1% changes the remaining-year operating profit by +15.4M.",
+  "text": "Without Actions, the forecast model projects operating profit of JPY 165M (80% range 156.4 to 173.6), based on the actual trend and order backlog. 2 adopted Action(s) add +5.5M (plan 7M; open months follow the progress-based outlook). Included Individual Factors contribute −1M (EV-002 −1). Landing is 169.5M, −10.5M vs budget. Not included: EV-004 −2; including it would give 167.5M.\n\nWhat could still move the landing in the rest of the year (Jul–Mar):\n• If the selling price rises by 1%, revenue would increase by about 15.4M and operating profit would increase by about 15.4M.\n• If sales volume grows by 1%, revenue would increase by about 15.4M and operating profit would increase by about 5.5M.\n• If the yen weakens by 0.1 JPY per baht, revenue would increase by about 35.8M and operating profit would increase by about 2.8M.",
   "is_base": true,
   "translated_at": null,
   "reviewed_by": null
@@ -1522,7 +1522,7 @@
  {
   "comment_id": "CM-F01-202706-OS",
   "language_code": "ja",
-  "text": "アクションなしの場合、予測モデルは実績トレンドと受注残から営業利益を165百万円（80%区間 156.4〜173.6）と予測しています。採用済みアクション2件が+5.5百万円寄与します（計画7百万円。未経過月は進捗に基づく見込み）。反映した個別要因は−1百万円です（EV-002 −1）。着地見込みは169.5百万円、予算比−10.5百万円です。未反映：EV-004 −2。反映すると167.5百万円になります。最も影響の大きいドライバーは販売単価で、+1%の変化で残期間の営業利益が+15.4百万円変動します。",
+  "text": "アクションなしの場合、予測モデルは実績トレンドと受注残から営業利益を165百万円（80%区間 156.4〜173.6）と予測しています。採用済みアクション2件が+5.5百万円寄与します（計画7百万円。未経過月は進捗に基づく見込み）。反映した個別要因は−1百万円です（EV-002 −1）。着地見込みは169.5百万円、予算比−10.5百万円です。未反映：EV-004 −2。反映すると167.5百万円になります。\n\n残り期間（7月〜3月）の着地見込みを動かし得る主な要因：\n・販売単価が1%上がると、売上高は約15.4百万円増え、営業利益は約15.4百万円増える見込みです。\n・販売数量が1%増えると、売上高は約15.4百万円増え、営業利益は約5.5百万円増える見込みです。\n・為替が1バーツあたり0.1円の円安になると、売上高は約35.8百万円増え、営業利益は約2.8百万円増える見込みです。",
   "is_base": false,
   "translated_at": "2027-07-03T00:00:00Z",
   "reviewed_by": null
@@ -1530,7 +1530,7 @@
  {
   "comment_id": "CM-F01-202706-OS",
   "language_code": "th",
-  "text": "หากไม่มีแอคชัน โมเดลพยากรณ์คาดการณ์กำไรจากการดำเนินงาน 165 ล้านเยน (ช่วง 80% 156.4–173.6) จากแนวโน้มจริงและยอดคำสั่งซื้อคงค้าง แอคชันที่อนุมัติ 2 รายการเพิ่ม +5.5 ล้านเยน (แผน 7) ปัจจัยเฉพาะที่รวมไว้ −1 ล้านเยน (EV-002 −1) คาดการณ์ ณ สิ้นปี 169.5 ล้านเยน (−10.5 เทียบงบประมาณ) ยังไม่รวม: EV-004 −2 ตัวขับเคลื่อนที่มีผลมากที่สุดคือราคาขาย: +1% เปลี่ยนกำไรช่วงที่เหลือ +15.4 ล้านเยน",
+  "text": "หากไม่มีแอคชัน โมเดลพยากรณ์คาดการณ์กำไรจากการดำเนินงาน 165 ล้านเยน (ช่วง 80% 156.4–173.6) จากแนวโน้มจริงและยอดคำสั่งซื้อคงค้าง แอคชันที่อนุมัติ 2 รายการเพิ่ม +5.5 ล้านเยน (แผน 7) ปัจจัยเฉพาะที่รวมไว้ −1 ล้านเยน (EV-002 −1) คาดการณ์ ณ สิ้นปี 169.5 ล้านเยน (−10.5 เทียบงบประมาณ) ยังไม่รวม: EV-004 −2\n\nปัจจัยที่อาจเปลี่ยนคาดการณ์ในช่วงที่เหลือของปี (ก.ค.–มี.ค.):\n• หากราคาขายเพิ่มขึ้น 1% รายได้จะเพิ่มขึ้นประมาณ 15.4 ล้านเยน และกำไรจากการดำเนินงานจะเพิ่มขึ้นประมาณ 15.4 ล้านเยน\n• หากปริมาณขายเพิ่มขึ้น 1% รายได้จะเพิ่มขึ้นประมาณ 15.4 ล้านเยน และกำไรจากการดำเนินงานจะเพิ่มขึ้นประมาณ 5.5 ล้านเยน\n• หากเงินเยนอ่อนค่าลง 0.1 เยนต่อบาท รายได้จะเพิ่มขึ้นประมาณ 35.8 ล้านเยน และกำไรจากการดำเนินงานจะเพิ่มขึ้นประมาณ 2.8 ล้านเยน",
   "is_base": false,
   "translated_at": "2027-07-03T00:00:00Z",
   "reviewed_by": null
@@ -1538,7 +1538,7 @@
  {
   "comment_id": "CM-F01-202706-MF",
   "language_code": "en",
-  "text": "Without Actions, the forecast model projects operating profit of JPY −42M (80% range −44.1 to −39.9), based on the actual trend and order backlog. 2 adopted Action(s) add +6.5M (plan 10.5M; open months follow the progress-based outlook). Included Individual Factors contribute −4.5M (EV-001 −4.5). Landing is −40M, ±0M vs budget. The most influential driver is material prices: +1% changes the remaining-year operating profit by −17.6M.",
+  "text": "Without Actions, the forecast model projects operating profit of JPY −42M (80% range −44.1 to −39.9), based on the actual trend and order backlog. 2 adopted Action(s) add +6.5M (plan 10.5M; open months follow the progress-based outlook). Included Individual Factors contribute −4.5M (EV-001 −4.5). Landing is −40M, ±0M vs budget.\n\nWhat could still move the landing in the rest of the year (Jul–Mar):\n• If material prices rise by 1%, operating profit would decrease by about 17.6M.\n• If the yen weakens by 0.1 JPY per baht, operating profit would decrease by about 1.5M.",
   "is_base": true,
   "translated_at": null,
   "reviewed_by": null
@@ -1546,7 +1546,7 @@
  {
   "comment_id": "CM-F01-202706-MF",
   "language_code": "ja",
-  "text": "アクションなしの場合、予測モデルは実績トレンドと受注残から営業利益を−42百万円（80%区間 −44.1〜−39.9）と予測しています。採用済みアクション2件が+6.5百万円寄与します（計画10.5百万円。未経過月は進捗に基づく見込み）。反映した個別要因は−4.5百万円です（EV-001 −4.5）。着地見込みは−40百万円、予算比±0百万円です。最も影響の大きいドライバーは材料価格で、+1%の変化で残期間の営業利益が−17.6百万円変動します。",
+  "text": "アクションなしの場合、予測モデルは実績トレンドと受注残から営業利益を−42百万円（80%区間 −44.1〜−39.9）と予測しています。採用済みアクション2件が+6.5百万円寄与します（計画10.5百万円。未経過月は進捗に基づく見込み）。反映した個別要因は−4.5百万円です（EV-001 −4.5）。着地見込みは−40百万円、予算比±0百万円です。\n\n残り期間（7月〜3月）の着地見込みを動かし得る主な要因：\n・材料価格が1%上がると、営業利益は約17.6百万円減る見込みです。\n・為替が1バーツあたり0.1円の円安になると、営業利益は約1.5百万円減る見込みです。",
   "is_base": false,
   "translated_at": "2027-07-03T00:00:00Z",
   "reviewed_by": null
@@ -1554,7 +1554,7 @@
  {
   "comment_id": "CM-F01-202706-MF",
   "language_code": "th",
-  "text": "หากไม่มีแอคชัน โมเดลพยากรณ์คาดการณ์กำไรจากการดำเนินงาน −42 ล้านเยน (ช่วง 80% −44.1–−39.9) จากแนวโน้มจริงและยอดคำสั่งซื้อคงค้าง แอคชันที่อนุมัติ 2 รายการเพิ่ม +6.5 ล้านเยน (แผน 10.5) ปัจจัยเฉพาะที่รวมไว้ −4.5 ล้านเยน (EV-001 −4.5) คาดการณ์ ณ สิ้นปี −40 ล้านเยน (±0 เทียบงบประมาณ) ตัวขับเคลื่อนที่มีผลมากที่สุดคือราคาวัตถุดิบ: +1% เปลี่ยนกำไรช่วงที่เหลือ −17.6 ล้านเยน",
+  "text": "หากไม่มีแอคชัน โมเดลพยากรณ์คาดการณ์กำไรจากการดำเนินงาน −42 ล้านเยน (ช่วง 80% −44.1–−39.9) จากแนวโน้มจริงและยอดคำสั่งซื้อคงค้าง แอคชันที่อนุมัติ 2 รายการเพิ่ม +6.5 ล้านเยน (แผน 10.5) ปัจจัยเฉพาะที่รวมไว้ −4.5 ล้านเยน (EV-001 −4.5) คาดการณ์ ณ สิ้นปี −40 ล้านเยน (±0 เทียบงบประมาณ)\n\nปัจจัยที่อาจเปลี่ยนคาดการณ์ในช่วงที่เหลือของปี (ก.ค.–มี.ค.):\n• หากราคาวัตถุดิบเพิ่มขึ้น 1% กำไรจากการดำเนินงานจะลดลงประมาณ 17.6 ล้านเยน\n• หากเงินเยนอ่อนค่าลง 0.1 เยนต่อบาท กำไรจากการดำเนินงานจะลดลงประมาณ 1.5 ล้านเยน",
   "is_base": false,
   "translated_at": "2027-07-03T00:00:00Z",
   "reviewed_by": null
@@ -1562,7 +1562,7 @@
  {
   "comment_id": "CM-F01-202706-AD",
   "language_code": "en",
-  "text": "Without Actions, the forecast model projects operating profit of JPY −50M (80% range −52.7 to −47.3), based on the actual trend and order backlog. 1 adopted Action(s) add +1.5M (plan 2.5M; open months follow the progress-based outlook). No Individual Factors are included. Landing is −48.5M, +11.5M vs budget. The most influential driver is JPY/THB exchange rate: +0.1 JPY/THB changes the remaining-year operating profit by −0.9M.",
+  "text": "Without Actions, the forecast model projects operating profit of JPY −50M (80% range −52.7 to −47.3), based on the actual trend and order backlog. 1 adopted Action(s) add +1.5M (plan 2.5M; open months follow the progress-based outlook). No Individual Factors are included. Landing is −48.5M, +11.5M vs budget.\n\nWhat could still move the landing in the rest of the year (Jul–Mar):\n• If the yen weakens by 0.1 JPY per baht, operating profit would decrease by about 0.9M.",
   "is_base": true,
   "translated_at": null,
   "reviewed_by": null
@@ -1570,7 +1570,7 @@
  {
   "comment_id": "CM-F01-202706-AD",
   "language_code": "ja",
-  "text": "アクションなしの場合、予測モデルは実績トレンドと受注残から営業利益を−50百万円（80%区間 −52.7〜−47.3）と予測しています。採用済みアクション1件が+1.5百万円寄与します（計画2.5百万円。未経過月は進捗に基づく見込み）。反映した個別要因はありません。着地見込みは−48.5百万円、予算比+11.5百万円です。最も影響の大きいドライバーは為替（円/バーツ）で、+0.1円/バーツの変化で残期間の営業利益が−0.9百万円変動します。",
+  "text": "アクションなしの場合、予測モデルは実績トレンドと受注残から営業利益を−50百万円（80%区間 −52.7〜−47.3）と予測しています。採用済みアクション1件が+1.5百万円寄与します（計画2.5百万円。未経過月は進捗に基づく見込み）。反映した個別要因はありません。着地見込みは−48.5百万円、予算比+11.5百万円です。\n\n残り期間（7月〜3月）の着地見込みを動かし得る主な要因：\n・為替が1バーツあたり0.1円の円安になると、営業利益は約0.9百万円減る見込みです。",
   "is_base": false,
   "translated_at": "2027-07-03T00:00:00Z",
   "reviewed_by": null
@@ -1578,7 +1578,7 @@
  {
   "comment_id": "CM-F01-202706-AD",
   "language_code": "th",
-  "text": "หากไม่มีแอคชัน โมเดลพยากรณ์คาดการณ์กำไรจากการดำเนินงาน −50 ล้านเยน (ช่วง 80% −52.7–−47.3) จากแนวโน้มจริงและยอดคำสั่งซื้อคงค้าง แอคชันที่อนุมัติ 1 รายการเพิ่ม +1.5 ล้านเยน (แผน 2.5) ไม่มีปัจจัยเฉพาะที่รวมไว้ คาดการณ์ ณ สิ้นปี −48.5 ล้านเยน (+11.5 เทียบงบประมาณ) ตัวขับเคลื่อนที่มีผลมากที่สุดคืออัตราแลกเปลี่ยนเยน/บาท: +0.1 เยน/บาท เปลี่ยนกำไรช่วงที่เหลือ −0.9 ล้านเยน",
+  "text": "หากไม่มีแอคชัน โมเดลพยากรณ์คาดการณ์กำไรจากการดำเนินงาน −50 ล้านเยน (ช่วง 80% −52.7–−47.3) จากแนวโน้มจริงและยอดคำสั่งซื้อคงค้าง แอคชันที่อนุมัติ 1 รายการเพิ่ม +1.5 ล้านเยน (แผน 2.5) ไม่มีปัจจัยเฉพาะที่รวมไว้ คาดการณ์ ณ สิ้นปี −48.5 ล้านเยน (+11.5 เทียบงบประมาณ)\n\nปัจจัยที่อาจเปลี่ยนคาดการณ์ในช่วงที่เหลือของปี (ก.ค.–มี.ค.):\n• หากเงินเยนอ่อนค่าลง 0.1 เยนต่อบาท กำไรจากการดำเนินงานจะลดลงประมาณ 0.9 ล้านเยน",
   "is_base": false,
   "translated_at": "2027-07-03T00:00:00Z",
   "reviewed_by": null

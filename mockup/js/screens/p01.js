@@ -45,17 +45,17 @@
       baseline: ja ? `開始前3か月平均（${A.periodLabel(M.prevPeriod(M.prevPeriod(M.prevPeriod(form.start))))}〜${A.periodLabel(M.prevPeriod(form.start))}）` : `3-month average before start (${A.periodLabel(M.prevPeriod(M.prevPeriod(M.prevPeriod(form.start))))}–${A.periodLabel(M.prevPeriod(form.start))})`,
       formula: kind === 'REV' ? '(actual revenue − baseline revenue) × gross margin 25%' : kind === 'COGS' ? 'baseline cost − actual cost (volume-adjusted)' : 'baseline expense − actual expense',
     };
-    // Overlap checks: other live Actions on the same Point with the same effect type, and Factors on the same org / period.
+    // Overlap checks: other live Actions on the same Insight with the same effect type, and Factors on the same org / period.
     const siblings = M.actionsForPoint(parent.point_id).filter((a) => a.action_id !== form.actionId && a.effect_kind === kind && ['ADOPTED', 'PROPOSED'].includes(a.decision_state));
     const factors = A.db.app_factor.filter((f) => !f.is_deleted && f.start_period_id <= form.end && f.end_period_id >= form.start
       && A.db.app_factor_org.some((o) => o.factor_id === f.factor_id && o.org_id === form.owner));
     const overlaps = [
-      ...siblings.map((a) => ({ id: a.action_id, text: (ja ? '同一ポイント・同種の効果：' : 'Same Point and effect type: ') + A.actionNamePlain(a) })),
+      ...siblings.map((a) => ({ id: a.action_id, text: (ja ? '同一インサイト・同種の効果：' : 'Same Insight and effect type: ') + A.actionNamePlain(a) })),
       ...factors.map((f) => ({ id: f.factor_id, text: (ja ? '期間が重なる個別要因（測定から除外）：' : 'Individual Factor in the same org/period (excluded from measurement): ') + A.aiPlain(f.title_comment_id) })),
     ];
     const explanation = ja
-      ? `対象指標：${TARGETS[kind].map((m) => A.t(m)).join('、')}。${src.source} から直接測定します。ベースライン：${src.baseline}。計算式：${src.formula}。年度計画効果（営業利益）は${planOp}百万円、${months.length}か月に均等配分しました（ポイント年換算影響の15%を上限に期間按分）。`
-      : `Target Metrics: ${TARGETS[kind].map((m) => A.t(m)).join(', ')}. Measured directly from ${src.source}. Baseline: ${src.baseline}. Formula: ${src.formula}. Planned FY operating-profit effect JPY ${planOp}M, spread evenly over ${months.length} months (capped at 15% of the Point's annualized impact, prorated by term).`;
+      ? `対象指標：${TARGETS[kind].map((m) => A.t(m)).join('、')}。${src.source} から直接測定します。ベースライン：${src.baseline}。計算式：${src.formula}。年度計画効果（営業利益）は${planOp}百万円、${months.length}か月に均等配分しました（インサイト年換算影響の15%を上限に期間按分）。`
+      : `Target Metrics: ${TARGETS[kind].map((m) => A.t(m)).join(', ')}. Measured directly from ${src.source}. Baseline: ${src.baseline}. Formula: ${src.formula}. Planned FY operating-profit effect JPY ${planOp}M, spread evenly over ${months.length} months (capped at 15% of the Insight's annualized impact, prorated by term).`;
     return { measurable: true, kind, targets: TARGETS[kind], planOp, monthly, months, overlaps, explanation, src, reliability: null };
   }
 

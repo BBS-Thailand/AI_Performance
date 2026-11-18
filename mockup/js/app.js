@@ -454,7 +454,7 @@
     boardUi: { metrics: ['OP'], metric: 'OP', range: 'HIST', status: '' },
     start() {
       initContext(); bindShell();
-      // Deep link (e.g. notifications): #A02:PT-001, #A05:ACT-001-SL-A01, #A01
+      // Deep link (e.g. notifications): #A02:IS-001, #A05:ACT-001-SL-A01, #A01
       const [scr, id] = decodeURIComponent(location.hash.slice(1)).split(':');
       if (scr === 'A02' && id && M.point(id)) { state.screen = 'A02'; state.params = { pointId: id, order: M.pointsFor(state.orgId, state.periodId).sort((a, b) => Math.abs(b.overall) - Math.abs(a.overall)).map((r) => r.point.point_id) }; }
       else if ((scr === 'A05' || scr === 'C03') && id && M.action(id)) { state.screen = scr; state.params = { actionId: id }; }

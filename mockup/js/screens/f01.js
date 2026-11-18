@@ -133,29 +133,7 @@
     </div>`;
   }
 
-  function driversCard(ctx) {
-    const { t, esc, fmt, fmtSigned, M, state } = A;
-    const run = M.modelRun(state.periodId);
-    if (!run || ctx.mode === 'VERSION') return '';
-    const fy = M.period(state.periodId).fiscal_year;
-    const openN = M.fyPeriods(fy).filter((p) => p > state.periodId).length;
-    const leaves = M.leafOrgs(state.orgId);
-    const rows = M.keyDrivers(state.orgId, run.forecast_run_id).map((d) => {
-      const drv = M.driver(d.driver_id);
-      const step = drv.value_type === 'LEVEL' ? 0.1 : 1;
-      const perMetric = leaves.reduce((s, o) => { const k = M.sensitivity(o, d.driver_id, run.forecast_run_id); return s + (k && k[ui.metric] !== undefined ? k[ui.metric] : 0); }, 0);
-      const impact = M.r2(perMetric * step * openN);
-      const sig = M.sensitivity(d.orgs[0], d.driver_id, run.forecast_run_id).significance;
-      const cat = M.factorTypes().find((x) => x.driver_id === d.driver_id);
-      return `<tr class="${cat && isLeaf() && ctx.mode === 'LIVE' ? 'main-row' : ''}" data-driver-cat="${cat ? cat.category : ''}">
-        <td>${esc(t('drv_' + d.driver_id))}</td><td class="nowrap">${drv.value_type === 'LEVEL' ? `+0.1 ${esc(drv.unit)}` : '+1%'}</td>
-        <td class="num ${A.tone(ui.metric, impact)}">${fmtSigned(impact)}</td><td><span class="tag sig-${sig}">${esc(t('sig_' + sig))}</span></td></tr>`;
-    }).join('');
-    return `<div class="card"><h2>${esc(t('key_drivers'))} <span class="tag ml">${esc(t('ml_model'))}</span><span class="right hint">${esc(t('key_drivers_hint'))}</span></h2>
-      <table class="grid-table"><thead><tr><th>${esc(t('driver'))}</th><th>${esc(t('change'))}</th><th class="num">${esc(t('remaining_impact', { m: t(ui.metric) }))}</th><th>${esc(t('significance'))}</th></tr></thead>
-      <tbody>${rows || `<tr><td colspan="4" class="muted">–</td></tr>`}</tbody></table>
-      <p class="hint" style="margin-top:6px">${esc(t('key_drivers_note'))}</p></div>`;
-  }
+
 
   function actionsTable(ctx) {
     const { t, esc, fmt, fmtSigned, M, state } = A;
@@ -237,8 +215,9 @@
       const now = figures(ctx, 'OP').landing;
       if (Math.abs(now - c.basis_landing_op) > 0.05) notice = `<div class="warnbox">${esc(t('ai_outdated', { a: fmt(c.basis_landing_op), b: fmt(now) }))}</div>`;
     }
+    // The comment only (the generated text already names the most influential drivers).
     return `<div class="card"><h2>${esc(t('f01_ai_comment'))} <span class="tag ai">${esc(t('ai_generated'))}</span></h2>
-      <div class="ai-box">${c ? A.aiText(c.comment_id) : `<span class="muted">${esc(t('no_ai_comment'))}</span>`}</div>${notice}</div>`;
+      <div class="ai-box f1-comment">${c ? A.aiText(c.comment_id) : `<span class="muted">${esc(t('no_ai_comment'))}</span>`}</div>${notice}</div>`;
   }
 
   /* ----------------------------------------------------------------- render */
@@ -276,7 +255,7 @@
       </div>
       ${actionsTable(ctx)}
       ${factorsTable(ctx)}
-      <div class="grid c2">${aiCard(ctx)}${driversCard(ctx)}</div>`;
+      ${aiCard(ctx)}`;
   }
 
   function mount(root) {
@@ -303,10 +282,6 @@
       const a = A.M.action(tr.dataset.action);
       const p = A.M.point(a.point_id);
       A.go('A02', { pointId: p.parent_point_id || p.point_id });
-    }));
-    root.querySelectorAll('tr[data-driver-cat]').forEach((tr) => tr.addEventListener('dblclick', () => {
-      if (!tr.classList.contains('main-row') || !A.canEditOrg(state.orgId)) return;
-      A.openFactor(null, { category: tr.dataset.driverCat });
     }));
     const add = root.querySelector('[data-add-factor]');
     if (add) add.addEventListener('click', () => A.openFactor(null, {}));

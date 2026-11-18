@@ -510,3 +510,18 @@ td.prog .mini i { display: block; height: 3px; background: #1d5ea8; border-radiu
 .chats-name { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .chats-n { background: var(--bad); color: #fff; font-size: 10.5px; border-radius: 8px; padding: 0 6px; line-height: 16px; flex: none; }
 .bell-item.chats-all { flex-direction: row; justify-content: center; color: var(--accent); font-weight: 600; border-bottom: 0; }
+
+/* A-02 Insight: Metric cards switch the graphs; budget vs actual table; four-Metric causes and Action effects */
+.a2-ytd { display: flex; flex-wrap: wrap; gap: 4px 16px; margin: -2px 0 8px; }
+.a2-cause-m { display: flex; flex-wrap: wrap; gap: 2px 12px; justify-content: flex-end; align-items: baseline; }
+.a2-cause-m .a2-op { padding-left: 10px; border-left: 1px solid var(--border); }
+.a2-acts th { position: static; }
+.a2-acts th.a2-grp { text-align: center; border-bottom: 1px solid var(--border); }
+
+.chart.wf .wf-link { stroke: var(--border-strong); stroke-dasharray: 3 3; }
+.chart.wf .wf-val { font-weight: 600; fill: var(--text); }
+.chart.wf .wf-val.good { fill: var(--good); }
+.chart.wf .wf-val.bad { fill: var(--bad); }
+.chart.wf .wf-strong { font-weight: 600; fill: var(--text); }
+.a2-graphs + .a2-graphs { margin-top: 0; }
+.ai-box.f1-comment { white-space: pre-line; } /* F-01: the comment keeps its paragraphs and driver list */

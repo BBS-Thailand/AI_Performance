@@ -48,7 +48,7 @@
 | Favorable | `value × dim_metric.favorable_direction > 0` is favorable. SG&A has direction `-1`. |
 | Variance | `actual − budget`. |
 | Header period (mockup) | Interpreted as **YTD as of the selected closed month** (open question README §12-6). |
-| IDs | Business IDs per README §3.4 (`PT-001`, `PT-001-SL`, `ACT-001-SL-A01`, `EV-001`). |
+| IDs | Business IDs per README §3.4 (`IS-001`, `IS-001-SL`, `ACT-001-SL-A01`, `EV-001`). |
 | Audit columns | All `app_*` tables: `created_at`, `created_by`, `modified_at`, `modified_by` (UTC). Omitted below for brevity. |
 | Languages | `en`, `ja`, `th`, `zh-Hans`, `zh-Hant`, `id`, `vi`. |
 
@@ -187,7 +187,7 @@ browser from these tables — no notebook or AI call.
 ### 4.2 Points (AI-detected Issues / Opportunities)
 | Table | Columns |
 |---|---|
-| `app_point` | point_id (`PT-001` / `PT-001-SL`), parent_point_id, point_no, org_id, point_type (`ISSUE`/`OPPORTUNITY`), status (`OPEN`, `IN_ACTION`, `RESOLVED`, `CLOSED`), raised_period_id, title_comment_id, gap_dimension (`CUSTOMER`/`PRODUCT`/`ACCOUNT` — A-02 decomposition chart), indicator_metric_id + indicator_filter (JSON — A-02 related-indicator chart) |
+| `app_point` | point_id (`IS-001` / `IS-001-SL`), parent_point_id, point_no, org_id, point_type (`ISSUE`/`OPPORTUNITY`), status (`OPEN`, `IN_ACTION`, `RESOLVED`, `CLOSED`), raised_period_id, title_comment_id, gap_dimension (`CUSTOMER`/`PRODUCT`/`ACCOUNT` — A-02 decomposition chart), indicator_metric_id + indicator_filter (JSON — A-02 related-indicator chart) |
 | `app_point_impact_snapshot` | point_id, as_of_period_id, metric_id, impact_ytd, impact_month (single-month impact), overall_impact_annual_op — one row per month the Point exists. A-01 second row (concept slide 38): **vs initial / vs last month** compare `impact_month` per Metric and `overall_impact_annual_op` for Overall impact (YTD only accumulates, so it can't show improvement). A Point raised in the selected month shows "Raised in {month} (new)" with no comparison. The A-01 main row Metric columns show `impact_month` (selected month only, concept slide 38 "Unit: JPY M (June)"); A-02 and the KPI cards stay YTD. |
 | `app_point_cause` | cause_id, point_id, as_of_period_id, sort_order, quantity_value, quantity_unit, impact_op, evidence_ref (table/filter used), comment_id |
 

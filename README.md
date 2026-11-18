@@ -28,7 +28,7 @@ The application has **three top-level menus**, with the following screens, pop-u
 | Menu | ID | Screen / component | Main responsibility |
 |---|---|---|---|
 | AI analysis | **A-01** | AI Insights | Top landing screen: KPIs, AI analysis, Point list |
-| AI analysis | **A-02** | Point Detail | Point impact/causes; review and decide on Action proposals |
+| AI analysis | **A-02** | Insight Detail | Point impact/causes; review and decide on Action proposals |
 | AI analysis | **P-01** | Action detail / add | Modal for Action definition and AI-calculated effect/measurement |
 | AI analysis | **A-03** | Action Board | Organization's adopted/executing Actions and progress |
 | AI analysis | **A-04** | Effect Overview | Action effects stacked by month and Action |
@@ -72,6 +72,8 @@ Support **seven UI languages**: English, Japanese, Thai, Simplified Chinese, Tra
 
 ### 3.1 A-01 — AI Insights (home)
 
+> **Terminology (2026-11-18):** the screens call a Point an **Insight** (A-01 list "Insight (Issues / Opportunities)", A-02 "Insight Detail"), with IDs `IS-001` / `IS-001-SL` (formerly `PT-`). This document and the data model keep "Point" (`app_point`) as the internal name.
+
 **Goal:** Identify and rank financial problems (**Issue**) and improvement opportunities (**Opportunity**) with their financial impact.
 
 **Screen elements:**
@@ -94,17 +96,19 @@ Support **seven UI languages**: English, Japanese, Thai, Simplified Chinese, Tra
 
 **Reference case (sample data, not hard-coded):** In Jun 2027, company Revenue = 1,250 (budget variance -55), Gross profit = 301 (-14), SG&A = 215 (+2 favorable), Operating profit = 86 (-12), all JPY M.
 
-### 3.2 A-02 — Point Detail
+### 3.2 A-02 — Insight Detail (formerly Point Detail)
 
 **Goal:** Understand why a Point exists and decide how to address it.
 
 **Screen elements:**
 
 - Point identity, type, affected departments, Metric impacts and annual overall impact.
-- Chart decomposing budget-to-actual operating-profit gap by customer/other relevant dimension.
-- Monthly related-indicator chart with **budget vs. actual**.
-- Scrollable AI-identified causes, each with quantity, financial impact and evidence/source.
-- Proposed Actions table: Action ID, title, annual operating-profit effect, owner, decision, status, decider.
+- Metric impact cards for all four Metrics (Revenue, Gross profit, SG&A, Operating profit, as on A-01).
+- One row of graphs for **each Metric the Insight affects** (non-zero YTD impact), all shown at once: waterfall on the left, monthly trend on the right.
+- **Waterfall** of the Metric (YTD, as in the concept slide): Budget → one step per customer/product/account difference (the Point's own ones first, the rest folded into Others) → Actual; steps coloured by whether they help the Metric. When the steps are small against the totals, the axis starts above zero and a note under the chart says so.
+- Monthly chart of the Metric for the Point's customers (or organizations for account Points) with **budget, actual and prior year**, plus YTD budget / actual / difference / prior year figures.
+- Scrollable AI-identified causes, each with quantity, impact on all four Metrics and evidence/source.
+- Proposed Actions table: Action ID, title, source, owner, **execution period**, planned FY effect per Metric (Revenue, Gross profit, SG&A, Operating profit; – for non-target Metrics), decision, status, decider.
 - **Adopt**, **Reject**, **Hold** and **+ Add action (user)** controls.
 - **To list**, **Previous**, **Next**, **Action Board** navigation.
 
@@ -164,8 +168,8 @@ Proposed
 
 | Entity | Format | Example |
 |---|---|---|
-| Parent Point | `PT-{number}` | `PT-001` |
-| Organization child Point | `PT-{number}-{orgCode}` | `PT-001-SL` |
+| Parent Point | `IS-{number}` | `IS-001` |
+| Organization child Point | `IS-{number}-{orgCode}` | `IS-001-SL` |
 | AI-proposed Action | `ACT-{pointNumber}-{orgCode}-A{sequence}` | `ACT-001-SL-A01` |
 | User-created Action | `ACT-{pointNumber}-{orgCode}-U{sequence}` | `ACT-001-SL-U01` |
 | Individual Factor | `EV-{sequence}` | `EV-002` |
@@ -240,7 +244,7 @@ Example organization codes: `SL` Sales, `OS` Overseas Sales, `MF` Manufacturing,
 - Financial landing bridge: **initial budget → forecast without Actions → Action contribution → included Individual Factors → final landing**.
 - Read-only contributing Action list, linked to the same Action data as A-03, with progress, initial-to-current expected contribution and excluded factor IDs.
 - Individual Factor table with include/exclude checkboxes, period, value, input date; **+ Add factor** and double-click edit via P-02.
-- AI explanation for calculated forecast and effect of unchecked factors.
+- AI explanation for calculated forecast and effect of unchecked factors; the comment also names the most influential drivers for the rest of the year from the ML model sensitivities (no separate driver table on F-01).
 
 **Required formula (for a Metric, fiscal year, organization and confirmed version):**
 
@@ -362,7 +366,7 @@ The following is a **proposed implementation-oriented model inferred from the sc
 | `MetricDefinition` | Metric ID/name, unit, account mapping, applicability by org, favorable-direction logic |
 | `FinancialActual` | fiscal period, org, account, customer/product dimensions, actual amount, source/loaded-at |
 | `InitialBudget` | fiscal year/period, org, account/Metric, fixed amount |
-| `Point` | `PT-*`, parent ID, org, Issue/Opportunity, title, created period, status, impact by Metric, overall annual OP impact |
+| `Point` (UI: Insight) | `IS-*`, parent ID, org, Issue/Opportunity, title, created period, status, impact by Metric, overall annual OP impact |
 | `PointCause` | Point ID, narrative, quantitative evidence, reference/source, relevance period |
 | `Action` | `ACT-*`, Point ID, owner org, origin A/U, content, dates, decision/execution state, latest decider |
 | `ActionMeasurement` | Action ID, target Metrics, data scope, baseline, calculation formula, monthly planned effect, expected annual effect, proxy reliability, exclusions |

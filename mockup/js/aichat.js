@@ -1,6 +1,6 @@
 /* C-01 AI chat — right panel on every screen (concept slides 7 and 36).
  * The AI answers about the current screen's period, organization and data, and about data related to it
- * (accounts and formula, breakdowns, budget / prior year, Points, Actions, Factors, Forecast).
+ * (accounts and formula, breakdowns, budget / prior year, Insights, Actions, Factors, Forecast).
  * It reads data only through the read-only tools below (the mockup's stand-in for DAX queries on the
  * semantic model as the signed-in user): every figure comes from a tool, the app draws the charts and
  * lists the sources. No writes; answers can carry [Open …] buttons. Provider / model / key are shared with C-03. */
@@ -41,7 +41,7 @@
   /* ================================================================== tools */
   const S = (type, extra = {}) => ({ type, ...extra });
   const TOOLS = [
-    { name: 'get_screen_context', description: 'What the user is looking at: screen, period (fiscal month, YTD range), organization (and its departments), the Point or Action in focus, and the Metric selection on A-03/A-04. Call this first when the question refers to "this", "here" or the screen.',
+    { name: 'get_screen_context', description: 'What the user is looking at: screen, period (fiscal month, YTD range), organization (and its departments), the Insight or Action in focus, and the Metric selection on A-03/A-04. Call this first when the question refers to "this", "here" or the screen.',
       input_schema: { type: 'object', properties: {}, required: [] } },
     { name: 'get_kpis', description: 'Revenue, gross profit, SG&A and operating profit of the selected organization: month and YTD actual vs budget with variance, full-year budget, prior-year YTD and whether each Metric applies to the organization (A-01).',
       input_schema: { type: 'object', properties: {}, required: [] } },
@@ -57,8 +57,8 @@
         top: S('integer', { description: 'Rows to return (default 10, max 20); the rest is summed as Other' }),
         chart: S('boolean', { description: 'Show a chart of the result in the chat' }),
       }, required: ['measure'] } },
-    { name: 'get_points', description: 'Points (issues / opportunities the AI found) for the selected organization and month: impact on each Metric YTD and this month, annual operating-profit impact, change vs last month, proposals and executing Actions, plus variance not explained by Points. With point_id: details, causes with evidence and the Actions under it.',
-      input_schema: { type: 'object', properties: { point_id: S('string', { description: 'e.g. PT-001 or PT-001-SL' }) }, required: [] } },
+    { name: 'get_points', description: 'Insights (issues / opportunities the AI found) for the selected organization and month: impact on each Metric YTD and this month, annual operating-profit impact, change vs last month, proposals and executing Actions, plus variance not explained by Insights. With point_id: details, causes with evidence and the Actions under it.',
+      input_schema: { type: 'object', properties: { point_id: S('string', { description: 'e.g. IS-001 or IS-001-SL' }) }, required: [] } },
     { name: 'get_actions', description: 'Actions of the selected organization: decision and execution state, progress vs expected, AI status, effect plan / actual to date / year-end outlook for a Metric. With action_id: all target Metrics, monthly effect, measurement method, latest AI assessment, excluded Factors and decision history (A-03 / A-05).',
       input_schema: { type: 'object', properties: { action_id: S('string'), metric: S('string', { enum: METRICS, description: 'Default OP' }) }, required: [] } },
     { name: 'get_forecast', description: 'Year-end Forecast (F-01) of the selected organization for a Metric: budget, ML forecast without Actions, adopted Action contribution, Individual Factors, landing and variance to budget; for a division or the company the sum of the departments\' latest confirmed versions with each department\'s landing.',
@@ -155,7 +155,7 @@
       const actual = M.biValue(c.orgId, ytd, metric, 'ACT'), budget = M.biValue(c.orgId, ytd, metric, 'BUD');
       return { data: { metric, formula, favorable_direction: fav, accounts, applicability: applies,
         ytd: { actual, budget, variance: actual === null || budget === null ? null : Math.round((actual - budget) * 100) / 100, range: ytdRange(c.pid) },
-        related: 'Use query_financials with group_by ["account"] for the YTD amount of each account; get_points / get_actions for Points and Actions affecting it.' },
+        related: 'Use query_financials with group_by ["account"] for the YTD amount of each account; get_points / get_actions for Insights and Actions affecting it.' },
         source: src('B01', 'DEF', 'account mapping') };
     },
 
@@ -216,20 +216,20 @@
         proposals: r.proposalCount, executing_actions: r.executingCount, executing_plan_op: r.plannedEffect, executing_actual_op: r.actualEffect });
       if (point_id) {
         const p = M.point(point_id);
-        if (!pointOk(p)) return { error: `${point_id} is not a Point of ${A.orgName(c.orgId)}` };
+        if (!pointOk(p)) return { error: `${point_id} is not an Insight of ${A.orgName(c.orgId)}` };
         if (!M.pointSnapshot(point_id, c.pid)) return { error: `${point_id} has no figures for ${A.periodLabel(c.pid)}` };
         const r = M.pointRow(point_id, c.pid, c.orgId);
         const ids = [point_id, ...M.pointChildren(point_id).map((x) => x.point_id)];
         const asOf = db.app_point_cause.filter((x) => ids.includes(x.point_id) && x.as_of_period_id <= c.pid).reduce((m, x) => Math.max(m, x.as_of_period_id), 0);
         const causes = db.app_point_cause.filter((x) => ids.includes(x.point_id) && x.as_of_period_id === asOf).sort((a, b) => a.sort_order - b.sort_order)
-          .map((x) => ({ text: A.aiPlain(x.comment_id), op_impact: x.impact_op, quantity: x.quantity_value, unit: x.quantity_unit, evidence: x.evidence_ref }));
+          .map((x) => ({ text: A.aiPlain(x.comment_id), impact: { revenue: x.impact_rev, gross_profit: x.impact_gp, sga: x.impact_sga, operating_profit: x.impact_op }, quantity: x.quantity_value, unit: x.quantity_unit, evidence: x.evidence_ref }));
         const actions = M.actionsForPoint(point_id).filter(actionOk).map((a) => ({ action_id: a.action_id, name: A.actionNamePlain(a), owner: A.orgName(a.owner_org_id), decision: a.decision_state, execution: a.execution_state }));
         return { data: { ...rowOut(r), indicator_metric: p.indicator_metric_id, causes, actions }, source: src('A02', 'YTD', point_id) };
       }
       const list = M.pointsFor(c.orgId, c.pid);
       const other = M.otherVariance(c.orgId, c.pid, list);
       list.sort((a, b) => Math.abs(b.overall) - Math.abs(a.overall));
-      return { data: { period: A.periodLabel(c.pid), organization: A.orgName(c.orgId), points: list.map(rowOut), variance_not_explained_by_points_ytd: other, unit: 'JPY million' }, source: src('A01', 'YTD', 'Points') };
+      return { data: { period: A.periodLabel(c.pid), organization: A.orgName(c.orgId), points: list.map(rowOut), variance_not_explained_by_points_ytd: other, unit: 'JPY million' }, source: src('A01', 'YTD', 'Insights') };
     },
 
     get_actions({ action_id, metric = 'OP' } = {}) {
@@ -349,7 +349,7 @@
       'You are the AI assistant (C-01) of an AI performance management app. It is a mockup: all data is simulated. The user asks about the screen they are looking at.',
       C().langRule(lang),
       'Rules:',
-      '1. Scope: answer about the period and organization in the context line, the data on the current screen, and data related to it: what the figures are made of or calculated from (accounts, formulas), breakdowns (department, customer, product, region, account, month), budget and prior-year comparisons, and the Points, Actions, Individual Factors and Forecast that affect them. Do not answer about other fiscal years or organizations outside the selected one: say it is outside the current context and suggest switching the period or organization in the header. Decline unrelated topics in one sentence.',
+      '1. Scope: answer about the period and organization in the context line, the data on the current screen, and data related to it: what the figures are made of or calculated from (accounts, formulas), breakdowns (department, customer, product, region, account, month), budget and prior-year comparisons, and the Insights, Actions, Individual Factors and Forecast that affect them. Do not answer about other fiscal years or organizations outside the selected one: say it is outside the current context and suggest switching the period or organization in the header. Decline unrelated topics in one sentence.',
       '2. Numbers: get every figure from the tools and quote it as returned (JPY million unless stated). Never estimate, forecast or invent a number and do not do arithmetic yourself: the tools return variances, shares and what-if results. If no tool gives the figure, say so.',
       '3. What-if: only what_if_stop_action exists. For other scenarios explain that options are changed in F-01 (Forecast).',
       '4. Read-only: you cannot change data. If asked to add, adopt or update something, name the screen that does it and add an open_screen button.',
@@ -477,7 +477,7 @@
     }
     if (id === 'point') {
       const d = tool('get_points', { point_id: c.params.pointId }).data;
-      const causes = d.causes.slice(0, 2).map((x) => `${x.text} (${fs(x.op_impact)})`).join(' / ') || '–';
+      const causes = d.causes.slice(0, 2).map((x) => `${x.text} (${fs(x.impact.operating_profit)})`).join(' / ') || '–';
       return t('ac_d_point', { id: d.point_id, title: d.title, op: fs(d.impact_ytd.OP ?? 0), causes, n: d.proposals, e: d.executing_actions });
     }
     if (id === 'whatif') {
@@ -627,18 +627,18 @@
   I18N.add({
     en: {
       ac_new: 'New chat', ac_close: 'Close', ac_context: 'Context', ac_ph: 'Ask about this screen… (Ctrl+Enter to send)',
-      ac_hello: 'Ask about the figures on this screen and the data behind them (accounts, breakdowns, Points, Actions, Forecast). Answers use the period and organization above; the AI only quotes figures from the app and cannot change data.',
+      ac_hello: 'Ask about the figures on this screen and the data behind them (accounts, breakdowns, Insights, Actions, Forecast). Answers use the period and organization above; the AI only quotes figures from the app and cannot change data.',
       ac_suggest: 'Suggested questions', ac_needs_key: 'Free-text questions need an API key. Try a suggested question, or set a key above.',
       ac_working: 'Looking at the data…', ac_sources: 'Sources:', ac_open: 'Open {s}', ac_demo_tag: 'pre-written demo answer',
       ac_demo_note: '(Pre-written demo answer built from the app\'s data. Set an API key to ask your own questions.)',
       ac_unverified: 'Check: {n} does not appear in the data the AI looked at.', ac_too_many: 'The question needed too many steps. Please ask a narrower question.',
       ac_ytd: 'YTD', ac_def: 'definition', ac_chart_var: '{m}: actual − budget', ac_sc_ACT: 'Actual', ac_sc_BUD: 'Budget', ac_sc_PY: 'Prior year', ac_sc_FCST: 'Forecast',
       ac_tool_get_screen_context: 'screen', ac_tool_get_kpis: 'KPIs', ac_tool_get_metric_definition: 'Metric definition', ac_tool_query_financials: 'BI query',
-      ac_tool_get_points: 'Points', ac_tool_get_actions: 'Actions', ac_tool_get_forecast: 'Forecast', ac_tool_what_if_stop_action: 'what-if', ac_tool_open_screen: 'link',
+      ac_tool_get_points: 'Insights', ac_tool_get_actions: 'Actions', ac_tool_get_forecast: 'Forecast', ac_tool_what_if_stop_action: 'what-if', ac_tool_open_screen: 'link',
       ac_dim_org: 'department', ac_dim_customer: 'customer', ac_above: 'above', ac_below: 'below', ac_progress: 'progress', ac_outlook_vs_plan: 'outlook vs plan',
       ac_s_op: 'Why is operating profit different from budget?', ac_s_break: 'Break down the operating profit gap by {dim}', ac_s_sga: 'How is SG&A calculated?',
-      ac_s_point: 'Summarize Point {id}', ac_s_whatif: 'What if {id} is stopped?', ac_s_behind: 'Which Actions are behind plan?', ac_s_fcst: 'What drives the landing versus budget?',
-      ac_d_op: 'Operating profit YTD is {a} against a budget of {b}, {v} ({dir} budget). The largest Points are {pts}. Variance not explained by Points: {o}.',
+      ac_s_point: 'Summarize Insight {id}', ac_s_whatif: 'What if {id} is stopped?', ac_s_behind: 'Which Actions are behind plan?', ac_s_fcst: 'What drives the landing versus budget?',
+      ac_d_op: 'Operating profit YTD is {a} against a budget of {b}, {v} ({dir} budget). The largest Insights are {pts}. Variance not explained by Insights: {o}.',
       ac_d_break: 'Operating profit actual minus budget YTD by {dim}: the largest gaps are {list}. Total gap {v}.',
       ac_d_sga: 'SG&A is the sum of these expense accounts: {accounts}. Operating profit = gross profit − SG&A, so higher SG&A lowers profit. YTD SG&A is {a} against a budget of {b} ({v}).',
       ac_d_point: '{id} {title}: operating profit impact YTD {op}. Main causes: {causes}. Actions: {n} proposed, {e} executing.',
@@ -648,18 +648,18 @@
     },
     ja: {
       ac_new: '新しいチャット', ac_close: '閉じる', ac_context: '文脈', ac_ph: 'この画面について質問…（Ctrl+Enterで送信）',
-      ac_hello: 'この画面の数値と、その元になるデータ（科目・内訳・ポイント・施策・着地見込）について質問できます。回答は上の年月度・組織が前提です。AIはアプリの数値だけを引用し、データは変更できません。',
+      ac_hello: 'この画面の数値と、その元になるデータ（科目・内訳・インサイト・施策・着地見込）について質問できます。回答は上の年月度・組織が前提です。AIはアプリの数値だけを引用し、データは変更できません。',
       ac_suggest: '質問の例', ac_needs_key: '自由入力の質問にはAPIキーが必要です。質問の例を試すか、上でキーを設定してください。',
       ac_working: 'データを確認中…', ac_sources: '出典：', ac_open: '{s} を開く', ac_demo_tag: 'デモ用の定型回答',
       ac_demo_note: '（アプリのデータから作成したデモ用の定型回答です。自由な質問にはAPIキーを設定してください。）',
       ac_unverified: '確認：{n} はAIが参照したデータにありません。', ac_too_many: '手順が多すぎました。質問を絞ってください。',
       ac_ytd: '累計', ac_def: '定義', ac_chart_var: '{m}：実績－予算', ac_sc_ACT: '実績', ac_sc_BUD: '予算', ac_sc_PY: '前年', ac_sc_FCST: '着地見込',
       ac_tool_get_screen_context: '画面', ac_tool_get_kpis: 'KPI', ac_tool_get_metric_definition: 'Metricsの定義', ac_tool_query_financials: 'BI照会',
-      ac_tool_get_points: 'ポイント', ac_tool_get_actions: '施策', ac_tool_get_forecast: '着地見込', ac_tool_what_if_stop_action: '試算', ac_tool_open_screen: 'リンク',
+      ac_tool_get_points: 'インサイト', ac_tool_get_actions: '施策', ac_tool_get_forecast: '着地見込', ac_tool_what_if_stop_action: '試算', ac_tool_open_screen: 'リンク',
       ac_dim_org: '部門', ac_dim_customer: '顧客', ac_above: '上回る', ac_below: '下回る', ac_progress: '進捗', ac_outlook_vs_plan: '見込－計画',
       ac_s_op: '営業利益が予算と違うのはなぜ？', ac_s_break: '営業利益の差を{dim}別に分解して', ac_s_sga: '販管費はどう計算されている？',
-      ac_s_point: 'ポイント {id} を要約して', ac_s_whatif: '{id} を中止したら？', ac_s_behind: '計画より遅れている施策は？', ac_s_fcst: '着地見込と予算の差の要因は？',
-      ac_d_op: '営業利益の累計は {a}（予算 {b}）で、差は {v}（予算を{dir}）です。主なポイントは {pts} です。ポイントで説明できない差：{o}。',
+      ac_s_point: 'インサイト {id} を要約して', ac_s_whatif: '{id} を中止したら？', ac_s_behind: '計画より遅れている施策は？', ac_s_fcst: '着地見込と予算の差の要因は？',
+      ac_d_op: '営業利益の累計は {a}（予算 {b}）で、差は {v}（予算を{dir}）です。主なインサイトは {pts} です。インサイトで説明できない差：{o}。',
       ac_d_break: '{dim}別の営業利益（累計、実績－予算）で差が大きいのは {list} です。差の合計 {v}。',
       ac_d_sga: '販管費は次の費用科目の合計です：{accounts}。営業利益＝売上総利益－販管費のため、販管費が増えると利益が減ります。販管費の累計は {a}（予算 {b}、差 {v}）です。',
       ac_d_point: '{id} {title}：営業利益への影響（累計）{op}。主な原因：{causes}。施策：提案 {n} 件、実行中 {e} 件。',
@@ -669,18 +669,18 @@
     },
     th: {
       ac_new: 'แชทใหม่', ac_close: 'ปิด', ac_context: 'บริบท', ac_ph: 'ถามเกี่ยวกับหน้าจอนี้… (Ctrl+Enter เพื่อส่ง)',
-      ac_hello: 'ถามเกี่ยวกับตัวเลขในหน้าจอนี้และข้อมูลเบื้องหลัง (บัญชี การแยกย่อย Point แอคชัน การคาดการณ์) คำตอบอ้างอิงงวดและองค์กรด้านบน AI อ้างอิงเฉพาะตัวเลขในแอปและแก้ไขข้อมูลไม่ได้',
+      ac_hello: 'ถามเกี่ยวกับตัวเลขในหน้าจอนี้และข้อมูลเบื้องหลัง (บัญชี การแยกย่อย Insight แอคชัน การคาดการณ์) คำตอบอ้างอิงงวดและองค์กรด้านบน AI อ้างอิงเฉพาะตัวเลขในแอปและแก้ไขข้อมูลไม่ได้',
       ac_suggest: 'ตัวอย่างคำถาม', ac_needs_key: 'คำถามแบบพิมพ์เองต้องใช้ API key ลองใช้ตัวอย่างคำถาม หรือตั้งค่า key ด้านบน',
       ac_working: 'กำลังดูข้อมูล…', ac_sources: 'แหล่งที่มา:', ac_open: 'เปิด {s}', ac_demo_tag: 'คำตอบตัวอย่างสำหรับเดโม',
       ac_demo_note: '(คำตอบตัวอย่างที่สร้างจากข้อมูลในแอป ตั้งค่า API key เพื่อถามคำถามของคุณเอง)',
       ac_unverified: 'ตรวจสอบ: {n} ไม่มีอยู่ในข้อมูลที่ AI ใช้', ac_too_many: 'คำถามนี้ใช้หลายขั้นตอนเกินไป โปรดถามให้แคบลง',
       ac_ytd: 'สะสม', ac_def: 'นิยาม', ac_chart_var: '{m}: ผลจริง − งบประมาณ', ac_sc_ACT: 'ผลจริง', ac_sc_BUD: 'งบประมาณ', ac_sc_PY: 'ปีก่อน', ac_sc_FCST: 'คาดการณ์',
       ac_tool_get_screen_context: 'หน้าจอ', ac_tool_get_kpis: 'KPI', ac_tool_get_metric_definition: 'นิยาม Metric', ac_tool_query_financials: 'คิวรี BI',
-      ac_tool_get_points: 'Point', ac_tool_get_actions: 'แอคชัน', ac_tool_get_forecast: 'คาดการณ์', ac_tool_what_if_stop_action: 'จำลอง', ac_tool_open_screen: 'ลิงก์',
+      ac_tool_get_points: 'Insight', ac_tool_get_actions: 'แอคชัน', ac_tool_get_forecast: 'คาดการณ์', ac_tool_what_if_stop_action: 'จำลอง', ac_tool_open_screen: 'ลิงก์',
       ac_dim_org: 'แผนก', ac_dim_customer: 'ลูกค้า', ac_above: 'สูงกว่า', ac_below: 'ต่ำกว่า', ac_progress: 'ความคืบหน้า', ac_outlook_vs_plan: 'คาดการณ์เทียบแผน',
       ac_s_op: 'ทำไมกำไรจากการดำเนินงานต่างจากงบประมาณ?', ac_s_break: 'แยกส่วนต่างกำไรจากการดำเนินงานตาม{dim}', ac_s_sga: 'ค่าใช้จ่ายขายและบริหารคำนวณอย่างไร?',
-      ac_s_point: 'สรุป Point {id}', ac_s_whatif: 'ถ้าหยุด {id} จะเป็นอย่างไร?', ac_s_behind: 'แอคชันใดล่าช้ากว่าแผน?', ac_s_fcst: 'อะไรทำให้คาดการณ์ต่างจากงบประมาณ?',
-      ac_d_op: 'กำไรจากการดำเนินงานสะสมอยู่ที่ {a} เทียบงบประมาณ {b} ส่วนต่าง {v} ({dir}งบประมาณ) Point ที่ใหญ่ที่สุดคือ {pts} ส่วนต่างที่ Point อธิบายไม่ได้: {o}',
+      ac_s_point: 'สรุป Insight {id}', ac_s_whatif: 'ถ้าหยุด {id} จะเป็นอย่างไร?', ac_s_behind: 'แอคชันใดล่าช้ากว่าแผน?', ac_s_fcst: 'อะไรทำให้คาดการณ์ต่างจากงบประมาณ?',
+      ac_d_op: 'กำไรจากการดำเนินงานสะสมอยู่ที่ {a} เทียบงบประมาณ {b} ส่วนต่าง {v} ({dir}งบประมาณ) Insight ที่ใหญ่ที่สุดคือ {pts} ส่วนต่างที่ Insight อธิบายไม่ได้: {o}',
       ac_d_break: 'กำไรจากการดำเนินงานสะสม (ผลจริง − งบประมาณ) ตาม{dim}: ส่วนต่างมากที่สุดคือ {list} ส่วนต่างรวม {v}',
       ac_d_sga: 'ค่าใช้จ่ายขายและบริหารคือผลรวมของบัญชีค่าใช้จ่ายเหล่านี้: {accounts} กำไรจากการดำเนินงาน = กำไรขั้นต้น − ค่าใช้จ่ายขายและบริหาร ค่าใช้จ่ายที่สูงขึ้นจึงลดกำไร ยอดสะสม {a} เทียบงบประมาณ {b} ({v})',
       ac_d_point: '{id} {title}: ผลกระทบต่อกำไรจากการดำเนินงานสะสม {op} สาเหตุหลัก: {causes} แอคชัน: เสนอ {n} รายการ กำลังดำเนินการ {e} รายการ',
@@ -690,18 +690,18 @@
     },
     'zh-Hans': {
       ac_new: '新对话', ac_close: '关闭', ac_context: '上下文', ac_ph: '询问此画面…（Ctrl+Enter 发送）',
-      ac_hello: '可询问此画面上的数值及其背后的数据（科目、细分、要点、行动、预测）。回答以上方的期间和组织为前提；AI只引用应用中的数值，不能修改数据。',
+      ac_hello: '可询问此画面上的数值及其背后的数据（科目、细分、洞察、行动、预测）。回答以上方的期间和组织为前提；AI只引用应用中的数值，不能修改数据。',
       ac_suggest: '推荐问题', ac_needs_key: '自由输入的问题需要API密钥。请尝试推荐问题，或在上方设置密钥。',
       ac_working: '正在查看数据…', ac_sources: '来源：', ac_open: '打开 {s}', ac_demo_tag: '演示用预设回答',
       ac_demo_note: '（根据应用数据生成的演示用预设回答。设置API密钥后可自由提问。）',
       ac_unverified: '请确认：{n} 不在AI查看的数据中。', ac_too_many: '此问题需要的步骤过多，请缩小问题范围。',
       ac_ytd: '累计', ac_def: '定义', ac_chart_var: '{m}：实际－预算', ac_sc_ACT: '实际', ac_sc_BUD: '预算', ac_sc_PY: '上年', ac_sc_FCST: '预测',
       ac_tool_get_screen_context: '画面', ac_tool_get_kpis: 'KPI', ac_tool_get_metric_definition: '指标定义', ac_tool_query_financials: 'BI查询',
-      ac_tool_get_points: '要点', ac_tool_get_actions: '行动', ac_tool_get_forecast: '预测', ac_tool_what_if_stop_action: '模拟', ac_tool_open_screen: '链接',
+      ac_tool_get_points: '洞察', ac_tool_get_actions: '行动', ac_tool_get_forecast: '预测', ac_tool_what_if_stop_action: '模拟', ac_tool_open_screen: '链接',
       ac_dim_org: '部门', ac_dim_customer: '客户', ac_above: '高于', ac_below: '低于', ac_progress: '进度', ac_outlook_vs_plan: '预测－计划',
       ac_s_op: '营业利润为什么与预算不同？', ac_s_break: '按{dim}分解营业利润差异', ac_s_sga: '销售及管理费用如何计算？',
-      ac_s_point: '总结要点 {id}', ac_s_whatif: '如果停止 {id} 会怎样？', ac_s_behind: '哪些行动落后于计划？', ac_s_fcst: '年末预测与预算差异的原因是什么？',
-      ac_d_op: '营业利润累计 {a}，预算 {b}，差异 {v}（{dir}预算）。最大的要点是 {pts}。要点无法解释的差异：{o}。',
+      ac_s_point: '总结洞察 {id}', ac_s_whatif: '如果停止 {id} 会怎样？', ac_s_behind: '哪些行动落后于计划？', ac_s_fcst: '年末预测与预算差异的原因是什么？',
+      ac_d_op: '营业利润累计 {a}，预算 {b}，差异 {v}（{dir}预算）。最大的洞察是 {pts}。洞察无法解释的差异：{o}。',
       ac_d_break: '按{dim}的营业利润累计（实际－预算）：差异最大的是 {list}。差异合计 {v}。',
       ac_d_sga: '销售及管理费用是以下费用科目的合计：{accounts}。营业利润＝毛利－销售及管理费用，因此费用增加会降低利润。累计 {a}，预算 {b}（{v}）。',
       ac_d_point: '{id} {title}：营业利润影响（累计）{op}。主要原因：{causes}。行动：提案 {n} 项，执行中 {e} 项。',
@@ -711,18 +711,18 @@
     },
     'zh-Hant': {
       ac_new: '新對話', ac_close: '關閉', ac_context: '情境', ac_ph: '詢問此畫面…（Ctrl+Enter 傳送）',
-      ac_hello: '可詢問此畫面上的數值及其背後的資料（科目、細分、要點、行動、預測）。回答以上方的期間與組織為前提；AI只引用應用程式中的數值，無法修改資料。',
+      ac_hello: '可詢問此畫面上的數值及其背後的資料（科目、細分、洞察、行動、預測）。回答以上方的期間與組織為前提；AI只引用應用程式中的數值，無法修改資料。',
       ac_suggest: '建議問題', ac_needs_key: '自由輸入的問題需要API金鑰。請嘗試建議問題，或在上方設定金鑰。',
       ac_working: '正在查看資料…', ac_sources: '來源：', ac_open: '開啟 {s}', ac_demo_tag: '示範用預設回答',
       ac_demo_note: '（根據應用程式資料產生的示範用預設回答。設定API金鑰後即可自由提問。）',
       ac_unverified: '請確認：{n} 不在AI查看的資料中。', ac_too_many: '此問題需要的步驟過多，請縮小問題範圍。',
       ac_ytd: '累計', ac_def: '定義', ac_chart_var: '{m}：實際－預算', ac_sc_ACT: '實際', ac_sc_BUD: '預算', ac_sc_PY: '前一年', ac_sc_FCST: '預測',
       ac_tool_get_screen_context: '畫面', ac_tool_get_kpis: 'KPI', ac_tool_get_metric_definition: '指標定義', ac_tool_query_financials: 'BI查詢',
-      ac_tool_get_points: '要點', ac_tool_get_actions: '行動', ac_tool_get_forecast: '預測', ac_tool_what_if_stop_action: '模擬', ac_tool_open_screen: '連結',
+      ac_tool_get_points: '洞察', ac_tool_get_actions: '行動', ac_tool_get_forecast: '預測', ac_tool_what_if_stop_action: '模擬', ac_tool_open_screen: '連結',
       ac_dim_org: '部門', ac_dim_customer: '客戶', ac_above: '高於', ac_below: '低於', ac_progress: '進度', ac_outlook_vs_plan: '預測－計畫',
       ac_s_op: '營業利益為什麼與預算不同？', ac_s_break: '按{dim}分解營業利益差異', ac_s_sga: '銷售及管理費用如何計算？',
-      ac_s_point: '摘要要點 {id}', ac_s_whatif: '如果停止 {id} 會怎樣？', ac_s_behind: '哪些行動落後於計畫？', ac_s_fcst: '年底預測與預算差異的原因是什麼？',
-      ac_d_op: '營業利益累計 {a}，預算 {b}，差異 {v}（{dir}預算）。最大的要點是 {pts}。要點無法解釋的差異：{o}。',
+      ac_s_point: '摘要洞察 {id}', ac_s_whatif: '如果停止 {id} 會怎樣？', ac_s_behind: '哪些行動落後於計畫？', ac_s_fcst: '年底預測與預算差異的原因是什麼？',
+      ac_d_op: '營業利益累計 {a}，預算 {b}，差異 {v}（{dir}預算）。最大的洞察是 {pts}。洞察無法解釋的差異：{o}。',
       ac_d_break: '按{dim}的營業利益累計（實際－預算）：差異最大的是 {list}。差異合計 {v}。',
       ac_d_sga: '銷售及管理費用是以下費用科目的合計：{accounts}。營業利益＝毛利－銷售及管理費用，因此費用增加會降低利益。累計 {a}，預算 {b}（{v}）。',
       ac_d_point: '{id} {title}：營業利益影響（累計）{op}。主要原因：{causes}。行動：提案 {n} 項，執行中 {e} 項。',
@@ -732,18 +732,18 @@
     },
     id: {
       ac_new: 'Obrolan baru', ac_close: 'Tutup', ac_context: 'Konteks', ac_ph: 'Tanya tentang layar ini… (Ctrl+Enter untuk mengirim)',
-      ac_hello: 'Tanyakan angka di layar ini dan data di baliknya (akun, rincian, Point, aksi, proyeksi). Jawaban memakai periode dan organisasi di atas; AI hanya mengutip angka dari aplikasi dan tidak dapat mengubah data.',
+      ac_hello: 'Tanyakan angka di layar ini dan data di baliknya (akun, rincian, Insight, aksi, proyeksi). Jawaban memakai periode dan organisasi di atas; AI hanya mengutip angka dari aplikasi dan tidak dapat mengubah data.',
       ac_suggest: 'Contoh pertanyaan', ac_needs_key: 'Pertanyaan bebas memerlukan kunci API. Coba contoh pertanyaan, atau atur kunci di atas.',
       ac_working: 'Memeriksa data…', ac_sources: 'Sumber:', ac_open: 'Buka {s}', ac_demo_tag: 'jawaban demo yang sudah disiapkan',
       ac_demo_note: '(Jawaban demo yang disusun dari data aplikasi. Atur kunci API untuk mengajukan pertanyaan sendiri.)',
       ac_unverified: 'Periksa: {n} tidak ada di data yang dilihat AI.', ac_too_many: 'Pertanyaan ini memerlukan terlalu banyak langkah. Persempit pertanyaannya.',
       ac_ytd: 'YTD', ac_def: 'definisi', ac_chart_var: '{m}: aktual − anggaran', ac_sc_ACT: 'Aktual', ac_sc_BUD: 'Anggaran', ac_sc_PY: 'Tahun lalu', ac_sc_FCST: 'Proyeksi',
       ac_tool_get_screen_context: 'layar', ac_tool_get_kpis: 'KPI', ac_tool_get_metric_definition: 'definisi metrik', ac_tool_query_financials: 'kueri BI',
-      ac_tool_get_points: 'Point', ac_tool_get_actions: 'aksi', ac_tool_get_forecast: 'proyeksi', ac_tool_what_if_stop_action: 'simulasi', ac_tool_open_screen: 'tautan',
+      ac_tool_get_points: 'Insight', ac_tool_get_actions: 'aksi', ac_tool_get_forecast: 'proyeksi', ac_tool_what_if_stop_action: 'simulasi', ac_tool_open_screen: 'tautan',
       ac_dim_org: 'departemen', ac_dim_customer: 'pelanggan', ac_above: 'di atas', ac_below: 'di bawah', ac_progress: 'progres', ac_outlook_vs_plan: 'proyeksi vs rencana',
       ac_s_op: 'Mengapa laba operasi berbeda dari anggaran?', ac_s_break: 'Rinci selisih laba operasi per {dim}', ac_s_sga: 'Bagaimana SG&A dihitung?',
-      ac_s_point: 'Ringkas Point {id}', ac_s_whatif: 'Bagaimana jika {id} dihentikan?', ac_s_behind: 'Aksi mana yang tertinggal dari rencana?', ac_s_fcst: 'Apa penyebab selisih proyeksi dengan anggaran?',
-      ac_d_op: 'Laba operasi YTD {a} dibanding anggaran {b}, selisih {v} ({dir} anggaran). Point terbesar: {pts}. Selisih yang tidak dijelaskan Point: {o}.',
+      ac_s_point: 'Ringkas Insight {id}', ac_s_whatif: 'Bagaimana jika {id} dihentikan?', ac_s_behind: 'Aksi mana yang tertinggal dari rencana?', ac_s_fcst: 'Apa penyebab selisih proyeksi dengan anggaran?',
+      ac_d_op: 'Laba operasi YTD {a} dibanding anggaran {b}, selisih {v} ({dir} anggaran). Insight terbesar: {pts}. Selisih yang tidak dijelaskan Insight: {o}.',
       ac_d_break: 'Laba operasi YTD (aktual − anggaran) per {dim}: selisih terbesar adalah {list}. Total selisih {v}.',
       ac_d_sga: 'SG&A adalah jumlah akun beban berikut: {accounts}. Laba operasi = laba kotor − SG&A, jadi SG&A yang lebih tinggi menurunkan laba. SG&A YTD {a} dibanding anggaran {b} ({v}).',
       ac_d_point: '{id} {title}: dampak laba operasi YTD {op}. Penyebab utama: {causes}. Aksi: {n} diusulkan, {e} berjalan.',
@@ -753,18 +753,18 @@
     },
     vi: {
       ac_new: 'Trò chuyện mới', ac_close: 'Đóng', ac_context: 'Ngữ cảnh', ac_ph: 'Hỏi về màn hình này… (Ctrl+Enter để gửi)',
-      ac_hello: 'Hỏi về số liệu trên màn hình này và dữ liệu phía sau (tài khoản, phân tích chi tiết, Point, hành động, dự báo). Câu trả lời dựa trên kỳ và tổ chức ở trên; AI chỉ trích dẫn số liệu của ứng dụng và không thể thay đổi dữ liệu.',
+      ac_hello: 'Hỏi về số liệu trên màn hình này và dữ liệu phía sau (tài khoản, phân tích chi tiết, Insight, hành động, dự báo). Câu trả lời dựa trên kỳ và tổ chức ở trên; AI chỉ trích dẫn số liệu của ứng dụng và không thể thay đổi dữ liệu.',
       ac_suggest: 'Câu hỏi gợi ý', ac_needs_key: 'Câu hỏi tự do cần khóa API. Hãy thử câu hỏi gợi ý hoặc đặt khóa ở trên.',
       ac_working: 'Đang xem dữ liệu…', ac_sources: 'Nguồn:', ac_open: 'Mở {s}', ac_demo_tag: 'câu trả lời demo soạn sẵn',
       ac_demo_note: '(Câu trả lời demo soạn sẵn từ dữ liệu của ứng dụng. Đặt khóa API để tự đặt câu hỏi.)',
       ac_unverified: 'Kiểm tra: {n} không có trong dữ liệu AI đã xem.', ac_too_many: 'Câu hỏi cần quá nhiều bước. Hãy hỏi hẹp hơn.',
       ac_ytd: 'Lũy kế', ac_def: 'định nghĩa', ac_chart_var: '{m}: thực tế − ngân sách', ac_sc_ACT: 'Thực tế', ac_sc_BUD: 'Ngân sách', ac_sc_PY: 'Năm trước', ac_sc_FCST: 'Dự báo',
       ac_tool_get_screen_context: 'màn hình', ac_tool_get_kpis: 'KPI', ac_tool_get_metric_definition: 'định nghĩa chỉ số', ac_tool_query_financials: 'truy vấn BI',
-      ac_tool_get_points: 'Point', ac_tool_get_actions: 'hành động', ac_tool_get_forecast: 'dự báo', ac_tool_what_if_stop_action: 'mô phỏng', ac_tool_open_screen: 'liên kết',
+      ac_tool_get_points: 'Insight', ac_tool_get_actions: 'hành động', ac_tool_get_forecast: 'dự báo', ac_tool_what_if_stop_action: 'mô phỏng', ac_tool_open_screen: 'liên kết',
       ac_dim_org: 'phòng ban', ac_dim_customer: 'khách hàng', ac_above: 'cao hơn', ac_below: 'thấp hơn', ac_progress: 'tiến độ', ac_outlook_vs_plan: 'dự báo so với kế hoạch',
       ac_s_op: 'Vì sao lợi nhuận hoạt động khác ngân sách?', ac_s_break: 'Phân tích chênh lệch lợi nhuận hoạt động theo {dim}', ac_s_sga: 'Chi phí bán hàng và quản lý được tính thế nào?',
-      ac_s_point: 'Tóm tắt Point {id}', ac_s_whatif: 'Nếu dừng {id} thì sao?', ac_s_behind: 'Hành động nào chậm so với kế hoạch?', ac_s_fcst: 'Điều gì tạo ra chênh lệch giữa dự báo và ngân sách?',
-      ac_d_op: 'Lợi nhuận hoạt động lũy kế là {a} so với ngân sách {b}, chênh lệch {v} ({dir} ngân sách). Các Point lớn nhất: {pts}. Chênh lệch không được Point giải thích: {o}.',
+      ac_s_point: 'Tóm tắt Insight {id}', ac_s_whatif: 'Nếu dừng {id} thì sao?', ac_s_behind: 'Hành động nào chậm so với kế hoạch?', ac_s_fcst: 'Điều gì tạo ra chênh lệch giữa dự báo và ngân sách?',
+      ac_d_op: 'Lợi nhuận hoạt động lũy kế là {a} so với ngân sách {b}, chênh lệch {v} ({dir} ngân sách). Các Insight lớn nhất: {pts}. Chênh lệch không được Insight giải thích: {o}.',
       ac_d_break: 'Lợi nhuận hoạt động lũy kế (thực tế − ngân sách) theo {dim}: chênh lệch lớn nhất là {list}. Tổng chênh lệch {v}.',
       ac_d_sga: 'Chi phí bán hàng và quản lý là tổng các tài khoản chi phí sau: {accounts}. Lợi nhuận hoạt động = lợi nhuận gộp − chi phí này, nên chi phí cao hơn làm giảm lợi nhuận. Lũy kế {a} so với ngân sách {b} ({v}).',
       ac_d_point: '{id} {title}: tác động lũy kế đến lợi nhuận hoạt động {op}. Nguyên nhân chính: {causes}. Hành động: {n} đề xuất, {e} đang thực hiện.',
