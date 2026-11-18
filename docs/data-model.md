@@ -161,9 +161,28 @@ browser from these tables — no notebook or AI call.
 ### 4.1 Security and user context
 | Table | Columns |
 |---|---|
-| `app_user` | user_id (UPN), display_name, role (`CORP_PLANNING`, `ORG_HEAD`, `ACTION_OWNER`, `VIEWER`), home_org_id |
-| `app_user_org_scope` | user_id, org_id, can_decide_action, can_confirm_forecast (scope includes descendants via org_path) |
+| `app_user` | user_id (= Microsoft Entra **object ID**, permanent), entra_object_id, upn, display_name, email, role (`CORP_PLANNING`, `ORG_HEAD`, `ACTION_OWNER`; null until Corporate Planning sets it), home_org_id, is_active. Never deleted: a leaver is disabled in Entra and set `is_active = false`, so decisions, chats and audit history stay linked. |
+| `app_user_org_scope` | user_id, org_id, can_edit (progress updates, Individual Factors, new Actions), can_decide_action, can_confirm_forecast, source (`ADMIN` = set by Corporate Planning, `DEFAULT` = first sign-in), granted_by, granted_at. Scope includes descendants via org_path. |
 | `app_user_preference` | user_id, language_code, last_period_id, last_org_id |
+
+**Who is a user (Fabric migration, decided 2026-11-18).** Three layers, one tenant per app:
+
+| Layer | Managed by | Decides |
+|---|---|---|
+| 1. Microsoft Entra ID sign-in | IT | Who can sign in. The app stores no passwords; the signed-in account is the user (the mockup's "Demo user" switch is removed). |
+| 2. Fabric access through Entra security groups | IT | Who can open the app: an app-users group gets **Viewer-level** access to the app and semantic model; only the build/admin group holds workspace roles. Workspace Admin / Member / Contributor bypass semantic-model RLS, so business users must never be workspace members. |
+| 3. `app_user` + `app_user_org_scope` | Corporate Planning (admin screen in the app) | Which organizations a person sees and what they may do. |
+
+| Role | Sees | Edit (`can_edit`) | Decide Actions | Confirm Forecast | C-01 AI chat / C-03 Action chat |
+|---|---|---|---|---|---|
+| `CORP_PLANNING` | scope (normally the company) | yes | yes | per scope row | yes |
+| `ORG_HEAD` | own organization and below | yes | yes | yes | yes |
+| `ACTION_OWNER` | own organization and below | yes | no | no | yes |
+
+- **First sign-in:** an app-group member with no `app_user` row is created with no role and one `DEFAULT` scope row on the home organization with every right off (**view-only**) (source of the home organization TBD, e.g. the Entra department attribute). Corporate Planning then sets the real scope.
+- **Open question:** is a separate read-only role needed (e.g. staff who only read and chat)? It is not in the requirements or concept slides; decide it with the role-to-organization matrix (README §12, item 2).
+- **Enforcement:** reads are filtered by semantic-model RLS for the signed-in user (screens and the C-01 tools alike); every write function re-checks `app_user_org_scope` server-side and never trusts the screen.
+- **To verify in Fabric:** that User Data Functions receive the caller's identity (needed for the server-side check); capacity size vs. licensing (below F64, every report reader needs Power BI Pro); RLS on object ID (`USEROBJECTID()`) vs. UPN (`USERPRINCIPALNAME()`).
 
 ### 4.2 Points (AI-detected Issues / Opportunities)
 | Table | Columns |
@@ -278,7 +297,7 @@ on revenue and standard cost-of-sales rows; other rows show as "(not allocated)"
 not available by customer, product or account.
 
 **RLS:** role `OrgScope` filters `dim_organization` to rows whose `org_path` starts with any
-`org_path` in `app_user_org_scope` for `USERPRINCIPALNAME()`. All app tables relate through `org_id`.
+`org_path` in `app_user_org_scope` for the signed-in user (`app_user` matched by `USERPRINCIPALNAME()` → upn, or by object ID; see §4.1), active users only. All app tables relate through `org_id`.
 
 ## 6. Reconciliation tests (must pass in mock and production)
 1. Σ leaf org metrics = company metric (no double counting).

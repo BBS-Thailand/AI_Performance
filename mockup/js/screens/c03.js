@@ -160,6 +160,7 @@
   function render(params) {
     const { esc, t, M, state } = A;
     if (params && params.actionId) local.actionId = params.actionId;
+    if (params && params.list) local.actionId = null; // "All chats" in the header menu
     const list = actionsInScope();
     const a0 = local.actionId ? M.action(local.actionId) : null;
     const a = a0 && list.includes(a0) ? a0 : null;
@@ -285,9 +286,11 @@
       });
       return;
     }
-    // The shell rendered before this thread was marked read: refresh the bell count.
-    const bell = document.querySelector('.bell-wrap');
+    // The shell rendered before this thread was marked read: refresh the bell and chat-list counts.
+    const bell = document.querySelector('.bell-wrap:not(.chats-wrap)');
     if (bell) bell.outerHTML = C().bellHtml();
+    const chats = document.querySelector('.chats-wrap');
+    if (chats) chats.outerHTML = C().chatsHtml();
     scrollDown(root);
 
     // AI settings (shared bar)

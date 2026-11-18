@@ -579,24 +579,36 @@ for (const org of ['SL', 'OS', 'MF', 'AD']) {
 }
 
 /* -------------------------------------------------------- users & AI text */
-const app_user = [
-  { user_id: 'u01', display_name: 'Sato (Corporate Planning)', email: 'sato@sample.example', role: 'CORP_PLANNING', home_org_id: 'CO' },
-  { user_id: 'u02', display_name: 'Tanaka (Sales Dept. Head)', email: 'tanaka@sample.example', role: 'ORG_HEAD', home_org_id: 'SL' },
-  { user_id: 'u03', display_name: 'Somchai (Overseas Sales Head)', email: 'somchai@sample.example', role: 'ORG_HEAD', home_org_id: 'OS' },
-  { user_id: 'u04', display_name: 'Suzuki (Manufacturing Head)', email: 'suzuki@sample.example', role: 'ORG_HEAD', home_org_id: 'MF' },
-  { user_id: 'u05', display_name: 'Nittaya (Administration Head)', email: 'nittaya@sample.example', role: 'ORG_HEAD', home_org_id: 'AD' },
-  { user_id: 'u06', display_name: 'Yamada (Sales Staff)', email: 'yamada@sample.example', role: 'ACTION_OWNER', home_org_id: 'SL' },
+// Production: user_id = Microsoft Entra object ID (permanent); upn / email are matched at sign-in and shown.
+// Users are never deleted (is_active = false keeps their decisions, chats and audit history linked).
+const USERS = [
+  ['u01', 'Sato (Corporate Planning)', 'sato', 'CORP_PLANNING', 'CO'],
+  ['u02', 'Tanaka (Sales Dept. Head)', 'tanaka', 'ORG_HEAD', 'SL'],
+  ['u03', 'Somchai (Overseas Sales Head)', 'somchai', 'ORG_HEAD', 'OS'],
+  ['u04', 'Suzuki (Manufacturing Head)', 'suzuki', 'ORG_HEAD', 'MF'],
+  ['u05', 'Nittaya (Administration Head)', 'nittaya', 'ORG_HEAD', 'AD'],
+  ['u06', 'Yamada (Sales Staff)', 'yamada', 'ACTION_OWNER', 'SL'],
 ];
-const app_user_org_scope = [
-  { user_id: 'u01', org_id: 'CO', can_decide_action: true, can_confirm_forecast: false },
-  { user_id: 'u02', org_id: 'SL', can_decide_action: true, can_confirm_forecast: true },
-  { user_id: 'u03', org_id: 'OS', can_decide_action: true, can_confirm_forecast: true },
-  { user_id: 'u04', org_id: 'MF', can_decide_action: true, can_confirm_forecast: true },
-  { user_id: 'u05', org_id: 'AD', can_decide_action: true, can_confirm_forecast: true },
-  { user_id: 'u06', org_id: 'SL', can_decide_action: false, can_confirm_forecast: false },
+const app_user = USERS.map(([id, name, mail, role, home]) => ({
+  user_id: id, entra_object_id: `mock-oid-${id}`, upn: `${mail}@sample.example`, display_name: name, email: `${mail}@sample.example`,
+  role, home_org_id: home, is_active: true,
+}));
+// Organization scope and rights, maintained by Corporate Planning in the app (IT only controls app entry via Entra groups).
+// can_edit: progress updates, Individual Factors, new Actions.
+// source: ADMIN (set by Corporate Planning) or DEFAULT (first sign-in: view-only on the home organization).
+const SCOPES = [
+  ['u01', 'CO', true, true, false],
+  ['u02', 'SL', true, true, true],
+  ['u03', 'OS', true, true, true],
+  ['u04', 'MF', true, true, true],
+  ['u05', 'AD', true, true, true],
+  ['u06', 'SL', true, false, false],
 ];
+const app_user_org_scope = SCOPES.map(([user, org, edit, decide, confirm]) => ({
+  user_id: user, org_id: org, can_edit: edit, can_decide_action: decide, can_confirm_forecast: confirm,
+  source: 'ADMIN', granted_by: 'u01', granted_at: '2027-04-01T00:00:00Z',
+}));
 const app_user_preference = app_user.map((u) => ({ user_id: u.user_id, language_code: u.user_id === 'u03' || u.user_id === 'u05' ? 'th' : u.user_id === 'u01' ? 'en' : 'ja', last_period_id: null, last_org_id: null }));
-
 const ai_run = [202704, 202705, 202706].map((p) => ({
   run_id: `RUN-${p}`, run_type: 'MONTHLY_ANALYSIS', as_of_period_id: p, model_name: 'TBD (mock)', prompt_version: 'mock-v1',
   source_load_id: `LOAD-PL-${p}`, status: 'SUCCEEDED', started_at: `${String(p).slice(0, 4)}-${String(p + 1).slice(4)}-03T00:00:00Z`, finished_at: null,

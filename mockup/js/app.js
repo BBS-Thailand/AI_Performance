@@ -22,6 +22,7 @@
   }
   /** README §2.2: restore last context, else latest closed month and user's organization. */
   function initContext() {
+    if (!db.app_user.some((u) => u.user_id === state.userId)) state.userId = 'u01'; // saved demo user no longer exists
     const pref = db.app_user_preference.find((p) => p.user_id === state.userId) || {};
     if (!state.lang) state.lang = pref.language_code || 'en';
     const periods = selectablePeriods();
@@ -91,9 +92,9 @@
   function canConfirm(orgId) {
     return userScopes().some((s) => s.can_confirm_forecast && M.inScope(orgId, s.org_id));
   }
-  /** Individual Factors can be registered for organizations in the user's scope. */
+  /** Progress updates and Individual Factors need a scope row with can_edit (a first-sign-in DEFAULT row has none; chat stays open). */
   function canEditOrg(orgId) {
-    return userScopes().some((s) => M.inScope(orgId, s.org_id));
+    return userScopes().some((s) => s.can_edit !== false && M.inScope(orgId, s.org_id));
   }
   function canDecide(action) {
     return userScopes().some((s) => s.can_decide_action && M.inScope(action.owner_org_id, s.org_id));
@@ -374,7 +375,7 @@
       <div class="product">${esc(t('app_title'))}</div>
       <nav>${MENU.map((m) => `<button data-menu="${m.home}" class="${m === activeMenu ? 'active' : ''}">${esc(t(m.key))}</button>`).join('')}</nav>
       <div class="spacer"></div>
-      ${App.Chat ? App.Chat.bellHtml() : ''}
+      ${App.Chat ? App.Chat.chatsHtml() + App.Chat.bellHtml() : ''}
       <span class="sim-badge" title="${esc(t('simulated_note'))}">${esc(t('simulated'))}</span>`;
     $('#contextbar').innerHTML = `
       <div class="crumb">${crumbs.join('')}</div>

@@ -1,44 +1,62 @@
 [
  {
   "user_id": "u01",
+  "entra_object_id": "mock-oid-u01",
+  "upn": "sato@sample.example",
   "display_name": "Sato (Corporate Planning)",
   "email": "sato@sample.example",
   "role": "CORP_PLANNING",
-  "home_org_id": "CO"
+  "home_org_id": "CO",
+  "is_active": true
  },
  {
   "user_id": "u02",
+  "entra_object_id": "mock-oid-u02",
+  "upn": "tanaka@sample.example",
   "display_name": "Tanaka (Sales Dept. Head)",
   "email": "tanaka@sample.example",
   "role": "ORG_HEAD",
-  "home_org_id": "SL"
+  "home_org_id": "SL",
+  "is_active": true
  },
  {
   "user_id": "u03",
+  "entra_object_id": "mock-oid-u03",
+  "upn": "somchai@sample.example",
   "display_name": "Somchai (Overseas Sales Head)",
   "email": "somchai@sample.example",
   "role": "ORG_HEAD",
-  "home_org_id": "OS"
+  "home_org_id": "OS",
+  "is_active": true
  },
  {
   "user_id": "u04",
+  "entra_object_id": "mock-oid-u04",
+  "upn": "suzuki@sample.example",
   "display_name": "Suzuki (Manufacturing Head)",
   "email": "suzuki@sample.example",
   "role": "ORG_HEAD",
-  "home_org_id": "MF"
+  "home_org_id": "MF",
+  "is_active": true
  },
  {
   "user_id": "u05",
+  "entra_object_id": "mock-oid-u05",
+  "upn": "nittaya@sample.example",
   "display_name": "Nittaya (Administration Head)",
   "email": "nittaya@sample.example",
   "role": "ORG_HEAD",
-  "home_org_id": "AD"
+  "home_org_id": "AD",
+  "is_active": true
  },
  {
   "user_id": "u06",
+  "entra_object_id": "mock-oid-u06",
+  "upn": "yamada@sample.example",
   "display_name": "Yamada (Sales Staff)",
   "email": "yamada@sample.example",
   "role": "ACTION_OWNER",
-  "home_org_id": "SL"
+  "home_org_id": "SL",
+  "is_active": true
  }
 ]

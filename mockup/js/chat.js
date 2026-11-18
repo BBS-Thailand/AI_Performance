@@ -208,14 +208,56 @@
     }).join('');
     return `<div class="bell-menu" role="menu"><div class="bell-h">${esc(t('c3_notifications'))}</div>${rows || `<div class="muted small" style="padding:10px">${esc(t('c3_no_notif'))}</div>`}</div>`;
   }
+  /* ================================================ chat list (header, next to the bell) */
+  /** Chats the user can open: unread first, then joined, then read-only; newest message first within each group. */
+  function myChats(userId = A.state.userId) {
+    return db().app_chat_thread.map((th) => {
+      const a = A.M.action(th.action_id);
+      if (!a || !canSee(a, userId)) return null;
+      const joined = isParticipant(th.action_id, userId);
+      const last = messages(th.action_id).slice(-1)[0];
+      const unread = joined ? (A.M.chatUnread(th.action_id, userId) || {}).unread || 0 : 0; // read-only viewers get no unread count
+      return { a, joined, last, unread };
+    }).filter(Boolean)
+      .sort((x, y) => ((y.unread > 0) - (x.unread > 0)) || (y.joined - x.joined) ||String(y.last ? y.last.sent_at : '').localeCompare(String(x.last ? x.last.sent_at : '')));
+  }
+  function chatsHtml() {
+    const n = myChats().reduce((s, c) => s + c.unread, 0);
+    return `<div class="bell-wrap chats-wrap"><button class="bell" data-chats title="${A.esc(t('c3_chats'))}" aria-label="${A.esc(t('c3_chats'))}" aria-haspopup="menu">💬${n ? `<b>${n}</b>` : ''}</button></div>`;
+  }
+  function chatsMenu() {
+    const { esc } = A;
+    const rows = myChats().map(({ a, joined, last, unread }) => {
+      const who = last ? (last.author_id ? firstName(last.author_id) : t('by_system')) : '';
+      return `<button class="bell-item ${unread ? 'unread' : ''}" data-chat-open="${a.action_id}">
+        <span class="small chats-top"><span class="id">${a.action_id}</span> <span class="chats-name">${esc(A.actionNamePlain(a))}</span>${unread ? `<b class="chats-n">${unread}</b>` : ''}</span>
+        <span class="bell-snip">${last ? `${esc(who)}: ${esc(String(last.body || '').slice(0, 80))}` : '–'}</span>
+        <span class="hint">${esc(A.orgName(a.owner_org_id))}${last ? ' · ' + esc(fmtWhen(last.sent_at)) : ''}${joined ? '' : ' · ' + esc(t('c3_not_joined'))}</span></button>`;
+    }).join('');
+    return `<div class="bell-menu" role="menu"><div class="bell-h">${esc(t('c3_chats'))}</div>
+      ${rows || `<div class="muted small" style="padding:10px">${esc(t('c3_no_chats'))}</div>`}
+      <button class="bell-item chats-all" data-chat-all>${esc(t('c3_open_list'))}</button></div>`;
+  }
+  /** Open an Action chat from the header; switch the organization filter when the Action sits outside it. */
+  function openChat(actionId) {
+    const a = A.M.action(actionId);
+    if (a && !A.M.inScope(a.owner_org_id, A.state.orgId) && A.userOrgs().includes(a.owner_org_id)) A.state.orgId = a.owner_org_id;
+    A.go('C03', { actionId });
+  }
+
   document.addEventListener('click', (e) => {
     const bell = e.target.closest('[data-bell]');
+    const chats = e.target.closest('[data-chats]');
     const open = document.querySelector('.bell-menu');
-    if (bell) {
-      if (open) { open.remove(); return; }
-      bell.parentElement.insertAdjacentHTML('beforeend', bellMenu());
+    if (bell || chats) {
+      const same = open && open.parentElement === (bell || chats).parentElement;
+      if (open) open.remove();
+      if (!same) (bell || chats).parentElement.insertAdjacentHTML('beforeend', bell ? bellMenu() : chatsMenu());
       return;
     }
+    const co = e.target.closest('[data-chat-open]');
+    if (co) { openChat(co.dataset.chatOpen); return; }
+    if (e.target.closest('[data-chat-all]')) { A.go('C03', { list: true }); return; }
     const item = e.target.closest('[data-notif]');
     if (item) {
       const n = myNotifications().find((x) => x.notification_id === item.dataset.notif);
@@ -415,6 +457,6 @@
 
   A.Chat = {
     PROVIDERS, settings, modelName, aiBarHtml, bindAiBar, loadSdk, LANG_EN, langLabel, langRule, unknownNumbers, thread, messages, participants, isParticipant, canManage, canStart, candidates, parseMentions,
-    post, startThread, addParticipant, removeParticipant, markRead, bellHtml, emailPreview, ask, translate, storedTranslation, actionContext, firstName, fmtWhen,
+    post, startThread, addParticipant, removeParticipant, markRead, bellHtml, chatsHtml, myChats,emailPreview, ask, translate, storedTranslation, actionContext, firstName, fmtWhen,
   };
 })();

@@ -2,37 +2,61 @@
  {
   "user_id": "u01",
   "org_id": "CO",
+  "can_edit": true,
   "can_decide_action": true,
-  "can_confirm_forecast": false
+  "can_confirm_forecast": false,
+  "source": "ADMIN",
+  "granted_by": "u01",
+  "granted_at": "2027-04-01T00:00:00Z"
  },
  {
   "user_id": "u02",
   "org_id": "SL",
+  "can_edit": true,
   "can_decide_action": true,
-  "can_confirm_forecast": true
+  "can_confirm_forecast": true,
+  "source": "ADMIN",
+  "granted_by": "u01",
+  "granted_at": "2027-04-01T00:00:00Z"
  },
  {
   "user_id": "u03",
   "org_id": "OS",
+  "can_edit": true,
   "can_decide_action": true,
-  "can_confirm_forecast": true
+  "can_confirm_forecast": true,
+  "source": "ADMIN",
+  "granted_by": "u01",
+  "granted_at": "2027-04-01T00:00:00Z"
  },
  {
   "user_id": "u04",
   "org_id": "MF",
+  "can_edit": true,
   "can_decide_action": true,
-  "can_confirm_forecast": true
+  "can_confirm_forecast": true,
+  "source": "ADMIN",
+  "granted_by": "u01",
+  "granted_at": "2027-04-01T00:00:00Z"
  },
  {
   "user_id": "u05",
   "org_id": "AD",
+  "can_edit": true,
   "can_decide_action": true,
-  "can_confirm_forecast": true
+  "can_confirm_forecast": true,
+  "source": "ADMIN",
+  "granted_by": "u01",
+  "granted_at": "2027-04-01T00:00:00Z"
  },
  {
   "user_id": "u06",
   "org_id": "SL",
+  "can_edit": true,
   "can_decide_action": false,
-  "can_confirm_forecast": false
+  "can_confirm_forecast": false,
+  "source": "ADMIN",
+  "granted_by": "u01",
+  "granted_at": "2027-04-01T00:00:00Z"
  }
 ]
