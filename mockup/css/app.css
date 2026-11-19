@@ -46,7 +46,6 @@ button, select, input, textarea { font: inherit; color: inherit; }
 .topbar nav button:hover { color: #fff; }
 .topbar nav button.active { color: #fff; border-bottom-color: #4cc2a9; font-weight: 600; }
 .topbar .spacer { flex: 1; }
-.sim-badge { background: #f5c451; color: #3a2a00; font-weight: 700; font-size: 11px; padding: 3px 8px; border-radius: 4px; letter-spacing: .4px; white-space: nowrap; }
 .contextbar { background: var(--surface); border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 14px; padding: 8px 16px; flex-wrap: wrap; }
 .contextbar .crumb { font-weight: 600; font-size: 14px; display: flex; gap: 8px; align-items: baseline; }
 .contextbar .crumb .sid { color: var(--accent); font-family: Consolas, monospace; font-size: 12px; }

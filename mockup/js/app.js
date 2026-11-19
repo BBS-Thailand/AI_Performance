@@ -375,8 +375,7 @@
       <div class="product">${esc(t('app_title'))}</div>
       <nav>${MENU.map((m) => `<button data-menu="${m.home}" class="${m === activeMenu ? 'active' : ''}">${esc(t(m.key))}</button>`).join('')}</nav>
       <div class="spacer"></div>
-      ${App.Chat ? App.Chat.chatsHtml() + App.Chat.bellHtml() : ''}
-      <span class="sim-badge" title="${esc(t('simulated_note'))}">${esc(t('simulated'))}</span>`;
+      ${App.Chat ? App.Chat.chatsHtml() + App.Chat.bellHtml() : ''}`;
     $('#contextbar').innerHTML = `
       <div class="crumb">${crumbs.join('')}</div>
       <div class="spacer"></div>
