@@ -75,10 +75,10 @@
   "forecast_version_id": "FV-OS-2027-01",
   "metric_id": "REV",
   "budget_annual": 2100,
-  "baseline_no_action": 2025.65,
+  "baseline_no_action": 2025.25,
   "action_contribution": 22,
   "factor_contribution": 0,
-  "landing": 2047.65
+  "landing": 2047.25
  },
  {
   "forecast_version_id": "FV-OS-2027-01",
@@ -111,10 +111,10 @@
   "forecast_version_id": "FV-OS-2027-02",
   "metric_id": "REV",
   "budget_annual": 2100,
-  "baseline_no_action": 2025.65,
+  "baseline_no_action": 2025.25,
   "action_contribution": 22,
   "factor_contribution": 0,
-  "landing": 2047.65
+  "landing": 2047.25
  },
  {
   "forecast_version_id": "FV-OS-2027-02",

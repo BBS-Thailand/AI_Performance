@@ -156,12 +156,24 @@
         const top = Math.min(y(v), y(0)), hh = Math.abs(y(v) - y(0));
         out += `<rect x="${x}" y="${top}" width="${each - 1}" height="${Math.max(hh, 0.5)}" fill="${s.color}" rx="1.5"><title>${esc(s.name)} ${esc(labels[i])}: ${fmt(v)}</title></rect>`;
       }));
-      series.filter((s) => s.type === 'line').forEach((s) => {
+      // Lines flagged `top` are drawn last so their markers are not covered by another series.
+      series.filter((s) => s.type === 'line').sort((a, b) => (a.top ? 1 : 0) - (b.top ? 1 : 0)).forEach((s) => {
         const pts = s.values.map((v, i) => (v === null || v === undefined ? null : [pad.l + bw * i + bw / 2, y(v)]));
         let d = '', pen = false;
         pts.forEach((p) => { if (!p) { pen = false; return; } d += (pen ? 'L' : 'M') + p[0].toFixed(1) + ',' + p[1].toFixed(1); pen = true; });
         out += `<path d="${d}" fill="none" stroke="${s.color}" stroke-width="${s.width || 2}" ${s.dash ? `stroke-dasharray="${s.dash === true ? '4 3' : s.dash}"` : ''}/>`;
-        pts.forEach((p, i) => { if (p) out += `<circle cx="${p[0]}" cy="${p[1]}" r="2.5" fill="${s.color}"><title>${esc(s.name)} ${esc(labels[i])}: ${fmt(s.values[i])}</title></circle>`; });
+        pts.forEach((p, i) => { if (p) out += `<circle cx="${p[0]}" cy="${p[1]}" r="${s.marker || 2.5}" fill="${s.color}"${s.marker ? ' stroke="var(--surface)" stroke-width="1.5"' : ''}><title>${esc(s.name)} ${esc(labels[i])}: ${fmt(s.values[i])}</title></circle>`; });
+        // Optional value label at the last point (used when a series may have a single measured month):
+        // under the point, or above it when another series passes just below.
+        const li = s.pointLabel ? pts.map(Boolean).lastIndexOf(true) : -1;
+        if (li >= 0) {
+          const py = pts[li][1];
+          const crowded = series.some((o) => o !== s && o.type === 'line' && o.values[li] !== null && o.values[li] !== undefined && y(o.values[li]) > py && y(o.values[li]) < py + 24);
+          const rising = li > 0 && pts[li - 1] && pts[li - 1][1] > py + 4; // own line arrives from below-left: label goes upper-left
+          out += rising
+            ? `<text x="${pts[li][0] - 8}" y="${py - 5}" text-anchor="end" class="end-label">${fmt(s.values[li])}</text>`
+            : `<text x="${pts[li][0]}" y="${crowded ? py - 9 : py + 16}" text-anchor="middle" class="end-label">${fmt(s.values[li])}</text>`;
+        }
       });
       // Direct end labels (value in text ink beside a colored marker), nudged apart so they never overlap.
       const ends = series.filter((s) => s.type === 'line' && s.endLabel).map((s) => {

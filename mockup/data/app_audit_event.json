@@ -52,7 +52,7 @@
   "event_type": "DECISION_ADOPT",
   "old_value": null,
   "new_value": "ADOPT",
-  "occurred_at": "2027-06-03T01:30:00Z"
+  "occurred_at": "2027-05-07T01:30:00Z"
  },
  {
   "event_id": "AE-06",
@@ -63,7 +63,7 @@
   "event_type": "DECISION_ADOPT",
   "old_value": null,
   "new_value": "ADOPT",
-  "occurred_at": "2027-06-05T04:20:00Z"
+  "occurred_at": "2027-05-10T04:20:00Z"
  },
  {
   "event_id": "AE-07",
@@ -74,7 +74,7 @@
   "event_type": "DECISION_ADOPT",
   "old_value": null,
   "new_value": "ADOPT",
-  "occurred_at": "2027-06-10T02:00:00Z"
+  "occurred_at": "2027-05-14T02:00:00Z"
  },
  {
   "event_id": "AE-08",
@@ -114,6 +114,17 @@
   "resource_type": "action",
   "resource_id": "ACT-001-SL-A01",
   "actor_type": "AI",
+  "actor_id": "RUN-202705",
+  "event_type": "AI_ASSESSMENT",
+  "old_value": null,
+  "new_value": "ON_TRACK / 5% / outlook 7",
+  "occurred_at": "2027-06-03T00:00:00Z"
+ },
+ {
+  "event_id": "AE-12",
+  "resource_type": "action",
+  "resource_id": "ACT-001-SL-A01",
+  "actor_type": "AI",
   "actor_id": "RUN-202706",
   "event_type": "AI_ASSESSMENT",
   "old_value": null,
@@ -121,7 +132,18 @@
   "occurred_at": "2027-07-03T00:00:00Z"
  },
  {
-  "event_id": "AE-12",
+  "event_id": "AE-13",
+  "resource_type": "action",
+  "resource_id": "ACT-001-OS-A01",
+  "actor_type": "AI",
+  "actor_id": "RUN-202705",
+  "event_type": "AI_ASSESSMENT",
+  "old_value": null,
+  "new_value": "ON_TRACK / 5% / outlook 3",
+  "occurred_at": "2027-06-03T00:00:00Z"
+ },
+ {
+  "event_id": "AE-14",
   "resource_type": "action",
   "resource_id": "ACT-001-OS-A01",
   "actor_type": "AI",
@@ -132,7 +154,18 @@
   "occurred_at": "2027-07-03T00:00:00Z"
  },
  {
-  "event_id": "AE-13",
+  "event_id": "AE-15",
+  "resource_type": "action",
+  "resource_id": "ACT-002-MF-A01",
+  "actor_type": "AI",
+  "actor_id": "RUN-202705",
+  "event_type": "AI_ASSESSMENT",
+  "old_value": null,
+  "new_value": "ON_TRACK / 10% / outlook 6",
+  "occurred_at": "2027-06-03T00:00:00Z"
+ },
+ {
+  "event_id": "AE-16",
   "resource_type": "action",
   "resource_id": "ACT-002-MF-A01",
   "actor_type": "AI",
@@ -143,7 +176,7 @@
   "occurred_at": "2027-07-03T00:00:00Z"
  },
  {
-  "event_id": "AE-14",
+  "event_id": "AE-17",
   "resource_type": "action",
   "resource_id": "ACT-003-OS-A01",
   "actor_type": "AI",
@@ -154,7 +187,7 @@
   "occurred_at": "2027-06-03T00:00:00Z"
  },
  {
-  "event_id": "AE-15",
+  "event_id": "AE-18",
   "resource_type": "action",
   "resource_id": "ACT-003-OS-A01",
   "actor_type": "AI",
@@ -165,7 +198,7 @@
   "occurred_at": "2027-07-03T00:00:00Z"
  },
  {
-  "event_id": "AE-16",
+  "event_id": "AE-19",
   "resource_type": "action",
   "resource_id": "ACT-004-SL-A01",
   "actor_type": "AI",
@@ -176,7 +209,7 @@
   "occurred_at": "2027-05-03T00:00:00Z"
  },
  {
-  "event_id": "AE-17",
+  "event_id": "AE-20",
   "resource_type": "action",
   "resource_id": "ACT-004-SL-A01",
   "actor_type": "AI",
@@ -187,7 +220,7 @@
   "occurred_at": "2027-06-03T00:00:00Z"
  },
  {
-  "event_id": "AE-18",
+  "event_id": "AE-21",
   "resource_type": "action",
   "resource_id": "ACT-004-SL-A01",
   "actor_type": "AI",
@@ -198,7 +231,7 @@
   "occurred_at": "2027-07-03T00:00:00Z"
  },
  {
-  "event_id": "AE-19",
+  "event_id": "AE-22",
   "resource_type": "action",
   "resource_id": "ACT-005-AD-U01",
   "actor_type": "AI",
@@ -209,7 +242,7 @@
   "occurred_at": "2027-06-03T00:00:00Z"
  },
  {
-  "event_id": "AE-20",
+  "event_id": "AE-23",
   "resource_type": "action",
   "resource_id": "ACT-005-AD-U01",
   "actor_type": "AI",
@@ -220,7 +253,7 @@
   "occurred_at": "2027-07-03T00:00:00Z"
  },
  {
-  "event_id": "AE-21",
+  "event_id": "AE-24",
   "resource_type": "action",
   "resource_id": "ACT-007-MF-A01",
   "actor_type": "AI",
@@ -231,7 +264,7 @@
   "occurred_at": "2027-06-03T00:00:00Z"
  },
  {
-  "event_id": "AE-22",
+  "event_id": "AE-25",
   "resource_type": "action",
   "resource_id": "ACT-007-MF-A01",
   "actor_type": "AI",
@@ -242,7 +275,7 @@
   "occurred_at": "2027-07-03T00:00:00Z"
  },
  {
-  "event_id": "AE-23",
+  "event_id": "AE-26",
   "resource_type": "action",
   "resource_id": "ACT-001-SL-A01",
   "actor_type": "USER",
@@ -253,7 +286,7 @@
   "occurred_at": "2027-06-05T02:00:00Z"
  },
  {
-  "event_id": "AE-24",
+  "event_id": "AE-27",
   "resource_type": "action",
   "resource_id": "ACT-001-SL-A01",
   "actor_type": "USER",
@@ -264,7 +297,7 @@
   "occurred_at": "2027-06-18T07:30:00Z"
  },
  {
-  "event_id": "AE-25",
+  "event_id": "AE-28",
   "resource_type": "action",
   "resource_id": "ACT-001-SL-A01",
   "actor_type": "USER",
@@ -275,7 +308,7 @@
   "occurred_at": "2027-07-02T01:00:00Z"
  },
  {
-  "event_id": "AE-26",
+  "event_id": "AE-29",
   "resource_type": "action",
   "resource_id": "ACT-005-AD-U01",
   "actor_type": "USER",
@@ -286,7 +319,7 @@
   "occurred_at": "2027-06-24T03:00:00Z"
  },
  {
-  "event_id": "AE-27",
+  "event_id": "AE-30",
   "resource_type": "action",
   "resource_id": "ACT-005-AD-U01",
   "actor_type": "USER",
@@ -297,7 +330,7 @@
   "occurred_at": "2027-07-01T02:00:00Z"
  },
  {
-  "event_id": "AE-28",
+  "event_id": "AE-31",
   "resource_type": "action",
   "resource_id": "ACT-007-MF-A01",
   "actor_type": "USER",
@@ -308,7 +341,7 @@
   "occurred_at": "2027-06-28T06:00:00Z"
  },
  {
-  "event_id": "AE-29",
+  "event_id": "AE-32",
   "resource_type": "action",
   "resource_id": "ACT-007-MF-A01",
   "actor_type": "USER",
@@ -319,7 +352,7 @@
   "occurred_at": "2027-07-01T03:00:00Z"
  },
  {
-  "event_id": "AE-30",
+  "event_id": "AE-33",
   "resource_type": "action",
   "resource_id": "ACT-003-OS-A01",
   "actor_type": "USER",

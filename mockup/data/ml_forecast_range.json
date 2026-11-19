@@ -35,9 +35,9 @@
   "forecast_run_id": "FCB-202706-01",
   "org_id": "OS",
   "metric_id": "REV",
-  "baseline_fy": 2025.7,
-  "low": 1982.5,
-  "high": 2068.8
+  "baseline_fy": 2025.3,
+  "low": 1982.1,
+  "high": 2068.4
  },
  {
   "forecast_run_id": "FCB-202706-01",
@@ -84,8 +84,8 @@
   "org_id": "MF",
   "metric_id": "OP",
   "baseline_fy": -42,
-  "low": -44.1,
-  "high": -39.9
+  "low": -44,
+  "high": -40
  },
  {
   "forecast_run_id": "FCB-202706-01",

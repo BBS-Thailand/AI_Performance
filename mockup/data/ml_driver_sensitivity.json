@@ -214,7 +214,7 @@
   "org_id": "OS",
   "driver_id": "FX_JPY_THB",
   "metric_id": "GP",
-  "impact_per_unit_month": 9.6693,
+  "impact_per_unit_month": 9.6718,
   "importance_rank": 3,
   "significance": "MEDIUM",
   "typical_fy_op_impact": 5.6
@@ -234,7 +234,7 @@
   "org_id": "OS",
   "driver_id": "FX_JPY_THB",
   "metric_id": "OP",
-  "impact_per_unit_month": 3.1318,
+  "impact_per_unit_month": 3.1344,
   "importance_rank": 3,
   "significance": "MEDIUM",
   "typical_fy_op_impact": 5.6
@@ -247,7 +247,7 @@
   "impact_per_unit_month": -1.9522,
   "importance_rank": 1,
   "significance": "HIGH",
-  "typical_fy_op_impact": 87.9
+  "typical_fy_op_impact": 87.8
  },
  {
   "forecast_run_id": "FCB-202706-01",
@@ -257,7 +257,7 @@
   "impact_per_unit_month": 0,
   "importance_rank": 1,
   "significance": "HIGH",
-  "typical_fy_op_impact": 87.9
+  "typical_fy_op_impact": 87.8
  },
  {
   "forecast_run_id": "FCB-202706-01",
@@ -267,7 +267,7 @@
   "impact_per_unit_month": -1.9522,
   "importance_rank": 1,
   "significance": "HIGH",
-  "typical_fy_op_impact": 87.9
+  "typical_fy_op_impact": 87.8
  },
  {
   "forecast_run_id": "FCB-202706-01",

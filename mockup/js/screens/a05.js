@@ -33,10 +33,12 @@
     const series = [
       { name: t('s_without'), type: 'line', color: '#898781', dash: '5 4', values: rows.map((r) => r.without) },
       { name: t('s_plan'), type: 'line', color: '#2a78d6', dash: '6 3', values: rows.map((r) => r.plan), endLabel: true },
-      { name: t('s_actual'), type: 'line', color: '#2b3440', width: 2.5, values: rows.map((r) => r.actual) },
+      { name: t('s_actual'), type: 'line', color: '#2b3440', width: 2.5, values: rows.map((r) => r.actual), top: true, marker: 4.5, pointLabel: true },
       { name: t('s_outlook'), type: 'line', color: '#eb6834', dash: '2 3', width: 2.5, values: outlook, endLabel: true },
     ];
-    return A.Chart.monthly(series, { labels, width: 600, height: 250, zero: false });
+    // Actions that have not reached a measured month get a note instead of a silently missing line.
+    const note = lastActual >= 0 ? '' : `<p class="small muted" style="margin:6px 0 0">${A.esc(a.start_period_id > state.periodId ? t('fig_no_actual_start', { m: A.periodLabel(a.start_period_id) }) : t('fig_no_actual'))}</p>`;
+    return A.Chart.monthly(series, { labels, width: 600, height: 250, zero: false }) + note;
   }
 
   function aiBox(a) {

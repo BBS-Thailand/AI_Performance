@@ -588,6 +588,17 @@
     vi: { exp_working_xlsx: 'Đang tạo Excel…', exp_pdf_hint: 'Toàn bộ màn hình như đang hiển thị', exp_xlsx_hint: 'Dữ liệu các bảng trên màn hình này', exp_no_tables: 'Màn hình này không có bảng để xuất ra Excel.', exp_info: 'Thông tin' },
   };
   Object.entries(EXPORT_XLSX).forEach(([lang, obj]) => Object.assign(T[lang], obj));
+  // A-05 effect graph: note shown when the Action has no measured month yet.
+  const A05_NOTE = {
+    en: { fig_no_actual_start: 'No Actual line yet: this Action starts in {m}.', fig_no_actual: 'No Actual line yet: no month has been measured.' },
+    ja: { fig_no_actual_start: '実績線はまだありません：このアクションは{m}開始です。', fig_no_actual: '実績線はまだありません：測定済みの月がありません。' },
+    th: { fig_no_actual_start: 'ยังไม่มีเส้นผลจริง: แอคชันนี้เริ่ม{m}', fig_no_actual: 'ยังไม่มีเส้นผลจริง: ยังไม่มีเดือนที่วัดผลแล้ว' },
+    'zh-Hans': { fig_no_actual_start: '尚无实际线：此行动自{m}开始。', fig_no_actual: '尚无实际线：还没有已测量的月份。' },
+    'zh-Hant': { fig_no_actual_start: '尚無實際線：此行動自{m}開始。', fig_no_actual: '尚無實際線：還沒有已測量的月份。' },
+    id: { fig_no_actual_start: 'Belum ada garis Aktual: Aksi ini dimulai pada {m}.', fig_no_actual: 'Belum ada garis Aktual: belum ada bulan yang diukur.' },
+    vi: { fig_no_actual_start: 'Chưa có đường Thực tế: Hành động này bắt đầu vào {m}.', fig_no_actual: 'Chưa có đường Thực tế: chưa có tháng nào được đo.' },
+  };
+  Object.entries(A05_NOTE).forEach(([lang, obj]) => Object.assign(T[lang], obj));
 
   /* ---- C-03 Action chat ---- */
   const CHAT = {

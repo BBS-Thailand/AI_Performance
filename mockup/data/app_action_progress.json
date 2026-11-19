@@ -1,6 +1,15 @@
 [
  {
   "action_id": "ACT-001-SL-A01",
+  "period_id": 202705,
+  "progress_pct": 5,
+  "ai_status": "ON_TRACK",
+  "outlook_total_op": 7,
+  "comment_id": "CM-ASSESS-ACT-001-SL-A01-202705",
+  "updated_by": null
+ },
+ {
+  "action_id": "ACT-001-SL-A01",
   "period_id": 202706,
   "progress_pct": 20,
   "ai_status": "ON_TRACK",
@@ -10,11 +19,29 @@
  },
  {
   "action_id": "ACT-001-OS-A01",
+  "period_id": 202705,
+  "progress_pct": 5,
+  "ai_status": "ON_TRACK",
+  "outlook_total_op": 3,
+  "comment_id": "CM-ASSESS-ACT-001-OS-A01-202705",
+  "updated_by": null
+ },
+ {
+  "action_id": "ACT-001-OS-A01",
   "period_id": 202706,
   "progress_pct": 15,
   "ai_status": "ON_TRACK",
   "outlook_total_op": 2.5,
   "comment_id": "CM-ASSESS-ACT-001-OS-A01-202706",
+  "updated_by": null
+ },
+ {
+  "action_id": "ACT-002-MF-A01",
+  "period_id": 202705,
+  "progress_pct": 10,
+  "ai_status": "ON_TRACK",
+  "outlook_total_op": 6,
+  "comment_id": "CM-ASSESS-ACT-002-MF-A01-202705",
   "updated_by": null
  },
  {

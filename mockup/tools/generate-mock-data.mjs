@@ -299,23 +299,23 @@ const app_point_cause = CAUSES.map(([point_id, quantity_value, quantity_unit, im
 /* ---------------------------------------------------------------- Actions */
 // kind: REV (revenue driven, GM 25%), COGS (cost), SGA. acct = account where effect lands.
 const ACTIONS = [
-  { id: 'ACT-001-SL-A01', point: 'IS-001-SL', org: 'SL', origin: 'AI', kind: 'REV', acct: '4010', start: 202706, end: 202712, plan: 7, outlook: 6, realized: { 202706: 0.4 },
-    decision: 'ADOPTED', exec: 'IN_PROGRESS', adopted: 202706, prog: { 202706: [20, 'ON_TRACK', 6] } },
+  { id: 'ACT-001-SL-A01', point: 'IS-001-SL', org: 'SL', origin: 'AI', kind: 'REV', acct: '4010', start: 202705, end: 202712, plan: 7, outlook: 6, realized: { 202705: 0, 202706: 0.4 },
+    decision: 'ADOPTED', exec: 'IN_PROGRESS', adopted: 202705, prog: { 202705: [5, 'ON_TRACK', 7], 202706: [20, 'ON_TRACK', 6] } },
   { id: 'ACT-001-SL-A02', point: 'IS-001-SL', org: 'SL', origin: 'AI', kind: 'REV', acct: '4010', start: 202708, end: 202803, plan: 5, decision: 'PROPOSED', exec: 'NOT_STARTED' },
   { id: 'ACT-001-SL-U01', point: 'IS-001-SL', org: 'SL', origin: 'USER', kind: 'REV', acct: '4010', start: 202707, end: 202709, plan: 2, decision: 'ON_HOLD', exec: 'NOT_STARTED', holdUntil: 202709 },
-  { id: 'ACT-001-OS-A01', point: 'IS-001-OS', org: 'OS', origin: 'AI', kind: 'REV', acct: '4010', start: 202706, end: 202803, plan: 3, outlook: 2.5, realized: { 202706: 0.2 },
-    decision: 'ADOPTED', exec: 'IN_PROGRESS', adopted: 202706, prog: { 202706: [15, 'ON_TRACK', 2.5] } },
-  { id: 'ACT-002-MF-A01', point: 'IS-002-MF', org: 'MF', origin: 'AI', kind: 'COGS', acct: '5030', start: 202707, end: 202803, plan: 6, outlook: 5, realized: {},
-    decision: 'ADOPTED', exec: 'IN_PROGRESS', adopted: 202706, prog: { 202706: [25, 'ON_TRACK', 5] } },
+  { id: 'ACT-001-OS-A01', point: 'IS-001-OS', org: 'OS', origin: 'AI', kind: 'REV', acct: '4010', start: 202705, end: 202803, plan: 3, outlook: 2.5, realized: { 202705: 0, 202706: 0.2 },
+    decision: 'ADOPTED', exec: 'IN_PROGRESS', adopted: 202705, prog: { 202705: [5, 'ON_TRACK', 3], 202706: [15, 'ON_TRACK', 2.5] } },
+  { id: 'ACT-002-MF-A01', point: 'IS-002-MF', org: 'MF', origin: 'AI', kind: 'COGS', acct: '5030', start: 202705, end: 202803, plan: 6, outlook: 5, realized: { 202705: 0, 202706: 0.3 },
+    decision: 'ADOPTED', exec: 'IN_PROGRESS', adopted: 202705, prog: { 202705: [10, 'ON_TRACK', 6], 202706: [25, 'ON_TRACK', 5] } },
   { id: 'ACT-002-MF-A02', point: 'IS-002-MF', org: 'MF', origin: 'AI', kind: 'COGS', acct: '5030', start: 202707, end: 202803, plan: 3.5, decision: 'REJECTED', exec: 'NOT_STARTED' },
-  { id: 'ACT-003-OS-A01', point: 'IS-003-OS', org: 'OS', origin: 'AI', kind: 'REV', acct: '4010', start: 202707, end: 202803, plan: 4, outlook: 3, realized: {},
+  { id: 'ACT-003-OS-A01', point: 'IS-003-OS', org: 'OS', origin: 'AI', kind: 'REV', acct: '4010', start: 202705, end: 202803, plan: 4, outlook: 3, realized: { 202705: 0, 202706: 0.1 },
     decision: 'ADOPTED', exec: 'IN_PROGRESS', adopted: 202705, prog: { 202705: [5, 'ON_TRACK', 4], 202706: [10, 'DELAYED', 3] } },
   { id: 'ACT-004-SL-A01', point: 'IS-004-SL', org: 'SL', origin: 'AI', kind: 'SGA', acct: '6030', start: 202704, end: 202706, plan: 3, outlook: 2.5, realized: { 202704: 0.7, 202705: 0.9, 202706: 0.9 },
     decision: 'ADOPTED', exec: 'COMPLETED', adopted: 202704, prog: { 202704: [30, 'ON_TRACK', 3], 202705: [65, 'EFFECTIVE', 2.8], 202706: [100, 'COMPLETED', 2.5] } },
   { id: 'ACT-005-AD-U01', point: 'IS-005-AD', org: 'AD', origin: 'USER', kind: 'SGA', acct: '6040', start: 202705, end: 202803, plan: 2.5, outlook: 1.5, realized: { 202705: 0.1, 202706: 0.2 },
     decision: 'ADOPTED', exec: 'IN_PROGRESS', adopted: 202705, prog: { 202705: [20, 'ON_TRACK', 2.5], 202706: [40, 'AT_RISK', 1.5] } },
   { id: 'ACT-006-OS-A01', point: 'IS-006-OS', org: 'OS', origin: 'AI', kind: 'REV', acct: '4010', start: 202707, end: 202712, plan: 2, decision: 'PROPOSED', exec: 'NOT_STARTED' },
-  { id: 'ACT-007-MF-A01', point: 'IS-007-MF', org: 'MF', origin: 'AI', kind: 'COGS', acct: '5040', start: 202706, end: 202803, plan: 4.5, outlook: 1.5, realized: { 202706: 0 },
+  { id: 'ACT-007-MF-A01', point: 'IS-007-MF', org: 'MF', origin: 'AI', kind: 'COGS', acct: '5040', start: 202705, end: 202803, plan: 4.5, outlook: 1.5, realized: { 202705: 0, 202706: 0 },
     decision: 'ADOPTED', exec: 'IN_PROGRESS', adopted: 202705, prog: { 202705: [0, 'ON_TRACK', 4.5], 202706: [10, 'DELAYED', 1.5] } },
   { id: 'ACT-008-SL-A01', point: 'IS-008-SL', org: 'SL', origin: 'AI', kind: 'REV', acct: '4010', start: 202708, end: 202803, plan: 4, decision: 'PROPOSED', exec: 'NOT_STARTED' },
 ];
@@ -361,17 +361,17 @@ for (const a of ACTIONS) {
 }
 // Measurement configuration (P-01 output)
 const MEAS = {
-  'ACT-001-SL-A01': ['DIRECT', 'fact_financial (4010, 5010)', 'customer_id = C02; product_id IN (P01, P03)', '3-month average before start (Mar–May 2027)', '(actual revenue − baseline revenue) × gross margin 25%'],
+  'ACT-001-SL-A01': ['DIRECT', 'fact_financial (4010, 5010)', 'customer_id = C02; product_id IN (P01, P03)', '3-month average before start (Feb–Apr 2027)', '(actual revenue − baseline revenue) × gross margin 25%'],
   'ACT-001-SL-A02': ['DIRECT', 'fact_financial (4010, 5010)', 'customer_id = C02; product_id = P04', 'Budgeted P04 revenue for C02 (zero)', 'actual P04 revenue from C02 × gross margin 25%'],
   'ACT-001-SL-U01': ['DIRECT', 'fact_financial (4010, 5010)', 'customer_id = C02', '3-month average before start (Apr–Jun 2027)', '(actual revenue − baseline revenue) × gross margin 25%'],
-  'ACT-001-OS-A01': ['DIRECT', 'fact_financial (4010, 5010)', 'customer_id = C06; product_id = P01', '3-month average before start (Mar–May 2027)', '(actual revenue − baseline revenue) × gross margin 25%'],
-  'ACT-002-MF-A01': ['DIRECT', 'fact_financial (5030); purchase price list', 'org_id = MF; account 5030; supplier = local', 'Imported unit price × volume (Apr–Jun 2027 average)', '(imported unit price − local unit price) × local volume, excluding EV-001 FX effect'],
+  'ACT-001-OS-A01': ['DIRECT', 'fact_financial (4010, 5010)', 'customer_id = C06; product_id = P01', '3-month average before start (Feb–Apr 2027)', '(actual revenue − baseline revenue) × gross margin 25%'],
+  'ACT-002-MF-A01': ['DIRECT', 'fact_financial (5030); purchase price list', 'org_id = MF; account 5030; supplier = local', 'Imported unit price × volume (Feb–Apr 2027 average)', '(imported unit price − local unit price) × local volume, excluding EV-001 FX effect'],
   'ACT-002-MF-A02': ['PROXY', 'Treasury FX contracts (not imported)', 'currency = THB/JPY', 'Spot rate at month start', 'hedged volume × (spot − forward rate)'],
-  'ACT-003-OS-A01': ['DIRECT', 'fact_financial (4010, 5010)', 'customer region = ASEAN; country = VN', '3-month average before start (Apr–Jun 2027)', '(actual revenue − baseline revenue) × gross margin 25%, excluding EV-002'],
+  'ACT-003-OS-A01': ['DIRECT', 'fact_financial (4010, 5010)', 'customer region = ASEAN; country = VN', '3-month average before start (Feb–Apr 2027)', '(actual revenue − baseline revenue) × gross margin 25%, excluding EV-002'],
   'ACT-004-SL-A01': ['DIRECT', 'fact_financial (6030)', 'org_id = SL; account 6030', 'Budgeted logistics cost per shipment × shipments', 'baseline cost − actual logistics cost'],
   'ACT-005-AD-U01': ['DIRECT', 'fact_financial (6040)', 'org_id = AD; account 6040', 'Rent contract amount before renegotiation', 'baseline rent − actual rent'],
   'ACT-006-OS-A01': ['PROXY', 'Distributor order backlog (CSV import)', 'customer_id = C07', 'Order backlog Apr–Jun 2027 average', 'recovered backlog × average price × gross margin 25%'],
-  'ACT-007-MF-A01': ['DIRECT', 'fact_financial (5040); production yield log', 'org_id = MF; Line 2', 'Line 2 yield 92.0% (Apr–May 2027)', '(actual yield − baseline yield) × material cost per point'],
+  'ACT-007-MF-A01': ['DIRECT', 'fact_financial (5040); production yield log', 'org_id = MF; Line 2', 'Line 2 yield 92.0% (Mar–Apr 2027)', '(actual yield − baseline yield) × material cost per point'],
   'ACT-008-SL-A01': ['DIRECT', 'fact_financial (4010, 5010)', 'org_id = SL; product_id = P04; customer_id IN (C01, C02)', 'Budgeted P04 revenue for C01 and C02', '(actual revenue − baseline revenue) × gross margin 25%'],
 };
 // Monthly level of the measured figure before the Action (JPY M, in the effect-kind Metric: revenue of the
@@ -388,9 +388,9 @@ const DECISIONS = [
   ['ACT-003-OS-A01', 'ADOPT', null, null, 'u03', '2027-05-12T03:40:00Z'],
   ['ACT-005-AD-U01', 'ADOPT', null, null, 'u05', '2027-05-06T02:10:00Z'],
   ['ACT-007-MF-A01', 'ADOPT', null, null, 'u04', '2027-05-20T06:00:00Z'],
-  ['ACT-001-SL-A01', 'ADOPT', null, null, 'u02', '2027-06-03T01:30:00Z'],
-  ['ACT-001-OS-A01', 'ADOPT', null, null, 'u03', '2027-06-05T04:20:00Z'],
-  ['ACT-002-MF-A01', 'ADOPT', null, null, 'u04', '2027-06-10T02:00:00Z'],
+  ['ACT-001-SL-A01', 'ADOPT', null, null, 'u02', '2027-05-07T01:30:00Z'],
+  ['ACT-001-OS-A01', 'ADOPT', null, null, 'u03', '2027-05-10T04:20:00Z'],
+  ['ACT-002-MF-A01', 'ADOPT', null, null, 'u04', '2027-05-14T02:00:00Z'],
   ['ACT-002-MF-A02', 'ADOPT', null, null, 'u04', '2027-06-10T02:05:00Z'],
   ['ACT-002-MF-A02', 'REJECT', 'FX exposure is hedged centrally by Treasury; local forward contracts are not permitted.', null, 'u01', '2027-06-12T08:15:00Z'],
   ['ACT-001-SL-U01', 'HOLD', 'Wait for Customer B mid-term plan announcement.', 202709, 'u02', '2027-06-20T05:00:00Z'],
@@ -636,9 +636,9 @@ comment('CM-SUM-202705-CO', 'A01_SUMMARY', 'org', 'CO', 202705, 'CO', {
   ja: '5月は予算差異が拡大しました。新たに1件のインサイト（製造歩留まり改善の機会）を検出しました。輸入材料費の圧力は4月以降わずかに緩和しています。今月は3件のアクションが採用されました。',
   th: 'ช่องว่างสะสมเทียบกับงบประมาณกว้างขึ้นในเดือนพฤษภาคม มีอินไซต์ใหม่ 1 เรื่อง คือโอกาสปรับปรุงผลผลิตในการผลิต แรงกดดันจากต้นทุนวัตถุดิบนำเข้าลดลงเล็กน้อยหลังเดือนเมษายน เดือนนี้อนุมัติแอคชัน 3 รายการ' });
 comment('CM-SUM-202706-CO', 'A01_SUMMARY', 'org', 'CO', 202706, 'CO', {
-  en: 'YTD operating profit is JPY 86M, JPY 12M below budget. The largest issue is volume decline at Customer B (annualized −36M), followed by imported material cost increase (−30M, improved +4M since April). Two new Insights were raised this month: order delays from Customer F in Indonesia (−14M) and an opportunity from domestic growth of high value-added control modules (+12M). Southeast Asian demand (+18M) and manufacturing yield (+16M) partly offset the issues. Adopted Actions have realized JPY 3.4M so far; their year-end outlook is JPY 22M against a plan of 30M, mainly because the Vietnam distributor expansion and the Line 2 yield rollout are delayed.',
-  ja: '当期累計の営業利益は86百万円で、予算を12百万円下回っています。最大の課題は顧客Bの数量減少（年換算−36百万円）、次いで輸入材料費の上昇（−30百万円、4月比+4百万円改善）です。今月は新たに2件のインサイトを検出しました。顧客F（インドネシア）の受注遅延（−14百万円）と、高付加価値の制御モジュールの国内での伸長という機会（+12百万円）です。東南アジアの需要拡大（+18百万円）と製造歩留まり改善（+16百万円）が課題を一部相殺しています。採用済みアクションの実現効果は3.4百万円、年度末見込みは計画30百万円に対し22百万円です。主因はベトナム販売網拡大とライン2歩留まり展開の遅れです。',
-  th: 'กำไรจากการดำเนินงานสะสมอยู่ที่ 86 ล้านเยน ต่ำกว่างบประมาณ 12 ล้านเยน อินไซต์ใหญ่ที่สุดคือยอดขายลูกค้า B ลดลง (ผลกระทบรายปี −36 ล้านเยน) รองลงมาคือต้นทุนวัตถุดิบนำเข้าสูงขึ้น (−30 ล้านเยน ดีขึ้น +4 ล้านเยนจากเดือนเมษายน) เดือนนี้พบอินไซต์ใหม่ 2 เรื่อง คือคำสั่งซื้อล่าช้าจากลูกค้า F ในอินโดนีเซีย (−14 ล้านเยน) และโอกาสจากการเติบโตของโมดูลควบคุมมูลค่าเพิ่มสูงในประเทศ (+12 ล้านเยน) ความต้องการในเอเชียตะวันออกเฉียงใต้ (+18 ล้านเยน) และการปรับปรุงผลผลิต (+16 ล้านเยน) ช่วยชดเชยบางส่วน แอคชันที่อนุมัติแล้วสร้างผลจริง 3.4 ล้านเยน และคาดการณ์ ณ สิ้นปี 22 ล้านเยน เทียบกับแผน 30 ล้านเยน เนื่องจากการขยายตัวแทนจำหน่ายในเวียดนามและการปรับปรุงผลผลิตสายการผลิต 2 ล่าช้า' });
+  en: 'YTD operating profit is JPY 86M, JPY 12M below budget. The largest issue is volume decline at Customer B (annualized −36M), followed by imported material cost increase (−30M, improved +4M since April). Two new Insights were raised this month: order delays from Customer F in Indonesia (−14M) and an opportunity from domestic growth of high value-added control modules (+12M). Southeast Asian demand (+18M) and manufacturing yield (+16M) partly offset the issues. Adopted Actions have realized JPY 3.8M so far; their year-end outlook is JPY 22M against a plan of 30M, mainly because the Vietnam distributor expansion and the Line 2 yield rollout are delayed.',
+  ja: '当期累計の営業利益は86百万円で、予算を12百万円下回っています。最大の課題は顧客Bの数量減少（年換算−36百万円）、次いで輸入材料費の上昇（−30百万円、4月比+4百万円改善）です。今月は新たに2件のインサイトを検出しました。顧客F（インドネシア）の受注遅延（−14百万円）と、高付加価値の制御モジュールの国内での伸長という機会（+12百万円）です。東南アジアの需要拡大（+18百万円）と製造歩留まり改善（+16百万円）が課題を一部相殺しています。採用済みアクションの実現効果は3.8百万円、年度末見込みは計画30百万円に対し22百万円です。主因はベトナム販売網拡大とライン2歩留まり展開の遅れです。',
+  th: 'กำไรจากการดำเนินงานสะสมอยู่ที่ 86 ล้านเยน ต่ำกว่างบประมาณ 12 ล้านเยน อินไซต์ใหญ่ที่สุดคือยอดขายลูกค้า B ลดลง (ผลกระทบรายปี −36 ล้านเยน) รองลงมาคือต้นทุนวัตถุดิบนำเข้าสูงขึ้น (−30 ล้านเยน ดีขึ้น +4 ล้านเยนจากเดือนเมษายน) เดือนนี้พบอินไซต์ใหม่ 2 เรื่อง คือคำสั่งซื้อล่าช้าจากลูกค้า F ในอินโดนีเซีย (−14 ล้านเยน) และโอกาสจากการเติบโตของโมดูลควบคุมมูลค่าเพิ่มสูงในประเทศ (+12 ล้านเยน) ความต้องการในเอเชียตะวันออกเฉียงใต้ (+18 ล้านเยน) และการปรับปรุงผลผลิต (+16 ล้านเยน) ช่วยชดเชยบางส่วน แอคชันที่อนุมัติแล้วสร้างผลจริง 3.8 ล้านเยน และคาดการณ์ ณ สิ้นปี 22 ล้านเยน เทียบกับแผน 30 ล้านเยน เนื่องจากการขยายตัวแทนจำหน่ายในเวียดนามและการปรับปรุงผลผลิตสายการผลิต 2 ล่าช้า' });
 comment('CM-SUM-202706-SL', 'A01_SUMMARY', 'org', 'SL', 202706, 'SL', {
   en: 'Sales Dept. YTD operating profit is JPY 9M below budget. Customer B volume decline (annualized −28M) and logistics cost overrun (−12M) are the main issues. Joint demand planning with Customer B started in June; the shipment consolidation Action was completed with JPY 2.5M realized. New this month: Customer C adopted the high-spec control module (+12M opportunity); the AI proposes offering it to Customers A and B.',
   ja: '営業部の当期累計営業利益は予算比9百万円の未達です。顧客Bの数量減少（年換算−28百万円）と物流費超過（−12百万円）が主な課題です。6月に顧客Bとの共同需要計画を開始し、出荷集約アクションは2.5百万円の効果を実現して完了しました。今月新たに、顧客Cが高仕様制御モジュールを採用した機会（+12百万円）を検出しました。AIは顧客A・Bへの提案を推奨しています。' });
@@ -705,16 +705,16 @@ const ACT_TEXT = {
 const ASSESS = {
   'ACT-001-SL-A01-202706': { en: 'On track. June revenue from Customer B recovered JPY 1.6M above baseline (JPY 0.4M operating profit). Framework order for Q3 is under negotiation. Outlook lowered from 7.0 to 6.0 because the drive-module model change remains postponed. Next step: confirm Q3 framework volume by July 20.',
     ja: '順調です。6月の顧客B売上はベースライン比1.6百万円回復（営業利益0.4百万円）。第3四半期の枠注文を交渉中です。駆動モジュールのモデルチェンジ延期が続くため、見込みを7.0から6.0に引き下げました。次のステップ：7月20日までに第3四半期の枠数量を確定。' },
-  'ACT-003-OS-A01-202706': { en: 'Delayed. Distributor contracts in northern Vietnam are not yet signed (planned for June). Outlook reduced to JPY 3.0M. Alternative: start with one distributor in Hanoi and add the second in Q3. EV-002 exhibition effect is excluded from measurement.',
-    ja: '遅延しています。ベトナム北部の代理店契約が未締結です（6月予定）。見込みを3.0百万円に引き下げました。代替案：まずハノイの1社で開始し、2社目は第3四半期に追加。EV-002（展示会）の効果は測定から除外しています。' },
+  'ACT-003-OS-A01-202706': { en: 'Delayed. Only one of the two distributor contracts in northern Vietnam is signed; first orders brought JPY 0.4M revenue in June (JPY 0.1M operating profit). Outlook reduced to JPY 3.0M. Next step: sign the second distributor in Q3. EV-002 exhibition effect is excluded from measurement.',
+    ja: '遅延しています。ベトナム北部の代理店契約は2社中1社のみ締結済みで、6月の初回受注は売上0.4百万円（営業利益0.1百万円）でした。見込みを3.0百万円に引き下げました。次のステップ：第3四半期に2社目と契約。EV-002（展示会）の効果は測定から除外しています。' },
   'ACT-005-AD-U01-202706': { en: 'At risk. Landlord rejected the first proposal; savings so far come only from the May interim discount. Outlook lowered to JPY 1.5M. Next step: present market-rent evidence in the July meeting.',
     ja: 'リスクあり。家主が初回提案を拒否し、現時点の削減は5月の暫定値引きのみです。見込みを1.5百万円に引き下げました。次のステップ：7月の協議で市場賃料の根拠を提示。' },
   'ACT-007-MF-A01-202706': { en: 'Delayed. Line 2 equipment modification slipped to September because of parts lead time. No effect yet. Outlook reduced from 4.5 to 1.5. Alternative: apply the process parameters without equipment change from August (estimated +0.5M).',
     ja: '遅延しています。部品の納期によりライン2の設備改造が9月にずれ込みました。効果はまだありません。見込みを4.5から1.5に引き下げました。代替案：設備改造なしで工程条件のみを8月から適用（推定+0.5百万円）。' },
   'ACT-004-SL-A01-202706': { en: 'Completed. Realized JPY 2.5M against a plan of 3.0M. Express freight requests fell by 35%; fuel surcharge increase (not controllable) explains the remaining gap.',
     ja: '完了しました。計画3.0百万円に対し2.5百万円を実現。特急便依頼は35%減少し、残りの差は燃料サーチャージ上昇（管理不能）によるものです。' },
-  'ACT-002-MF-A01-202706': { en: 'On track (preparation). Supplier qualification finished; first local deliveries start in July. Outlook JPY 5.0M after excluding the EV-001 FX effect.',
-    ja: '順調（準備段階）。サプライヤー認定が完了し、7月から現地納入を開始します。EV-001（為替）の影響を除外した見込みは5.0百万円です。' },
+  'ACT-002-MF-A01-202706': { en: 'On track. Supplier qualification finished in May; the first local deliveries in June saved JPY 0.3M. Outlook JPY 5.0M after excluding the EV-001 FX effect.',
+    ja: '順調です。5月にサプライヤー認定が完了し、6月の初回現地納入で0.3百万円を削減しました。EV-001（為替）の影響を除外した見込みは5.0百万円です。' },
   'ACT-001-OS-A01-202706': { en: 'On track. Sample approval received; first order JPY 0.8M revenue in June. Outlook 2.5M because the plant ramp-up is two months late.',
     ja: '順調です。サンプル承認を取得し、6月に初回受注（売上0.8百万円）。工場立上げが2か月遅れているため見込みは2.5百万円です。' },
 };

@@ -2,8 +2,35 @@
  {
   "action_id": "ACT-001-SL-A01",
   "metric_id": "REV",
+  "period_id": 202705,
+  "planned_effect": 3.52,
+  "actual_effect": 0,
+  "outlook_effect": null,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-001-SL-A01",
+  "metric_id": "GP",
+  "period_id": 202705,
+  "planned_effect": 0.88,
+  "actual_effect": 0,
+  "outlook_effect": null,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-001-SL-A01",
+  "metric_id": "OP",
+  "period_id": 202705,
+  "planned_effect": 0.88,
+  "actual_effect": 0,
+  "outlook_effect": null,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-001-SL-A01",
+  "metric_id": "REV",
   "period_id": 202706,
-  "planned_effect": 4,
+  "planned_effect": 3.52,
   "actual_effect": 1.6,
   "outlook_effect": null,
   "excluded_factor_amount": null
@@ -12,7 +39,7 @@
   "action_id": "ACT-001-SL-A01",
   "metric_id": "GP",
   "period_id": 202706,
-  "planned_effect": 1,
+  "planned_effect": 0.88,
   "actual_effect": 0.4,
   "outlook_effect": null,
   "excluded_factor_amount": null
@@ -21,7 +48,7 @@
   "action_id": "ACT-001-SL-A01",
   "metric_id": "OP",
   "period_id": 202706,
-  "planned_effect": 1,
+  "planned_effect": 0.88,
   "actual_effect": 0.4,
   "outlook_effect": null,
   "excluded_factor_amount": null
@@ -30,7 +57,7 @@
   "action_id": "ACT-001-SL-A01",
   "metric_id": "REV",
   "period_id": 202707,
-  "planned_effect": 4,
+  "planned_effect": 3.52,
   "actual_effect": null,
   "outlook_effect": 3.76,
   "excluded_factor_amount": null
@@ -39,7 +66,7 @@
   "action_id": "ACT-001-SL-A01",
   "metric_id": "GP",
   "period_id": 202707,
-  "planned_effect": 1,
+  "planned_effect": 0.88,
   "actual_effect": null,
   "outlook_effect": 0.94,
   "excluded_factor_amount": null
@@ -48,7 +75,7 @@
   "action_id": "ACT-001-SL-A01",
   "metric_id": "OP",
   "period_id": 202707,
-  "planned_effect": 1,
+  "planned_effect": 0.88,
   "actual_effect": null,
   "outlook_effect": 0.94,
   "excluded_factor_amount": null
@@ -57,7 +84,7 @@
   "action_id": "ACT-001-SL-A01",
   "metric_id": "REV",
   "period_id": 202708,
-  "planned_effect": 4,
+  "planned_effect": 3.52,
   "actual_effect": null,
   "outlook_effect": 3.76,
   "excluded_factor_amount": null
@@ -66,7 +93,7 @@
   "action_id": "ACT-001-SL-A01",
   "metric_id": "GP",
   "period_id": 202708,
-  "planned_effect": 1,
+  "planned_effect": 0.88,
   "actual_effect": null,
   "outlook_effect": 0.94,
   "excluded_factor_amount": null
@@ -75,7 +102,7 @@
   "action_id": "ACT-001-SL-A01",
   "metric_id": "OP",
   "period_id": 202708,
-  "planned_effect": 1,
+  "planned_effect": 0.88,
   "actual_effect": null,
   "outlook_effect": 0.94,
   "excluded_factor_amount": null
@@ -84,7 +111,7 @@
   "action_id": "ACT-001-SL-A01",
   "metric_id": "REV",
   "period_id": 202709,
-  "planned_effect": 4,
+  "planned_effect": 3.48,
   "actual_effect": null,
   "outlook_effect": 3.72,
   "excluded_factor_amount": null
@@ -93,7 +120,7 @@
   "action_id": "ACT-001-SL-A01",
   "metric_id": "GP",
   "period_id": 202709,
-  "planned_effect": 1,
+  "planned_effect": 0.87,
   "actual_effect": null,
   "outlook_effect": 0.93,
   "excluded_factor_amount": null
@@ -102,7 +129,7 @@
   "action_id": "ACT-001-SL-A01",
   "metric_id": "OP",
   "period_id": 202709,
-  "planned_effect": 1,
+  "planned_effect": 0.87,
   "actual_effect": null,
   "outlook_effect": 0.93,
   "excluded_factor_amount": null
@@ -111,7 +138,7 @@
   "action_id": "ACT-001-SL-A01",
   "metric_id": "REV",
   "period_id": 202710,
-  "planned_effect": 4,
+  "planned_effect": 3.48,
   "actual_effect": null,
   "outlook_effect": 3.72,
   "excluded_factor_amount": null
@@ -120,7 +147,7 @@
   "action_id": "ACT-001-SL-A01",
   "metric_id": "GP",
   "period_id": 202710,
-  "planned_effect": 1,
+  "planned_effect": 0.87,
   "actual_effect": null,
   "outlook_effect": 0.93,
   "excluded_factor_amount": null
@@ -129,7 +156,7 @@
   "action_id": "ACT-001-SL-A01",
   "metric_id": "OP",
   "period_id": 202710,
-  "planned_effect": 1,
+  "planned_effect": 0.87,
   "actual_effect": null,
   "outlook_effect": 0.93,
   "excluded_factor_amount": null
@@ -138,7 +165,7 @@
   "action_id": "ACT-001-SL-A01",
   "metric_id": "REV",
   "period_id": 202711,
-  "planned_effect": 4,
+  "planned_effect": 3.48,
   "actual_effect": null,
   "outlook_effect": 3.72,
   "excluded_factor_amount": null
@@ -147,7 +174,7 @@
   "action_id": "ACT-001-SL-A01",
   "metric_id": "GP",
   "period_id": 202711,
-  "planned_effect": 1,
+  "planned_effect": 0.87,
   "actual_effect": null,
   "outlook_effect": 0.93,
   "excluded_factor_amount": null
@@ -156,7 +183,7 @@
   "action_id": "ACT-001-SL-A01",
   "metric_id": "OP",
   "period_id": 202711,
-  "planned_effect": 1,
+  "planned_effect": 0.87,
   "actual_effect": null,
   "outlook_effect": 0.93,
   "excluded_factor_amount": null
@@ -165,7 +192,7 @@
   "action_id": "ACT-001-SL-A01",
   "metric_id": "REV",
   "period_id": 202712,
-  "planned_effect": 4,
+  "planned_effect": 3.48,
   "actual_effect": null,
   "outlook_effect": 3.72,
   "excluded_factor_amount": null
@@ -174,7 +201,7 @@
   "action_id": "ACT-001-SL-A01",
   "metric_id": "GP",
   "period_id": 202712,
-  "planned_effect": 1,
+  "planned_effect": 0.87,
   "actual_effect": null,
   "outlook_effect": 0.93,
   "excluded_factor_amount": null
@@ -183,7 +210,7 @@
   "action_id": "ACT-001-SL-A01",
   "metric_id": "OP",
   "period_id": 202712,
-  "planned_effect": 1,
+  "planned_effect": 0.87,
   "actual_effect": null,
   "outlook_effect": 0.93,
   "excluded_factor_amount": null
@@ -488,8 +515,35 @@
  {
   "action_id": "ACT-001-OS-A01",
   "metric_id": "REV",
+  "period_id": 202705,
+  "planned_effect": 1.12,
+  "actual_effect": 0,
+  "outlook_effect": null,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-001-OS-A01",
+  "metric_id": "GP",
+  "period_id": 202705,
+  "planned_effect": 0.28,
+  "actual_effect": 0,
+  "outlook_effect": null,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-001-OS-A01",
+  "metric_id": "OP",
+  "period_id": 202705,
+  "planned_effect": 0.28,
+  "actual_effect": 0,
+  "outlook_effect": null,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-001-OS-A01",
+  "metric_id": "REV",
   "period_id": 202706,
-  "planned_effect": 1.2,
+  "planned_effect": 1.12,
   "actual_effect": 0.8,
   "outlook_effect": null,
   "excluded_factor_amount": null
@@ -498,7 +552,7 @@
   "action_id": "ACT-001-OS-A01",
   "metric_id": "GP",
   "period_id": 202706,
-  "planned_effect": 0.3,
+  "planned_effect": 0.28,
   "actual_effect": 0.2,
   "outlook_effect": null,
   "excluded_factor_amount": null
@@ -507,7 +561,7 @@
   "action_id": "ACT-001-OS-A01",
   "metric_id": "OP",
   "period_id": 202706,
-  "planned_effect": 0.3,
+  "planned_effect": 0.28,
   "actual_effect": 0.2,
   "outlook_effect": null,
   "excluded_factor_amount": null
@@ -516,7 +570,7 @@
   "action_id": "ACT-001-OS-A01",
   "metric_id": "REV",
   "period_id": 202707,
-  "planned_effect": 1.2,
+  "planned_effect": 1.12,
   "actual_effect": null,
   "outlook_effect": 1.04,
   "excluded_factor_amount": null
@@ -525,7 +579,7 @@
   "action_id": "ACT-001-OS-A01",
   "metric_id": "GP",
   "period_id": 202707,
-  "planned_effect": 0.3,
+  "planned_effect": 0.28,
   "actual_effect": null,
   "outlook_effect": 0.26,
   "excluded_factor_amount": null
@@ -534,7 +588,7 @@
   "action_id": "ACT-001-OS-A01",
   "metric_id": "OP",
   "period_id": 202707,
-  "planned_effect": 0.3,
+  "planned_effect": 0.28,
   "actual_effect": null,
   "outlook_effect": 0.26,
   "excluded_factor_amount": null
@@ -543,7 +597,7 @@
   "action_id": "ACT-001-OS-A01",
   "metric_id": "REV",
   "period_id": 202708,
-  "planned_effect": 1.2,
+  "planned_effect": 1.08,
   "actual_effect": null,
   "outlook_effect": 1.04,
   "excluded_factor_amount": null
@@ -552,7 +606,7 @@
   "action_id": "ACT-001-OS-A01",
   "metric_id": "GP",
   "period_id": 202708,
-  "planned_effect": 0.3,
+  "planned_effect": 0.27,
   "actual_effect": null,
   "outlook_effect": 0.26,
   "excluded_factor_amount": null
@@ -561,7 +615,7 @@
   "action_id": "ACT-001-OS-A01",
   "metric_id": "OP",
   "period_id": 202708,
-  "planned_effect": 0.3,
+  "planned_effect": 0.27,
   "actual_effect": null,
   "outlook_effect": 0.26,
   "excluded_factor_amount": null
@@ -570,7 +624,7 @@
   "action_id": "ACT-001-OS-A01",
   "metric_id": "REV",
   "period_id": 202709,
-  "planned_effect": 1.2,
+  "planned_effect": 1.08,
   "actual_effect": null,
   "outlook_effect": 1.04,
   "excluded_factor_amount": null
@@ -579,7 +633,7 @@
   "action_id": "ACT-001-OS-A01",
   "metric_id": "GP",
   "period_id": 202709,
-  "planned_effect": 0.3,
+  "planned_effect": 0.27,
   "actual_effect": null,
   "outlook_effect": 0.26,
   "excluded_factor_amount": null
@@ -588,7 +642,7 @@
   "action_id": "ACT-001-OS-A01",
   "metric_id": "OP",
   "period_id": 202709,
-  "planned_effect": 0.3,
+  "planned_effect": 0.27,
   "actual_effect": null,
   "outlook_effect": 0.26,
   "excluded_factor_amount": null
@@ -597,7 +651,7 @@
   "action_id": "ACT-001-OS-A01",
   "metric_id": "REV",
   "period_id": 202710,
-  "planned_effect": 1.2,
+  "planned_effect": 1.08,
   "actual_effect": null,
   "outlook_effect": 1.04,
   "excluded_factor_amount": null
@@ -606,7 +660,7 @@
   "action_id": "ACT-001-OS-A01",
   "metric_id": "GP",
   "period_id": 202710,
-  "planned_effect": 0.3,
+  "planned_effect": 0.27,
   "actual_effect": null,
   "outlook_effect": 0.26,
   "excluded_factor_amount": null
@@ -615,7 +669,7 @@
   "action_id": "ACT-001-OS-A01",
   "metric_id": "OP",
   "period_id": 202710,
-  "planned_effect": 0.3,
+  "planned_effect": 0.27,
   "actual_effect": null,
   "outlook_effect": 0.26,
   "excluded_factor_amount": null
@@ -624,7 +678,7 @@
   "action_id": "ACT-001-OS-A01",
   "metric_id": "REV",
   "period_id": 202711,
-  "planned_effect": 1.2,
+  "planned_effect": 1.08,
   "actual_effect": null,
   "outlook_effect": 1.04,
   "excluded_factor_amount": null
@@ -633,7 +687,7 @@
   "action_id": "ACT-001-OS-A01",
   "metric_id": "GP",
   "period_id": 202711,
-  "planned_effect": 0.3,
+  "planned_effect": 0.27,
   "actual_effect": null,
   "outlook_effect": 0.26,
   "excluded_factor_amount": null
@@ -642,7 +696,7 @@
   "action_id": "ACT-001-OS-A01",
   "metric_id": "OP",
   "period_id": 202711,
-  "planned_effect": 0.3,
+  "planned_effect": 0.27,
   "actual_effect": null,
   "outlook_effect": 0.26,
   "excluded_factor_amount": null
@@ -651,7 +705,7 @@
   "action_id": "ACT-001-OS-A01",
   "metric_id": "REV",
   "period_id": 202712,
-  "planned_effect": 1.2,
+  "planned_effect": 1.08,
   "actual_effect": null,
   "outlook_effect": 1,
   "excluded_factor_amount": null
@@ -660,7 +714,7 @@
   "action_id": "ACT-001-OS-A01",
   "metric_id": "GP",
   "period_id": 202712,
-  "planned_effect": 0.3,
+  "planned_effect": 0.27,
   "actual_effect": null,
   "outlook_effect": 0.25,
   "excluded_factor_amount": null
@@ -669,7 +723,7 @@
   "action_id": "ACT-001-OS-A01",
   "metric_id": "OP",
   "period_id": 202712,
-  "planned_effect": 0.3,
+  "planned_effect": 0.27,
   "actual_effect": null,
   "outlook_effect": 0.25,
   "excluded_factor_amount": null
@@ -678,7 +732,7 @@
   "action_id": "ACT-001-OS-A01",
   "metric_id": "REV",
   "period_id": 202801,
-  "planned_effect": 1.2,
+  "planned_effect": 1.08,
   "actual_effect": null,
   "outlook_effect": 1,
   "excluded_factor_amount": null
@@ -687,7 +741,7 @@
   "action_id": "ACT-001-OS-A01",
   "metric_id": "GP",
   "period_id": 202801,
-  "planned_effect": 0.3,
+  "planned_effect": 0.27,
   "actual_effect": null,
   "outlook_effect": 0.25,
   "excluded_factor_amount": null
@@ -696,7 +750,7 @@
   "action_id": "ACT-001-OS-A01",
   "metric_id": "OP",
   "period_id": 202801,
-  "planned_effect": 0.3,
+  "planned_effect": 0.27,
   "actual_effect": null,
   "outlook_effect": 0.25,
   "excluded_factor_amount": null
@@ -705,7 +759,7 @@
   "action_id": "ACT-001-OS-A01",
   "metric_id": "REV",
   "period_id": 202802,
-  "planned_effect": 1.2,
+  "planned_effect": 1.08,
   "actual_effect": null,
   "outlook_effect": 1,
   "excluded_factor_amount": null
@@ -714,7 +768,7 @@
   "action_id": "ACT-001-OS-A01",
   "metric_id": "GP",
   "period_id": 202802,
-  "planned_effect": 0.3,
+  "planned_effect": 0.27,
   "actual_effect": null,
   "outlook_effect": 0.25,
   "excluded_factor_amount": null
@@ -723,7 +777,7 @@
   "action_id": "ACT-001-OS-A01",
   "metric_id": "OP",
   "period_id": 202802,
-  "planned_effect": 0.3,
+  "planned_effect": 0.27,
   "actual_effect": null,
   "outlook_effect": 0.25,
   "excluded_factor_amount": null
@@ -732,7 +786,7 @@
   "action_id": "ACT-001-OS-A01",
   "metric_id": "REV",
   "period_id": 202803,
-  "planned_effect": 1.2,
+  "planned_effect": 1.08,
   "actual_effect": null,
   "outlook_effect": 1,
   "excluded_factor_amount": null
@@ -741,7 +795,7 @@
   "action_id": "ACT-001-OS-A01",
   "metric_id": "GP",
   "period_id": 202803,
-  "planned_effect": 0.3,
+  "planned_effect": 0.27,
   "actual_effect": null,
   "outlook_effect": 0.25,
   "excluded_factor_amount": null
@@ -750,171 +804,207 @@
   "action_id": "ACT-001-OS-A01",
   "metric_id": "OP",
   "period_id": 202803,
-  "planned_effect": 0.3,
+  "planned_effect": 0.27,
   "actual_effect": null,
   "outlook_effect": 0.25,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-002-MF-A01",
+  "metric_id": "GP",
+  "period_id": 202705,
+  "planned_effect": 0.55,
+  "actual_effect": 0,
+  "outlook_effect": null,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-002-MF-A01",
+  "metric_id": "OP",
+  "period_id": 202705,
+  "planned_effect": 0.55,
+  "actual_effect": 0,
+  "outlook_effect": null,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-002-MF-A01",
+  "metric_id": "GP",
+  "period_id": 202706,
+  "planned_effect": 0.55,
+  "actual_effect": 0.3,
+  "outlook_effect": null,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-002-MF-A01",
+  "metric_id": "OP",
+  "period_id": 202706,
+  "planned_effect": 0.55,
+  "actual_effect": 0.3,
+  "outlook_effect": null,
   "excluded_factor_amount": null
  },
  {
   "action_id": "ACT-002-MF-A01",
   "metric_id": "GP",
   "period_id": 202707,
-  "planned_effect": 0.67,
+  "planned_effect": 0.55,
   "actual_effect": null,
-  "outlook_effect": 0.56,
+  "outlook_effect": 0.53,
   "excluded_factor_amount": null
  },
  {
   "action_id": "ACT-002-MF-A01",
   "metric_id": "OP",
   "period_id": 202707,
-  "planned_effect": 0.67,
+  "planned_effect": 0.55,
   "actual_effect": null,
-  "outlook_effect": 0.56,
+  "outlook_effect": 0.53,
   "excluded_factor_amount": null
  },
  {
   "action_id": "ACT-002-MF-A01",
   "metric_id": "GP",
   "period_id": 202708,
-  "planned_effect": 0.67,
+  "planned_effect": 0.55,
   "actual_effect": null,
-  "outlook_effect": 0.56,
+  "outlook_effect": 0.53,
   "excluded_factor_amount": null
  },
  {
   "action_id": "ACT-002-MF-A01",
   "metric_id": "OP",
   "period_id": 202708,
-  "planned_effect": 0.67,
+  "planned_effect": 0.55,
   "actual_effect": null,
-  "outlook_effect": 0.56,
+  "outlook_effect": 0.53,
   "excluded_factor_amount": null
  },
  {
   "action_id": "ACT-002-MF-A01",
   "metric_id": "GP",
   "period_id": 202709,
-  "planned_effect": 0.67,
+  "planned_effect": 0.55,
   "actual_effect": null,
-  "outlook_effect": 0.56,
+  "outlook_effect": 0.52,
   "excluded_factor_amount": null
  },
  {
   "action_id": "ACT-002-MF-A01",
   "metric_id": "OP",
   "period_id": 202709,
-  "planned_effect": 0.67,
+  "planned_effect": 0.55,
   "actual_effect": null,
-  "outlook_effect": 0.56,
+  "outlook_effect": 0.52,
   "excluded_factor_amount": null
  },
  {
   "action_id": "ACT-002-MF-A01",
   "metric_id": "GP",
   "period_id": 202710,
-  "planned_effect": 0.67,
+  "planned_effect": 0.55,
   "actual_effect": null,
-  "outlook_effect": 0.56,
+  "outlook_effect": 0.52,
   "excluded_factor_amount": null
  },
  {
   "action_id": "ACT-002-MF-A01",
   "metric_id": "OP",
   "period_id": 202710,
-  "planned_effect": 0.67,
+  "planned_effect": 0.55,
   "actual_effect": null,
-  "outlook_effect": 0.56,
+  "outlook_effect": 0.52,
   "excluded_factor_amount": null
  },
  {
   "action_id": "ACT-002-MF-A01",
   "metric_id": "GP",
   "period_id": 202711,
-  "planned_effect": 0.67,
+  "planned_effect": 0.54,
   "actual_effect": null,
-  "outlook_effect": 0.56,
+  "outlook_effect": 0.52,
   "excluded_factor_amount": null
  },
  {
   "action_id": "ACT-002-MF-A01",
   "metric_id": "OP",
   "period_id": 202711,
-  "planned_effect": 0.67,
+  "planned_effect": 0.54,
   "actual_effect": null,
-  "outlook_effect": 0.56,
+  "outlook_effect": 0.52,
   "excluded_factor_amount": null
  },
  {
   "action_id": "ACT-002-MF-A01",
   "metric_id": "GP",
   "period_id": 202712,
-  "planned_effect": 0.67,
+  "planned_effect": 0.54,
   "actual_effect": null,
-  "outlook_effect": 0.55,
+  "outlook_effect": 0.52,
   "excluded_factor_amount": null
  },
  {
   "action_id": "ACT-002-MF-A01",
   "metric_id": "OP",
   "period_id": 202712,
-  "planned_effect": 0.67,
+  "planned_effect": 0.54,
   "actual_effect": null,
-  "outlook_effect": 0.55,
+  "outlook_effect": 0.52,
   "excluded_factor_amount": null
  },
  {
   "action_id": "ACT-002-MF-A01",
   "metric_id": "GP",
   "period_id": 202801,
-  "planned_effect": 0.66,
+  "planned_effect": 0.54,
   "actual_effect": null,
-  "outlook_effect": 0.55,
+  "outlook_effect": 0.52,
   "excluded_factor_amount": null
  },
  {
   "action_id": "ACT-002-MF-A01",
   "metric_id": "OP",
   "period_id": 202801,
-  "planned_effect": 0.66,
+  "planned_effect": 0.54,
   "actual_effect": null,
-  "outlook_effect": 0.55,
+  "outlook_effect": 0.52,
   "excluded_factor_amount": null
  },
  {
   "action_id": "ACT-002-MF-A01",
   "metric_id": "GP",
   "period_id": 202802,
-  "planned_effect": 0.66,
+  "planned_effect": 0.54,
   "actual_effect": null,
-  "outlook_effect": 0.55,
+  "outlook_effect": 0.52,
   "excluded_factor_amount": null
  },
  {
   "action_id": "ACT-002-MF-A01",
   "metric_id": "OP",
   "period_id": 202802,
-  "planned_effect": 0.66,
+  "planned_effect": 0.54,
   "actual_effect": null,
-  "outlook_effect": 0.55,
+  "outlook_effect": 0.52,
   "excluded_factor_amount": null
  },
  {
   "action_id": "ACT-002-MF-A01",
   "metric_id": "GP",
   "period_id": 202803,
-  "planned_effect": 0.66,
+  "planned_effect": 0.54,
   "actual_effect": null,
-  "outlook_effect": 0.55,
+  "outlook_effect": 0.52,
   "excluded_factor_amount": null
  },
  {
   "action_id": "ACT-002-MF-A01",
   "metric_id": "OP",
   "period_id": 202803,
-  "planned_effect": 0.66,
+  "planned_effect": 0.54,
   "actual_effect": null,
-  "outlook_effect": 0.55,
+  "outlook_effect": 0.52,
   "excluded_factor_amount": null
  },
  {
@@ -1082,244 +1172,298 @@
  {
   "action_id": "ACT-003-OS-A01",
   "metric_id": "REV",
+  "period_id": 202705,
+  "planned_effect": 1.48,
+  "actual_effect": 0,
+  "outlook_effect": null,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-003-OS-A01",
+  "metric_id": "GP",
+  "period_id": 202705,
+  "planned_effect": 0.37,
+  "actual_effect": 0,
+  "outlook_effect": null,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-003-OS-A01",
+  "metric_id": "OP",
+  "period_id": 202705,
+  "planned_effect": 0.37,
+  "actual_effect": 0,
+  "outlook_effect": null,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-003-OS-A01",
+  "metric_id": "REV",
+  "period_id": 202706,
+  "planned_effect": 1.48,
+  "actual_effect": 0.4,
+  "outlook_effect": null,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-003-OS-A01",
+  "metric_id": "GP",
+  "period_id": 202706,
+  "planned_effect": 0.37,
+  "actual_effect": 0.1,
+  "outlook_effect": null,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-003-OS-A01",
+  "metric_id": "OP",
+  "period_id": 202706,
+  "planned_effect": 0.37,
+  "actual_effect": 0.1,
+  "outlook_effect": null,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-003-OS-A01",
+  "metric_id": "REV",
   "period_id": 202707,
-  "planned_effect": 1.8,
+  "planned_effect": 1.48,
   "actual_effect": null,
-  "outlook_effect": 1.36,
+  "outlook_effect": 1.32,
   "excluded_factor_amount": null
  },
  {
   "action_id": "ACT-003-OS-A01",
   "metric_id": "GP",
   "period_id": 202707,
-  "planned_effect": 0.45,
+  "planned_effect": 0.37,
   "actual_effect": null,
-  "outlook_effect": 0.34,
+  "outlook_effect": 0.33,
   "excluded_factor_amount": null
  },
  {
   "action_id": "ACT-003-OS-A01",
   "metric_id": "OP",
   "period_id": 202707,
-  "planned_effect": 0.45,
+  "planned_effect": 0.37,
   "actual_effect": null,
-  "outlook_effect": 0.34,
+  "outlook_effect": 0.33,
   "excluded_factor_amount": null
  },
  {
   "action_id": "ACT-003-OS-A01",
   "metric_id": "REV",
   "period_id": 202708,
-  "planned_effect": 1.8,
+  "planned_effect": 1.48,
   "actual_effect": null,
-  "outlook_effect": 1.36,
+  "outlook_effect": 1.32,
   "excluded_factor_amount": null
  },
  {
   "action_id": "ACT-003-OS-A01",
   "metric_id": "GP",
   "period_id": 202708,
-  "planned_effect": 0.45,
+  "planned_effect": 0.37,
   "actual_effect": null,
-  "outlook_effect": 0.34,
+  "outlook_effect": 0.33,
   "excluded_factor_amount": null
  },
  {
   "action_id": "ACT-003-OS-A01",
   "metric_id": "OP",
   "period_id": 202708,
-  "planned_effect": 0.45,
+  "planned_effect": 0.37,
   "actual_effect": null,
-  "outlook_effect": 0.34,
+  "outlook_effect": 0.33,
   "excluded_factor_amount": null
  },
  {
   "action_id": "ACT-003-OS-A01",
   "metric_id": "REV",
   "period_id": 202709,
-  "planned_effect": 1.8,
+  "planned_effect": 1.44,
   "actual_effect": null,
-  "outlook_effect": 1.36,
+  "outlook_effect": 1.28,
   "excluded_factor_amount": null
  },
  {
   "action_id": "ACT-003-OS-A01",
   "metric_id": "GP",
   "period_id": 202709,
-  "planned_effect": 0.45,
+  "planned_effect": 0.36,
   "actual_effect": null,
-  "outlook_effect": 0.34,
+  "outlook_effect": 0.32,
   "excluded_factor_amount": null
  },
  {
   "action_id": "ACT-003-OS-A01",
   "metric_id": "OP",
   "period_id": 202709,
-  "planned_effect": 0.45,
+  "planned_effect": 0.36,
   "actual_effect": null,
-  "outlook_effect": 0.34,
+  "outlook_effect": 0.32,
   "excluded_factor_amount": null
  },
  {
   "action_id": "ACT-003-OS-A01",
   "metric_id": "REV",
   "period_id": 202710,
-  "planned_effect": 1.8,
+  "planned_effect": 1.44,
   "actual_effect": null,
-  "outlook_effect": 1.32,
+  "outlook_effect": 1.28,
   "excluded_factor_amount": null
  },
  {
   "action_id": "ACT-003-OS-A01",
   "metric_id": "GP",
   "period_id": 202710,
-  "planned_effect": 0.45,
+  "planned_effect": 0.36,
   "actual_effect": null,
-  "outlook_effect": 0.33,
+  "outlook_effect": 0.32,
   "excluded_factor_amount": null
  },
  {
   "action_id": "ACT-003-OS-A01",
   "metric_id": "OP",
   "period_id": 202710,
-  "planned_effect": 0.45,
+  "planned_effect": 0.36,
   "actual_effect": null,
-  "outlook_effect": 0.33,
+  "outlook_effect": 0.32,
   "excluded_factor_amount": null
  },
  {
   "action_id": "ACT-003-OS-A01",
   "metric_id": "REV",
   "period_id": 202711,
-  "planned_effect": 1.76,
+  "planned_effect": 1.44,
   "actual_effect": null,
-  "outlook_effect": 1.32,
+  "outlook_effect": 1.28,
   "excluded_factor_amount": null
  },
  {
   "action_id": "ACT-003-OS-A01",
   "metric_id": "GP",
   "period_id": 202711,
-  "planned_effect": 0.44,
+  "planned_effect": 0.36,
   "actual_effect": null,
-  "outlook_effect": 0.33,
+  "outlook_effect": 0.32,
   "excluded_factor_amount": null
  },
  {
   "action_id": "ACT-003-OS-A01",
   "metric_id": "OP",
   "period_id": 202711,
-  "planned_effect": 0.44,
+  "planned_effect": 0.36,
   "actual_effect": null,
-  "outlook_effect": 0.33,
+  "outlook_effect": 0.32,
   "excluded_factor_amount": null
  },
  {
   "action_id": "ACT-003-OS-A01",
   "metric_id": "REV",
   "period_id": 202712,
-  "planned_effect": 1.76,
+  "planned_effect": 1.44,
   "actual_effect": null,
-  "outlook_effect": 1.32,
+  "outlook_effect": 1.28,
   "excluded_factor_amount": null
  },
  {
   "action_id": "ACT-003-OS-A01",
   "metric_id": "GP",
   "period_id": 202712,
-  "planned_effect": 0.44,
+  "planned_effect": 0.36,
   "actual_effect": null,
-  "outlook_effect": 0.33,
+  "outlook_effect": 0.32,
   "excluded_factor_amount": null
  },
  {
   "action_id": "ACT-003-OS-A01",
   "metric_id": "OP",
   "period_id": 202712,
-  "planned_effect": 0.44,
+  "planned_effect": 0.36,
   "actual_effect": null,
-  "outlook_effect": 0.33,
+  "outlook_effect": 0.32,
   "excluded_factor_amount": null
  },
  {
   "action_id": "ACT-003-OS-A01",
   "metric_id": "REV",
   "period_id": 202801,
-  "planned_effect": 1.76,
+  "planned_effect": 1.44,
   "actual_effect": null,
-  "outlook_effect": 1.32,
+  "outlook_effect": 1.28,
   "excluded_factor_amount": null
  },
  {
   "action_id": "ACT-003-OS-A01",
   "metric_id": "GP",
   "period_id": 202801,
-  "planned_effect": 0.44,
+  "planned_effect": 0.36,
   "actual_effect": null,
-  "outlook_effect": 0.33,
+  "outlook_effect": 0.32,
   "excluded_factor_amount": null
  },
  {
   "action_id": "ACT-003-OS-A01",
   "metric_id": "OP",
   "period_id": 202801,
-  "planned_effect": 0.44,
+  "planned_effect": 0.36,
   "actual_effect": null,
-  "outlook_effect": 0.33,
+  "outlook_effect": 0.32,
   "excluded_factor_amount": null
  },
  {
   "action_id": "ACT-003-OS-A01",
   "metric_id": "REV",
   "period_id": 202802,
-  "planned_effect": 1.76,
+  "planned_effect": 1.44,
   "actual_effect": null,
-  "outlook_effect": 1.32,
+  "outlook_effect": 1.28,
   "excluded_factor_amount": null
  },
  {
   "action_id": "ACT-003-OS-A01",
   "metric_id": "GP",
   "period_id": 202802,
-  "planned_effect": 0.44,
+  "planned_effect": 0.36,
   "actual_effect": null,
-  "outlook_effect": 0.33,
+  "outlook_effect": 0.32,
   "excluded_factor_amount": null
  },
  {
   "action_id": "ACT-003-OS-A01",
   "metric_id": "OP",
   "period_id": 202802,
-  "planned_effect": 0.44,
+  "planned_effect": 0.36,
   "actual_effect": null,
-  "outlook_effect": 0.33,
+  "outlook_effect": 0.32,
   "excluded_factor_amount": null
  },
  {
   "action_id": "ACT-003-OS-A01",
   "metric_id": "REV",
   "period_id": 202803,
-  "planned_effect": 1.76,
+  "planned_effect": 1.44,
   "actual_effect": null,
-  "outlook_effect": 1.32,
+  "outlook_effect": 1.28,
   "excluded_factor_amount": null
  },
  {
   "action_id": "ACT-003-OS-A01",
   "metric_id": "GP",
   "period_id": 202803,
-  "planned_effect": 0.44,
+  "planned_effect": 0.36,
   "actual_effect": null,
-  "outlook_effect": 0.33,
+  "outlook_effect": 0.32,
   "excluded_factor_amount": null
  },
  {
   "action_id": "ACT-003-OS-A01",
   "metric_id": "OP",
   "period_id": 202803,
-  "planned_effect": 0.44,
+  "planned_effect": 0.36,
   "actual_effect": null,
-  "outlook_effect": 0.33,
+  "outlook_effect": 0.32,
   "excluded_factor_amount": null
  },
  {
@@ -1739,8 +1883,26 @@
  {
   "action_id": "ACT-007-MF-A01",
   "metric_id": "GP",
+  "period_id": 202705,
+  "planned_effect": 0.41,
+  "actual_effect": 0,
+  "outlook_effect": null,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-007-MF-A01",
+  "metric_id": "OP",
+  "period_id": 202705,
+  "planned_effect": 0.41,
+  "actual_effect": 0,
+  "outlook_effect": null,
+  "excluded_factor_amount": null
+ },
+ {
+  "action_id": "ACT-007-MF-A01",
+  "metric_id": "GP",
   "period_id": 202706,
-  "planned_effect": 0.45,
+  "planned_effect": 0.41,
   "actual_effect": 0,
   "outlook_effect": null,
   "excluded_factor_amount": null
@@ -1749,7 +1911,7 @@
   "action_id": "ACT-007-MF-A01",
   "metric_id": "OP",
   "period_id": 202706,
-  "planned_effect": 0.45,
+  "planned_effect": 0.41,
   "actual_effect": 0,
   "outlook_effect": null,
   "excluded_factor_amount": null
@@ -1758,7 +1920,7 @@
   "action_id": "ACT-007-MF-A01",
   "metric_id": "GP",
   "period_id": 202707,
-  "planned_effect": 0.45,
+  "planned_effect": 0.41,
   "actual_effect": null,
   "outlook_effect": 0.17,
   "excluded_factor_amount": null
@@ -1767,7 +1929,7 @@
   "action_id": "ACT-007-MF-A01",
   "metric_id": "OP",
   "period_id": 202707,
-  "planned_effect": 0.45,
+  "planned_effect": 0.41,
   "actual_effect": null,
   "outlook_effect": 0.17,
   "excluded_factor_amount": null
@@ -1776,7 +1938,7 @@
   "action_id": "ACT-007-MF-A01",
   "metric_id": "GP",
   "period_id": 202708,
-  "planned_effect": 0.45,
+  "planned_effect": 0.41,
   "actual_effect": null,
   "outlook_effect": 0.17,
   "excluded_factor_amount": null
@@ -1785,7 +1947,7 @@
   "action_id": "ACT-007-MF-A01",
   "metric_id": "OP",
   "period_id": 202708,
-  "planned_effect": 0.45,
+  "planned_effect": 0.41,
   "actual_effect": null,
   "outlook_effect": 0.17,
   "excluded_factor_amount": null
@@ -1794,7 +1956,7 @@
   "action_id": "ACT-007-MF-A01",
   "metric_id": "GP",
   "period_id": 202709,
-  "planned_effect": 0.45,
+  "planned_effect": 0.41,
   "actual_effect": null,
   "outlook_effect": 0.17,
   "excluded_factor_amount": null
@@ -1803,7 +1965,7 @@
   "action_id": "ACT-007-MF-A01",
   "metric_id": "OP",
   "period_id": 202709,
-  "planned_effect": 0.45,
+  "planned_effect": 0.41,
   "actual_effect": null,
   "outlook_effect": 0.17,
   "excluded_factor_amount": null
@@ -1812,7 +1974,7 @@
   "action_id": "ACT-007-MF-A01",
   "metric_id": "GP",
   "period_id": 202710,
-  "planned_effect": 0.45,
+  "planned_effect": 0.41,
   "actual_effect": null,
   "outlook_effect": 0.17,
   "excluded_factor_amount": null
@@ -1821,7 +1983,7 @@
   "action_id": "ACT-007-MF-A01",
   "metric_id": "OP",
   "period_id": 202710,
-  "planned_effect": 0.45,
+  "planned_effect": 0.41,
   "actual_effect": null,
   "outlook_effect": 0.17,
   "excluded_factor_amount": null
@@ -1830,7 +1992,7 @@
   "action_id": "ACT-007-MF-A01",
   "metric_id": "GP",
   "period_id": 202711,
-  "planned_effect": 0.45,
+  "planned_effect": 0.41,
   "actual_effect": null,
   "outlook_effect": 0.17,
   "excluded_factor_amount": null
@@ -1839,7 +2001,7 @@
   "action_id": "ACT-007-MF-A01",
   "metric_id": "OP",
   "period_id": 202711,
-  "planned_effect": 0.45,
+  "planned_effect": 0.41,
   "actual_effect": null,
   "outlook_effect": 0.17,
   "excluded_factor_amount": null
@@ -1848,7 +2010,7 @@
   "action_id": "ACT-007-MF-A01",
   "metric_id": "GP",
   "period_id": 202712,
-  "planned_effect": 0.45,
+  "planned_effect": 0.41,
   "actual_effect": null,
   "outlook_effect": 0.17,
   "excluded_factor_amount": null
@@ -1857,7 +2019,7 @@
   "action_id": "ACT-007-MF-A01",
   "metric_id": "OP",
   "period_id": 202712,
-  "planned_effect": 0.45,
+  "planned_effect": 0.41,
   "actual_effect": null,
   "outlook_effect": 0.17,
   "excluded_factor_amount": null
@@ -1866,7 +2028,7 @@
   "action_id": "ACT-007-MF-A01",
   "metric_id": "GP",
   "period_id": 202801,
-  "planned_effect": 0.45,
+  "planned_effect": 0.41,
   "actual_effect": null,
   "outlook_effect": 0.16,
   "excluded_factor_amount": null
@@ -1875,7 +2037,7 @@
   "action_id": "ACT-007-MF-A01",
   "metric_id": "OP",
   "period_id": 202801,
-  "planned_effect": 0.45,
+  "planned_effect": 0.41,
   "actual_effect": null,
   "outlook_effect": 0.16,
   "excluded_factor_amount": null
@@ -1884,7 +2046,7 @@
   "action_id": "ACT-007-MF-A01",
   "metric_id": "GP",
   "period_id": 202802,
-  "planned_effect": 0.45,
+  "planned_effect": 0.41,
   "actual_effect": null,
   "outlook_effect": 0.16,
   "excluded_factor_amount": null
@@ -1893,7 +2055,7 @@
   "action_id": "ACT-007-MF-A01",
   "metric_id": "OP",
   "period_id": 202802,
-  "planned_effect": 0.45,
+  "planned_effect": 0.41,
   "actual_effect": null,
   "outlook_effect": 0.16,
   "excluded_factor_amount": null
@@ -1902,7 +2064,7 @@
   "action_id": "ACT-007-MF-A01",
   "metric_id": "GP",
   "period_id": 202803,
-  "planned_effect": 0.45,
+  "planned_effect": 0.4,
   "actual_effect": null,
   "outlook_effect": 0.16,
   "excluded_factor_amount": null
@@ -1911,7 +2073,7 @@
   "action_id": "ACT-007-MF-A01",
   "metric_id": "OP",
   "period_id": 202803,
-  "planned_effect": 0.45,
+  "planned_effect": 0.4,
   "actual_effect": null,
   "outlook_effect": 0.16,
   "excluded_factor_amount": null
